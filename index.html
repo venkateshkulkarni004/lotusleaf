@@ -1,0 +1,1048 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0A2A22">
+    <title>The LotusLeaf Collection — Hospitality Management & Consulting</title>
+    <meta name="description" content="The LotusLeaf Collection — hospitality management, consulting and pre-opening solutions for hotels, resorts and serviced apartments across India.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --emerald: #0a2a22;
+        --emerald-800: #0f3a2f;
+        --gold: #d4af37;
+        --gold-soft: #e6c968;
+        --cream: #f9f8f6;
+        --muted-dark: #4a625a;
+        --muted-light: #a3b8b2;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+      body {
+        margin: 0;
+        font-family: "Outfit", system-ui, sans-serif;
+        color: var(--emerald);
+        background: var(--cream);
+        -webkit-font-smoothing: antialiased;
+      }
+      .font-serif { font-family: "Cormorant Garamond", Georgia, serif; }
+      ::selection { background: var(--gold); color: var(--emerald); }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 10px; }
+      ::-webkit-scrollbar-track { background: var(--cream); }
+      ::-webkit-scrollbar-thumb { background: #cbb96a; border-radius: 8px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+      .overline {
+        font-size: 0.75rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--gold);
+      }
+      .text-gold { color: var(--gold); }
+      .bg-emerald { background: var(--emerald); }
+      .bg-cream { background: var(--cream); }
+      .text-cream { color: var(--cream); }
+      .text-muted-dark { color: var(--muted-dark); }
+      .text-muted-light { color: var(--muted-light); }
+
+      .text-gold-gradient {
+        background: linear-gradient(120deg, #b8901f 0%, #d4af37 40%, #f0d97a 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gold-hairline {
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--gold), transparent);
+      }
+
+      .section { padding: 6rem 0; }
+      @media (max-width: 768px) { .section { padding: 4rem 0; } }
+
+      .display-serif {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        line-height: 1.05;
+      }
+
+      /* Navbar */
+      .navbar-custom {
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+        background: transparent;
+        z-index: 1030;
+      }
+      .navbar-custom.scrolled {
+        background: rgba(249, 248, 246, 0.9);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(10, 42, 34, 0.1);
+      }
+      .navbar-custom .nav-link {
+        color: rgba(249, 248, 246, 0.9);
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+      }
+      .navbar-custom.scrolled .nav-link { color: var(--muted-dark); }
+      .navbar-custom .nav-link:hover { color: var(--gold); }
+      .brand-text { color: var(--cream); transition: color 0.3s ease; }
+      .navbar-custom.scrolled .brand-text { color: var(--emerald); }
+      .lotus-nav { stroke: var(--gold); transition: stroke 0.3s ease; }
+      .navbar-custom.scrolled .lotus-nav { stroke: var(--emerald); }
+
+      .btn-gold {
+        background: var(--gold);
+        color: var(--emerald);
+        font-weight: 600;
+        border: none;
+        border-radius: 999px;
+        padding: 0.65rem 1.6rem;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+      }
+      .btn-gold:hover { background: var(--gold-soft); color: var(--emerald); }
+      .btn-outline-cream {
+        background: transparent;
+        color: var(--cream);
+        border: 1px solid rgba(249, 248, 246, 0.3);
+        border-radius: 999px;
+        padding: 0.9rem 2rem;
+        font-weight: 600;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+      .btn-outline-cream:hover { color: var(--gold); border-color: var(--gold); }
+      .btn-emerald {
+        background: var(--emerald);
+        color: var(--cream);
+        border: none;
+        border-radius: 999px;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
+      }
+      .btn-emerald:hover { background: var(--emerald-800); color: var(--cream); }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute; inset: 0;
+        background: url("images/pexels-photo-9400976.jpeg")
+          center/cover no-repeat;
+      }
+      .hero-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(10, 42, 34, 0.96) 0%,
+          rgba(10, 42, 34, 0.82) 45%,
+          rgba(10, 42, 34, 0.4) 100%
+        );
+      }
+      .hero-overlay-2 {
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, var(--emerald), transparent 45%);
+      }
+
+      /* Cards */
+      .value-card, .service-card, .project-card, .team-card, .price-card {
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+      .value-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 0.85rem;
+        padding: 1.5rem;
+      }
+      .value-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(212,175,55,0.5); }
+      .value-icon {
+        width: 44px; height: 44px; border-radius: 0.6rem;
+        background: rgba(212, 175, 55, 0.15);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--gold); font-size: 1.2rem; margin-bottom: 1rem;
+      }
+      .service-card {
+        background: #fff;
+        border: 1px solid rgba(10, 42, 34, 0.1);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      }
+      .service-card:hover { box-shadow: 0 20px 40px rgba(10,42,34,0.12); transform: translateY(-4px); }
+      .service-icon {
+        width: 48px; height: 48px; border-radius: 0.75rem;
+        background: var(--emerald); color: var(--gold);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.35rem; margin-bottom: 1.25rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .service-card:hover .service-icon { background: var(--gold); color: var(--emerald); }
+
+      .chip {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        color: var(--cream);
+        background: rgba(255,255,255,0.05);
+        margin: 0.25rem;
+      }
+
+      .price-card {
+        border-radius: 1rem;
+        padding: 2rem;
+        display: flex; flex-direction: column;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(212,175,55,0.2);
+      }
+      .price-card:hover { transform: translateY(-4px); }
+      .price-card.featured { background: var(--cream); border: 1px solid var(--gold); }
+      .badge-gold {
+        align-self: flex-start;
+        background: var(--gold); color: var(--emerald);
+        font-size: 0.72rem; font-weight: 600;
+        padding: 0.3rem 0.8rem; border-radius: 999px; margin-bottom: 1rem;
+      }
+
+      .project-card {
+        background: #fff;
+        border: 1px solid rgba(10, 42, 34, 0.1);
+        border-radius: 0.85rem;
+        padding: 1.5rem;
+      }
+      .project-card:hover { border-color: rgba(212,175,55,0.5); }
+      .project-num { font-family: "Cormorant Garamond", serif; font-size: 2rem; color: rgba(212,175,55,0.4); }
+
+      .team-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(212,175,55,0.2);
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+      }
+      .team-card:hover { border-color: rgba(212,175,55,0.5); }
+      .team-avatar {
+        width: 80px; height: 80px; margin: 0 auto;
+        border-radius: 999px;
+        background: rgba(212,175,55,0.15);
+        border: 1px solid rgba(212,175,55,0.4);
+        display: flex; align-items: center; justify-content: center;
+        font-family: "Cormorant Garamond", serif; font-size: 1.6rem; color: var(--gold);
+      }
+
+      .contact-icon {
+        width: 44px; height: 44px; border-radius: 0.7rem;
+        background: var(--emerald); color: var(--gold);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.15rem; flex-shrink: 0;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .contact-link:hover .contact-icon { background: var(--gold); color: var(--emerald); }
+      .contact-link { text-decoration: none; color: var(--muted-dark); }
+      .contact-link:hover { color: var(--emerald); }
+
+      .form-control {
+        border: 1px solid rgba(10, 42, 34, 0.2);
+        border-radius: 0.5rem;
+        padding: 0.7rem 0.9rem;
+      }
+      .form-control:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.2);
+      }
+      .form-label { color: var(--emerald); font-size: 0.9rem; font-weight: 500; }
+
+      .footer-link { color: rgba(249,248,246,0.8); text-decoration: none; font-size: 0.9rem; }
+      .footer-link:hover { color: var(--gold); }
+
+      /* Reveal animation */
+      .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+      }
+      .grain { position: relative; }
+      .zoom-img { overflow: hidden; }
+      .zoom-img img { transition: transform 0.7s ease; }
+      .zoom-img:hover img { transform: scale(1.05); }
+    </style>
+  </head>
+
+  <body>
+    <!-- SVG lotus symbol -->
+    <svg style="display: none">
+      <symbol id="lotus" viewBox="0 0 64 64">
+        <g fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 52c0-10 0-18 0-24"></path>
+          <path d="M32 28c-2-8-1-16 0-22 1 6 2 14 0 22z"></path>
+          <path d="M32 30c-6-5-11-7-17-8 3 6 8 11 17 12z"></path>
+          <path d="M32 30c6-5 11-7 17-8-3 6-8 11-17 12z"></path>
+          <path d="M32 32c-9-2-16 0-22 3 6 4 15 6 22 1z"></path>
+          <path d="M32 32c9-2 16 0 22 3-6 4-15 6-22 1z"></path>
+          <path d="M14 46c6 5 12 7 18 7s12-2 18-7"></path>
+        </g>
+      </symbol>
+    </svg>
+
+    <!-- NAVBAR -->
+   <style>
+  .navbar-custom {
+    background: #0A2A22 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 4px 0; /* Reduced navbar height */
+  }
+
+  .navbar-custom .navbar-brand {
+    padding: 0;
+  }
+
+  .navbar-custom .brand-text {
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 1.1rem !important;
+  }
+
+  .navbar-custom .nav-link {
+    color: #ffffff !important;
+    padding: 6px 10px !important;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-custom .nav-link:hover,
+  .navbar-custom .nav-link.active {
+    color: #D4AF37 !important;
+  }
+
+  .navbar-custom .navbar-toggler {
+    border: none;
+    box-shadow: none;
+    padding: 4px;
+  }
+
+  .navbar-custom .navbar-toggler i {
+    color: #D4AF37;
+  }
+
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      background: #0A2A22;
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 8px;
+    }
+
+    .navbar-nav .nav-item {
+      margin-bottom: 8px;
+    }
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+      <img src="images/WhatsApp_Image_2026-06-19_at_7.35.11_PM-removebg-preview.png"
+           alt="The LotusLeaf Collection Logo"
+           width="40"
+           height="40">
+      <span class="font-serif brand-text">
+        The LotusLeaf Collection
+      </span>
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu">
+      <i class="bi bi-list fs-3"></i>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-gold btn-sm px-3 py-2" href="#contact">Get in Touch</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+    <!-- HERO -->
+    <header class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-overlay-2"></div>
+      <div class="container position-relative" style="z-index: 2; padding-top: 5rem">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="d-flex align-items-center gap-3 mb-4">
+           <img src="images\WhatsApp_Image_2026-06-19_at_7.35.11_PM-removebg-preview.png" alt="The LotusLeaf Collection Logo" width="50" height="50">
+              <span class="overline">Hospitality Management · Consulting · Pre-Opening Solutions</span>
+            </div>
+            <h1 class="display-serif text-cream mb-4" style="font-size: clamp(2.6rem, 6vw, 4.6rem)">
+              Experience That Builds <span class="text-gold-gradient">Excellence.</span><br>
+              Presence That Creates <span class="text-gold-gradient">Impact.</span>
+            </h1>
+            <p class="text-muted-light fs-5 mb-5" style="max-width: 33rem">
+              A hospitality management & consulting firm transforming hotels, resorts and serviced
+              apartments into distinguished destinations across India.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+              <a href="#contact" class="btn btn-gold px-4 py-3">Partner With Us</a>
+              <a href="#services" class="btn btn-outline-cream">Explore Our Expertise</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="section bg-cream" id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal">
+            <span class="overline">Who We Are</span>
+            <h2 class="display-serif mt-2 mb-4" style="color: var(--emerald); font-size: clamp(2rem, 4vw, 3rem)">
+              Crafting distinguished destinations
+            </h2>
+            <p class="text-muted-dark">
+              A hospitality consulting and management firm dedicated to crafting extraordinary guest
+              experiences while driving sustainable business growth for hotels, resorts, and serviced
+              apartments. We combine deep operational expertise with sales, marketing, and revenue
+              management to transform assets into distinguished destinations.
+            </p>
+            <div class="row g-4 mt-2">
+              <div class="col-sm-6">
+                <div class="p-4 bg-white rounded-3 h-100" style="border: 1px solid rgba(10,42,34,0.1)">
+                  <span class="overline">Our Vision</span>
+                  <p class="text-muted-dark small mt-2 mb-0">
+                    To be India's most trusted hospitality management and consulting partner,
+                    transforming assets into distinguished destinations.
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-4 bg-white rounded-3 h-100" style="border: 1px solid rgba(10,42,34,0.1)">
+                  <span class="overline">Our Mission</span>
+                  <p class="text-muted-dark small mt-2 mb-0">
+                    To empower hospitality ventures with strategic expertise, sustainable growth
+                    solutions, and world-class operational standards.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="position-relative">
+              <div class="zoom-img rounded-4">
+                <img src="images/pexels-photo-37351199.jpeg" alt="Grand hotel lobby with marble floors" class="w-100 rounded-4" style="height: 500px; object-fit: cover">
+              </div>
+              <div class="position-absolute d-none d-sm-flex align-items-center gap-3 bg-emerald px-4 py-3 rounded-3 shadow" style="bottom: -24px; left: -24px">
+    <img src="images/WhatsApp_Image_2026-06-19_at_7.35.11_PM-removebg-preview.png"
+         alt="The LotusLeaf Collection Logo"
+         width="50"
+         height="50">
+
+    <div>
+        <div class="font-serif text-cream fs-3 lh-1">7+</div>
+        <div class="text-muted-light small">Properties Elevated</div>
+    </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section bg-emerald grain">
+      <div class="container">
+        <div class="text-center mx-auto reveal" style="max-width: 42rem">
+          <span class="overline">What Guides Us</span>
+          <h2 class="display-serif text-cream mt-2" style="font-size: clamp(2rem, 4vw, 3rem)">
+            Values at the heart of every partnership
+          </h2>
+        </div>
+        <div class="row g-3 mt-4" id="valuesGrid">
+        <div class="col-6 col-md-3 reveal">
+          <div class="value-card">
+            <div class="value-icon"><i class="bi bi-award"></i></div>
+            <p class="font-serif text-cream fs-4 mb-0 lh-sm">Excellence</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="value-card">
+            <div class="value-icon"><i class="bi bi-shield-check"></i></div>
+            <p class="font-serif text-cream fs-4 mb-0 lh-sm">Integrity</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="value-card">
+            <div class="value-icon"><i class="bi bi-heart"></i></div>
+            <p class="font-serif text-cream fs-4 mb-0 lh-sm">Guest First</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="value-card">
+            <div class="value-icon"><i class="bi bi-lightbulb"></i></div>
+            <p class="font-serif text-cream fs-4 mb-0 lh-sm">Innovation</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="value-card">
+            <div class="value-icon"><i class="bi bi-people"></i></div>
+            <p class="font-serif text-cream fs-4 mb-0 lh-sm">Partnership</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="value-card">
+            <div class="value-icon"><i class="bi bi-tree"></i></div>
+            <p class="font-serif text-cream fs-4 mb-0 lh-sm">Sustainability</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="value-card">
+            <div class="value-icon"><i class="bi bi-stars"></i></div>
+            <p class="font-serif text-cream fs-4 mb-0 lh-sm">Passion for Hospitality</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 reveal">
+          <div class="value-card">
+            <div class="value-icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <p class="font-serif text-cream fs-4 mb-0 lh-sm">Growth Mindset</p>
+          </div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section bg-cream" id="services">
+      <div class="container">
+        <div class="reveal" style="max-width: 40rem">
+          <span class="overline">Core Expertise</span>
+          <h2 class="display-serif mt-2" style="color: var(--emerald); font-size: clamp(2rem, 4vw, 3rem)">
+            Services engineered for growth
+          </h2>
+        </div>
+        <div class="row g-4 mt-3" id="servicesGrid">
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-buildings"></i></div>
+            <h3 class="font-serif fs-3" style="color: var(--emerald)">Hotel & Resort Management</h3>
+            <p class="text-muted-dark small mb-0">End-to-end operational management that elevates service standards and profitability across hotels, resorts and serviced apartments.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-megaphone"></i></div>
+            <h3 class="font-serif fs-3" style="color: var(--emerald)">Sales, Marketing & Distribution</h3>
+            <p class="text-muted-dark small mb-0">Integrated commercial strategy, brand positioning and distribution to maximise visibility and bookings.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-graph-up"></i></div>
+            <h3 class="font-serif fs-3" style="color: var(--emerald)">Revenue Management</h3>
+            <p class="text-muted-dark small mb-0">Data-driven pricing, forecasting and yield strategies that optimise RevPAR and total revenue.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-key"></i></div>
+            <h3 class="font-serif fs-3" style="color: var(--emerald)">Pre-Opening Consultancy</h3>
+            <p class="text-muted-dark small mb-0">Turnkey pre-opening planning, SOPs and systems that ensure a flawless, on-time launch.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-people-fill"></i></div>
+            <h3 class="font-serif fs-3" style="color: var(--emerald)">Human Capital & Culture</h3>
+            <p class="text-muted-dark small mb-0">Talent acquisition, employee engagement, training and HR compliance that build enduring service culture.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-speedometer2"></i></div>
+            <h3 class="font-serif fs-3" style="color: var(--emerald)">Operational Excellence</h3>
+            <p class="text-muted-dark small mb-0">SOP development, quality assurance and business transformation for consistent, world-class delivery.</p>
+          </div>
+        </div></div>
+
+        <!-- Special assignments -->
+        <div class="reveal mt-5 position-relative rounded-4 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39" alt="Elegant luxury hotel room" class="w-100" style="height: 280px; object-fit: cover">
+          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: linear-gradient(90deg, rgba(10,42,34,0.96), rgba(10,42,34,0.5))">
+            <div class="px-4 px-lg-5" style="max-width: 42rem">
+              <span class="overline">Special Consultancy Assignments</span>
+              <div class="mt-3">
+                <span class="chip">Revenue Management</span>
+                <span class="chip">Sales & Marketing</span>
+                <span class="chip">HR & Training</span>
+                <span class="chip">Procurement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section bg-emerald grain" id="pricing">
+      <div class="container">
+        <div class="text-center mx-auto reveal" style="max-width: 44rem">
+          <span class="overline">Commercial Model</span>
+          <h2 class="display-serif text-cream mt-2" style="font-size: clamp(2rem, 4vw, 3rem)">
+            Transparent, performance-aligned engagements
+          </h2>
+        </div>
+        <div class="row g-4 mt-4" id="pricingGrid">
+        <div class="col-lg-4 reveal">
+          <div class="price-card featured">
+            <span class="badge-gold">Most Popular</span>
+            <h3 class="font-serif fs-3 " style="color: var(--emerald)">Management Fees</h3>
+            <div class="font-serif mt-2 " style="font-size: 2.4rem; color: var(--emerald)">₹2,00,000</div>
+            <div class="small text-muted-dark">per month</div>
+            <p class="small mt-3 text-muted-dark">+ 7% of total revenue as a performance incentive</p>
+            <div class="gold-hairline my-3"></div>
+            <ul class="list-unstyled d-flex flex-column gap-2 flex-grow-1">
+              <li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small text-muted-dark">Full operational management</span>
+                  </li><li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small text-muted-dark">Performance-aligned incentive model</span>
+                  </li><li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small text-muted-dark">Monthly reporting & reviews</span>
+                  </li>
+            </ul>
+            <a href="#contact" class="btn btn-emerald w-100 mt-4 py-2">Enquire Now</a>
+          </div>
+        </div>
+        <div class="col-lg-4 reveal">
+          <div class="price-card ">
+            
+            <h3 class="font-serif fs-3 text-cream" style="">Pre-Opening Consultancy</h3>
+            <div class="font-serif mt-2 text-gold-gradient" style="font-size: 2.4rem; ">₹5 – 15 Lakhs</div>
+            <div class="small text-muted-light">one-time project fee</div>
+            <p class="small mt-3 text-muted-light">Based on room count, project size and scope</p>
+            <div class="gold-hairline my-3"></div>
+            <ul class="list-unstyled d-flex flex-column gap-2 flex-grow-1">
+              <li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small text-cream">Complete pre-opening roadmap</span>
+                  </li><li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small text-cream">SOPs, systems & recruitment</span>
+                  </li><li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small text-cream">Launch-ready operations</span>
+                  </li>
+            </ul>
+            <a href="#contact" class="btn btn-gold w-100 mt-4 py-2">Enquire Now</a>
+          </div>
+        </div>
+        <div class="col-lg-4 reveal">
+          <div class="price-card ">
+            
+            <h3 class="font-serif fs-3 text-cream" style="">Specialized Projects</h3>
+            <div class="font-serif mt-2 text-gold-gradient" style="font-size: 2.4rem; ">Monthly Retainer</div>
+            <div class="small text-muted-light">tailored per department</div>
+            <p class="small mt-3 text-muted-light">Revenue · Marketing · HR · Procurement</p>
+            <div class="gold-hairline my-3"></div>
+            <ul class="list-unstyled d-flex flex-column gap-2 flex-grow-1">
+              <li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small text-cream">Focused departmental consulting</span>
+                  </li><li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small text-cream">Flexible engagement scope</span>
+                  </li><li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small text-cream">Expert-led execution</span>
+                  </li>
+            </ul>
+            <a href="#contact" class="btn btn-gold w-100 mt-4 py-2">Enquire Now</a>
+          </div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section bg-cream" id="projects">
+      <div class="container">
+        <div class="reveal" style="max-width: 42rem">
+          <span class="overline">Projects Handled</span>
+          <h2 class="display-serif mt-2" style="color: var(--emerald); font-size: clamp(2rem, 4vw, 3rem)">
+            Properties we've had the privilege to shape
+          </h2>
+        </div>
+        <div class="row g-4 mt-3">
+          <div class="col-lg-4">
+            <div class="row g-4">
+              <div class="col-6 col-lg-12 reveal">
+                <div class="zoom-img rounded-4">
+                  <img src="images/pexels-photo-33500266.png" alt="Eco-friendly resort architecture" class="w-100 rounded-4" style="height: 220px; object-fit: cover">
+                </div>
+              </div>
+              <div class="col-6 col-lg-12 reveal">
+                <div class="zoom-img rounded-4">
+                  <img src="images/pexels-photo-37031491.jpeg" alt="Tropical hotel at sunset" class="w-100 rounded-4" style="height: 220px; object-fit: cover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row g-3" id="projectsGrid">
+        <div class="col-sm-6 reveal">
+          <div class="project-card">
+            <span class="project-num">01</span>
+            <h3 class="font-serif fs-4 lh-sm" style="color: var(--emerald)">Hotel Ivy Studios</h3>
+            <p class="text-muted-dark small mb-0 mt-1"><i class="bi bi-geo-alt text-gold me-1"></i>Viman Nagar, Pune</p>
+          </div>
+        </div>
+        <div class="col-sm-6 reveal">
+          <div class="project-card">
+            <span class="project-num">02</span>
+            <h3 class="font-serif fs-4 lh-sm" style="color: var(--emerald)">Mantra Resort</h3>
+            <p class="text-muted-dark small mb-0 mt-1"><i class="bi bi-geo-alt text-gold me-1"></i>Bhor</p>
+          </div>
+        </div>
+        <div class="col-sm-6 reveal">
+          <div class="project-card">
+            <span class="project-num">03</span>
+            <h3 class="font-serif fs-4 lh-sm" style="color: var(--emerald)">The Solitaire</h3>
+            <p class="text-muted-dark small mb-0 mt-1"><i class="bi bi-geo-alt text-gold me-1"></i>Jaipur</p>
+          </div>
+        </div>
+        <div class="col-sm-6 reveal">
+          <div class="project-card">
+            <span class="project-num">04</span>
+            <h3 class="font-serif fs-4 lh-sm" style="color: var(--emerald)">Prakruti Resort</h3>
+            <p class="text-muted-dark small mb-0 mt-1"><i class="bi bi-geo-alt text-gold me-1"></i>Hyderabad</p>
+          </div>
+        </div>
+        <div class="col-sm-6 reveal">
+          <div class="project-card">
+            <span class="project-num">05</span>
+            <h3 class="font-serif fs-4 lh-sm" style="color: var(--emerald)">Ritz Valley Resort & The Grand Legacy</h3>
+            <p class="text-muted-dark small mb-0 mt-1"><i class="bi bi-geo-alt text-gold me-1"></i>Mahabaleshwar</p>
+          </div>
+        </div>
+        <div class="col-sm-6 reveal">
+          <div class="project-card">
+            <span class="project-num">06</span>
+            <h3 class="font-serif fs-4 lh-sm" style="color: var(--emerald)">Gautam Resort</h3>
+            <p class="text-muted-dark small mb-0 mt-1"><i class="bi bi-geo-alt text-gold me-1"></i>Lonavala</p>
+          </div>
+        </div>
+        <div class="col-sm-6 reveal">
+          <div class="project-card">
+            <span class="project-num">07</span>
+            <h3 class="font-serif fs-4 lh-sm" style="color: var(--emerald)">Swara Group of Hotels & Resorts</h3>
+            <p class="text-muted-dark small mb-0 mt-1"><i class="bi bi-geo-alt text-gold me-1"></i>Malhar Machi & Jalsrushti, Mulshi</p>
+          </div>
+        </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+   <section class="section bg-emerald grain" id="team">
+  <div class="container">
+    <div class="text-center mx-auto reveal" style="max-width: 42rem">
+      <span class="overline">Leadership</span>
+      <h2 class="display-serif text-cream mt-2" style="font-size: clamp(2rem, 4vw, 3rem)">
+        Founder with Hospitality in his DNA
+      </h2>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="team-card text-center">
+          <div class="team-avatar">SS</div>
+          <h3 class="font-serif fs-3 text-cream mt-4">Sanjeev Salokhe</h3>
+          <p class="overline mt-2">Founder & Director</p>
+          <p class="small text-muted-light">Operational Excellence & Organizational Development</p>
+          <div class="gold-hairline my-3"></div>
+          <p class="small mb-0" style="color: rgba(249,248,246,0.75)">
+            Leads SOP development, quality assurance and business transformation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- CONTACT -->
+    <section class="section bg-cream" id="contact">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8 reveal">
+        <span class="overline">Get in Touch</span>
+
+        <h2 class="display-serif mt-2 mb-3" style="color: var(--emerald); font-size: clamp(2rem, 4vw, 3rem);">
+          Contact Us
+        </h2>
+
+        <p class="text-muted-dark mb-4">
+          For inquiries, collaborations, or partnership opportunities, feel free to reach out to us via email.
+        </p>
+
+        <a class="contact-link d-inline-flex align-items-center gap-3 fs-5"
+           href="mailto:info@lotusleafcollection.com">
+          <span class="contact-icon">
+            <i class="bi bi-envelope"></i>
+          </span>
+          <span>info@lotusleafcollection.com</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- FOOTER -->
+    <footer class="bg-emerald grain" style="border-top: 1px solid rgba(212,175,55,0.2)">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-md-5">
+            <div class="d-flex align-items-center gap-2">
+  <img src="images/WhatsApp_Image_2026-06-19_at_7.35.11_PM-removebg-preview.png"
+       alt="The LotusLeaf Collection Logo"
+       width="40"
+       height="40">
+
+  <span class="font-serif text-cream fs-5">
+    The LotusLeaf Collection
+  </span>
+</div>
+            <p class="text-muted-light small mt-3" style="max-width: 20rem">
+              Experience That Builds Excellence. Presence That Creates Impact.
+            </p>
+          </div>
+          <div class="col-6 col-md-3">
+            <p class="overline">Explore</p>
+            <div class="d-flex flex-column gap-2 mt-3">
+              <a class="footer-link" href="#about">About</a>
+              <a class="footer-link" href="#services">Services</a>
+              <a class="footer-link" href="#pricing">Pricing</a>
+              <a class="footer-link" href="#projects">Projects</a>
+              <a class="footer-link" href="#team">Team</a>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <p class="overline">Contact</p>
+            <div class="d-flex flex-column gap-2 mt-3">
+              <a class="footer-link" href="mailto:info@lotusleafcollection.com">info@lotusleafcollection.com</a>
+              <a class="footer-link" href="tel:+919923587326">+91 99235 87326</a>
+              <a class="footer-link" href="https://www.lotusleafcollection.com" target="_blank" rel="noopener">www.lotusleafcollection.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 mt-5 pt-4" style="border-top: 1px solid rgba(249,248,246,0.1)">
+          <span class="text-muted-light small" id="copyright">© 2026 The LotusLeaf Collection. All rights reserved.</span>
+          <span class="text-muted-light small">Hospitality Management · Consulting · Pre-Opening Solutions</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      // ---- Data ----
+      const values = [
+        { t: "Excellence", i: "bi-award" },
+        { t: "Integrity", i: "bi-shield-check" },
+        { t: "Guest First", i: "bi-heart" },
+        { t: "Innovation", i: "bi-lightbulb" },
+        { t: "Partnership", i: "bi-people" },
+        { t: "Sustainability", i: "bi-tree" },
+        { t: "Passion for Hospitality", i: "bi-stars" },
+        { t: "Growth Mindset", i: "bi-graph-up-arrow" },
+      ];
+      const services = [
+        { t: "Hotel & Resort Management", i: "bi-buildings", d: "End-to-end operational management that elevates service standards and profitability across hotels, resorts and serviced apartments." },
+        { t: "Sales, Marketing & Distribution", i: "bi-megaphone", d: "Integrated commercial strategy, brand positioning and distribution to maximise visibility and bookings." },
+        { t: "Revenue Management", i: "bi-graph-up", d: "Data-driven pricing, forecasting and yield strategies that optimise RevPAR and total revenue." },
+        { t: "Pre-Opening Consultancy", i: "bi-key", d: "Turnkey pre-opening planning, SOPs and systems that ensure a flawless, on-time launch." },
+        { t: "Human Capital & Culture", i: "bi-people-fill", d: "Talent acquisition, employee engagement, training and HR compliance that build enduring service culture." },
+        { t: "Operational Excellence", i: "bi-speedometer2", d: "SOP development, quality assurance and business transformation for consistent, world-class delivery." },
+      ];
+      const pricing = [
+        { t: "Management Fees", price: "₹2,00,000", unit: "per month", detail: "+ 7% of total revenue as a performance incentive", feats: ["Full operational management", "Performance-aligned incentive model", "Monthly reporting & reviews"], featured: true },
+        { t: "Pre-Opening Consultancy", price: "₹5 – 15 Lakhs", unit: "one-time project fee", detail: "Based on room count, project size and scope", feats: ["Complete pre-opening roadmap", "SOPs, systems & recruitment", "Launch-ready operations"], featured: false },
+        { t: "Specialized Projects", price: "Monthly Retainer", unit: "tailored per department", detail: "Revenue · Marketing · HR · Procurement", feats: ["Focused departmental consulting", "Flexible engagement scope", "Expert-led execution"], featured: false },
+      ];
+      const projects = [
+        { n: "Hotel Ivy Studios", l: "Viman Nagar, Pune" },
+        { n: "Mantra Resort", l: "Bhor" },
+        { n: "The Solitaire", l: "Jaipur" },
+        { n: "Prakruti Resort", l: "Hyderabad" },
+        { n: "Ritz Valley Resort & The Grand Legacy", l: "Mahabaleshwar" },
+        { n: "Gautam Resort", l: "Lonavala" },
+        { n: "Swara Group of Hotels & Resorts", l: "Malhar Machi & Jalsrushti, Mulshi" },
+      ];
+      const team = [
+        { n: "Sanjeev Salokhe", r: "Founder & Director", f: "Operational Excellence & Organizational Development", d: "Leads SOP development, quality assurance and business transformation." },
+        { n: "Preeti Kokate", r: "Founder & Director", f: "Human Capital & Culture", d: "Drives talent acquisition, employee engagement and HR compliance." },
+        { n: "Manoranjan Panda", r: "Founder & Director", f: "Commercial Strategy", d: "Oversees sales, marketing, revenue management and distribution." },
+      ];
+
+      const initials = (name) =>
+        name.replace(/&/g, "").split(" ").filter(Boolean).map((n) => n[0]).slice(0, 2).join("");
+
+      // ---- Render ----
+      document.getElementById("valuesGrid").innerHTML = values
+        .map(
+          (v) => `
+        <div class="col-6 col-md-3 reveal">
+          <div class="value-card">
+            <div class="value-icon"><i class="bi ${v.i}"></i></div>
+            <p class="font-serif text-cream fs-4 mb-0 lh-sm">${v.t}</p>
+          </div>
+        </div>`
+        )
+        .join("");
+
+      document.getElementById("servicesGrid").innerHTML = services
+        .map(
+          (s) => `
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi ${s.i}"></i></div>
+            <h3 class="font-serif fs-3" style="color: var(--emerald)">${s.t}</h3>
+            <p class="text-muted-dark small mb-0">${s.d}</p>
+          </div>
+        </div>`
+        )
+        .join("");
+
+      document.getElementById("pricingGrid").innerHTML = pricing
+        .map(
+          (p) => `
+        <div class="col-lg-4 reveal">
+          <div class="price-card ${p.featured ? "featured" : ""}">
+            ${p.featured ? '<span class="badge-gold">Most Popular</span>' : ""}
+            <h3 class="font-serif fs-3 ${p.featured ? "" : "text-cream"}" style="${p.featured ? "color: var(--emerald)" : ""}">${p.t}</h3>
+            <div class="font-serif mt-2 ${p.featured ? "" : "text-gold-gradient"}" style="font-size: 2.4rem; ${p.featured ? "color: var(--emerald)" : ""}">${p.price}</div>
+            <div class="small ${p.featured ? "text-muted-dark" : "text-muted-light"}">${p.unit}</div>
+            <p class="small mt-3 ${p.featured ? "text-muted-dark" : "text-muted-light"}">${p.detail}</p>
+            <div class="gold-hairline my-3"></div>
+            <ul class="list-unstyled d-flex flex-column gap-2 flex-grow-1">
+              ${p.feats
+                .map(
+                  (f) => `<li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-lg text-gold mt-1"></i>
+                    <span class="small ${p.featured ? "text-muted-dark" : "text-cream"}">${f}</span>
+                  </li>`
+                )
+                .join("")}
+            </ul>
+            <a href="#contact" class="btn ${p.featured ? "btn-emerald" : "btn-gold"} w-100 mt-4 py-2">Enquire Now</a>
+          </div>
+        </div>`
+        )
+        .join("");
+
+      document.getElementById("projectsGrid").innerHTML = projects
+        .map(
+          (p, idx) => `
+        <div class="col-sm-6 reveal">
+          <div class="project-card">
+            <span class="project-num">${String(idx + 1).padStart(2, "0")}</span>
+            <h3 class="font-serif fs-4 lh-sm" style="color: var(--emerald)">${p.n}</h3>
+            <p class="text-muted-dark small mb-0 mt-1"><i class="bi bi-geo-alt text-gold me-1"></i>${p.l}</p>
+          </div>
+        </div>`
+        )
+        .join("");
+
+      document.getElementById("teamGrid").innerHTML = team
+        .map(
+          (m) => `
+        <div class="col-md-4 reveal">
+          <div class="team-card">
+            <div class="team-avatar">${initials(m.n)}</div>
+            <h3 class="font-serif fs-3 text-cream mt-4">${m.n}</h3>
+            <p class="overline mt-2">${m.r}</p>
+            <p class="small text-muted-light">${m.f}</p>
+            <div class="gold-hairline my-3"></div>
+            <p class="small mb-0" style="color: rgba(249,248,246,0.75)">${m.d}</p>
+          </div>
+        </div>`
+        )
+        .join("");
+
+      document.getElementById("copyright").textContent =
+        "© " + new Date().getFullYear() + " The LotusLeaf Collection. All rights reserved.";
+
+      // ---- Navbar scroll ----
+      const navbar = document.getElementById("navbar");
+      const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+
+      // Close mobile menu on link click
+      document.querySelectorAll("#navMenu a").forEach((a) =>
+        a.addEventListener("click", () => {
+          const menu = document.getElementById("navMenu");
+          if (menu.classList.contains("show")) new bootstrap.Collapse(menu).hide();
+        })
+      );
+
+      // ---- Reveal on scroll ----
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+      // ---- Contact form -> mailto ----
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const subject = encodeURIComponent("New Inquiry from " + name);
+        const body = encodeURIComponent(
+          "Name: " + name + "\n" +
+          "Email: " + email + "\n" +
+          "Phone: " + (phone || "Not provided") + "\n\n" +
+          "Message:\n" + message
+        );
+        window.location.href =
+          "mailto:info@lotusleafcollection.com?subject=" + subject + "&body=" + body;
+      });
+    </script>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a180f5e47ce095ab',t:'MTc4MzUzMzMzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" data-cf-beacon="{" version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","server_timing":{"name":{"cfcachestatus":true,"cfedge":true,"cfextpri":true,"cfl4":true,"cforigin":true,"cfspeedbrain":true},"location_startswith":null}}"="" crossorigin="anonymous"></script>
+
+
+</body></html>
