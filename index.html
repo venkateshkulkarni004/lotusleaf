@@ -53,7 +53,7 @@
       }
       .text-gold { color: var(--gold); }
       .bg-emerald { background: var(--emerald); }
-      .bg-cream { background: var(--cream); }
+      .bg-cream { background: var(--cream); color: var(--emerald); }
       .text-cream { color: var(--cream); }
       .text-muted-dark { color: var(--muted-dark); }
       .text-muted-light { color: var(--muted-light); }
@@ -82,7 +82,7 @@
       /* Navbar */
       .navbar-custom {
         transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-        background: #0A2A22;;
+        background: #0A2A22;
         z-index: 1030;
       }
       .navbar-custom.scrolled {
@@ -169,6 +169,7 @@
         border: 1px solid rgba(212, 175, 55, 0.2);
         border-radius: 0.85rem;
         padding: 1.5rem;
+        color: var(--cream);
       }
       .value-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(212,175,55,0.5); }
       .value-icon {
@@ -183,6 +184,7 @@
         border-radius: 1rem;
         padding: 2rem;
         box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        color: var(--emerald);
       }
       .service-card:hover { box-shadow: 0 20px 40px rgba(10,42,34,0.12); transform: translateY(-4px); }
       .service-icon {
@@ -211,6 +213,7 @@
         border: 1px solid rgba(10, 42, 34, 0.1);
         border-radius: 0.85rem;
         padding: 1.5rem;
+        color: var(--emerald);
       }
       .project-card:hover { border-color: rgba(212,175,55,0.5); }
       .project-num { font-family: "Cormorant Garamond", serif; font-size: 2rem; color: rgba(212,175,55,0.4); }
@@ -221,6 +224,7 @@
         border-radius: 1rem;
         padding: 2rem;
         text-align: center;
+        color: var(--cream);
       }
       .team-card:hover { border-color: rgba(212,175,55,0.5); }
       .team-avatar {
@@ -247,6 +251,7 @@
         border: 1px solid rgba(10, 42, 34, 0.2);
         border-radius: 0.5rem;
         padding: 0.7rem 0.9rem;
+        color: var(--emerald);
       }
       .form-control:focus {
         border-color: var(--gold);
@@ -275,7 +280,7 @@
         border-radius: 1rem;
         padding: 2rem;
         box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-        margin-top: 2rem;
+        color: var(--emerald);
       }
       .vision-mission-block:hover {
         box-shadow: 0 10px 20px rgba(10,42,34,0.08);
@@ -304,6 +309,136 @@
         color: var(--muted-light);
         font-size: 0.95rem;
       }
+
+      /* Values Section */
+      .values-section {
+        background: #0A2A22;
+        padding: 50px 0;
+        color: var(--cream);
+      }
+      .values-section .overline {
+        color: #D4AF37;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .values-section .display-serif {
+        color: #D4AF37;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+      }
+      .values-section .section-desc {
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 620px;
+        margin: auto;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .values-section .vision-mission-block {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(212, 175, 55, 0.30);
+        border-radius: 12px;
+        padding: 18px;
+        min-height: 180px;
+        color: #f2f2f2;
+      }
+      .values-section .vision-mission-block p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+      .values-section .value-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(212, 175, 55, 0.30);
+        border-radius: 12px;
+        padding: 18px 15px;
+        text-align: center;
+        min-height: 190px;
+        color: var(--cream);
+      }
+      .values-section .value-icon {
+        width: 45px;
+        height: 45px;
+        margin: 0 auto 12px;
+        border-radius: 50%;
+        background: #D4AF37;
+        color: #0A2A22;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+      .values-section .value-card h4 {
+        color: #D4AF37;
+        font-size: 18px;
+        margin-bottom: 8px;
+        font-family: Georgia, serif;
+        font-weight: 600;
+      }
+      .values-section .value-card p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+
+      /* Founder Icon */
+      .founder-icon {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: #D4AF37;
+        color: #0A2A22;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Contact Form */
+      .lotus-contact-form {
+        background: #ffffff;
+        border: 1px solid rgba(10, 42, 34, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        color: var(--emerald);
+      }
+      .lotus-contact-form h3 {
+        color: #0A2A22;
+        font-size: 1.8rem;
+        font-family: Georgia, serif;
+      }
+      .lotus-contact-form .form-label {
+        color: #0A2A22;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .lotus-contact-form .form-control {
+        border: 1px solid rgba(10, 42, 34, 0.2);
+        border-radius: 10px;
+        padding: 12px 15px;
+        font-size: 14px;
+        color: var(--emerald);
+      }
+      .lotus-contact-form .form-control:focus {
+        border-color: #D4AF37;
+        box-shadow: 0 0 0 .15rem rgba(212, 175, 55, 0.25);
+      }
+      .lotus-contact-form .btn-gold {
+        background: #D4AF37;
+        color: #0A2A22;
+        border: none;
+        font-weight: 600;
+        border-radius: 10px;
+      }
+      .lotus-contact-form .btn-gold:hover {
+        background: #0A2A22;
+        color: #ffffff;
+      }
     </style>
   </head>
 
@@ -330,7 +465,6 @@
           <svg width="40" height="40" fill="none" viewBox="0 0 64 64">
             <use href="#lotus"></use>
           </svg>
-          <span class="font-serif brand-text"></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
           <i class="bi bi-list fs-3"></i>
@@ -350,53 +484,44 @@
       </div>
     </nav>
 
-   <!-- HERO -->
-<header class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-overlay-2"></div>
-
-
-  <div class="container position-relative" style="z-index:2; padding-top:5rem;">
-    <div class="row">
-      <div class="col-lg-8">
-
-        <div class="d-flex align-items-center gap-3 mb-4">
-          <svg width="40" height="40" fill="none" viewBox="0 0 64 64">
-            <use href="#lotus"></use>
-          </svg>
+    <!-- HERO -->
+    <header class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-overlay-2"></div>
+      <div class="container position-relative" style="z-index:2; padding-top:5rem;">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <svg width="40" height="40" fill="none" viewBox="0 0 64 64">
+                <use href="#lotus"></use>
+              </svg>
+            </div>
+            <div class="mb-4">
+              <img src="images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png"
+                   alt="The LotusLeaf Collection Logo"
+                   class="img-fluid"
+                   style="max-width:250px; height:auto;">
+              <h2 class="display-serif text-cream mb-3" style="font-size:clamp(2rem,6vw,4.6rem);">
+                Experience That Builds
+                <span class="text-gold-gradient">Excellence.</span>
+              </h2>
+              <p class="text-muted-light fs-4 mb-4" style="max-width:34rem;">
+                Presence That Creates
+                <span class="text-gold-gradient">Impact.</span>
+              </p>
+              <p class="text-muted-light fs-5 mb-5" style="max-width:33rem;">
+                A hospitality management & consulting firm transforming hotels, resorts, and serviced apartments into distinguished destinations across India.
+              </p>
+              <div class="d-flex flex-column flex-sm-row gap-3">
+                <a href="#contact" class="btn btn-gold px-4 py-3">Partner With Us</a>
+                <a href="#services" class="btn btn-outline-cream">Explore Our Expertise</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Logo -->
-<div class="mb-4">
-    <img src="images\WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png"
-         alt="The LotusLeaf Collection Logo"
-         class="img-fluid"
-         style="max-width:250px; height:auto;">
-              <h2 class="display-serif text-cream mb-3" style="font-size:clamp(rem,6vw,4.6rem);">
-          Experience That Builds
-          <span class="text-gold-gradient">Excellence.</span>
-        </h2>
-
-        <p class="text-muted-light fs-4 mb-4" style="max-width:34rem;">
-          Presence That Creates
-          <span class="text-gold-gradient">Impact.</span>
-        </p>
-
-        <p class="text-muted-light fs-5 mb-5" style="max-width:33rem;">
-          A hospitality management & consulting firm transforming hotels, resorts, and serviced apartments into distinguished destinations across India.
-        </p>
-
-        <div class="d-flex flex-column flex-sm-row gap-3">
-          <a href="#contact" class="btn btn-gold px-4 py-3">Partner With Us</a>
-          <a href="#services" class="btn btn-outline-cream">Explore Our Expertise</a>
-        </div>
-</div>
-
-
       </div>
-    </div>
-  </div>
-</header>
+    </header>
 
     <!-- ABOUT -->
     <section class="section bg-cream" id="about">
@@ -408,7 +533,7 @@
               Crafting distinguished destinations
             </h2>
             <p class="text-muted-dark">
-              The LotusLeaf Collection is a hospitality consulting and management company dedicated to creating exceptional guest experiences while driving sustainable business growth. 
+              The LotusLeaf Collection is a hospitality consulting and management company dedicated to creating exceptional guest experiences while driving sustainable business growth.
               We partner with owners and brands to enhance profitability, strengthen market positioning, and deliver service excellence across hotels, resorts, serviced apartments, and hospitality ventures.
             </p>
             <div class="row g-4 mt-4">
@@ -452,260 +577,86 @@
       </div>
     </section>
 
-<!-- ===================== VALUES SECTION ===================== -->
-<section class="section values-section" id="values">
-
-<style>
-/* ===================================================
-   VALUES SECTION ONLY
-=================================================== */
-
-.values-section{
-    background:#0A2A22;
-    padding:50px 0;
-}
-
-/* Heading */
-
-.values-section .overline{
-    color:#D4AF37;
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-.values-section .display-serif{
-    color:#D4AF37;
-    font-size:clamp(2rem,4vw,2.8rem);
-}
-
-.values-section .section-desc{
-    color:rgba(255,255,255,.85);
-    max-width:620px;
-    margin:auto;
-    font-size:15px;
-    line-height:1.6;
-}
-
-/* Vision & Mission */
-
-.values-section .vision-mission-block{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(212,175,55,.30);
-    border-radius:12px;
-    padding:18px;
-    min-height:180px;
-    transition:.3s;
-}
-
-.values-section .vision-mission-block:hover{
-    border-color:#D4AF37;
-    transform:translateY(-4px);
-}
-
-.values-section .vision-mission-block p{
-    color:#f2f2f2;
-    font-size:14px;
-    line-height:1.6;
-    margin-bottom:0;
-}
-
-/* Value Cards */
-
-.values-section .value-card{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(212,175,55,.30);
-    border-radius:12px;
-    padding:18px 15px;
-    text-align:center;
-    min-height:190px;
-    transition:.3s;
-}
-
-.values-section .value-card:hover{
-    border-color:#D4AF37;
-    background:rgba(255,255,255,.08);
-    transform:translateY(-5px);
-}
-
-.values-section .value-icon{
-    width:45px;
-    height:45px;
-    margin:0 auto 12px;
-    border-radius:50%;
-    background:#D4AF37;
-    color:#0A2A22;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:18px;
-}
-
-.values-section .value-card h4{
-    color:#D4AF37;
-    font-size:18px;
-    margin-bottom:8px;
-    font-family:Georgia,serif;
-    font-weight:600;
-}
-
-.values-section .value-card p{
-    color:rgba(255,255,255,.85);
-    font-size:13px;
-    line-height:1.5;
-    margin-bottom:0;
-}
-
-/* Compact spacing */
-
-.values-section .row{
-    --bs-gutter-x:16px;
-    --bs-gutter-y:16px;
-}
-
-@media (max-width:768px){
-
-    .values-section{
-        padding:40px 0;
-    }
-
-    .values-section .vision-mission-block,
-    .values-section .value-card{
-        min-height:auto;
-    }
-
-}
-</style>
-
-<div class="container">
-
-    <!-- Heading -->
-    <div class="text-center mx-auto mb-4" style="max-width:650px;">
-
-        <span class="overline">
-            What Guides Us
-        </span>
-
-        <h2 class="display-serif mt-2 mb-3">
-            Pillars of Excellence
-        </h2>
-
-        <p class="section-desc">
+    <!-- VALUES SECTION -->
+    <section class="section values-section" id="values">
+      <div class="container">
+        <div class="text-center mx-auto mb-4" style="max-width:650px;">
+          <span class="overline">What Guides Us</span>
+          <h2 class="display-serif mt-2 mb-3">Pillars of Excellence</h2>
+          <p class="section-desc">
             The principles that define our culture, shape every decision,
             and drive exceptional hospitality experiences.
-        </p>
-
-    </div>
-
-    <!-- Vision & Mission -->
-
-    <div class="row">
-
-        <div class="col-lg-6">
-
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
             <div class="vision-mission-block">
-
-                <span class="overline">Our Vision</span>
-
-                <p class="mt-2">
-                    To be India's most trusted hospitality management and consulting partner,
-                    transforming hospitality assets into distinguished destinations through
-                    innovation, operational excellence, and exceptional guest experiences.
-                </p>
-
+              <span class="overline">Our Vision</span>
+              <p class="mt-2">
+                To be India's most trusted hospitality management and consulting partner,
+                transforming hospitality assets into distinguished destinations through
+                innovation, operational excellence, and exceptional guest experiences.
+              </p>
             </div>
-
-        </div>
-
-        <div class="col-lg-6">
-
+          </div>
+          <div class="col-lg-6">
             <div class="vision-mission-block">
-
-                <span class="overline">Our Mission</span>
-
-                <p class="mt-2">
-                    To empower hospitality ventures with strategic expertise,
-                    sustainable growth solutions, and world-class operational
-                    standards that maximize profitability and create lasting value.
-                </p>
-
+              <span class="overline">Our Mission</span>
+              <p class="mt-2">
+                To empower hospitality ventures with strategic expertise,
+                sustainable growth solutions, and world-class operational
+                standards that maximize profitability and create lasting value.
+              </p>
             </div>
-
+          </div>
         </div>
-
-    </div>
-
-    <!-- Values -->
-
-    <div class="row mt-3">
-
-        <div class="col-md-6 col-lg-4">
+        <div class="row mt-3">
+          <div class="col-md-6 col-lg-4">
             <div class="value-card">
-                <div class="value-icon">
-                    <i class="bi bi-award-fill"></i>
-                </div>
-                <h4>Excellence</h4>
-                <p>Pursuing the highest standards in service and business performance.</p>
+              <div class="value-icon"><i class="bi bi-award-fill"></i></div>
+              <h4>Excellence</h4>
+              <p>Pursuing the highest standards in service and business performance.</p>
             </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
+          </div>
+          <div class="col-md-6 col-lg-4">
             <div class="value-card">
-                <div class="value-icon">
-                    <i class="bi bi-shield-check"></i>
-                </div>
-                <h4>Integrity</h4>
-                <p>Conducting business with transparency and accountability.</p>
+              <div class="value-icon"><i class="bi bi-shield-check"></i></div>
+              <h4>Integrity</h4>
+              <p>Conducting business with transparency and accountability.</p>
             </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
+          </div>
+          <div class="col-md-6 col-lg-4">
             <div class="value-card">
-                <div class="value-icon">
-                    <i class="bi bi-heart-fill"></i>
-                </div>
-                <h4>Guest First</h4>
-                <p>Designing every decision around memorable guest experiences.</p>
+              <div class="value-icon"><i class="bi bi-heart-fill"></i></div>
+              <h4>Guest First</h4>
+              <p>Designing every decision around memorable guest experiences.</p>
             </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
+          </div>
+          <div class="col-md-6 col-lg-4">
             <div class="value-card">
-                <div class="value-icon">
-                    <i class="bi bi-lightbulb-fill"></i>
-                </div>
-                <h4>Innovation</h4>
-                <p>Embracing new ideas and technology to drive continuous improvement.</p>
+              <div class="value-icon"><i class="bi bi-lightbulb-fill"></i></div>
+              <h4>Innovation</h4>
+              <p>Embracing new ideas and technology to drive continuous improvement.</p>
             </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
+          </div>
+          <div class="col-md-6 col-lg-4">
             <div class="value-card">
-                <div class="value-icon">
-                    <i class="bi bi-people-fill"></i>
-                </div>
-                <h4>Partnership</h4>
-                <p>Building long-term relationships based on shared success.</p>
+              <div class="value-icon"><i class="bi bi-people-fill"></i></div>
+              <h4>Partnership</h4>
+              <p>Building long-term relationships based on shared success.</p>
             </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
+          </div>
+          <div class="col-md-6 col-lg-4">
             <div class="value-card">
-                <div class="value-icon">
-                    <i class="bi bi-globe2"></i>
-                </div>
-                <h4>Sustainability</h4>
-                <p>Promoting responsible hospitality for long-term community value.</p>
+              <div class="value-icon"><i class="bi bi-globe2"></i></div>
+              <h4>Sustainability</h4>
+              <p>Promoting responsible hospitality for long-term community value.</p>
             </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</div>
-
-</section>
-<!-- =================== END VALUES SECTION =================== -->
     <!-- SERVICES -->
     <section class="section bg-cream" id="services">
       <div class="container">
@@ -718,462 +669,143 @@
         <div class="row g-4 mt-3" id="servicesGrid">
           <!-- Services will be dynamically inserted here -->
         </div>
-
-        <!-- Special assignments -->
-    
       </div>
     </section>
 
     <!-- PROJECTS -->
-   <!-- PROJECTS -->
-<section class="section bg-cream" id="projects">
-
-<div class="container">
-
-    <div class="text-center mx-auto mb-5" style="max-width:700px;">
-        <span class="overline">Projects Handled</span>
-
-        <h2 class="display-serif mt-2"
-            style="color:var(--emerald); font-size:clamp(1rem,2vw,2rem)">
+    <section class="section bg-cream" id="projects">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width:700px;">
+          <span class="overline">Projects Handled</span>
+          <h2 class="display-serif mt-2" style="color:var(--emerald); font-size:clamp(1.5rem,2vw,2.5rem);">
             Properties We've Had the Privilege to Shape
-        </h2>
-    </div>
-
-
-    <div class="row g-4">
-
-
-        <!-- Hotel Ivy Studios -->
-        <div class="col-md-6 col-lg-4 reveal">
-            <div class="zoom-img rounded-4 overflow-hidden mb-3">
-                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"
-                     class="w-100 rounded-4"
-                     style="height:230px;object-fit:cover;"
-                     alt="Hotel Ivy Studios">
-            </div>
-
-            <h4 class="font-serif" style="color:#0A2A22;">
-                Hotel Ivy Studios
-            </h4>
-
-            <p class="text-muted-dark">
-                Viman Nagar, Pune
-            </p>
+          </h2>
         </div>
-
-
-
-        <!-- Mantra Resort -->
-        <div class="col-md-6 col-lg-4 reveal">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
-                     class="w-100 rounded-4"
-                     style="height:230px;object-fit:cover;"
-                     alt="Mantra Resort">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Hotel Ivy Studios">
             </div>
-
-            <h4 class="font-serif" style="color:#0A2A22;">
-                Mantra Resort
-            </h4>
-
-            <p class="text-muted-dark">
-                Bhor
-            </p>
-        </div>
-
-
-
-        <!-- The Solitaire -->
-        <div class="col-md-6 col-lg-4 reveal">
+            <h4 class="font-serif" style="color:#0A2A22;">Hotel Ivy Studios</h4>
+            <p class="text-muted-dark">Viman Nagar, Pune</p>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop"
-                     class="w-100 rounded-4"
-                     style="height:230px;object-fit:cover;"
-                     alt="The Solitaire">
+              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Mantra Resort">
             </div>
-
-            <h4 class="font-serif" style="color:#0A2A22;">
-                The Solitaire
-            </h4>
-
-            <p class="text-muted-dark">
-                Jaipur
-            </p>
-        </div>
-
-
-
-        <!-- Prakruti Resort -->
-        <div class="col-md-6 col-lg-4 reveal">
+            <h4 class="font-serif" style="color:#0A2A22;">Mantra Resort</h4>
+            <p class="text-muted-dark">Bhor</p>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070&auto=format&fit=crop"
-                     class="w-100 rounded-4"
-                     style="height:230px;object-fit:cover;"
-                     alt="Prakruti Resort">
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="The Solitaire">
             </div>
-
-            <h4 class="font-serif" style="color:#0A2A22;">
-                Prakruti Resort
-            </h4>
-
-            <p class="text-muted-dark">
-                Hyderabad
-            </p>
-        </div>
-
-
-
-        <!-- Ritz Valley Resort -->
-        <div class="col-md-6 col-lg-4 reveal">
+            <h4 class="font-serif" style="color:#0A2A22;">The Solitaire</h4>
+            <p class="text-muted-dark">Jaipur</p>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
-                     class="w-100 rounded-4"
-                     style="height:230px;object-fit:cover;"
-                     alt="Ritz Valley Resort">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Prakruti Resort">
             </div>
-
-            <h4 class="font-serif" style="color:#0A2A22;">
-                Ritz Valley Resort & The Grand Legacy
-            </h4>
-
-            <p class="text-muted-dark">
-                Mahabaleshwar
-            </p>
-        </div>
-
-
-
-        <!-- Gautam Resort -->
-        <div class="col-md-6 col-lg-4 reveal">
+            <h4 class="font-serif" style="color:#0A2A22;">Prakruti Resort</h4>
+            <p class="text-muted-dark">Hyderabad</p>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-                <img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?q=80&w=2070&auto=format&fit=crop"
-                     class="w-100 rounded-4"
-                     style="height:230px;object-fit:cover;"
-                     alt="Gautam Resort">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Ritz Valley Resort">
             </div>
-
-            <h4 class="font-serif" style="color:#0A2A22;">
-                Gautam Resort
-            </h4>
-
-            <p class="text-muted-dark">
-                Lonavala
-            </p>
-        </div>
-
-
-
-        <!-- Swara Group -->
-        <div class="col-md-6 col-lg-4 reveal">
+            <h4 class="font-serif" style="color:#0A2A22;">Ritz Valley Resort & The Grand Legacy</h4>
+            <p class="text-muted-dark">Mahabaleshwar</p>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-                <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?q=80&w=2070&auto=format&fit=crop"
-                     class="w-100 rounded-4"
-                     style="height:230px;object-fit:cover;"
-                     alt="Swara Group Hotels and Resorts">
+              <img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Gautam Resort">
             </div>
-
-            <h4 class="font-serif" style="color:#0A2A22;">
-                Swara Group of Hotels & Resorts
-            </h4>
-
-            <p class="text-muted-dark">
-                Malhar Machi & Jalsrushti, Mulshi
-            </p>
+            <h4 class="font-serif" style="color:#0A2A22;">Gautam Resort</h4>
+            <p class="text-muted-dark">Lonavala</p>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="zoom-img rounded-4 overflow-hidden mb-3">
+              <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Swara Group">
+            </div>
+            <h4 class="font-serif" style="color:#0A2A22;">Swara Group of Hotels & Resorts</h4>
+            <p class="text-muted-dark">Malhar Machi & Jalsrushti, Mulshi</p>
+          </div>
         </div>
-
-
-    </div>
-
-</div>
-
-</section>
-    <!-- TEAM -->
-  
-<section class="section bg-emerald grain" id="team">
-  <div class="container">
-
-    <div class="text-center mx-auto reveal" style="max-width:42rem">
-
-      <span class="overline">Leadership</span>
-<h2 class="display-serif text-cream mt-2"
-          style="font-size:clamp(1.8rem,3vw,2.5rem);">
-        
-      </h2>
-    
-      <h2 class="display-serif text-cream mt-2"
-          style="font-size:clamp(1.8rem,3vw,2.5rem);">
-        Founder with Hospitality in his DNA
-      </h2>
-        <!-- Founder Icon -->
-      <div class="founder-icon mx-auto mt-4 mb-3">
-        <i class="bi bi-person-badge-fill"></i>
       </div>
-
-
-      <p class="text-cream mt-3 fs-5" style="line-height:1.8;">
-        Sanjeev Salokhe
-      </p>
-
-      <p class="text-gold-gradient fs-6 mb-0">
-        Founder & Director
-      </p>
-
-    </div>
-
-  </div>
-</section>
-
-
-<style>
-/* Founder Icon Only */
-.founder-icon{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    background:#D4AF37;
-    color:#0A2A22;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    box-shadow:0 8px 20px rgba(0,0,0,.3);
-}
-</style>
-  
-<!-- CONTACT -->
-<section class="section bg-cream" id="contact">
-
-<style>
-/* ===============================
-   CONTACT FORM ONLY CSS
-================================ */
-
-.lotus-contact-form{
-    background:#ffffff;
-    border:1px solid rgba(10,42,34,0.1);
-    max-width:600px;
-    margin:0 auto;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.lotus-contact-form h3{
-    color:#0A2A22;
-    font-size:1.8rem;
-    font-family:Georgia,serif;
-}
-
-.lotus-contact-form .form-label{
-    color:#0A2A22;
-    font-weight:600;
-    font-size:14px;
-}
-
-.lotus-contact-form .form-control{
-    border:1px solid rgba(10,42,34,0.2);
-    border-radius:10px;
-    padding:12px 15px;
-    font-size:14px;
-}
-
-.lotus-contact-form .form-control:focus{
-    border-color:#D4AF37;
-    box-shadow:0 0 0 .15rem rgba(212,175,55,.25);
-}
-
-.lotus-contact-form .btn-gold{
-    background:#D4AF37;
-    color:#0A2A22;
-    border:none;
-    font-weight:600;
-    border-radius:10px;
-}
-
-.lotus-contact-form .btn-gold:hover{
-    background:#0A2A22;
-    color:#ffffff;
-}
-
-</style>
-
-
-<div class="container">
-
-    <div class="row justify-content-center text-center">
-
-        <div class="col-lg-8 reveal">
-
-            <span class="overline">
-                Get in Touch
-            </span>
-
-
-            <h2 class="display-serif mt-2 mb-3"
-                style="color:var(--emerald); font-size:clamp(2rem,4vw,3rem)">
-                Contact Us
-            </h2>
-
-
-            <p class="text-muted-dark mb-4">
-                For inquiries, collaborations, or partnership opportunities,
-                feel free to reach out to us via email or phone.
-            </p>
-
-
-            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
-
-                <a class="contact-link d-inline-flex align-items-center gap-3 fs-5"
-                   href="mailto:info@lotusleafcollection.com">
-
-                    <span class="contact-icon">
-                        <i class="bi bi-envelope"></i>
-                    </span>
-
-                    <span>
-                        info@lotusleafcollection.com
-                    </span>
-
-                </a>
-
-
-                <a class="contact-link d-inline-flex align-items-center gap-3 fs-5"
-                   href="tel:+919923587326">
-
-                    <span class="contact-icon">
-                        <i class="bi bi-telephone"></i>
-                    </span>
-
-                    <span>
-                        +91 99235 87326
-                    </span>
-
-                </a>
-
-            </div>
-
-
-
-            <!-- WEB3FORMS CONTACT FORM -->
-
-            <div class="lotus-contact-form">
-
-
-                <h3 class="mb-4">
-                    Send Us a Message
-                </h3>
-
-
-                <form action="https://api.web3forms.com/submit"
-                      method="POST"
-                      class="row g-3">
-
-
-                    <input type="hidden"
-                           name="access_key"
-                           value="a66d62d3-c1e6-47fa-87c7-f112f4740d52">
-
-
-                    <div class="col-md-6">
-                        <label class="form-label">
-                            Name
-                        </label>
-
-                        <input type="text"
-                               name="name"
-                               class="form-control"
-                               placeholder="Your Name"
-                               required>
-                    </div>
-
-
-
-                    <div class="col-md-6">
-
-                        <label class="form-label">
-                            Email
-                        </label>
-
-                        <input type="email"
-                               name="email"
-                               class="form-control"
-                               placeholder="Your Email"
-                               required>
-
-                    </div>
-
-
-
-                    <div class="col-md-6">
-
-                        <label class="form-label">
-                            Phone
-                        </label>
-
-                        <input type="tel"
-                               name="phone"
-                               class="form-control"
-                               placeholder="Your Phone Number">
-
-                    </div>
-
-
-
-                    <div class="col-md-6">
-
-                        <label class="form-label">
-                            Company / Organization
-                        </label>
-
-                        <input type="text"
-                               name="company"
-                               class="form-control"
-                               placeholder="Your Company">
-
-                    </div>
-
-
-
-                    <div class="col-12">
-
-                        <label class="form-label">
-                            Message
-                        </label>
-
-
-                        <textarea name="message"
-                                  class="form-control"
-                                  rows="4"
-                                  placeholder="How can we assist you?"
-                                  required></textarea>
-
-                    </div>
-
-
-
-                    <div class="col-12">
-
-                        <button type="submit"
-                                class="btn btn-gold px-4 py-3 w-100">
-                            Send Message
-                        </button> 
-
-                    </div>
-
-
-                </form>
-
-
-            </div>
-
-
+    </section>
+
+    <!-- TEAM -->
+    <section class="section bg-emerald grain" id="team">
+      <div class="container">
+        <div class="text-center mx-auto reveal" style="max-width:42rem">
+          <span class="overline">Leadership</span>
+          <h2 class="display-serif text-cream mt-2" style="font-size:clamp(1.8rem,3vw,2.5rem);">
+            Founder with Hospitality in his DNA
+          </h2>
+          <div class="founder-icon mx-auto mt-4 mb-3">
+            <i class="bi bi-person-badge-fill"></i>
+          </div>
+          <p class="text-cream mt-3 fs-5" style="line-height:1.8;">Sanjeev Salokhe</p>
+          <p class="text-gold-gradient fs-6 mb-0">Founder & Director</p>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</div>
-
-</section>
+    <!-- CONTACT -->
+    <section class="section bg-cream" id="contact">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8 reveal">
+            <span class="overline">Get in Touch</span>
+            <h2 class="display-serif mt-2 mb-3" style="color:var(--emerald); font-size:clamp(2rem,4vw,3rem)">Contact Us</h2>
+            <p class="text-muted-dark mb-4">
+              For inquiries, collaborations, or partnership opportunities,
+              feel free to reach out to us via email or phone.
+            </p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
+              <a class="contact-link d-inline-flex align-items-center gap-3 fs-5" href="mailto:info@lotusleafcollection.com">
+                <span class="contact-icon"><i class="bi bi-envelope"></i></span>
+                <span>info@lotusleafcollection.com</span>
+              </a>
+              <a class="contact-link d-inline-flex align-items-center gap-3 fs-5" href="tel:+919923587326">
+                <span class="contact-icon"><i class="bi bi-telephone"></i></span>
+                <span>+91 99235 87326</span>
+              </a>
+            </div>
+            <div class="lotus-contact-form">
+              <h3 class="mb-4">Send Us a Message</h3>
+              <form action="https://api.web3forms.com/submit" method="POST" class="row g-3">
+                <input type="hidden" name="access_key" value="a66d62d3-c1e6-47fa-87c7-f112f4740d52">
+                <div class="col-md-6">
+                  <label class="form-label">Name</label>
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Phone</label>
+                  <input type="tel" name="phone" class="form-control" placeholder="Your Phone Number">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Company / Organization</label>
+                  <input type="text" name="company" class="form-control" placeholder="Your Company">
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Message</label>
+                  <textarea name="message" class="form-control" rows="4" placeholder="How can we assist you?" required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-gold px-4 py-3 w-100">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="bg-emerald grain" style="border-top: 1px solid rgba(212,175,55,0.2)">
@@ -1184,14 +816,7 @@
               <svg width="40" height="40" fill="none" viewBox="0 0 64 64">
                 <use href="#lotus"></use>
               </svg>
-              <!-- Logo -->
-<div class="mb-4">
-    <img src="images\WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png"
-         alt="The LotusLeaf Collection Logo"
-         class="img-fluid"
-         style="max-width:250px; height:auto;">
-</div>
-
+              <img src="images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png" alt="The LotusLeaf Collection Logo" class="img-fluid" style="max-width:250px; height:auto;">
             </div>
             <p class="text-muted-light small mt-3" style="max-width: 20rem">
               Experience That Builds Excellence. Presence That Creates Impact.
@@ -1201,7 +826,7 @@
             <p class="overline">Explore</p>
             <div class="d-flex flex-column gap-2 mt-3">
               <a class="footer-link" href="#about">About</a>
-              <a class="footer-link" href="#services">Services</a>  
+              <a class="footer-link" href="#services">Services</a>
               <a class="footer-link" href="#projects">Projects</a>
               <a class="footer-link" href="#team">Team</a>
               <a class="footer-link" href="#contact">Contact</a>
@@ -1227,105 +852,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // ---- Data ----
-     const services = [
-  { 
-    t: "Hotel & Resort Management",
-    i: "bi-buildings",
-    d: "Turnkey management solutions optimizing daily hotel operations."
-  },
-  { 
-    t: "Pre-Opening Consultancy",
-    i: "bi-key",
-    d: "End-to-end launch planning, budgeting, SOP creation, and vendor sourcing."
-  },
-  { 
-    t: "Commercial Strategy",
-    i: "bi-megaphone",
-    d: "Tailored revenue management, sales, marketing, and distribution setups."
-  },
-  { 
-    t: "Special Consultancy Assignments",
-    i: "bi-briefcase-fill",
-    d: "Customized hospitality consulting solutions designed for specific business objectives and growth requirements."
-  },
-  { 
-    t: "Revenue Management",
-    i: "bi-graph-up-arrow",
-    d: "Data-driven pricing strategies, forecasting, and revenue optimization to maximize profitability."
-  },
-  { 
-    t: "Sales & Marketing",
-    i: "bi-bar-chart-line-fill",
-    d: "Strategic sales planning, brand positioning, digital marketing, and distribution solutions to increase visibility and bookings."
-  },
-  { 
-    t: "HR & Training",
-    i: "bi-people-fill",
-    d: "Building high-performing teams through recruitment, employee development, training programs, and culture enhancement."
-  },
-  { 
-    t: "Procurement",
-    i: "bi-cart-check-fill",
-    d: "Efficient procurement strategies, vendor management, and cost optimization for hospitality operations."
-  }
-];
-      
-      const projects = [
-        { n: "Hotel Ivy Studios", l: "Viman Nagar, Pune" },
-        { n: "Mantra Resort", l: "Bhor" },
-        { n: "The Solitaire", l: "Jaipur" },
-        { n: "Prakruti Resort", l: "Hyderabad" },
-        { n: "Ritz Valley Resort & The Grand Legacy", l: "Mahabaleshwar" },
-        { n: "Gautam Resort", l: "Lonavala" },
-        { n: "Swara Group of Hotels & Resorts", l: "Malhar Machi & Jalsrushti, Mulshi" },
-      ];
-      const team = [
-        { n: "Sanjeev Salokhe", r: "Founder & Director" }
+      const services = [
+        { t: "Hotel & Resort Management", i: "bi-buildings", d: "Turnkey management solutions optimizing daily hotel operations." },
+        { t: "Pre-Opening Consultancy", i: "bi-key", d: "End-to-end launch planning, budgeting, SOP creation, and vendor sourcing." },
+        { t: "Commercial Strategy", i: "bi-megaphone", d: "Tailored revenue management, sales, marketing, and distribution setups." },
+        { t: "Special Consultancy Assignments", i: "bi-briefcase-fill", d: "Customized hospitality consulting solutions designed for specific business objectives and growth requirements." },
+        { t: "Revenue Management", i: "bi-graph-up-arrow", d: "Data-driven pricing strategies, forecasting, and revenue optimization to maximize profitability." },
+        { t: "Sales & Marketing", i: "bi-bar-chart-line-fill", d: "Strategic sales planning, brand positioning, digital marketing, and distribution solutions to increase visibility and bookings." },
+        { t: "HR & Training", i: "bi-people-fill", d: "Building high-performing teams through recruitment, employee development, training programs, and culture enhancement." },
+        { t: "Procurement", i: "bi-cart-check-fill", d: "Efficient procurement strategies, vendor management, and cost optimization for hospitality operations." }
       ];
 
-      const initials = (name) =>
-        name.replace(/&/g, "").split(" ").filter(Boolean).map((n) => n[0]).slice(0, 2).join("");
-
-      // ---- Render Services ---- 
+      // ---- Render Services ----
       document.getElementById("servicesGrid").innerHTML = services
         .map(
           (s) => `
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="service-card">
-            <div class="service-icon"><i class="bi ${s.i}"></i></div>
-            <h3 class="font-serif fs-3" style="color: var(--emerald)">${s.t}</h3>
-            <p class="text-muted-dark small mb-0">${s.d}</p>
-          </div>
-        </div>`
-        )
-        .join("");
-
-      document.getElementById("projectsGrid").innerHTML = projects
-        .map(
-          (p, idx) => `
-        <div class="col-sm-6 reveal">
-          <div class="project-card">
-            <span class="project-num">${String(idx + 1).padStart(2, "0")}</span>
-            <h3 class="font-serif fs-4 lh-sm" style="color: var(--emerald)">${p.n}</h3>
-            <p class="text-muted-dark small mb-0 mt-1"><i class="bi bi-geo-alt text-gold me-1"></i>${p.l}</p>
-          </div>
-        </div>`
-        )
-        .join("");
-
-      document.getElementById("teamGrid").innerHTML = team
-        .map(
-          (m) => `
-        <div class="col-md-4 reveal">
-          <div class="team-card">
-            <div class="team-avatar">${initials(m.n)}</div>
-            <h3 class="font-serif fs-3 text-cream mt-4">${m.n}</h3>
-            <p class="overline mt-2">${m.r}</p>
-            <p class="small text-muted-light">${m.f}</p>
-            <div class="gold-hairline my-3"></div>
-            <p class="small mb-0" style="color: rgba(249,248,246,0.75)">${m.d}</p>
-          </div>
-        </div>`
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="service-card">
+              <div class="service-icon"><i class="bi ${s.i}"></i></div>
+              <h3 class="font-serif fs-3" style="color: var(--emerald)">${s.t}</h3>
+              <p class="text-muted-dark small mb-0">${s.d}</p>
+            </div>
+          </div>`
         )
         .join("");
 
@@ -1359,26 +907,6 @@
         { threshold: 0.12 }
       );
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-
-      // ---- Contact form -> mailto ----
-      document.getElementById("contactForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const company = document.getElementById("company").value.trim();
-        const message = document.getElementById("message").value.trim();
-        const subject = encodeURIComponent("New Inquiry from " + name);
-        const body = encodeURIComponent(
-          "Name: " + name + "\n" +
-          "Email: " + email + "\n" +
-          "Phone: " + (phone || "Not provided") + "\n" +
-          "Company: " + (company || "Not provided") + "\n\n" +
-          "Message:\n" + message
-        );
-        window.location.href =
-          "mailto:info@lotusleafcollection.com?subject=" + subject + "&body=" + body;
-      });
     </script>
   </body>
 </html>
