@@ -458,31 +458,1705 @@
       </symbol>
     </svg>
 
-    <!-- NAVBAR -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-custom fixed-top">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
-          <svg width="40" height="40" fill="none" viewBox="0 0 64 64">
-            <use href="#lotus"></use>
-          </svg>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-          <i class="bi bi-list fs-3"></i>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-          <ul class="navbar-nav align-items-lg-center gap-lg-2">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            <li class="nav-item ms-lg-2">
-              <a class="btn btn-gold btn-sm px-3 py-2" href="#contact">Get in Touch</a>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The LotusLeaf Collection</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  <style>
+
+    /* =========================================
+       GENERAL
+    ========================================= */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+    /* =========================================
+       NAVBAR
+    ========================================= */
+
+    .navbar-custom {
+      background: #ffffff;
+      padding: 12px 0;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+      z-index: 1050;
+    }
+
+
+    .navbar-brand {
+      color: #222;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+
+    .navbar-brand:hover {
+      color: #b08a3c;
+    }
+
+
+    .nav-link {
+      color: #222 !important;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 14px !important;
+      transition: 0.3s;
+    }
+
+
+    .nav-link:hover {
+      color: #b08a3c !important;
+    }
+
+
+    /* =========================================
+       MAIN OUR HOTELS DROPDOWN
+    ========================================= */
+
+    .hotel-dropdown {
+      min-width: 250px;
+      padding: 8px 0;
+
+      border: none;
+      border-radius: 8px;
+
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+
+
+    .hotel-dropdown .dropdown-item {
+      padding: 11px 18px;
+      font-size: 14px;
+      color: #333;
+
+      transition: 0.3s;
+    }
+
+
+    .hotel-dropdown .dropdown-item:hover {
+      background: #f8f5ed;
+      color: #b08a3c;
+    }
+
+
+    /* =========================================
+       LOCATION SUBMENU
+    ========================================= */
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+
+    .dropdown-submenu > .dropdown-menu {
+
+      top: 0;
+      left: 100%;
+
+      margin-top: -8px;
+      margin-left: 2px;
+
+      min-width: 290px;
+
+      border: none;
+      border-radius: 8px;
+
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /*
+       IMPORTANT:
+       No hover opening.
+       Javascript controls everything.
+    */
+
+    .dropdown-submenu > .dropdown-menu.show {
+      display: block;
+    }
+
+
+    /* =========================================
+       ARROWS
+    ========================================= */
+
+    .dropdown-submenu > .dropdown-toggle::after {
+
+      float: right;
+
+      margin-top: 7px;
+    }
+
+
+    /* =========================================
+       GOLD BUTTON
+    ========================================= */
+
+    .btn-gold {
+
+      background: #b08a3c;
+
+      border: 1px solid #b08a3c;
+
+      color: #ffffff;
+
+      border-radius: 4px;
+
+      transition: 0.3s;
+    }
+
+
+    .btn-gold:hover {
+
+      background: #92702e;
+
+      border-color: #92702e;
+
+      color: #ffffff;
+    }
+
+
+    /* =========================================
+       THREE LINE BUTTON
+    ========================================= */
+
+    .side-menu-btn {
+
+      width: 46px;
+      height: 46px;
+
+      border: 1px solid #ddd;
+
+      background: #ffffff;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 4px;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+
+    .side-menu-btn i {
+
+      font-size: 25px;
+
+      color: #222;
+    }
+
+
+    .side-menu-btn:hover {
+
+      background: #b08a3c;
+
+      border-color: #b08a3c;
+    }
+
+
+    .side-menu-btn:hover i {
+
+      color: #ffffff;
+    }
+
+
+    /* =========================================
+       RIGHT SIDE SLIDER
+    ========================================= */
+
+    .side-offcanvas {
+
+      width: 420px !important;
+
+      background: #ffffff;
+    }
+
+
+    .side-offcanvas .offcanvas-header {
+
+      padding: 25px 30px;
+
+      border-bottom: 1px solid #eeeeee;
+    }
+
+
+    .side-offcanvas .offcanvas-title {
+
+      font-size: 21px;
+
+      font-weight: 600;
+
+      color: #222;
+    }
+
+
+    .side-offcanvas .offcanvas-body {
+
+      padding: 30px;
+    }
+
+
+    /* =========================================
+       SIDE MENU
+    ========================================= */
+
+    .side-menu {
+
+      list-style: none;
+
+      padding: 0;
+
+      margin: 0;
+    }
+
+
+    .side-menu > li {
+
+      border-bottom: 1px solid #eeeeee;
+    }
+
+
+    .side-menu > li > a {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      text-decoration: none;
+
+      color: #222;
+
+      font-size: 16px;
+
+      font-weight: 500;
+
+      padding: 17px 5px;
+
+      transition: 0.3s;
+    }
+
+
+    .side-menu > li > a:hover {
+
+      color: #b08a3c;
+    }
+
+
+    /* =========================================
+       SIDE HOTEL LOCATIONS
+    ========================================= */
+
+    .side-hotel-location {
+
+      border-top: 1px solid #eeeeee;
+    }
+
+
+    .side-hotel-location > button {
+
+      width: 100%;
+
+      border: 0;
+
+      background: transparent;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 14px 10px;
+
+      color: #333;
+
+      font-size: 15px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      text-align: left;
+    }
+
+
+    .side-hotel-location > button:hover {
+
+      color: #b08a3c;
+
+      background: #faf8f2;
+    }
+
+
+    /* =========================================
+       SIDE HOTEL LIST
+    ========================================= */
+
+    .side-hotel-list {
+
+      display: none;
+
+      background: #fafafa;
+
+      padding: 5px 15px 12px 25px;
+    }
+
+
+    .side-hotel-list.show {
+
+      display: block;
+    }
+
+
+    .side-hotel-list a {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      text-decoration: none;
+
+      color: #555;
+
+      font-size: 14px;
+
+      padding: 10px 0;
+
+      transition: 0.3s;
+    }
+
+
+    .side-hotel-list a:hover {
+
+      color: #b08a3c;
+
+      padding-left: 5px;
+    }
+
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+
+    .side-contact {
+
+      margin-top: 35px;
+    }
+
+
+    .side-contact h6 {
+
+      color: #b08a3c;
+
+      font-size: 13px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .side-contact p {
+
+      margin-bottom: 12px;
+
+      color: #555;
+
+      font-size: 14px;
+    }
+
+
+    .side-contact a {
+
+      color: #333;
+
+      text-decoration: none;
+    }
+
+
+    .side-contact a:hover {
+
+      color: #b08a3c;
+    }
+
+
+    /* =========================================
+       SOCIAL
+    ========================================= */
+
+    .side-social {
+
+      display: flex;
+
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+
+    .side-social a {
+
+      width: 38px;
+      height: 38px;
+
+      border: 1px solid #ddd;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: #333;
+
+      text-decoration: none;
+
+      border-radius: 50%;
+
+      transition: 0.3s;
+    }
+
+
+    .side-social a:hover {
+
+      background: #b08a3c;
+
+      border-color: #b08a3c;
+
+      color: #ffffff;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 991px) {
+
+      .navbar-custom {
+
+        padding: 10px 15px;
+      }
+
+
+      .navbar-collapse {
+
+        margin-top: 15px;
+      }
+
+
+      .nav-link {
+
+        padding: 12px 5px !important;
+      }
+
+
+      /*
+        Main dropdown becomes normal
+        vertical menu on mobile
+      */
+
+      .hotel-dropdown {
+
+        box-shadow: none;
+
+        border-radius: 0;
+
+        padding-left: 10px;
+      }
+
+
+      .dropdown-submenu > .dropdown-menu {
+
+        position: static;
+
+        margin: 0;
+
+        box-shadow: none;
+
+        border-radius: 0;
+
+        padding-left: 15px;
+
+        background: #fafafa;
+      }
+
+
+      .side-offcanvas {
+
+        width: 85% !important;
+
+        max-width: 420px;
+      }
+
+    }
+
+
+    @media (max-width: 576px) {
+
+      .side-offcanvas {
+
+        width: 100% !important;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MAIN NAVBAR
+===================================================== -->
+
+<nav
+  id="navbar"
+  class="navbar navbar-expand-lg navbar-custom fixed-top">
+
+
+  <div class="container">
+
+
+    <!-- LOGO -->
+
+    <a
+      class="navbar-brand d-flex align-items-center gap-2"
+      href="#hero">
+
+      <svg
+        width="40"
+        height="40"
+        fill="none"
+        viewBox="0 0 64 64">
+
+        <use href="#lotus"></use>
+
+      </svg>
+
+
+      <span>
+        The LotusLeaf Collection
+      </span>
+
+    </a>
+
+
+
+    <!-- MOBILE NAV BUTTON -->
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMenu">
+
+      <i class="bi bi-list fs-3"></i>
+
+    </button>
+
+
+
+    <!-- NAVIGATION -->
+
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navMenu">
+
+
+      <ul
+        class="navbar-nav align-items-lg-center gap-lg-2">
+
+
+        <!-- ABOUT -->
+
+        <li class="nav-item">
+
+          <a
+            class="nav-link"
+            href="#about">
+
+            About
+
+          </a>
+
+        </li>
+
+
+
+        <!-- =================================================
+             OUR HOTELS
+        ================================================== -->
+
+        <li class="nav-item dropdown">
+
+          <!-- IMPORTANT:
+               Removed data-bs-toggle.
+               Javascript controls opening/closing.
+          -->
+
+          <a
+            class="nav-link dropdown-toggle"
+            href="javascript:void(0)"
+            id="ourHotelsBtn">
+
+            Our Hotels
+
+          </a>
+
+
+          <!-- MAIN HOTEL MENU -->
+
+          <ul
+            class="dropdown-menu dropdown-menu-end hotel-dropdown"
+            id="mainHotelMenu">
+
+
+            <!-- =========================
+                 AJMER
+            ========================== -->
+
+            <li class="dropdown-submenu">
+
+              <a
+                class="dropdown-item dropdown-toggle"
+                href="javascript:void(0)"
+                data-location="ajmer">
+
+                Ajmer
+
+              </a>
+
+
+              <ul
+                class="dropdown-menu"
+                id="ajmerMenu">
+
+
+                <li>
+
+                  <a
+                    class="dropdown-item"
+                    href="https://www.blackrockhotels.com/pushkara-resort-spa-ajmer/"
+                    target="_blank">
+
+                    Pushkara Resort &amp; Spa, Ajmer
+
+                  </a>
+
+                </li>
+
+
+              </ul>
+
             </li>
+
+
+
+            <!-- =========================
+                 JAIPUR
+            ========================== -->
+
+            <li class="dropdown-submenu">
+
+              <a
+                class="dropdown-item dropdown-toggle"
+                href="javascript:void(0)"
+                data-location="jaipur">
+
+                Jaipur
+
+              </a>
+
+
+              <ul
+                class="dropdown-menu"
+                id="jaipurMenu">
+
+
+                <li>
+
+                  <a
+                    class="dropdown-item"
+                    href="https://www.blackrockhotels.com/anant-mahal-jaipur/"
+                    target="_blank">
+
+                    Anant Mahal, Jaipur
+
+                  </a>
+
+                </li>
+
+
+                <li>
+
+                  <a
+                    class="dropdown-item"
+                    href="https://www.blackrockhotels.com/ananta-spa-resort-jaipur/"
+                    target="_blank">
+
+                    Ananta Spa &amp; Resort, Jaipur
+
+                  </a>
+
+                </li>
+
+
+                <li>
+
+                  <a
+                    class="dropdown-item"
+                    href="https://www.blackrockhotels.com/beelwa-palace-jaipur/"
+                    target="_blank">
+
+                    Beelwa Palace, Jaipur
+
+                  </a>
+
+                </li>
+
+
+              </ul>
+
+            </li>
+
+
+
+            <!-- =========================
+                 RANTHAMBORE
+            ========================== -->
+
+            <li class="dropdown-submenu">
+
+              <a
+                class="dropdown-item dropdown-toggle"
+                href="javascript:void(0)"
+                data-location="ranthambore">
+
+                Ranthambore
+
+              </a>
+
+
+              <ul
+                class="dropdown-menu"
+                id="ranthamboreMenu">
+
+
+                <li>
+
+                  <a
+                    class="dropdown-item"
+                    href="http://www.aamaghatiresort.com/aamaghati-wildlife-resort/"
+                    target="_blank">
+
+                    AamaGhati Wildlife Resort
+
+                  </a>
+
+                </li>
+
+
+                <li>
+
+                  <a
+                    class="dropdown-item"
+                    href="http://www.aamaghatiresort.com/the-farm-stay-ranthambore/"
+                    target="_blank">
+
+                    The Farm Stay by AamaGhati
+
+                  </a>
+
+                </li>
+
+
+              </ul>
+
+            </li>
+
+
           </ul>
+
+        </li>
+
+
+
+        <!-- SERVICES -->
+
+        <li class="nav-item">
+
+          <a
+            class="nav-link"
+            href="#services">
+
+            Services
+
+          </a>
+
+        </li>
+
+
+
+        <!-- PROJECTS -->
+
+        <li class="nav-item">
+
+          <a
+            class="nav-link"
+            href="#projects">
+
+            Projects
+
+          </a>
+
+        </li>
+
+
+
+        <!-- TEAM -->
+
+        <li class="nav-item">
+
+          <a
+            class="nav-link"
+            href="#team">
+
+            Team
+
+          </a>
+
+        </li>
+
+
+
+        <!-- CONTACT -->
+
+        <li class="nav-item">
+
+          <a
+            class="nav-link"
+            href="#contact">
+
+            Contact
+
+          </a>
+
+        </li>
+
+
+
+        <!-- GET IN TOUCH -->
+
+        <li class="nav-item ms-lg-2">
+
+          <a
+            class="btn btn-gold btn-sm px-3 py-2"
+            href="#contact">
+
+            Book Now 
+
+          </a>
+
+        </li>
+
+
+
+        <!-- THREE LINE MENU -->
+
+        <li class="nav-item ms-lg-2">
+
+          <button
+            class="side-menu-btn"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#rightSideMenu">
+
+            <i class="bi bi-list"></i>
+
+          </button>
+
+        </li>
+
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     RIGHT SIDE SLIDING MENU
+===================================================== -->
+
+<div
+  class="offcanvas offcanvas-end side-offcanvas"
+  tabindex="-1"
+  id="rightSideMenu">
+
+
+  <!-- HEADER -->
+
+  <div class="offcanvas-header">
+
+    <h5 class="offcanvas-title">
+
+      The LotusLeaf Collection
+
+    </h5>
+
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas">
+    </button>
+
+  </div>
+
+
+
+  <!-- BODY -->
+
+  <div class="offcanvas-body">
+
+
+    <ul class="side-menu">
+
+
+      <!-- ABOUT -->
+
+      <li>
+
+        <a href="#about">
+
+          About Us
+
+          <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+      </li>
+
+
+
+      <!-- =================================================
+           SIDE OUR HOTELS
+      ================================================== -->
+
+      <li>
+
+
+        <!-- MAIN OUR HOTELS BUTTON -->
+
+        <a
+          href="javascript:void(0)"
+          id="sideHotelsBtn">
+
+          <span>
+            Our Hotels
+          </span>
+
+          <i
+            class="bi bi-chevron-down"
+            id="sideHotelsIcon">
+          </i>
+
+        </a>
+
+
+        <!-- SIDE HOTEL MENU -->
+
+        <div
+          id="sideHotelsMenu"
+          style="display:none;">
+
+
+          <!-- =================================
+               AJMER
+          ================================== -->
+
+          <div class="side-hotel-location">
+
+
+            <button
+              type="button"
+              data-side-location="sideAjmer">
+
+              <span>
+                Ajmer
+              </span>
+
+              <i class="bi bi-chevron-down"></i>
+
+            </button>
+
+
+            <div
+              class="side-hotel-list"
+              id="sideAjmer">
+
+
+              <a
+                href="https://www.blackrockhotels.com/pushkara-resort-spa-ajmer/"
+                target="_blank">
+
+                Pushkara Resort &amp; Spa, Ajmer
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================
+               JAIPUR
+          ================================== -->
+
+          <div class="side-hotel-location">
+
+
+            <button
+              type="button"
+              data-side-location="sideJaipur">
+
+              <span>
+                Jaipur
+              </span>
+
+              <i class="bi bi-chevron-down"></i>
+
+            </button>
+
+
+            <div
+              class="side-hotel-list"
+              id="sideJaipur">
+
+
+              <a
+                href="https://www.blackrockhotels.com/anant-mahal-jaipur/"
+                target="_blank">
+
+                Anant Mahal, Jaipur
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
+
+              <a
+                href="https://www.blackrockhotels.com/ananta-spa-resort-jaipur/"
+                target="_blank">
+
+                Ananta Spa &amp; Resort, Jaipur
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
+
+              <a
+                href="https://www.blackrockhotels.com/beelwa-palace-jaipur/"
+                target="_blank">
+
+                Beelwa Palace, Jaipur
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================
+               RANTHAMBORE
+          ================================== -->
+
+          <div class="side-hotel-location">
+
+
+            <button
+              type="button"
+              data-side-location="sideRanthambore">
+
+              <span>
+                Ranthambore
+              </span>
+
+              <i class="bi bi-chevron-down"></i>
+
+            </button>
+
+
+            <div
+              class="side-hotel-list"
+              id="sideRanthambore">
+
+
+              <a
+                href="http://www.aamaghatiresort.com/aamaghati-wildlife-resort/"
+                target="_blank">
+
+                AamaGhati Wildlife Resort
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
+
+              <a
+                href="http://www.aamaghatiresort.com/the-farm-stay-ranthambore/"
+                target="_blank">
+
+                The Farm Stay by AamaGhati
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
+
+            </div>
+
+          </div>
+
+
         </div>
+
+      </li>
+
+
+
+      <!-- SERVICES -->
+
+      <li>
+
+        <a href="#services">
+
+          Services
+
+          <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+      </li>
+
+
+
+      <!-- PROJECTS -->
+
+      <li>
+
+        <a href="#projects">
+
+          Projects
+
+          <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+      </li>
+
+
+
+      <!-- TEAM -->
+
+      <li>
+
+        <a href="#team">
+
+          Our Team
+
+          <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+      </li>
+
+
+
+      <!-- CONTACT -->
+
+      <li>
+
+        <a href="#contact">
+
+          Contact Us
+
+          <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+      </li>
+
+
+    </ul>
+
+
+
+    <!-- =================================================
+         CONTACT DETAILS
+    ================================================== -->
+
+    <div class="side-contact">
+
+
+      <h6>
+        Get In Touch
+      </h6>
+
+
+      <p>
+
+        <i class="bi bi-envelope me-2"></i>
+
+        <a href="mailto:info@lotusleafcollection.com">
+
+          info@lotusleafcollection.com
+
+        </a>
+
+      </p>
+
+
+      <p>
+
+        <i class="bi bi-telephone me-2"></i>
+
+        <a href="tel:+919923587326">
+
+          +91 99235 87326
+
+        </a>
+
+      </p>
+
+
+      <div class="side-social">
+
+
+        <a href="#">
+
+          <i class="bi bi-instagram"></i>
+
+        </a>
+
+
+        <a href="#">
+
+          <i class="bi bi-facebook"></i>
+
+        </a>
+
+
+        <a href="#">
+
+          <i class="bi bi-linkedin"></i>
+
+        </a>
+
+
+        <a href="#">
+
+          <i class="bi bi-youtube"></i>
+
+        </a>
+
+
       </div>
-    </nav>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     BOOTSTRAP JS
+===================================================== -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<!-- =====================================================
+     MENU JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+  /* ==================================================
+     MAIN NAVBAR
+     OUR HOTELS OPEN / CLOSE
+  ================================================== */
+
+  const ourHotelsBtn =
+    document.getElementById("ourHotelsBtn");
+
+  const mainHotelMenu =
+    document.getElementById("mainHotelMenu");
+
+
+  ourHotelsBtn.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    e.stopPropagation();
+
+
+    /*
+       Toggle main hotel menu
+    */
+
+    mainHotelMenu.classList.toggle("show");
+
+
+    /*
+       If closing main menu,
+       close all location menus
+    */
+
+    if (!mainHotelMenu.classList.contains("show")) {
+
+      closeMainLocationMenus();
+
+    }
+
+  });
+
+
+
+  /* ==================================================
+     MAIN NAVBAR LOCATION MENUS
+  ================================================== */
+
+  const locationButtons =
+    document.querySelectorAll(
+      "#mainHotelMenu .dropdown-submenu > .dropdown-toggle"
+    );
+
+
+  locationButtons.forEach(function (button) {
+
+
+    button.addEventListener("click", function (e) {
+
+      e.preventDefault();
+
+      e.stopPropagation();
+
+
+      const submenu =
+        this.nextElementSibling;
+
+
+      /*
+         Close all other location menus
+      */
+
+      document
+        .querySelectorAll(
+          "#mainHotelMenu .dropdown-submenu .dropdown-menu"
+        )
+        .forEach(function (menu) {
+
+          if (menu !== submenu) {
+
+            menu.classList.remove("show");
+
+          }
+
+        });
+
+
+      /*
+         Toggle clicked location
+      */
+
+      submenu.classList.toggle("show");
+
+    });
+
+  });
+
+
+
+  /* ==================================================
+     CLOSE MAIN LOCATION MENUS
+  ================================================== */
+
+  function closeMainLocationMenus() {
+
+    document
+      .querySelectorAll(
+        "#mainHotelMenu .dropdown-submenu .dropdown-menu"
+      )
+      .forEach(function (menu) {
+
+        menu.classList.remove("show");
+
+      });
+
+  }
+
+
+
+  /* ==================================================
+     CLICK OUTSIDE MAIN MENU
+  ================================================== */
+
+  document.addEventListener("click", function (e) {
+
+
+    const navbar =
+      document.getElementById("navbar");
+
+
+    if (!navbar.contains(e.target)) {
+
+      mainHotelMenu.classList.remove("show");
+
+      closeMainLocationMenus();
+
+    }
+
+  });
+
+
+
+  /* ==================================================
+     SIDE MENU
+     OUR HOTELS OPEN / CLOSE
+  ================================================== */
+
+  const sideHotelsBtn =
+    document.getElementById("sideHotelsBtn");
+
+  const sideHotelsMenu =
+    document.getElementById("sideHotelsMenu");
+
+  const sideHotelsIcon =
+    document.getElementById("sideHotelsIcon");
+
+
+  sideHotelsBtn.addEventListener("click", function () {
+
+
+    const isOpen =
+      sideHotelsMenu.style.display === "block";
+
+
+    if (isOpen) {
+
+
+      /*
+         CLOSE
+      */
+
+      sideHotelsMenu.style.display = "none";
+
+      sideHotelsIcon.className =
+        "bi bi-chevron-down";
+
+
+      closeSideLocationMenus();
+
+
+    } else {
+
+
+      /*
+         OPEN
+      */
+
+      sideHotelsMenu.style.display = "block";
+
+      sideHotelsIcon.className =
+        "bi bi-chevron-up";
+
+    }
+
+  });
+
+
+
+  /* ==================================================
+     SIDE LOCATION MENUS
+  ================================================== */
+
+  const sideLocationButtons =
+    document.querySelectorAll(
+      "[data-side-location]"
+    );
+
+
+  sideLocationButtons.forEach(function (button) {
+
+
+    button.addEventListener("click", function () {
+
+
+      const targetId =
+        this.getAttribute("data-side-location");
+
+
+      const target =
+        document.getElementById(targetId);
+
+
+      const isOpen =
+        target.classList.contains("show");
+
+
+      /*
+         Close all other locations
+      */
+
+      closeSideLocationMenus();
+
+
+      /*
+         If it was closed,
+         open it.
+         If it was open,
+         it stays closed.
+      */
+
+      if (!isOpen) {
+
+        target.classList.add("show");
+
+        const icon =
+          this.querySelector("i");
+
+        icon.className =
+          "bi bi-chevron-up";
+
+      }
+
+    });
+
+  });
+
+
+
+  /* ==================================================
+     CLOSE SIDE LOCATION MENUS
+  ================================================== */
+
+  function closeSideLocationMenus() {
+
+
+    document
+      .querySelectorAll(".side-hotel-list")
+      .forEach(function (menu) {
+
+        menu.classList.remove("show");
+
+      });
+
+
+    document
+      .querySelectorAll(
+        ".side-hotel-location button i"
+      )
+      .forEach(function (icon) {
+
+        icon.className =
+          "bi bi-chevron-down";
+
+      });
+
+  }
+
+
+
+  /* ==================================================
+     RESET SIDE MENU WHEN CLOSED
+  ================================================== */
+
+  const sideMenu =
+    document.getElementById("rightSideMenu");
+
+
+  sideMenu.addEventListener(
+    "hidden.bs.offcanvas",
+    function () {
+
+      sideHotelsMenu.style.display = "none";
+
+      sideHotelsIcon.className =
+        "bi bi-chevron-down";
+
+      closeSideLocationMenus();
+
+    }
+  );
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
 
     <!-- HERO -->
     <header class="hero" id="hero">
@@ -684,95 +2358,953 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Hotel Ivy Studios">
+            <img src="images\645866a_hb_a_002.jpg" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Hotel Ivy Studios">
             </div>
             <h4 class="font-serif" style="color:#0A2A22;">Hotel Ivy Studios</h4>
             <p class="text-muted-dark">Viman Nagar, Pune</p>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Mantra Resort">
+              <img src="images\m9.jpg" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Mantra Resort">
             </div>
             <h4 class="font-serif" style="color:#0A2A22;">Mantra Resort</h4>
             <p class="text-muted-dark">Bhor</p>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="The Solitaire">
+              <img src="images\images.jpg" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="The Solitaire">
             </div>
             <h4 class="font-serif" style="color:#0A2A22;">The Solitaire</h4>
             <p class="text-muted-dark">Jaipur</p>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Prakruti Resort">
+              <img src="images\f676e04f.jpg" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Prakruti Resort">
             </div>
             <h4 class="font-serif" style="color:#0A2A22;">Prakruti Resort</h4>
             <p class="text-muted-dark">Hyderabad</p>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Ritz Valley Resort">
+              <img src="images\images (1).jpg" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Ritz Valley Resort">
             </div>
             <h4 class="font-serif" style="color:#0A2A22;">Ritz Valley Resort & The Grand Legacy</h4>
             <p class="text-muted-dark">Mahabaleshwar</p>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-              <img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Gautam Resort">
+              <img src="images\images (2).jpg" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Gautam Resort">
             </div>
             <h4 class="font-serif" style="color:#0A2A22;">Gautam Resort</h4>
             <p class="text-muted-dark">Lonavala</p>
           </div>
           <div class="col-md-6 col-lg-4 reveal">
             <div class="zoom-img rounded-4 overflow-hidden mb-3">
-              <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?q=80&w=2070&auto=format&fit=crop" class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Swara Group">
+              <img src="images\images (3).jpg"  class="w-100 rounded-4" style="height:230px;object-fit:cover;" alt="Swara Group">
             </div>
             <h4 class="font-serif" style="color:#0A2A22;">Swara Group of Hotels & Resorts</h4>
             <p class="text-muted-dark">Malhar Machi & Jalsrushti, Mulshi</p>
           </div>
         </div>
       </div>
+      
+      
     </section>
 
     <!-- TEAM -->
-    <section class="section bg-emerald grain" id="team">
-      <div class="container">
-        <div class="text-center mx-auto reveal" style="max-width:42rem">
-          <span class="overline">Leadership</span>
-          <h2 class="display-serif text-cream mt-2" style="font-size:clamp(1.8rem,3vw,2.5rem);">
-            Founder with Hospitality in his DNA
-          </h2>
-          <div class="founder-icon mx-auto mt-4 mb-3">
-            <i class="bi bi-person-badge-fill"></i>
+    <!-- TEAM / LEADERSHIP -->
+<section class="section bg-emerald grain" id="team">
+
+  <div class="container">
+
+    <!-- FOUNDER -->
+    <div class="text-center mx-auto reveal" style="max-width:42rem">
+
+      <span class="overline">Leadership</span>
+
+      <h2 class="display-serif text-cream mt-2"
+          style="font-size:clamp(1.8rem,3vw,2.5rem);">
+        Founder with Hospitality in his DNA
+      </h2>
+
+      <div class="founder-icon mx-auto mt-4 mb-3">
+        <i class="bi bi-person-badge-fill"></i>
+      </div>
+
+      <p class="text-cream mt-3 fs-5 mb-1">
+        Sanjeev Salokhe
+      </p>
+
+      <p class="text-gold-gradient fs-6 mb-5">
+        CEO
+      </p>
+
+    </div>
+
+
+    <!-- ADVISORY BOARD HEADING -->
+    <div class="text-center advisory-board-heading reveal">
+
+      <span class="overline">Advisory Board</span>
+
+      <h3 class="display-serif text-cream mt-2 mb-4"
+          style="font-size:clamp(1.6rem,2.5vw,2.2rem);">
+        Strategic Leadership &amp; Expertise
+      </h3>
+
+    </div>
+
+
+    <!-- ADVISORY BOARD CARDS -->
+    <div class="row g-4 justify-content-center">
+
+      <!-- MANOJ MENON -->
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="advisor-card">
+
+          <div class="advisor-icon">
+            <i class="bi bi-megaphone-fill"></i>
           </div>
-          <p class="text-cream mt-3 fs-5" style="line-height:1.8;">Sanjeev Salokhe</p>
-          <p class="text-gold-gradient fs-6 mb-0">Founder & Director</p>
+
+          <div class="advisor-content">
+
+            <span class="advisor-label">
+              SALES &amp; MARKETING
+            </span>
+
+            <h4>
+              Manoj Menon
+            </h4>
+
+            <p class="advisor-role">
+              Sales &amp; Marketing Strategist
+            </p>
+
+            <div class="advisor-experience">
+              <i class="bi bi-award"></i>
+              <span>35+ Years Experience</span>
+            </div>
+
+          </div>
+
         </div>
       </div>
-    </section>
+
+
+      <!-- BALBIR NEGI -->
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="advisor-card">
+
+          <div class="advisor-icon">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+
+          <div class="advisor-content">
+
+            <span class="advisor-label">
+              FINANCE
+            </span>
+
+            <h4>
+              Balbir Negi
+            </h4>
+
+            <p class="advisor-role">
+              Financial Strategist
+            </p>
+
+            <div class="advisor-experience">
+              <i class="bi bi-award"></i>
+              <span>30+ Years Experience</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- SMRITI & VISHAL -->
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="advisor-card">
+
+          <div class="advisor-icon">
+            <i class="bi bi-bar-chart-line-fill"></i>
+          </div>
+
+          <div class="advisor-content">
+
+            <span class="advisor-label">
+              REVENUE MANAGEMENT
+            </span>
+
+            <h4>
+              Smriti &amp; Vishal
+            </h4>
+
+            <p class="advisor-role">
+              Revenue Management &amp; Strategic Planning
+            </p>
+
+            <div class="advisor-experience">
+              <i class="bi bi-award"></i>
+              <span>25+ Years Experience</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- MADHULIKA JOSHI -->
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="advisor-card">
+
+          <div class="advisor-icon">
+            <i class="bi bi-laptop-fill"></i>
+          </div>
+
+          <div class="advisor-content">
+
+            <span class="advisor-label">
+              DIGITAL MARKETING
+            </span>
+
+            <h4>
+              Madhulika Joshi
+            </h4>
+
+            <p class="advisor-role">
+              Digital Marketing
+            </p>
+
+            <div class="advisor-experience">
+              <i class="bi bi-award"></i>
+              <span>30+ Years Experience</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- SAMEER VYAS -->
+      <div class="col-lg-4 col-md-6 reveal">
+        <div class="advisor-card">
+
+          <div class="advisor-icon">
+            <i class="bi bi-building-fill"></i>
+          </div>
+
+          <div class="advisor-content">
+
+            <span class="advisor-label">
+              HOSPITALITY OPERATIONS
+            </span>
+
+            <h4>
+              Sameer Vyas
+            </h4>
+
+            <p class="advisor-role">
+              Pre-opening &amp; Rooms Division
+            </p>
+
+            <div class="advisor-experience">
+              <i class="bi bi-award"></i>
+              <span>20+ Years Experience</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+    <div class="advisory-summary text-center reveal">
+
+      <div class="advisory-divider">
+        <span>✧</span>
+      </div>
+
+      <p>
+        Collectively bringing over
+        <strong>140 years</strong>
+        of hospitality leadership, operational expertise,
+        and strategic guidance to drive sustainable growth
+        and exceptional business performance.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+
+/* ================================
+   ADVISORY BOARD
+================================ */
+
+.advisory-board-heading {
+  max-width: 700px;
+  margin: 0 auto 25px;
+}
+
+
+/* ================================
+   ADVISOR CARD
+================================ */
+
+.advisor-card {
+  height: 100%;
+  min-height: 235px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+
+  padding: 30px 25px;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.advisor-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ================================
+   ADVISOR ICON
+================================ */
+
+.advisor-icon {
+  width: 64px;
+  height: 64px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--emerald);
+  color: var(--gold);
+
+  font-size: 25px;
+
+  margin-bottom: 18px;
+
+  border: 2px solid rgba(201, 162, 75, 0.35);
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.advisor-content {
+  width: 100%;
+}
+
+
+.advisor-label {
+  display: block;
+
+  color: var(--emerald);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 7px;
+}
+
+
+.advisor-card h4 {
+  margin: 0;
+
+  color: var(--emerald);
+
+  font-family: Georgia, serif;
+
+  font-size: 21px;
+
+  text-transform: none;
+}
+
+
+.advisor-role {
+  margin: 8px 0 15px;
+
+  color: #555;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* ================================
+   EXPERIENCE
+================================ */
+
+.advisor-experience {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 7px 13px;
+
+  border-radius: 30px;
+
+  background: rgba(10, 42, 34, 0.07);
+
+  color: var(--emerald);
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.advisor-experience i {
+  color: var(--gold);
+
+  font-size: 14px;
+}
+
+
+/* ================================
+   SUMMARY
+================================ */
+
+.advisory-summary {
+  max-width: 750px;
+
+  margin: 40px auto 0;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+.advisory-summary p {
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+
+.advisory-summary strong {
+  color: var(--gold);
+
+  font-size: 18px;
+}
+
+
+/* ================================
+   DIVIDER
+================================ */
+
+.advisory-divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 12px;
+}
+
+
+.advisory-divider::before,
+.advisory-divider::after {
+  content: "";
+
+  height: 1px;
+
+  background: var(--gold);
+
+  flex: 1;
+}
+
+
+.advisory-divider span {
+  color: var(--gold);
+
+  font-size: 20px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 767px) {
+
+  .advisor-card {
+    min-height: 220px;
+
+    padding: 25px 20px;
+  }
+
+  .advisor-icon {
+    width: 58px;
+    height: 58px;
+
+    font-size: 22px;
+  }
+
+  .advisor-card h4 {
+    font-size: 19px;
+  }
+
+  .advisor-role {
+    font-size: 13px;
+  }
+
+  .advisory-summary {
+    padding: 0 15px;
+  }
+
+}
+
+</style>
 
     <!-- CONTACT -->
-    <section class="section bg-cream" id="contact">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-8 reveal">
-            <span class="overline">Get in Touch</span>
-            <h2 class="display-serif mt-2 mb-3" style="color:var(--emerald); font-size:clamp(2rem,4vw,3rem)">Contact Us</h2>
-            <p class="text-muted-dark mb-4">
-              For inquiries, collaborations, or partnership opportunities,
-              feel free to reach out to us via email or phone.
-            </p>
-            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
-              <a class="contact-link d-inline-flex align-items-center gap-3 fs-5" href="mailto:info@lotusleafcollection.com">
-                <span class="contact-icon"><i class="bi bi-envelope"></i></span>
-                <span>info@lotusleafcollection.com</span>
-              </a>
-              <a class="contact-link d-inline-flex align-items-center gap-3 fs-5" href="tel:+919923587326">
-                <span class="contact-icon"><i class="bi bi-telephone"></i></span>
-                <span>+91 99235 87326</span>
-              </a>
+   <!-- CONTACT -->
+
+<section class="section bg-cream" id="contact">
+
+  <style>
+    .contact-office {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .contact-office:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-office-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: var(--text-dark, #333);
+      line-height: 1.7;
+    }
+
+    .contact-detail.address {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .contact-detail a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-detail a:hover {
+      color: var(--emerald);
+    }
+
+    .contact-detail .contact-icon {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--emerald);
+      font-size: 18px;
+    }
+
+    @media (max-width: 575px) {
+      .contact-office {
+        padding: 30px 20px !important;
+      }
+
+      .contact-detail {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="container">
+
+```
+
+
+<!-- CONTACT OFFICE BLOCKS -->
+<section class="section bg-cream" id="contact">
+
+  <style>
+    /* ================================
+       CONTACT OFFICE
+    ================================= */
+
+    .contact-office {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .contact-office:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Information container */
+    .contact-office-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    /* Icon + content row */
+    .contact-detail {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      align-items: center;
+      column-gap: 14px;
+      text-align: left;
+      color: var(--text-dark, #333);
+      line-height: 1.6;
+    }
+
+    /* Align address icon with first line */
+    .contact-detail:has(.bi-geo-alt) {
+      align-items: start;
+    }
+
+    /* Icon */
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+      background: rgba(10, 42, 34, 0.07);
+
+      color: var(--emerald);
+      font-size: 18px;
+    }
+
+    /* Text */
+    .contact-text {
+      min-width: 0;
+      font-size: 15px;
+    }
+
+    /* Links */
+    .contact-text a {
+      color: inherit;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-text a:hover {
+      color: var(--emerald);
+    }
+
+    /* Mobile */
+    @media (max-width: 575px) {
+
+      .contact-office {
+        padding: 30px 20px !important;
+      }
+
+      .contact-office-info {
+        max-width: 100%;
+      }
+
+      .contact-detail {
+        grid-template-columns: 40px 1fr;
+        column-gap: 12px;
+      }
+
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 16px;
+      }
+
+      .contact-text {
+        font-size: 14px;
+      }
+
+    }
+  </style>
+
+
+  <div class="container">
+
+    <!-- SECTION HEADING -->
+    <div class="row justify-content-center text-center">
+
+      <div class="col-lg-8 reveal">
+
+        <span class="overline">
+          Get in Touch
+        </span>
+
+        <h2 class="display-serif mt-2 mb-3"
+            style="color:var(--emerald); font-size:clamp(2rem,4vw,3rem);">
+          Contact Us
+        </h2>
+
+        <p class="text-muted-dark mb-5">
+          For inquiries, collaborations, or partnership opportunities,
+          feel free to reach out to our offices.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- OFFICE BLOCKS -->
+    <div class="row g-4 justify-content-center">
+
+
+      <!-- ================================
+           INDIA OFFICE
+      ================================= -->
+
+      <div class="col-lg-5 col-md-6 reveal">
+
+        <div class="contact-office text-center p-4 p-lg-5">
+
+          <span class="overline">
+            India
+          </span>
+
+          <h3 class="display-serif mt-2 mb-4"
+              style="color:var(--emerald);">
+            India Office
+          </h3>
+
+
+          <div class="contact-office-info">
+
+
+            <!-- INDIA ADDRESS -->
+            <div class="contact-detail">
+
+              <span class="contact-icon">
+                <i class="bi bi-geo-alt"></i>
+              </span>
+
+              <div class="contact-text">
+                Pune<br>
+                India
+              </div>
+
             </div>
+
+
+            <!-- INDIA EMAIL -->
+            <div class="contact-detail">
+
+              <span class="contact-icon">
+                <i class="bi bi-envelope"></i>
+              </span>
+
+              <div class="contact-text">
+
+                <a href="mailto:info@lotusleafcollection.com">
+                  info@lotusleafcollection.com
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <!-- INDIA PHONE -->
+            <div class="contact-detail">
+
+              <span class="contact-icon">
+                <i class="bi bi-telephone"></i>
+              </span>
+
+              <div class="contact-text">
+
+                <a href="tel:+919923587326">
+                  +91 99235 87326
+                </a>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ================================
+           UAE OFFICE
+      ================================= -->
+
+      <div class="col-lg-5 col-md-6 reveal">
+
+        <div class="contact-office text-center p-4 p-lg-5">
+
+          <span class="overline">
+            UAE
+          </span>
+
+          <h3 class="display-serif mt-2 mb-4"
+              style="color:var(--emerald);">
+            UAE Office
+          </h3>
+
+
+          <div class="contact-office-info">
+
+
+            <!-- CONTACT PERSON -->
+            <div class="contact-detail">
+
+              <span class="contact-icon">
+                <i class="bi bi-person"></i>
+              </span>
+
+              <div class="contact-text">
+                Praneesh Prabhakaran
+              </div>
+
+            </div>
+
+
+            <!-- UAE ADDRESS -->
+            <div class="contact-detail">
+
+              <span class="contact-icon">
+                <i class="bi bi-geo-alt"></i>
+              </span>
+
+              <div class="contact-text">
+
+                Office No. 3, 1st Floor,<br>
+                Royal Infinity Office,<br>
+                Mohd Obaid Al Majid Building,<br>
+                Marrakech Street,<br>
+                Dubai, UAE
+
+              </div>
+
+            </div>
+
+
+            <!-- UAE EMAIL -->
+            <div class="contact-detail">
+
+              <span class="contact-icon">
+                <i class="bi bi-envelope"></i>
+              </span>
+
+              <div class="contact-text">
+
+                <a href="mailto:info@lotusleafcollection.com">
+                  info@lotusleafcollection.com
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <!-- UAE PHONE -->
+            <div class="contact-detail">
+
+              <span class="contact-icon">
+                <i class="bi bi-telephone"></i>
+              </span>
+
+              <div class="contact-text">
+
+                <a href="tel:+971551636310">
+                  +971 55 1636310
+                </a>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
             <div class="lotus-contact-form">
               <h3 class="mb-4">Send Us a Message</h3>
               <form action="https://api.web3forms.com/submit" method="POST" class="row g-3">
