@@ -79,6 +79,52 @@
         line-height: 1.05;
       }
 
+      /* Pre-opening cards use the site's emerald, cream and gold palette. */
+      #creation .preopening-card {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        padding: 2rem;
+        border: 1px solid rgba(10, 42, 34, 0.12);
+        border-radius: 1rem;
+        background: #fffefa;
+        box-shadow: 0 8px 24px rgba(10, 42, 34, 0.07);
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      }
+      #creation .preopening-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 4px;
+        background: linear-gradient(180deg, var(--gold), var(--gold-soft));
+      }
+      #creation .preopening-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(212, 175, 55, .55);
+        box-shadow: 0 16px 34px rgba(10, 42, 34, .13);
+      }
+      #creation .preopening-icon {
+        display: inline-grid;
+        width: 3.25rem;
+        height: 3.25rem;
+        place-items: center;
+        border: 1px solid rgba(212, 175, 55, .5);
+        border-radius: 50%;
+        background: rgba(212, 175, 55, .13);
+        color: var(--emerald);
+        font-size: 1.35rem;
+      }
+      #creation .preopening-card h3 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 600;
+      }
+      #creation .preopening-card ul { padding-left: 1.15rem; line-height: 1.8; }
+      #creation .preopening-card li::marker { color: var(--gold); }
+      @media (prefers-reduced-motion: reduce) {
+        #creation .preopening-card { transition: none; }
+        #creation .preopening-card:hover { transform: none; }
+      }
+
       /* Navbar */
       .navbar-custom {
         transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
@@ -195,6 +241,45 @@
         transition: background-color 0.3s ease, color 0.3s ease;
       }
       .service-card:hover .service-icon { background: var(--gold); color: var(--emerald); }
+
+      /* Hotel management service cards */
+      .management-services-section {
+        background: linear-gradient(180deg, #f9f8f6 0%, #f1f5f1 100%);
+      }
+      .management-service-card {
+        position: relative;
+        overflow: hidden;
+        padding: 1.6rem;
+        border: 1px solid rgba(10, 42, 34, 0.12);
+        border-top: 4px solid var(--gold);
+        border-radius: 1rem;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(10, 42, 34, 0.07);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+      .management-service-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 16px 34px rgba(10, 42, 34, 0.14);
+      }
+      .management-service-card .service-card-head { gap: 0.9rem; }
+      .management-service-card .service-card-icon {
+        width: 46px;
+        height: 46px;
+        flex: 0 0 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.8rem;
+        background: var(--emerald);
+        color: var(--gold);
+        font-size: 1.2rem;
+        transition: background 0.25s ease, color 0.25s ease;
+      }
+      .management-service-card:hover .service-card-icon { background: var(--gold); color: var(--emerald); }
+      .management-service-card ul { padding-left: 1.1rem; margin: 1.2rem 0 0; color: var(--muted-dark); }
+      .management-service-card li { padding: 0.35rem 0; }
+      .management-service-card li::marker { color: var(--gold); }
 
       .chip {
         display: inline-block;
@@ -2609,7 +2694,7 @@ window.addEventListener("load", function () {
                       href="#coming-projects"
                     target="_blank">
 
-                    Vedi valley Resort, Satara 
+                    Vedi Valley Resort, Satara 
 
                   </a>
 
@@ -3424,195 +3509,3599 @@ document.addEventListener("DOMContentLoaded", function () {
 </html>
 
     <!-- HERO -->
-    <header class="hero" id="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-overlay-2"></div>
-      <div class="container position-relative" style="z-index:2; padding-top:5rem;">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="d-flex align-items-center gap-3 mb-4">
-              <svg width="40" height="40" fill="none" viewBox="0 0 64 64">
-                <use href="#lotus"></use>
-              </svg>
-            </div>
-            <div class="mb-4">
-              <img src="images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png"
-                   alt="The LotusLeaf Collection Logo"
-                   class="img-fluid"
-                   style="max-width:250px; height:auto;">
-              <h2 class="display-serif text-cream mb-3" style="font-size:clamp(2rem,6vw,4.6rem);">
-                Experience That Builds
-                <span class="text-gold-gradient">Excellence.</span>
-              </h2>
-              <p class="text-muted-light fs-4 mb-4" style="max-width:34rem;">
-                Presence That Creates
-                <span class="text-gold-gradient">Impact.</span>
-              </p>
-              <p class="text-muted-light fs-5 mb-5" style="max-width:33rem;">
-                A hospitality management & consulting firm transforming hotels, resorts, and serviced apartments into distinguished destinations across India.
-              </p>
-              <div class="d-flex flex-column flex-sm-row gap-3">
-                <a href="#contact" class="btn btn-gold px-4 py-3">Partner With Us</a>
-                <a href="#services" class="btn btn-outline-cream">Explore Our Expertise</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+   <header class="hero" id="hero"> 
+  <div class="hero-bg"></div> 
+  <div class="hero-overlay"></div> 
+  <div class="hero-overlay-2"></div> 
 
-    <!-- ABOUT -->
-    <section class="section bg-cream" id="about">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6 reveal">
-            <span class="overline">Who We Are</span>
-            <h2 class="display-serif mt-2 mb-4" style="color: var(--emerald); font-size: clamp(2rem, 4vw, 3rem)">
-              Crafting distinguished destinations
-            </h2>
-            <p class="text-muted-dark">
-              The LotusLeaf Collection is a hospitality consulting and management company dedicated to creating exceptional guest experiences while driving sustainable business growth.
-              We partner with owners and brands to enhance profitability, strengthen market positioning, and deliver service excellence across hotels, resorts, serviced apartments, and hospitality ventures.
-            </p>
-            <div class="row g-4 mt-4">
-              <div class="col-sm-4">
-                <div class="p-4 bg-white rounded-3 h-100" style="border: 1px solid rgba(10,42,34,0.1)">
-                  <div class="font-serif text-gold fs-2 lh-1">75+</div>
-                  <p class="text-muted-dark small mt-2 mb-0">Years of cumulative hospitality industry experience</p>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="p-4 bg-white rounded-3 h-100" style="border: 1px solid rgba(10,42,34,0.1)">
-                  <div class="font-serif text-gold fs-2 lh-1">50+</div>
-                  <p class="text-muted-dark small mt-2 mb-0">Projects successfully delivered across multiple segments</p>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="p-4 bg-white rounded-3 h-100" style="border: 1px solid rgba(10,42,34,0.1)">
-                  <div class="font-serif text-gold fs-2 lh-1">Pan India</div>
-                  <p class="text-muted-dark small mt-2 mb-0">Presence serving diverse hospitality markets</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 reveal">
-            <div class="position-relative">
-              <div class="zoom-img rounded-4">
-                <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1974&auto=format&fit=crop" alt="Grand hotel lobby with marble floors" class="w-100 rounded-4" style="height: 500px; object-fit: cover">
-              </div>
-              <div class="position-absolute d-none d-sm-flex align-items-center gap-3 bg-emerald px-4 py-3 rounded-3 shadow" style="bottom: -24px; left: -24px">
-                <svg width="50" height="50" fill="none" viewBox="0 0 64 64">
-                  <use href="#lotus"></use>
-                </svg>
-                <div>
-                  <div class="font-serif text-cream fs-3 lh-1">7+</div>
-                  <div class="text-muted-light small">Properties Elevated</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="container position-relative" style="z-index:2; padding-top:5rem;"> 
+    <div class="row"> 
+      <div class="col-lg-8"> 
 
-    <br>
+        <div class="d-flex align-items-center gap-3 mb-4"> 
+          <svg width="40" height="40" fill="none" viewBox="0 0 64 64"> 
+            <use href="#lotus"></use> 
+          </svg> 
+        </div> 
+
+        <div class="mb-4"> 
+
+          <!-- LOGO -->
+          <img 
+            src="images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png" 
+            alt="The LotusLeaf Collection Logo"
+            class="img-fluid"
+            style="max-width:350px; height:auto;"
+          >
+
+          <!-- MAIN BRAND -->
+        
+
+          <!-- SERVICES -->
+          <p class="text-gold-gradient fs-5 mb-4" style="letter-spacing:0.08em;">
+            Hospitality Management
+              <span class="text-muted-light"> | </span> Consulting
+            <span class="text-muted-light"> | </span>
+            Pre-Opening Solutions
+          </p>
+
+          <!-- MAIN HEADING -->
+          <h2 
+            class="display-serif text-cream mb-3"
+            style="font-size:clamp(2rem,6vw,4.6rem); line-height:1.05;"
+          >
+            BUILDING EXCEPTIONAL
+            <span class="text-gold-gradient">HOSPITALITY</span>
+          </h2>
+
+          <!-- DESCRIPTION -->
+          <p 
+            class="text-muted-light fs-5 mb-5"
+            style="max-width:38rem; line-height:1.7;"
+          >
+            Delivering Sustainable Growth, Operational Excellence 
+            &amp; Profitable Hotel Assets.
+          </p>
+
+          <!-- PROPERTY TYPES -->
+          <div class="d-flex flex-wrap gap-4 mb-5">
+
+            <div>
+              <span 
+                class="text-gold-gradient"
+                style="font-size:1rem; letter-spacing:0.15em;"
+              >
+              </span>
+            </div>
+
+            <div>
+              <span 
+                class="text-gold-gradient"
+                style="font-size:1rem; letter-spacing:0.15em;"
+              >
+              </span>
+            </div>
+
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="d-flex flex-column flex-sm-row gap-3"> 
+
+            <a 
+              href="#contact" 
+              class="btn btn-gold px-4 py-3"
+            >
+              Partner With Us
+            </a> 
+
+            <a 
+              href="#services" 
+              class="btn btn-outline-cream px-4 py-3"
+            >
+              Explore Our Expertise
+            </a> 
+
+          </div>
+
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</header>
+
+   <!-- =========================================
+     ABOUT / THE LOTUSLEAF COLLECTION
+========================================= -->
+<section class="section bg-cream" id="about">
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-9 reveal">
+
+        
+        <h2 class="display-serif mt-3 mb-4"
+            style="color: var(--emerald); font-size: clamp(2.2rem, 4vw, 3.5rem);">
+          The LotusLeaf Collection
+        </h2>
+
+        <p class="text-muted-dark mx-auto"
+           style="max-width: 850px; font-size: 1.08rem; line-height: 1.9;">
+          Hospitality from strategy to operations.
+        </p>
+
+      </div>
+    </div>
+
+
+    <!-- COMPANY OVERVIEW -->
+    <div class="row align-items-center g-5">
+
+      <!-- CONTENT -->
+      <div class="col-lg-6 reveal">
+
+        <span class="overline">Company Overview</span>
+
+        <h3 class="display-serif mt-2 mb-4"
+            style="color: var(--emerald); font-size: clamp(2rem, 3.5vw, 2.8rem);">
+          Creating and growing profitable destinations
+        </h3>
+
+        <p class="text-muted-dark">
+          The LotusLeaf Collection is a hospitality management and consulting
+          company partnering with hotel owners, investors and developers to
+          create, operate and grow distinctive hospitality destinations.
+        </p>
+
+        <p class="text-muted-dark">
+          We combine strategic insight, operational expertise and commercial
+          thinking to help hospitality assets move from vision to execution
+          and from execution to sustainable growth.
+        </p>
+
+
+        <!-- TRUST / INSIGHT / EXECUTION -->
+        <div class="row g-3 mt-4">
+
+          <div class="col-4">
+            <div class="text-center p-3">
+              <div class="font-serif text-gold fs-2">01</div>
+              <div class="small fw-semibold mt-2"
+                   style="color:var(--emerald);">
+                Trust
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="text-center p-3">
+              <div class="font-serif text-gold fs-2">02</div>
+              <div class="small fw-semibold mt-2"
+                   style="color:var(--emerald);">
+                Insight
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="text-center p-3">
+              <div class="font-serif text-gold fs-2">03</div>
+              <div class="small fw-semibold mt-2"
+                   style="color:var(--emerald);">
+                Execution
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- IMAGE -->
+      <div class="col-lg-6 reveal">
+
+        <div class="position-relative">
+
+          <div class="zoom-img rounded-4 overflow-hidden">
+
+            <img
+              src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1974&auto=format&fit=crop"
+              alt="Luxury hospitality destination"
+              class="w-100 rounded-4"
+              style="height:520px; object-fit:cover;"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <!-- EXPERIENCE BADGE -->
+          <div
+            class="position-absolute d-none d-sm-flex align-items-center gap-3 bg-emerald px-4 py-3 rounded-3 shadow"
+            style="bottom:-24px; left:-24px;">
+
+            <svg width="48"
+                 height="48"
+                 fill="none"
+                 viewBox="0 0 64 64"
+                 aria-hidden="true">
+
+              <use href="#lotus"></use>
+
+            </svg>
+
+            <div>
+
+              <div class="font-serif text-cream fs-3 lh-1">
+                100+
+              </div>
+
+              <div class="text-muted-light small mt-1">
+                Years Combined<br>
+                Leadership Experience
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         PHILOSOPHY
+    ========================================= -->
+    <div class="row justify-content-center mt-5 pt-5">
+
+      <div class="col-lg-10 text-center reveal">
+
+        <span class="overline">Our Philosophy</span>
+
+        <h3 class="display-serif mt-2 mb-3"
+            style="color:var(--emerald); font-size:clamp(2rem,3.5vw,2.8rem);">
+          People. Places. Possibilities.
+        </h3>
+
+        <p class="text-muted-dark mx-auto"
+           style="max-width:800px; line-height:1.9;">
+          Meaningful hospitality rooted in trust, collaboration,
+          sustainability and respect for people and places.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- PHILOSOPHY CARDS -->
+    <div class="row g-4 mt-4">
+
+      <!-- PEOPLE -->
+      <div class="col-lg-4 col-md-6 reveal">
+
+        <div class="p-4 p-lg-5 bg-white rounded-4 h-100"
+             style="border:1px solid rgba(10,42,34,0.10);">
+
+          <span class="font-serif text-gold fs-2">
+            01
+          </span>
+
+          <h4 class="display-serif mt-3 mb-3"
+              style="color:var(--emerald);">
+            People
+          </h4>
+
+          <p class="text-muted-dark small mb-0"
+             style="line-height:1.85;">
+            Building strong relationships with owners, teams, partners
+            and guests to create a culture of trust, collaboration
+            and meaningful hospitality.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- PLACES -->
+      <div class="col-lg-4 col-md-6 reveal">
+
+        <div class="p-4 p-lg-5 bg-white rounded-4 h-100"
+             style="border:1px solid rgba(10,42,34,0.10);">
+
+          <span class="font-serif text-gold fs-2">
+            02
+          </span>
+
+          <h4 class="display-serif mt-3 mb-3"
+              style="color:var(--emerald);">
+            Places
+          </h4>
+
+          <p class="text-muted-dark small mb-0"
+             style="line-height:1.85;">
+            Respecting the character, culture and context of every
+            destination while creating hospitality experiences that
+            feel authentic and relevant.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- POSSIBILITIES -->
+      <div class="col-lg-4 col-md-6 reveal">
+
+        <div class="p-4 p-lg-5 bg-white rounded-4 h-100"
+             style="border:1px solid rgba(10,42,34,0.10);">
+
+          <span class="font-serif text-gold fs-2">
+            03
+          </span>
+
+          <h4 class="display-serif mt-3 mb-3"
+              style="color:var(--emerald);">
+            Possibilities
+          </h4>
+
+          <p class="text-muted-dark small mb-0"
+             style="line-height:1.85;">
+            Unlocking opportunities through strategic thinking,
+            innovation, operational excellence and sustainable
+            commercial growth.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         STRATEGY TO OPERATIONS
+    ========================================= -->
+    <div class="row align-items-center g-5 mt-5 pt-5">
+
+      <div class="col-lg-5 reveal">
+
+        <span class="overline">
+          Hospitality From Strategy To Operations
+        </span>
+
+        <h3 class="display-serif mt-2 mb-4"
+            style="color:var(--emerald); font-size:clamp(2rem,3.5vw,2.8rem);">
+          From concept to performance
+        </h3>
+
+        <p class="text-muted-dark"
+           style="line-height:1.9;">
+          Our end-to-end approach brings together strategic planning,
+          development expertise and operational execution across the
+          hospitality lifecycle.
+        </p>
+
+      </div>
+
+
+      <div class="col-lg-7 reveal">
+
+        <div class="row g-3">
+
+          <!-- STRATEGY -->
+          <div class="col-md-6">
+
+            <div class="p-4 bg-white rounded-4 h-100"
+                 style="border:1px solid rgba(10,42,34,0.10);">
+
+              <span class="text-gold font-serif fs-4">
+                01
+              </span>
+
+              <h5 class="mt-3 mb-2"
+                  style="color:var(--emerald);">
+                Concept & Feasibility
+              </h5>
+
+              <p class="text-muted-dark small mb-0">
+                Concept development, feasibility and strategic
+                positioning.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- PRE OPENING -->
+          <div class="col-md-6">
+
+            <div class="p-4 bg-white rounded-4 h-100"
+                 style="border:1px solid rgba(10,42,34,0.10);">
+
+              <span class="text-gold font-serif fs-4">
+                02
+              </span>
+
+              <h5 class="mt-3 mb-2"
+                  style="color:var(--emerald);">
+                Pre-Opening
+              </h5>
+
+              <p class="text-muted-dark small mb-0">
+                Pre-opening planning, brand development and
+                operational readiness.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- OPERATIONS -->
+          <div class="col-md-6">
+
+            <div class="p-4 bg-white rounded-4 h-100"
+                 style="border:1px solid rgba(10,42,34,0.10);">
+
+              <span class="text-gold font-serif fs-4">
+                03
+              </span>
+
+              <h5 class="mt-3 mb-2"
+                  style="color:var(--emerald);">
+                Operations
+              </h5>
+
+              <p class="text-muted-dark small mb-0">
+                Operational management, service excellence,
+                people and processes.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- SALES & PERFORMANCE -->
+          <div class="col-md-6">
+
+            <div class="p-4 bg-white rounded-4 h-100"
+                 style="border:1px solid rgba(10,42,34,0.10);">
+
+              <span class="text-gold font-serif fs-4">
+                04
+              </span>
+
+              <h5 class="mt-3 mb-2"
+                  style="color:var(--emerald);">
+                Sales & Performance
+              </h5>
+
+              <p class="text-muted-dark small mb-0">
+                Commercial growth, sales, revenue optimisation
+                and performance improvement.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+   
+
+
+    <!-- =========================================
+         CLOSING STATEMENT
+    ========================================= -->
+    <div class="row justify-content-center mt-5">
+
+      <div class="col-lg-8 text-center reveal">
+
+        <span class="overline">
+          Our Commitment
+        </span>
+
+        <h3 class="display-serif mt-2 mb-3"
+            style="color:var(--emerald);">
+          Creating Hospitality Assets for a Brighter Tomorrow
+        </h3>
+
+        <p class="text-muted-dark"
+           style="line-height:1.9;">
+          Through thoughtful strategy, responsible operations and
+          long-term partnerships, we aim to create hospitality assets
+          that deliver meaningful experiences and sustainable value.
+        </p>
+
+        <div class="mt-4">
+
+          <span class="px-3 py-2 rounded-pill"
+                style="
+                  background:rgba(201,162,75,0.12);
+                  color:var(--emerald);
+                  font-size:.8rem;
+                  letter-spacing:.12em;
+                  text-transform:uppercase;
+                  margin:0 3px;
+                ">
+            Trust
+          </span>
+
+          <span class="px-3 py-2 rounded-pill"
+                style="
+                  background:rgba(201,162,75,0.12);
+                  color:var(--emerald);
+                  font-size:.8rem;
+                  letter-spacing:.12em;
+                  text-transform:uppercase;
+                  margin:0 3px;
+                ">
+            Insight
+          </span>
+
+          <span class="px-3 py-2 rounded-pill"
+                style="
+                  background:rgba(201,162,75,0.12);
+                  color:var(--emerald);
+                  font-size:.8rem;
+                  letter-spacing:.12em;
+                  text-transform:uppercase;
+                  margin:0 3px;
+                ">
+            Execution
+          </span>
+
+          <span class="px-3 py-2 rounded-pill"
+                style="
+                  background:rgba(201,162,75,0.12);
+                  color:var(--emerald);
+                  font-size:.8rem;
+                  letter-spacing:.12em;
+                  text-transform:uppercase;
+                  margin:0 3px;
+                ">
+            Sustainable Growth
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<br>
     
 
-    <!-- VALUES SECTION -->
-    <section class="section values-section" id="values">
-      <div class="container">
-        <div class="text-center mx-auto mb-4" style="max-width:650px;">
-          <span class="overline">What Guides Us</span>
-          <h2 class="display-serif mt-2 mb-3">Pillars of Excellence</h2>
-          <p class="section-desc">
-            The principles that define our culture, shape every decision,
-            and drive exceptional hospitality experiences.
+  <!-- =========================================================
+     THE LOTUSLEAF COLLECTION
+     VISION / MISSION / CORE VALUES / PROMISE
+     PREMIUM LUXURY VERSION
+========================================================= -->
+
+<section class="section values-section ll-values" id="values">
+
+  <div class="container">
+
+    <!-- =====================================================
+         TOP BRAND VALUES
+    ====================================================== -->
+
+    <div class="ll-top-values reveal">
+      <span>PEOPLE</span>
+      <b>|</b>
+      <span class="active">PLACES</span>
+      <b>|</b>
+      <span>POSSIBILITIES</span>
+    </div>
+
+
+    <!-- =====================================================
+         OUR VISION
+    ====================================================== -->
+
+    <div class="ll-vision reveal">
+
+      <div class="ll-section-label">
+        <span>OUR VISION</span>
+        <span class="ll-label-line"></span>
+      </div>
+
+      <div class="ll-vision-layout">
+
+        <div class="ll-vision-heading">
+          <h2 class="ll-vision-title">
+            Vision <span>2035</span>
+          </h2>
+        </div>
+
+        <div class="ll-vision-content">
+          <p>
+            To become India’s most trusted and respected hotel management
+            company, recognized for transforming hospitality assets into
+            <strong>profitable, sustainable</strong> and
+            <strong>guest-centric destinations</strong> through innovation,
+            operational excellence and strategic partnerships.
           </p>
         </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="vision-mission-block">
-              <span class="overline">Our Vision</span>
-              <p class="mt-2">
-                To be India's most trusted hospitality management and consulting partner,
-                transforming hospitality assets into distinguished destinations through
-                innovation, operational excellence, and exceptional guest experiences.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="vision-mission-block">
-              <span class="overline">Our Mission</span>
-              <p class="mt-2">
-                To empower hospitality ventures with strategic expertise,
-                sustainable growth solutions, and world-class operational
-                standards that maximize profitability and create lasting value.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-md-6 col-lg-4">
-            <div class="value-card">
-              <div class="value-icon"><i class="bi bi-award-fill"></i></div>
-              <h4>Excellence</h4>
-              <p>Pursuing the highest standards in service and business performance.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="value-card">
-              <div class="value-icon"><i class="bi bi-shield-check"></i></div>
-              <h4>Integrity</h4>
-              <p>Conducting business with transparency and accountability.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="value-card">
-              <div class="value-icon"><i class="bi bi-heart-fill"></i></div>
-              <h4>Guest First</h4>
-              <p>Designing every decision around memorable guest experiences.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="value-card">
-              <div class="value-icon"><i class="bi bi-lightbulb-fill"></i></div>
-              <h4>Innovation</h4>
-              <p>Embracing new ideas and technology to drive continuous improvement.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="value-card">
-              <div class="value-icon"><i class="bi bi-people-fill"></i></div>
-              <h4>Partnership</h4>
-              <p>Building long-term relationships based on shared success.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="value-card">
-              <div class="value-icon"><i class="bi bi-globe2"></i></div>
-              <h4>Sustainability</h4>
-              <p>Promoting responsible hospitality for long-term community value.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         GOLD DIVIDER
+    ====================================================== -->
+
+    <div class="ll-gold-divider">
+      <span></span>
+      <span class="ll-divider-dot"></span>
+      <span></span>
+    </div>
+
+
+    <!-- =====================================================
+         OUR MISSION
+    ====================================================== -->
+
+    <div class="ll-mission reveal">
+
+      <div class="ll-mission-icon">
+        <i class="bi bi-bullseye"></i>
+      </div>
+
+      <div class="ll-mission-content">
+
+        <div class="ll-section-label">
+          <span>OUR MISSION</span>
+          <span class="ll-label-line"></span>
+        </div>
+
+        <p class="ll-mission-intro">
+          We partner with hotel owners, investors and developers to create
+          long-term value by delivering:
+        </p>
+
+
+        <div class="ll-mission-list">
+
+          <!-- LEFT COLUMN -->
+          <div class="ll-mission-column">
+
+            <div class="ll-mission-item">
+              <span class="ll-bullet"></span>
+              <span>Exceptional hotel management solutions</span>
+            </div>
+
+            <div class="ll-mission-item">
+              <span class="ll-bullet"></span>
+              <span>Revenue-driven commercial strategies</span>
+            </div>
+
+            <div class="ll-mission-item">
+              <span class="ll-bullet"></span>
+              <span>Operational excellence across all departments</span>
+            </div>
+
+            <div class="ll-mission-item">
+              <span class="ll-bullet"></span>
+              <span>Successful pre-opening and asset optimization</span>
+            </div>
+
+          </div>
+
+
+          <!-- VERTICAL DIVIDER -->
+          <div class="ll-mission-divider"></div>
+
+
+          <!-- RIGHT COLUMN -->
+          <div class="ll-mission-column">
+
+            <div class="ll-mission-item">
+              <span class="ll-bullet"></span>
+              <span>Sustainable profitability and enhanced asset value</span>
+            </div>
+
+            <div class="ll-mission-item">
+              <span class="ll-bullet"></span>
+              <span>Memorable guest experiences through service excellence</span>
+            </div>
+
+            <div class="ll-mission-item">
+              <span class="ll-bullet"></span>
+              <span>People development and leadership excellence</span>
+            </div>
+
+            <div class="ll-mission-item">
+              <span class="ll-bullet"></span>
+              <span>Transparent governance and ethical business practices</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CORE VALUES DIVIDER
+    ====================================================== -->
+
+    <div class="ll-section-divider"></div>
+
+
+    <!-- =====================================================
+         WHY THE LOTUSLEAF COLLECTION
+    ====================================================== -->
+
+    <div class="ll-core-values reveal">
+
+      <div class="ll-core-heading">
+
+        <div class="ll-section-label">
+          <span>OUR CORE VALUES</span>
+          <span class="ll-label-line"></span>
+        </div>
+
+      </div>
+
+
+      <div class="ll-values-grid">
+
+
+        <!-- =================================================
+             INTEGRITY
+        ================================================== -->
+
+        <article class="ll-value-card">
+
+          <div class="ll-value-icon">
+            <i class="bi bi-shield"></i>
+          </div>
+
+          <h3>INTEGRITY</h3>
+
+          <span class="ll-small-line"></span>
+
+          <p>
+            We operate with honesty, transparency, accountability
+            and fairness in every engagement.
+          </p>
+
+        </article>
+
+
+        <!-- =================================================
+             PARTNERSHIP
+        ================================================== -->
+
+        <article class="ll-value-card">
+
+          <div class="ll-value-icon">
+            <i class="bi bi-people-fill" aria-hidden="true"></i>
+          </div>
+          <h3>PARTNERSHIP</h3>
+
+          <span class="ll-small-line"></span>
+
+          <p>
+            
+            We believe in long-term relationships built on trust,
+            collaboration and shared success.
+          </p>
+
+        </article>
+
+
+        <!-- =================================================
+             INNOVATION
+        ================================================== -->
+
+        <article class="ll-value-card">
+
+          <div class="ll-value-icon">
+            <i class="bi bi-lightbulb"></i>
+          </div>
+
+          <h3>INNOVATION</h3>
+
+          <span class="ll-small-line"></span>
+
+          <p>
+            We embrace technology, creativity and modern hospitality
+            practices to stay ahead of the industry.
+          </p>
+
+        </article>
+
+
+        <!-- =================================================
+             GUEST CENTRICITY
+        ================================================== -->
+
+        <article class="ll-value-card">
+
+          <div class="ll-value-icon">
+            <i class="bi bi-heart"></i>
+          </div>
+
+          <h3>GUEST CENTRICITY</h3>
+
+          <span class="ll-small-line"></span>
+
+          <p>
+            Every decision is driven by creating memorable guest
+            experiences and lasting brand loyalty.
+          </p>
+
+        </article>
+
+
+        <!-- =================================================
+             SUSTAINABILITY
+        ================================================== -->
+
+        <article class="ll-value-card">
+
+  <div class="ll-value-icon">
+    <svg aria-hidden="true" viewBox="0 0 24 24" style="display: block; width: 1.5rem; height: 1.5rem; fill: #2f7d32;">
+      <path d="M20.9 3.1C12.2 2.8 5.2 5.1 3.2 10.4c-1.2 3.2.8 6.6 4 6.6 5.4 0 10.4-6.1 13.7-13.9ZM4 21c1.8-5.3 5.5-8.8 11-11-3.2 2.3-5.7 5.4-7.4 9.1L4 21Z"/>
+    </svg>
+</div>
+
+          <h3>SUSTAINABILITY</h3>
+
+          <span class="ll-small-line"></span>
+
+          <p>
+            We promote responsible hospitality by respecting communities,
+            preserving the environment and creating businesses that
+            thrive for generations.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         OUR PROMISE
+    ====================================================== -->
+
+    <div class="ll-promise reveal">
+
+      <div class="ll-promise-label">
+        <span>OUR PROMISE</span>
+      </div>
+
+      <div class="ll-promise-line"></div>
+
+      <div class="ll-promise-content">
+
+        <h2>
+          Building Exceptional Hospitality
+        </h2>
+
+        <p>
+          through Strategic Leadership, Operational Excellence,
+          Sustainable Growth and Profitable Hotel Assets.
+        </p>
+
+      </div>
+
+      <div class="ll-promise-end-line"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PREMIUM LOTUSLEAF VALUES CSS
+========================================================= -->
+
+<style>
+
+  /* =========================================================
+     MAIN SECTION
+  ========================================================= */
+
+  .ll-values {
+    position: relative;
+    overflow: hidden;
+
+    background:
+      radial-gradient(
+        circle at 10% 10%,
+        rgba(201,162,75,.055),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 90% 85%,
+        rgba(201,162,75,.04),
+        transparent 30%
+      ),
+      var(--emerald, #0A2A22);
+
+    color: #ffffff;
+
+    padding-top: clamp(70px, 8vw, 120px);
+    padding-bottom: clamp(70px, 8vw, 120px);
+  }
+
+
+  .ll-values > .container {
+    position: relative;
+    z-index: 2;
+  }
+
+
+  /* =========================================================
+     TOP PEOPLE / PLACES / POSSIBILITIES
+  ========================================================= */
+
+  .ll-top-values {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 55px;
+
+    color: rgba(255,255,255,.8);
+
+    font-family: var(--font-sans, sans-serif);
+
+    font-size: .72rem;
+
+    font-weight: 600;
+
+    letter-spacing: .28em;
+
+    text-transform: uppercase;
+  }
+
+
+  .ll-top-values b {
+    color: var(--gold, #C9A24B);
+    font-weight: 400;
+  }
+
+
+  .ll-top-values .active {
+    color: var(--gold, #C9A24B);
+  }
+
+
+  /* =========================================================
+     SECTION LABEL
+  ========================================================= */
+
+  .ll-section-label {
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    color: var(--gold, #C9A24B);
+
+    font-family: var(--font-sans, sans-serif);
+
+    font-size: clamp(.78rem, 1vw, .95rem);
+
+    font-weight: 600;
+
+    letter-spacing: .27em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 24px;
+  }
+
+
+  .ll-label-line {
+    display: block;
+
+    width: 70px;
+
+    height: 1px;
+
+    background:
+      linear-gradient(
+        90deg,
+        var(--gold, #C9A24B),
+        rgba(201,162,75,.15)
+      );
+  }
+
+
+  /* =========================================================
+     VISION
+  ========================================================= */
+
+  .ll-vision {
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    padding-bottom: 10px;
+  }
+
+
+  .ll-vision-layout {
+    display: grid;
+
+    grid-template-columns: minmax(300px, .72fr) minmax(450px, 1.28fr);
+
+    align-items: center;
+
+    gap: clamp(45px, 6vw, 90px);
+  }
+
+
+  .ll-vision-title {
+    margin: 0;
+
+    color: #F7F5EF;
+
+    font-family: var(--font-serif, Georgia, serif);
+
+    font-size: clamp(4rem, 7vw, 7.2rem);
+
+    font-weight: 400;
+
+    line-height: .9;
+
+    letter-spacing: -.035em;
+  }
+
+
+  .ll-vision-title span {
+    display: block;
+
+    color: var(--gold, #C9A24B);
+
+    margin-top: 10px;
+  }
+
+
+  .ll-vision-content {
+    padding-top: 20px;
+  }
+
+
+  .ll-vision-content p {
+    margin: 0;
+
+    color: #ffffff !important;
+
+    font-family: var(--font-sans, sans-serif);
+
+    font-size: clamp(1rem, 1.35vw, 1.18rem);
+
+    font-weight: 400;
+
+    line-height: 1.72;
+  }
+
+
+  .ll-vision-content strong {
+    color: var(--gold, #C9A24B);
+
+    font-weight: 600;
+  }
+
+
+  /* =========================================================
+     GOLD DIVIDER
+  ========================================================= */
+
+  .ll-gold-divider {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    gap: 18px;
+
+    margin: 55px 0 55px;
+  }
+
+
+  .ll-gold-divider > span:first-child,
+  .ll-gold-divider > span:last-child {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(201,162,75,.75)
+      );
+  }
+
+
+  .ll-gold-divider > span:last-child {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(201,162,75,.75),
+        transparent
+      );
+  }
+
+
+  .ll-divider-dot {
+    width: 7px;
+
+    height: 7px;
+
+    flex: 0 0 7px;
+
+    border: 1px solid var(--gold, #C9A24B);
+
+    transform: rotate(45deg);
+  }
+
+
+  /* =========================================================
+     MISSION
+  ========================================================= */
+
+  .ll-mission {
+    display: grid;
+
+    grid-template-columns: 130px 1fr;
+
+    gap: 45px;
+
+    align-items: start;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+  }
+
+
+  .ll-mission-icon {
+    width: 120px;
+
+    height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--gold, #C9A24B);
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(201,162,75,.15),
+        rgba(201,162,75,.035)
+      );
+
+    border: 1px solid rgba(201,162,75,.55);
+
+    box-shadow:
+      inset 0 0 0 7px rgba(201,162,75,.035);
+
+    font-size: 3.5rem;
+  }
+
+
+  .ll-mission-content {
+    min-width: 0;
+  }
+
+
+  .ll-mission-intro {
+    margin: 0 0 22px;
+
+    color: #ffffff !important;
+
+    font-family: var(--font-sans, sans-serif);
+
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+
+    line-height: 1.65;
+  }
+
+
+  /* =========================================================
+     MISSION LIST
+  ========================================================= */
+
+  .ll-mission-list {
+    display: grid;
+
+    grid-template-columns: 1fr 1px 1fr;
+
+    gap: 30px;
+
+    align-items: stretch;
+  }
+
+
+  .ll-mission-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+  }
+
+
+  .ll-mission-divider {
+    width: 1px;
+
+    min-height: 100%;
+
+    background:
+      linear-gradient(
+        to bottom,
+        transparent,
+        rgba(201,162,75,.55),
+        transparent
+      );
+  }
+
+
+  .ll-mission-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    color: #ffffff;
+
+    font-family: var(--font-sans, sans-serif);
+
+    font-size: clamp(.92rem, 1.1vw, 1.04rem);
+
+    line-height: 1.5;
+  }
+
+
+  .ll-bullet {
+    width: 9px;
+
+    height: 9px;
+
+    flex: 0 0 9px;
+
+    margin-top: 7px;
+
+    border-radius: 50%;
+
+    background: var(--gold, #C9A24B);
+
+    box-shadow:
+      0 0 0 3px rgba(201,162,75,.07);
+  }
+
+
+  /* =========================================================
+     CORE VALUES DIVIDER
+  ========================================================= */
+
+  .ll-section-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 55px 0 28px;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(201,162,75,.7),
+        transparent
+      );
+  }
+
+
+  /* =========================================================
+     CORE VALUES HEADING
+  ========================================================= */
+
+  .ll-core-heading {
+    margin-bottom: 22px;
+  }
+
+
+  .ll-core-heading .ll-section-label {
+    margin-bottom: 0;
+  }
+
+
+  /* =========================================================
+     CORE VALUE GRID
+  ========================================================= */
+
+  .ll-values-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 6px;
+  }
+
+
+  .ll-value-card {
+    min-height: 225px;
+
+    padding: 22px 20px 25px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.018)
+      );
+
+    border: 1px solid rgba(201,162,75,.13);
+
+    transition: none;
+
+    border-radius: 3px;
+  }
+
+
+  /* NO HOVER / TOUCH COLOR CHANGE */
+
+  .ll-value-card:hover,
+  .ll-value-card:active,
+  .ll-value-card:focus,
+  .ll-value-card:focus-visible {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.018)
+      ) !important;
+
+    border-color: rgba(201,162,75,.13) !important;
+
+    transform: none !important;
+
+    box-shadow: none !important;
+  }
+
+
+  .ll-value-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+
+  /* =========================================================
+     CORE VALUE ICON
+  ========================================================= */
+
+  .ll-value-icon {
+    width: 72px;
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color: var(--gold, #C9A24B);
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(201,162,75,.15),
+        rgba(201,162,75,.035)
+      );
+
+    border: 1px solid rgba(201,162,75,.48);
+
+    font-size: 2.2rem;
+
+    margin-bottom: 14px;
+  }
+
+
+  /* =========================================================
+     CORE VALUE TITLE
+  ========================================================= */
+
+  .ll-value-card h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: var(--font-sans, sans-serif);
+
+    font-size: .86rem;
+
+    font-weight: 600;
+
+    letter-spacing: .2em;
+
+    line-height: 1.3;
+  }
+
+
+  .ll-small-line {
+    width: 42px;
+
+    height: 1px;
+
+    margin: 12px 0 10px;
+
+    background: var(--gold, #C9A24B);
+  }
+
+
+  .ll-value-card p {
+    margin: 0;
+
+    color: rgba(255,255,255,.72);
+
+    font-family: var(--font-sans, sans-serif);
+
+    font-size: .82rem;
+
+    line-height: 1.55;
+
+    max-width: 225px;
+  }
+
+
+  /* =========================================================
+     OUR PROMISE
+  ========================================================= */
+
+  .ll-promise {
+    display: grid;
+
+    grid-template-columns: auto 1px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 28px;
+
+    margin-top: 18px;
+
+    padding-top: 28px;
+  }
+
+
+  .ll-promise-label {
+    white-space: nowrap;
+  }
+
+
+  .ll-promise-label span {
+    color: #ffffff;
+
+    font-family: var(--font-sans, sans-serif);
+
+    font-size: .75rem;
+
+    font-weight: 600;
+
+    letter-spacing: .27em;
+
+    text-transform: uppercase;
+  }
+
+
+  .ll-promise-line {
+    width: 1px;
+
+    height: 55px;
+
+    background: var(--gold, #C9A24B);
+  }
+
+
+  .ll-promise-content h2 {
+    margin: 0;
+
+    color: #F7F5EF;
+
+    font-family: var(--font-serif, Georgia, serif);
+
+    font-size: clamp(2rem, 3.5vw, 3.3rem);
+
+    font-style: italic;
+
+    font-weight: 400;
+
+    line-height: 1.05;
+  }
+
+
+  .ll-promise-content p {
+    margin: 7px 0 0;
+
+    color: rgba(255,255,255,.75);
+
+    font-family: var(--font-serif, Georgia, serif);
+
+    font-size: clamp(.85rem, 1.1vw, 1rem);
+
+    font-style: italic;
+
+    line-height: 1.5;
+  }
+
+
+  .ll-promise-end-line {
+    width: 90px;
+
+    height: 1px;
+
+    background:
+      linear-gradient(
+        90deg,
+        var(--gold, #C9A24B),
+        transparent
+      );
+  }
+
+
+  /* =========================================================
+     TABLET
+  ========================================================= */
+
+  @media (max-width: 1199px) {
+
+    .ll-values-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 8px;
+    }
+
+
+    .ll-value-card {
+      min-height: 240px;
+    }
+
+
+    .ll-vision-layout {
+      grid-template-columns: .8fr 1.2fr;
+    }
+
+  }
+
+
+  /* =========================================================
+     MOBILE / TABLET
+  ========================================================= */
+
+  @media (max-width: 767px) {
+
+    .ll-values {
+      padding-top: 65px;
+
+      padding-bottom: 70px;
+    }
+
+
+    .ll-top-values {
+      justify-content: center;
+
+      font-size: .62rem;
+
+      letter-spacing: .18em;
+
+      gap: 9px;
+
+      margin-bottom: 40px;
+    }
+
+
+    .ll-section-label {
+      font-size: .72rem;
+
+      letter-spacing: .19em;
+
+      gap: 12px;
+    }
+
+
+    .ll-label-line {
+      width: 45px;
+    }
+
+
+    /* VISION */
+
+    .ll-vision-layout {
+      display: block;
+    }
+
+
+    .ll-vision-title {
+      font-size: 4rem;
+
+      margin-bottom: 30px;
+    }
+
+
+    .ll-vision-content {
+      padding-top: 0;
+    }
+
+
+    .ll-vision-content p {
+      font-size: .98rem;
+
+      line-height: 1.7;
+    }
+
+
+    .ll-gold-divider {
+      margin: 45px 0;
+    }
+
+
+    /* MISSION */
+
+    .ll-mission {
+      display: block;
+    }
+
+
+    .ll-mission-icon {
+      width: 88px;
+
+      height: 88px;
+
+      font-size: 2.6rem;
+
+      margin-bottom: 28px;
+    }
+
+
+    .ll-mission-intro {
+      font-size: .95rem;
+    }
+
+
+    .ll-mission-list {
+      display: block;
+    }
+
+
+    .ll-mission-column {
+      gap: 12px;
+    }
+
+
+    .ll-mission-column + .ll-mission-divider + .ll-mission-column {
+      margin-top: 12px;
+    }
+
+
+    .ll-mission-divider {
+      display: none;
+    }
+
+
+    .ll-mission-item {
+      font-size: .9rem;
+
+      gap: 11px;
+    }
+
+
+    /* CORE VALUES */
+
+    .ll-section-divider {
+      margin: 45px 0 25px;
+    }
+
+
+    .ll-values-grid {
+      grid-template-columns: 1fr;
+
+      gap: 8px;
+    }
+
+
+    .ll-value-card {
+      min-height: auto;
+
+      padding: 28px 25px;
+    }
+
+
+    .ll-value-icon {
+      width: 76px;
+
+      height: 76px;
+
+      font-size: 2.25rem;
+    }
+
+
+    .ll-value-card h3 {
+      font-size: .82rem;
+    }
+
+
+    .ll-value-card p {
+      max-width: 290px;
+
+      font-size: .84rem;
+    }
+
+
+    /* PROMISE */
+
+    .ll-promise {
+      display: block;
+
+      text-align: center;
+
+      padding-top: 45px;
+    }
+
+
+    .ll-promise-label {
+      margin-bottom: 20px;
+    }
+
+
+    .ll-promise-line {
+      width: 55px;
+
+      height: 1px;
+
+      margin: 0 auto 25px;
+    }
+
+
+    .ll-promise-content h2 {
+      font-size: 2.25rem;
+    }
+
+
+    .ll-promise-content p {
+      font-size: .85rem;
+
+      padding: 0 10px;
+    }
+
+
+    .ll-promise-end-line {
+      display: none;
+    }
+
+  }
+
+
+  /* =========================================================
+     SMALL MOBILE
+  ========================================================= */
+
+  @media (max-width: 420px) {
+
+    .ll-vision-title {
+      font-size: 3.35rem;
+    }
+
+
+    .ll-top-values {
+      font-size: .56rem;
+
+      letter-spacing: .13em;
+    }
+
+
+    .ll-mission-icon {
+      width: 80px;
+
+      height: 80px;
+
+      font-size: 2.35rem;
+    }
+
+
+    .ll-value-card {
+      padding: 25px 20px;
+    }
+
+
+    .ll-promise-content h2 {
+      font-size: 1.95rem;
+    }
+
+  }
+
+</style>
+
+
+    <!-- =====================================================
+         OUR CORE VALUES
+    ====================================================== -->
+
+    <br>
+    <br> 
+    <br>
+    <div class="core-values-section">
+
+      <div class="core-values-header reveal">
+
+        <div>
+
+          <div class="section-kicker">
+            WHY THE LOTUSLEAF COLLECTION
+          </div>
+
+          <h2 class="display-serif">
+            Creating Hospitality Assets for a <span>Brighter Tomorrow</span>
+          </h2>
+
+        </div>
+
+       
+
+      </div>
+
+
+      <!-- Core Values -->
+
+      <div class="core-values-grid">
+
+
+        <!-- Owner Focused -->
+
+        <div class="core-value-card reveal">
+
+          <div class="core-value-icon">
+            <i class="bi bi-person-check"></i>
+          </div>
+
+          <h3>Owner Focused</h3>
+
+          <p>
+            We align every decision with owner priorities, asset performance
+            and long-term value creation.
+          </p>
+
+          <div class="core-value-line"></div>
+
+        </div>
+
+
+        <!-- Revenue Driven -->
+
+        <div class="core-value-card reveal">
+
+          <div class="core-value-icon">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+
+          <h3>Revenue Driven</h3>
+
+          <p>
+            We identify opportunities that strengthen revenue, profitability
+            and sustainable commercial growth.
+          </p>
+
+          <div class="core-value-line"></div>
+
+        </div>
+
+
+        <!-- Operational Excellence -->
+
+        <div class="core-value-card reveal">
+
+          <div class="core-value-icon">
+            <i class="bi bi-gear-wide-connected"></i>
+          </div>
+
+          <h3>Operational Excellence</h3>
+
+          <p>
+            We build disciplined systems and standards that deliver
+            consistency, efficiency and exceptional guest experiences.
+          </p>
+
+          <div class="core-value-line"></div>
+
+        </div>
+
+
+        <!-- Commercial Expertise -->
+
+        <div class="core-value-card reveal">
+
+          <div class="core-value-icon">
+            <i class="bi bi-briefcase"></i>
+          </div>
+
+          <h3>Commercial Expertise</h3>
+
+          <p>
+            We combine market insight, strategic thinking and hospitality
+            expertise to unlock asset potential.
+          </p>
+
+          <div class="core-value-line"></div>
+
+        </div>
+
+
+        <!-- Human Capital Development -->
+
+        <div class="core-value-card reveal">
+
+          <div class="core-value-icon">
+            <i class="bi bi-person-up"></i>
+          </div>
+
+          <h3>Human Capital Development</h3>
+
+          <p>
+            We develop capable leaders and engaged teams who elevate
+            performance and create lasting impact.
+          </p>
+
+          <div class="core-value-line"></div>
+
+        </div>
+
+
+        <!-- Asset Value Creation -->
+
+        <div class="core-value-card reveal">
+
+          <div class="core-value-icon">
+            <i class="bi bi-building-up"></i>
+          </div>
+
+          <h3>Asset Value Creation</h3>
+
+          <p>
+            We create stronger, more resilient hospitality assets prepared
+            to thrive for generations.
+          </p>
+
+          <div class="core-value-line"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         OUR PROMISE
+    ====================================================== -->
+
+    <div class="promise-section reveal">
+
+      <div class="promise-inner">
+
+        <div class="promise-content">
+
+          <span class="section-kicker">
+           
+          </span>
+
+          <h2 class="display-serif">
+            Creating Hospitality Assets for a
+            <span>Brighter Tomorrow</span>
+          </h2>
+
+          <div class="promise-points" style="display: block;">
+            <span style="display: block;">TRUST</span>
+            <span style="display: block;">INSIGHT</span>
+            <span style="display: block;">EXECUTION</span>
+            <span style="display: block;">SUSTAINABLE GROWTH</span>
+          </div>
+
+        </div>
+
+
+        <div class="promise-mark">
+
+          <i class="bi bi-arrow-up-right"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     PREMIUM UI / UX STYLES
+========================================================= -->
+
+<style>
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.values-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   VISION
+========================================================= */
+
+.vision-intro {
+  position: relative;
+  padding: 20px 0 90px;
+  border-bottom: 1px solid rgba(10,42,34,.12);
+}
+
+.vision-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 35px;
+
+  color: var(--gold, #C9A24B);
+
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.vision-line {
+  width: 42px;
+  height: 1px;
+  background: var(--gold, #C9A24B);
+}
+
+.vision-title {
+  margin: 0;
+
+  color: var(--emerald, #0A2A22);
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: .95;
+  letter-spacing: -.035em;
+}
+
+.vision-title span {
+  color: var(--gold, #C9A24B);
+}
+
+.vision-description {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: var(--text-muted-dark, #5f6864);
+
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+.mission-section {
+  padding: 100px 0;
+}
+
+.mission-heading {
+  max-width: 850px;
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.mission-heading-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.section-kicker {
+  color: var(--gold, #C9A24B);
+
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.mission-heading-line {
+  width: 45px;
+  height: 1px;
+
+  background: var(--gold, #C9A24B);
+}
+
+.mission-heading h2 {
+  margin: 0 0 18px;
+
+  color: var(--emerald, #0A2A22);
+
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+
+.mission-heading h2 span {
+  color: var(--gold, #C9A24B);
+}
+
+.mission-heading p {
+  max-width: 650px;
+  margin: auto;
+
+  color: var(--text-muted-dark, #5f6864);
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   MISSION GRID
+========================================================= */
+
+.mission-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+
+.mission-card {
+  position: relative;
+  min-height: 270px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 25px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(10,42,34,.10);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.96),
+      rgba(246,242,232,.65)
+    );
+
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+}
+
+
+.mission-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  right: -45px;
+  bottom: -45px;
+
+  border-radius: 50%;
+
+  background: rgba(201,162,75,.10);
+
+  transition: transform .5s ease;
+}
+
+
+.mission-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(201,162,75,.55);
+
+  box-shadow:
+    0 20px 45px rgba(10,42,34,.10);
+}
+
+
+.mission-card:hover::before {
+  transform: scale(2.2);
+}
+
+
+.mission-card-top {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.mission-index {
+  color: rgba(10,42,34,.38);
+
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+
+.mission-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--emerald, #0A2A22);
+  color: var(--gold, #C9A24B);
+
+  font-size: 1.2rem;
+
+  transition:
+    transform .4s ease,
+    background .4s ease;
+}
+
+
+.mission-card:hover .mission-icon {
+  transform: rotate(-8deg) scale(1.08);
+
+  background: var(--gold, #C9A24B);
+  color: var(--emerald, #0A2A22);
+}
+
+
+.mission-card-content {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.mission-card h3 {
+  max-width: 230px;
+
+  margin: 0;
+
+  color: var(--emerald, #0A2A22);
+
+  font-size: 1.05rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+
+.mission-arrow {
+  flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(10,42,34,.12);
+  border-radius: 50%;
+
+  color: var(--emerald, #0A2A22);
+
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    color .35s ease;
+}
+
+
+.mission-card:hover .mission-arrow {
+  transform: translate(3px,-3px);
+
+  background: var(--emerald, #0A2A22);
+  color: var(--gold, #C9A24B);
+}
+3+
+
+/* =========================================================
+   CORE VALUES
+========================================================= */
+
+.core-values-section {
+  padding: 25px 0 100px;
+}
+
+
+.core-values-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+
+  gap: 40px;
+
+  margin-bottom: 50px;
+}
+
+
+.core-values-header > div {
+  width: 100%;
+  max-width: 900px;
+}
+
+
+.core-values-header h2 {
+  margin: 12px auto 0;
+
+  color: var(--emerald, #0A2A22);
+
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1;
+}
+
+
+.core-values-header h2 span {
+  color: var(--gold, #C9A24B);
+}
+
+
+.core-values-header p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: var(--text-muted-dark, #5f6864);
+
+  line-height: 1.8;
+}
+
+
+.core-values-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+
+.core-value-card {
+  position: relative;
+
+  min-height: 310px;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(10,42,34,.10);
+  border-radius: 18px;
+
+  background: #fff;
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease,
+    border-color .4s ease;
+}
+
+
+.core-value-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(201,162,75,.5);
+
+  box-shadow:
+    0 20px 45px rgba(10,42,34,.09);
+}
+
+
+.core-value-number {
+  position: absolute;
+
+  top: 25px;
+  right: 28px;
+
+  color: rgba(10,42,34,.16);
+
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+
+.core-value-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  border-radius: 50%;
+
+  background: rgba(10,42,34,.06);
+
+  color: var(--emerald, #0A2A22);
+
+  font-size: 1.3rem;
+
+  transition: all .4s ease;
+}
+
+
+.core-value-card:hover .core-value-icon {
+  background: var(--emerald, #0A2A22);
+
+  color: var(--gold, #C9A24B);
+
+  transform: scale(1.08);
+}
+
+
+.core-value-card h3 {
+  margin-bottom: 14px;
+
+  color: var(--emerald, #0A2A22);
+
+  font-size: 1.15rem;
+
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+
+.core-value-card p {
+  max-width: 340px;
+
+  margin: 0;
+
+  color: var(--text-muted-dark, #5f6864);
+
+  line-height: 1.75;
+}
+
+
+.core-value-line {
+  position: absolute;
+
+  left: 30px;
+  bottom: 25px;
+
+  width: 35px;
+  height: 2px;
+
+  background: var(--gold, #C9A24B);
+
+  transition: width .4s ease;
+}
+
+
+.core-value-card:hover .core-value-line {
+  width: 80px;
+}
+
+
+/* =========================================================
+   PROMISE
+========================================================= */
+
+.promise-section {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0A2A22 0%,
+      #10382D 55%,
+      #0A2A22 100%
+    );
+
+  box-shadow:
+    0 30px 70px rgba(10,42,34,.18);
+}
+
+
+.promise-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  right: -160px;
+  top: -180px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(201,162,75,.16);
+}
+
+
+.promise-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  left: -120px;
+  bottom: -150px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(201,162,75,.10);
+}
+
+
+.promise-inner {
+  position: relative;
+  z-index: 2;
+
+  min-height: 330px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 65px 70px;
+}
+
+
+.promise-content h2 {
+  max-width: 800px;
+
+  margin: 15px 0;
+
+  color: var(--cream, #F5F0E6);
+
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+
+  line-height: 1;
+
+  letter-spacing: -.03em;
+}
+
+
+.promise-content h2 span {
+  color: var(--gold, #C9A24B);
+}
+
+
+.promise-content p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: rgba(245,240,230,.72);
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+.promise-mark {
+  flex-shrink: 0;
+
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(201,162,75,.45);
+
+  border-radius: 50%;
+
+  color: var(--gold, #C9A24B);
+
+  font-size: 1.4rem;
+
+  transition:
+    transform .4s ease,
+    background .4s ease;
+}
+
+
+.promise-section:hover .promise-mark {
+  transform: rotate(45deg);
+
+  background: rgba(201,162,75,.10);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .mission-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .core-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .vision-intro {
+    padding-bottom: 60px;
+  }
+
+  .vision-title {
+    font-size: 3.2rem;
+  }
+
+  .mission-section {
+    padding: 70px 0;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-card {
+    min-height: 230px;
+  }
+
+  .core-values-section {
+    padding-bottom: 70px;
+  }
+
+  .core-values-header {
+    display: block;
+  }
+
+  .core-values-header p {
+    margin-top: 20px;
+  }
+
+  .core-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .core-value-card {
+    min-height: 280px;
+  }
+
+  .promise-inner {
+    min-height: auto;
+
+    display: block;
+
+    padding: 50px 28px;
+  }
+
+  .promise-mark {
+    margin-top: 35px;
+  }
+
+}
+</style>
     <!-- SERVICES -->
     <section class="section bg-cream" id="services">
       <div class="container">
         <div class="reveal" style="max-width: 40rem">
-          <span class="overline">Core Expertise</span>
+          <span class="overline">Our Service Portfolio</span>
           <h2 class="display-serif mt-2" style="color: var(--emerald); font-size: clamp(2rem, 4vw, 3rem)">
-            Services engineered for growth
+            Solutions for a Stronger Tomorrow
           </h2>
+          <p class="text-muted-dark mt-3 mb-0">Business today meets opportunity. We create hospitality assets for a brighter tomorrow through trust, insight, execution, and sustainable growth.</p>
         </div>
         <div class="row g-4 mt-3" id="servicesGrid">
           <!-- Services will be dynamically inserted here -->
         </div>
       </div>
     </section>
+    <!-- CREATION / PRE-OPENING SERVICES -->
+    <section class="section bg-emerald" id="creation">
+      <div class="container">
+        <div class="row align-items-end g-4 mb-5">
+          <div class="col-lg-7">
+            <span class="overline">Scope of Work</span>
+            <h2 class="display-serif mt-2" style="color: var(--cream); font-size: clamp(2rem, 4vw, 3rem)">
+              Pre-opening Services
+            </h2>
+          </div>
+          <div class="col-lg-5">
+            <p class="text-muted-light mb-0">From vision to a grand opening, we bring together the strategy, people, systems, and standards needed to launch with confidence.</p>
+          </div>
+        </div>
+
+        <div class="row g-4 preopening-flow">
+          <div class="col-md-6 col-lg-4"><div class="preopening-card h-100">
+            <span class="preopening-icon" aria-hidden="true"><i class="bi bi-calendar2-check"></i></span>
+            <h3 class="h4 mt-3" style="color: var(--emerald)">Timeline</h3>
+            <ul class="text-muted-dark mb-0"><li>Project Schedule</li><li>Milestones &amp; Deliverables</li><li>Critical Path Planning</li><li>Progress Monitoring</li><li>Project Roadmap</li></ul>
+          </div></div>
+          <div class="col-md-6 col-lg-4"><div class="preopening-card h-100">
+            <span class="preopening-icon" aria-hidden="true"><i class="bi bi-pencil-square"></i></span>
+            <h3 class="h4 mt-3" style="color: var(--emerald)">Planning</h3>
+            <ul class="text-muted-dark mb-0"><li>Market Assessment</li><li>Hotel Positioning</li><li>Financial Feasibility</li><li>Business Plan</li></ul>
+          </div></div>
+          <div class="col-md-6 col-lg-4"><div class="preopening-card h-100">
+            <span class="preopening-icon" aria-hidden="true"><i class="bi bi-buildings"></i></span>
+            <h3 class="h4 mt-3" style="color: var(--emerald)">Design</h3>
+            <ul class="text-muted-dark mb-0"><li>Concept Development</li><li>Architectural Review</li><li>Interior Design Guidance</li><li>BOH &amp; FOH Planning</li><li>Kitchen &amp; Engineering</li></ul>
+          </div></div>
+          <div class="col-md-6 col-lg-4"><div class="preopening-card h-100">
+            <span class="preopening-icon" aria-hidden="true"><i class="bi bi-people"></i></span>
+            <h3 class="h4 mt-3" style="color: var(--emerald)">Recruitment</h3>
+            <ul class="text-muted-dark mb-0"><li>Organization Structure</li><li>Manpower Planning</li><li>Recruitment Strategy</li><li>Key Management Hiring</li><li>HR Policies &amp; Compliance</li></ul>
+          </div></div>
+          <div class="col-md-6 col-lg-4"><div class="preopening-card h-100">
+            <span class="preopening-icon" aria-hidden="true"><i class="bi bi-box-seam"></i></span>
+            <h3 class="h4 mt-3" style="color: var(--emerald)">Procurement</h3>
+            <ul class="text-muted-dark mb-0"><li>FF&amp;E Specifications</li><li>Vendor Identification</li><li>Purchasing &amp; Negotiation</li><li>Cost Control</li><li>Logistics &amp; Tracking</li></ul>
+          </div></div>
+          <div class="col-md-6 col-lg-4"><div class="preopening-card h-100">
+            <span class="preopening-icon" aria-hidden="true"><i class="bi bi-mortarboard"></i></span>
+            <h3 class="h4 mt-3" style="color: var(--emerald)">Training</h3>
+            <ul class="text-muted-dark mb-0"><li>SOP Development</li><li>Brand Standards</li><li>Departmental Training</li><li>Service Culture</li><li>Mock Operations</li></ul>
+          </div></div>
+          <div class="col-md-6 col-lg-4"><div class="preopening-card h-100">
+            <span class="preopening-icon" aria-hidden="true"><i class="bi bi-pc-display"></i></span>
+            <h3 class="h4 mt-3" style="color: var(--emerald)">Systems</h3>
+            <ul class="text-muted-dark mb-0"><li>PMS &amp; POS Setup</li><li>Channel Manager</li><li>Revenue Management Systems</li><li>Finance &amp; Accounting</li><li>Reporting &amp; MIS</li></ul>
+          </div></div>
+          <div class="col-md-6 col-lg-4"><div class="preopening-card h-100">
+            <span class="preopening-icon" aria-hidden="true"><i class="bi bi-rocket-takeoff"></i></span>
+            <h3 class="h4 mt-3" style="color: var(--emerald)">Opening</h3>
+            <ul class="text-muted-dark mb-0"><li>Trial Operations</li><li>Soft Opening</li><li>Sales &amp; Marketing Launch</li><li>Grand Opening</li><li>Stabilization Support</li></ul>
+          </div></div>
+        </div>
+      </div>
+    </section>
+    <!-- HOTEL MANAGEMENT SERVICES -->
+    <section class="section management-services-section" id="hotel-management-services">
+      <div class="container">
+        <div class="management-services-header text-center mx-auto mb-5">
+          <span class="overline">Hotel Management Services</span>
+          <h2 class="display-serif mt-2">Comprehensive Management for Sustainable Growth</h2>
+          <p class="text-muted-dark mb-0">Integrated expertise and hands-on execution across every part of your hotel.</p>
+        </div>
+
+        <div class="row g-4 management-services-grid">
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-people"></i></span>
+                <h3 class="h4 mb-0">HR</h3>
+              </div>
+              <ul>
+                <li>Talent &amp; Development</li>
+                <li>Performance Management</li>
+                <li>Employee Engagement</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-clipboard-check"></i></span>
+                <h3 class="h4 mb-0">Operations</h3>
+              </div>
+              <ul>
+                <li>Guest Experience</li>
+                <li>SOP Implementation</li>
+                <li>Quality &amp; Compliance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-calculator"></i></span>
+                <h3 class="h4 mb-0">Finance</h3>
+              </div>
+              <ul>
+                <li>Budgeting &amp; Forecasting</li>
+                <li>Financial Reporting</li>
+                <li>Cost Control</li>
+                <li>Statutory Compliance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i></span>
+                <h3 class="h4 mb-0">Revenue</h3>
+              </div>
+              <ul>
+                <li>Pricing Strategy</li>
+                <li>Demand Forecasting</li>
+                <li>Channel Management</li>
+                <li>Revenue Optimization</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-bag-check"></i></span>
+                <h3 class="h4 mb-0">Purchase</h3>
+              </div>
+              <ul>
+                <li>Vendor Management</li>
+                <li>Negotiation &amp; Procurement</li>
+                <li>Quality Assurance</li>
+                <li>Cost Monitoring</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-bar-chart"></i></span>
+                <h3 class="h4 mb-0">Sales</h3>
+              </div>
+              <ul>
+                <li>Market Positioning</li>
+                <li>Corporate &amp; Leisure Sales</li>
+                <li>Trade Partnerships</li>
+                <li>Direct Booking Growth</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-cup-hot"></i></span>
+                <h3 class="h4 mb-0">F&amp;B</h3>
+              </div>
+              <ul>
+                <li>Restaurant Operations</li>
+                <li>Menu Planning</li>
+                <li>Cost Control</li>
+                <li>Guest Experience</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-house-door"></i></span>
+                <h3 class="h4 mb-0">Housekeeping</h3>
+              </div>
+              <ul>
+                <li>Cleaning &amp; Hygiene</li>
+                <li>Room Care</li>
+                <li>Linen Management</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-box-seam"></i></span>
+                <h3 class="h4 mb-0">Store</h3>
+              </div>
+              <ul>
+                <li>Inventory Control</li>
+                <li>Stock Management</li>
+                <li>Receiving &amp; Issuing</li>
+                <li>Store Audits</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="management-service-card h-100">
+              <div class="service-card-head">
+                <span class="service-card-icon" aria-hidden="true"><i class="bi bi-tools"></i></span>
+                <h3 class="h4 mb-0">Engineering</h3>
+              </div>
+              <ul>
+                <li>Preventive Maintenance</li>
+                <li>Asset Management</li>
+                <li>Energy Optimization</li>
+                <li>Safety &amp; Compliance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+    <!-- COMMERCIAL MANAGEMENT -->
+    <section class="section bg-cream commercial-section" id="commercial-management">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width:700px;">
+          <span class="overline" style="color:var(--gold-soft);">Commercial Excellence</span>
+          <h2 class="display-serif mt-2" style="color:var(--gold-soft); font-size:clamp(2rem,4vw,3.25rem);">Commercial Management</h2>
+          <p class="style="color:var(--gold-soft)>A connected strategy to grow demand, strengthen distribution and maximize property revenue.</p>
+        </div>
+        <style>
+          .commercial-section { position:relative; overflow:hidden; color:#f6f2e8; background:radial-gradient(ellipse at 50% 0%,#174b3d 0%,#0c2923 48%,#071a17 100%) !important; }
+          .commercial-section::before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.18; background-image:radial-gradient(rgba(222,190,112,.55) .7px,transparent .7px); background-size:24px 24px; mask-image:linear-gradient(to bottom,black,transparent 80%); }
+          .commercial-section > .container { position:relative; z-index:1; }
+          .commercial-wheel { display:grid; grid-template-columns:1fr minmax(220px,1.1fr) 1fr; gap:1rem; align-items:stretch; max-width:1050px; margin:auto; }
+          .commercial-panel { padding:1.5rem; border:1px solid rgba(224,194,124,.25); border-radius:1.25rem; background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035)); color:#f6f2e8; box-shadow:0 16px 38px rgba(0,0,0,.22); backdrop-filter:blur(10px); transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,background .25s ease; }
+          .commercial-panel:hover, .commercial-panel:focus-within { transform:translateY(-6px); border-color:var(--gold-soft); background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.05)); box-shadow:0 22px 44px rgba(0,0,0,.32),0 0 24px rgba(212,175,55,.1); }
+          .commercial-panel h3 { font-family:"Cormorant Garamond",serif; font-size:1.65rem; font-weight:700; margin:0 0 1rem; color:var(--gold-soft); }
+          .commercial-panel ul { list-style:none; padding:0; margin:0; }
+          .commercial-panel li { display:flex; gap:.65rem; align-items:center; padding:.32rem 0; color:rgba(246,242,232,.78); font-size:.92rem; transition:color .2s ease,transform .2s ease; }
+          .commercial-panel li:hover { color:#fff; transform:translateX(4px); }
+          .commercial-panel li::before { content:""; width:7px; height:7px; flex:0 0 7px; border-radius:50%; background:var(--gold); box-shadow:0 0 10px rgba(212,175,55,.55); }
+          .commercial-core { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; min-height:280px; padding:2rem; color:#fff; border-radius:50%; background:radial-gradient(circle at 35% 25%,#2c7459,#0d382d 72%); box-shadow:0 0 0 9px #0b2822,0 0 0 10px rgba(212,175,55,.65),0 18px 40px rgba(0,0,0,.38); transition:transform .3s ease,box-shadow .3s ease; }
+          .commercial-core:hover { transform:scale(1.035); box-shadow:0 0 0 9px #0b2822,0 0 0 11px rgba(212,175,55,.8),0 24px 55px rgba(0,0,0,.48); }
+          .commercial-core i { color:var(--gold-soft); font-size:2rem; }
+          .commercial-core h3 { font-family:"Cormorant Garamond",serif; font-size:2rem; line-height:1; margin:.7rem 0; }
+          .commercial-core p { max-width:190px; margin:0; color:rgba(255,255,255,.78); font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; }
+          .commercial-foot { grid-column:1/-1; display:flex; justify-content:center; flex-wrap:wrap; gap:.6rem 1.5rem; margin-top:.5rem; color:rgba(246,242,232,.72); font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; }
+          .commercial-foot span::before { content:"✦"; color:var(--gold); margin-right:.45rem; }
+          @media(max-width:767px) { .commercial-wheel { grid-template-columns:1fr 1fr; } .commercial-core { grid-column:1/-1; grid-row:1; min-height:230px; width:230px; justify-self:center; } .commercial-panel { padding:1.2rem; } }
+          @media(max-width:480px) { .commercial-wheel { grid-template-columns:1fr; } .commercial-core { grid-column:1; } .commercial-foot { grid-column:1; } }
+          @media(prefers-reduced-motion:reduce) { .commercial-panel,.commercial-panel li,.commercial-core { transition:none; } .commercial-panel:hover,.commercial-panel:focus-within,.commercial-core:hover,.commercial-panel li:hover { transform:none; } }
+        </style>
+        <div class="commercial-wheel">
+          <article class="commercial-panel"><h3>Distribution Channels</h3><ul><li>Direct Sales</li><li>OTA &amp; Metasearch</li><li>Corporate Accounts</li><li>Travel Trade</li><li>MICE</li><li>Digital Marketing</li></ul></article>
+          <div class="commercial-core"><i class="bi bi-bar-chart-line-fill" aria-hidden="true"></i><h3>Commercial<br>Management</h3><p>More guests · Higher revenue · Stronger growth</p></div>
+          <article class="commercial-panel"><h3>Sales &amp; Marketing</h3><ul><li>Sales Funnel</li><li>Lead Generation</li><li>Conversion</li><li>Guest Retention</li><li>Brand Loyalty</li></ul></article>
+          <article class="commercial-panel"><h3>Revenue Management</h3><ul><li>Occupancy Strategy</li><li>RevPAR Growth</li><li>Yield Management</li><li>Demand Forecasting</li><li>Pricing Strategy</li></ul></article>
+          <article class="commercial-panel"><h3>Performance &amp; Insight</h3><ul><li>Market Intelligence</li><li>Channel Mix</li><li>Campaign Performance</li><li>Revenue Reporting</li><li>Continuous Optimization</li></ul></article>
+          <div class="commercial-foot"><span>Trust</span><span>Insight</span><span>Execution</span><span>Sustainable Growth</span></div>
+        </div>
+      </div>
+    </section>
+    <!-- OWNER BENEFITS -->
+    <section class="section owner-benefits" id="owner-benefits">
+      <style>
+        .owner-benefits{position:relative;overflow:hidden;background:#fbfaf6;color:#101d43;padding:6rem 0 5rem}
+        .owner-benefits:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,250,246,.96),rgba(251,250,246,.72)),radial-gradient(circle at 58% 42%,#f3ead7,transparent 40%);pointer-events:none}
+        .owner-benefits .container{position:relative;z-index:1}.owner-benefits-layout{display:grid;grid-template-columns:minmax(250px,.82fr) minmax(470px,1.7fr);gap:2.25rem;align-items:center}
+        .owner-benefits-intro .overline{letter-spacing:.25em;font-size:.78rem;color:#17356a}.owner-benefits-intro h2{font:700 clamp(3rem,5vw,4.8rem)/.9 "Cormorant Garamond",Georgia,serif;color:#101d43;margin:1rem 0}.owner-benefits-intro h2 span{color:#a96816}.owner-benefits-intro p{font-size:.82rem;letter-spacing:.2em;color:#1d3157;text-transform:uppercase}
+        .owner-benefits-wheel{position:relative;min-height:500px;display:grid;place-items:center}.owner-benefits-orbit{position:absolute;width:min(420px,78vw);aspect-ratio:1;border:2px solid transparent;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 20%,#d9a536 25%,transparent 32% 52%,#f0cf72 58%,transparent 65% 100%) border-box;mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);mask-composite:exclude;animation:owner-orbit-spin 9s linear infinite;filter:drop-shadow(0 0 5px rgba(217,165,54,.55))}
+        .owner-benefits-center{position:relative;z-index:2;width:220px;height:220px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#fffdf6;border:7px solid #d5a33a;box-shadow:0 0 0 5px #fff,0 8px 25px #70531635;padding:1rem}
+        .owner-benefits-center:before,.owner-benefits-center:after{content:"";width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;border-bottom:34px solid #b77b21;position:absolute;top:24px;transform:rotate(-18deg)}.owner-benefits-center:after{border-bottom-color:#d9b66a;transform:rotate(18deg) translateX(19px)}
+        .owner-benefits-center strong{font:700 1.8rem/.88 "Cormorant Garamond",Georgia,serif;margin-top:2.4rem}.owner-benefits-center small{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;margin-top:.5rem}
+        .owner-benefit{position:absolute;z-index:3;width:138px;height:138px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:.8rem;color:#fff;background:radial-gradient(circle at 30% 25%,#276344,#0c3028 75%);border:2px solid #d8aa49;box-shadow:0 0 0 3px #fff,0 8px 18px #33220c30}
+        .owner-benefits-wheel{animation:owner-wheel-float 6s ease-in-out infinite}
+        .owner-benefit{animation:owner-benefit-pulse 3.6s ease-in-out infinite;transition:box-shadow .3s ease,filter .3s ease}
+        .owner-benefit:nth-of-type(3){animation-delay:.4s}.owner-benefit:nth-of-type(4){animation-delay:.8s}.owner-benefit:nth-of-type(5){animation-delay:1.2s}.owner-benefit:nth-of-type(6){animation-delay:1.6s}
+        .owner-benefit:hover{animation-play-state:paused;filter:brightness(1.15);box-shadow:0 0 0 4px #fff,0 0 24px #d8aa49,0 12px 24px #33220c45}
+        @keyframes owner-wheel-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+        @keyframes owner-orbit-spin{to{transform:rotate(360deg)}}
+        @keyframes owner-benefit-pulse{0%,100%{scale:1}50%{scale:1.045}}
+        .owner-benefit:nth-of-type(even){background:radial-gradient(circle at 30% 25%,#bf872e,#633808 78%)}.owner-benefit i{font-size:1.5rem;margin-bottom:.18rem}.owner-benefit b{font:600 1.25rem/1 "Cormorant Garamond",Georgia,serif}.owner-benefit span{font-size:.7rem;line-height:1.2;margin-top:.25rem}.benefit-gop{top:0;left:50%;transform:translateX(-50%)}.benefit-adr{top:13%;left:15%}.benefit-transparency{top:13%;right:15%}.benefit-enhancement{bottom:13%;left:15%}.benefit-costs{bottom:13%;right:15%}
+        .owner-controls{grid-column:1/-1;border:1px solid #e6d4ad;border-radius:12px;background:#fffaf0;display:grid;grid-template-columns:repeat(5,1fr);margin-top:-.2rem;box-shadow:0 5px 18px #74551b10}.owner-control{padding:1.1rem .8rem;text-align:center;border-right:1px solid #eee2ca}.owner-control:last-child{border:0}.owner-control i{display:block;font-size:1.45rem;color:#986719;margin-bottom:.4rem}.owner-control b{display:block;font:700 .92rem "Cormorant Garamond",Georgia,serif;color:#14234a}.owner-control span{display:block;font-size:.62rem;color:#526078}
+        @media(max-width:767px){.owner-benefits-layout{grid-template-columns:1fr;gap:.5rem}.owner-benefits-intro{text-align:center}.owner-benefits-wheel{min-height:390px}.owner-benefit{width:100px;height:100px}.benefit-adr,.benefit-enhancement{left:4%}.benefit-transparency,.benefit-costs{right:4%}.owner-controls{grid-template-columns:repeat(2,1fr)}.owner-control:nth-child(2n){border-right:0}.owner-control:last-child{grid-column:1/-1}}
+        .owner-benefits-wheel:hover .owner-benefits-orbit{animation-play-state:paused}.owner-benefits-wheel:focus-within .owner-benefits-orbit{animation-play-state:paused}
+        @media(prefers-reduced-motion:reduce){.owner-benefits-wheel,.owner-benefit,.owner-benefits-orbit{animation:none!important;transition:none!important}}
+      </style>
+      <div class="container owner-benefits-layout">
+        <div class="owner-benefits-intro"><span class="overline">OWNER BENEFITS</span><h2>Why Owners<br>Choose<br><span>LotusLeaf Collection
+</span></h2><p>Experience today.<br>Greater tomorrow.</p></div>
+        <div class="owner-benefits-wheel" aria-label="Owner benefits">
+          <div class="owner-benefits-orbit" aria-hidden="true"></div>
+          <div class="owner-benefit benefit-gop"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i><b>Higher GOP</b><span>Stronger Profitability</span></div>
+          <div class="owner-benefit benefit-adr"><i class="bi bi-cash-coin" aria-hidden="true"></i><b>Higher ADR</b><span>Premium Positioning</span></div>
+          <div class="owner-benefit benefit-transparency"><i class="bi bi-eye-fill" aria-hidden="true"></i><b>Owner Transparency</b><span>Visibility at Every Step</span></div>
+          <div class="owner-benefit benefit-enhancement"><i class="bi bi-gear-fill" aria-hidden="true"></i><b>Asset Enhancement</b><span>Increased Long-Term Value</span></div>
+          <div class="owner-benefit benefit-costs"><i class="bi bi-hand-thumbs-up-fill" aria-hidden="true"></i><b>Reduced Costs</b><span>Smarter Operations</span></div>
+          <div class="owner-benefits-center"><strong>OWNER<br>BENEFITS</strong><small>A stronger asset<br>a brighter tomorrow</small></div>
+        </div>
+        <div class="owner-controls" aria-label="Financial controls">
+          <div class="owner-control"><i class="bi bi-calendar3" aria-hidden="true"></i><b>Daily</b><span>Operational Tracking</span></div>
+          <div class="owner-control"><i class="bi bi-calendar-check" aria-hidden="true"></i><b>Weekly</b><span>Performance Review</span></div>
+          <div class="owner-control"><i class="bi bi-calendar-month" aria-hidden="true"></i><b>Monthly</b><span>Financial Analysis</span></div>
+          <div class="owner-control"><i class="bi bi-bar-chart-line-fill" aria-hidden="true"></i><b>Quarterly</b><span>Strategic Review</span></div>
+          <div class="owner-control"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><b>Owner Reporting</b><span>Clear. Comprehensive. Timely.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOSPITALITY EXPERIENCE NETWORK -->
+    <section class="section bg-cream" id="hospitality-network">
+      <style>
+        .hospitality-network{padding:clamp(4rem,8vw,7rem) 0;background:linear-gradient(135deg,#fbfaf6,var(--cream));color:var(--emerald);overflow:hidden}.hn-title{text-align:center;margin:0 auto 2.5rem}.hn-title h2{font:700 clamp(2.4rem,5vw,4.5rem)/.9 "Cormorant Garamond",Georgia,serif;margin:.3rem;color:var(--emerald);letter-spacing:-.02em}.hn-title p{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;margin:1rem;color:var(--gold)}.hn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center;max-width:1040px;margin:0 auto}.hn-region{position:relative;height:180px;border:1px solid rgba(212,175,55,.55);border-radius:20px;background:linear-gradient(180deg,#f8f7f1 0%,#e8eee9 100%);box-shadow:0 18px 40px rgba(10,42,34,.1);transition:transform .3s ease,box-shadow .3s ease}.hn-region:hover{transform:translateY(-5px);box-shadow:0 24px 50px rgba(10,42,34,.16)}.hn-region-header{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin:0;color:var(--emerald);font:700 clamp(1.5rem,3vw,2.2rem) "Cormorant Garamond",serif;letter-spacing:.12em}.hn-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:900px;margin:2.5rem auto 2rem}.hn-stat{display:grid;grid-template-columns:auto 1fr;column-gap:.65rem;align-items:center;padding:1.1rem;border-top:1px solid rgba(212,175,55,.65);border-bottom:1px solid rgba(212,175,55,.65)}.hn-stat i{grid-row:span 2;color:var(--gold);font-size:1.35rem}.hn-stat strong{font:700 1.65rem "Cormorant Garamond",Georgia,serif}.hn-stat span{font-size:.62rem;line-height:1.35;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-dark)}.hn-label{text-align:center;text-transform:uppercase;font-size:.68rem;letter-spacing:.2em;margin:2rem 0 .9rem;color:var(--emerald)}.hn-brand-slider{position:relative;overflow:hidden;padding:1.15rem 0;border-block:1px solid rgba(212,175,55,.65)}.hn-brands{display:flex;align-items:center;gap:1rem;width:max-content;animation:hn-marquee 30s linear infinite}.hn-brand{display:grid;place-items:center;flex:0 0 175px;height:82px;padding:.8rem;border:1px solid rgba(212,175,55,.35);border-radius:12px;background:rgba(255,255,255,.8);color:var(--emerald);text-align:center;font:700 1rem "Cormorant Garamond",Georgia,serif;box-shadow:0 5px 15px rgba(10,42,34,.06)}.hn-brand:nth-child(3n){color:var(--gold)}.hn-brand-slider:hover .hn-brands,.hn-brand-slider:focus-within .hn-brands{animation-play-state:paused}@keyframes hn-marquee{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.hn-brands,.hn-region{animation:none;transition:none}}@media(max-width:767px){.hn-grid{grid-template-columns:1fr}.hn-region{height:150px}.hn-stats{grid-template-columns:1fr;gap:.5rem}.hn-stat{padding:.8rem 1rem}}
+      </style>
+      <div class="container">
+        <header class="hn-title"><h2>Hospitality Experience<br>Across India &amp; Africa</h2><p>Diverse markets · Proven capability · Greater tomorrow</p></header>
+        <div class="hn-grid">
+          <div class="hn-region india" aria-label="India hospitality network">
+            <h3 class="hn-region-header">INDIA</h3>
+          </div>
+          <div class="hn-region africa" aria-label="Africa hospitality network">
+            <h3 class="hn-region-header">AFRICA</h3>
+          </div>
+        </div>
+        <div class="hn-stats"><div class="hn-stat"><i class="bi bi-building" aria-hidden="true"></i><strong>20+</strong><span>Hotel &amp; Resort<br>Assignments</span></div><div class="hn-stat"><i class="bi bi-globe-americas" aria-hidden="true"></i><strong>2</strong><span>Continents<br>India &amp; Africa</span></div><div class="hn-stat"><i class="bi bi-people-fill" aria-hidden="true"></i><strong>100+ Years</strong><span>Combined Leadership<br>Experience</span></div></div>
+   
+    </section>
+
+    <!-- BRANDS WE HAVE WORKED WITH -->
+    <section class="section bg-cream brands-worked" id="brands-worked">
+      <style>
+        .brands-worked{padding:clamp(4rem,8vw,7rem) 0;overflow:hidden;color:#f6e5ad;background:linear-gradient(135deg,#071b17,#12352b 58%,#071b17)}
+        .brands-worked-title{text-align:center;margin:0 auto 2.5rem;max-width:760px}
+        .brands-worked-title h2{margin:.35rem 0;color:#f2d27c;font:700 clamp(2.4rem,5vw,4.5rem)/.95 "Cormorant Garamond",Georgia,serif}
+        .brands-worked-title p{margin:0;color:var(--gold);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase}
+        .brands-slider{position:relative;overflow:hidden;padding:1.25rem 0;border-block:1px solid rgba(212,175,55,.7)}
+        .brands-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;width:min(100% - 2rem,1200px);margin:0 auto}
+        .brand-card{display:grid;place-items:center;min-width:0;height:150px;padding:1.25rem;border:1px solid rgba(212,175,55,.65);border-radius:14px;background:linear-gradient(145deg,#173b30,#0b211b);box-shadow:0 8px 20px rgba(0,0,0,.24);color:#f2d27c;text-align:center;font:700 1.15rem/1.1 "Cormorant Garamond",Georgia,serif;transition:transform .25s ease,background .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:pointer}
+        .brand-card:hover,.brand-card:focus-visible{transform:translateY(-7px) scale(1.025);background:linear-gradient(145deg,#6d5220,#302713);border-color:#f2d27c;box-shadow:0 16px 30px rgba(212,175,55,.24);outline:none}
+        .brand-card:active{transform:translateY(-2px) scale(.99)}
+        .brand-card img{display:block;max-width:100%;max-height:90px;width:auto;height:auto;object-fit:contain}
+        .brand-card.logo-slot img{max-width:165px}
+        .brand-card.logo-slot{font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;color:#f2d27c}
+        @media(prefers-reduced-motion:reduce){.brand-card{transition:none}.brand-card:hover,.brand-card:focus-visible,.brand-card:active{transform:none}}
+        @media(max-width:575px){.brands-track{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.brand-card{height:120px}}
+      </style>
+      <div class="container">
+        <header class="brands-worked-title">
+          <p>Our network of trusted partnerships</p>
+          <h3>Brands We Have Worked With</h3>
+        </header>
+      </div>
+      <div class="brands-slider" aria-label="Brands we have worked with">
+        <div class="brands-track">
+          <div class="brand-card">Shalimar Hotels</div>
+          <div class="brand-card">The Oberoi Group</div>
+          <div class="brand-card">The O Group</div>
+          <div class="brand-card">The Pride Group</div>
+          <div class="brand-card">NCL</div>
+          <div class="brand-card">Radisson</div>
+          <div class="brand-card">BW</div>
+          <div class="brand-card">Best Western Hotels &amp; Resorts</div>
+          <div class="brand-card">Royal Caribbean</div>
+          <div class="brand-card">NORWEGIAN CRUISE LINE</div>
+          <div class="brand-card">Taj Mahal Tea House</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="success-formula-section" aria-label="Success formula and client engagement">
+      <div class="success-formula-shell">
+        <div class="success-formula-header">
+          <h2>SUCCESS FORMULA</h2>
+        </div>
+
+        <div class="formula-grid">
+          <div class="formula-card formula-card--light">
+            <div class="formula-icon icon-people">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="22" cy="24" r="8"/>
+                <circle cx="41" cy="24" r="7"/>
+                <path d="M12 50c2-9 8-13 18-13s16 4 18 13"/>
+                <path d="M33 50c1-7 6-10 13-10"/>
+              </svg>
+            </div>
+            <div class="formula-labels">
+              <span class="formula-title">PEOPLE</span>
+              <span class="formula-copy">Right People<br>Great Experiences</span>
+            </div>
+          </div>
+
+          <div class="formula-plus">+</div>
+
+          <div class="formula-card formula-card--light">
+            <div class="formula-icon icon-process">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M14 24h36v18H14z"/>
+                <path d="M18 20V12h28v8"/>
+                <path d="M22 26v10M32 26v10M42 26v10"/>
+                <path d="M18 52h28"/>
+              </svg>
+            </div>
+            <div class="formula-labels">
+              <span class="formula-title">PROCESS</span>
+              <span class="formula-copy">Standard Systems<br>Consistent Results</span>
+            </div>
+          </div>
+
+          <div class="formula-plus">+</div>
+
+          <div class="formula-card formula-card--light">
+            <div class="formula-icon icon-tech">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="14" y="12" width="36" height="26" rx="3"/>
+                <path d="M22 52h20"/>
+                <path d="M28 38v14M36 38v14"/>
+                <path d="M24 18h16"/>
+              </svg>
+            </div>
+            <div class="formula-labels">
+              <span class="formula-title">TECHNOLOGY</span>
+              <span class="formula-copy">Smart Tools<br>Higher Efficiency</span>
+            </div>
+          </div>
+
+          <div class="formula-plus">+</div>
+
+          <div class="formula-card formula-card--light">
+            <div class="formula-icon icon-revenue">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M16 44V18h8l8 10 8-10h8v26"/>
+                <path d="M18 44h28"/>
+                <path d="M16 30h32"/>
+              </svg>
+            </div>
+            <div class="formula-labels">
+              <span class="formula-title">REVENUE</span>
+              <span class="formula-copy">More Guests<br>Higher Returns</span>
+            </div>
+          </div>
+
+          <div class="formula-equals">=</div>
+
+          <div class="formula-card formula-card--dark">
+            <div class="formula-icon icon-hotel">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M12 48h40v-8H12zm3-18h8v8h-8zm10 0h8v8h-8zm10 0h8v8h-8zm10 0h8v8h-8zM18 20h28v8H18z"/>
+                <path d="M24 14h16v8H24z"/>
+              </svg>
+            </div>
+            <div class="formula-labels">
+              <span class="formula-title">PROFITABLE</span>
+              <span class="formula-copy">HOTEL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="engagement-header">
+          <h3>CLIENT ENGAGEMENT</h3>
+        </div>
+
+        <div class="engagement-grid">
+          <div class="engagement-step">
+            <div class="step-number">01</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="32" cy="25" r="12"/>
+                <path d="M18 48c2-8 8-12 14-12s12 4 14 12"/>
+              </svg>
+            </div>
+            <span class="step-name">DISCOVERY</span>
+            <p>Understand Goals<br>&amp; Assess Potential</p>
+          </div>
+
+          <div class="engagement-step">
+            <div class="step-number">02</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="18" y="16" width="28" height="32" rx="3"/>
+                <path d="M25 16V10h14v6"/>
+                <path d="M24 26h16M24 32h16M24 38h12"/>
+              </svg>
+            </div>
+            <span class="step-name">PROPOSAL</span>
+            <p>Tailored Solution<br>&amp; Commercials</p>
+          </div>
+
+          <div class="engagement-step">
+            <div class="step-number">03</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M16 38l18-18 12 12 14-14"/>
+                <path d="M42 18h12v12"/>
+                <path d="M16 26l8 8 14-14"/>
+              </svg>
+            </div>
+            <span class="step-name">AGREEMENT</span>
+            <p>Define Scope,<br>Terms &amp; Partnership</p>
+          </div>
+
+          <div class="engagement-step">
+            <div class="step-number">04</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M16 32c0-9 7-16 16-16s16 7 16 16-7 16-16 16-16-7-16-16z"/>
+                <path d="M24 32h16M32 24v16"/>
+              </svg>
+            </div>
+            <span class="step-name">TRANSITION</span>
+            <p>Mobilisation &amp; Team Onboarding</p>
+          </div>
+
+          <div class="engagement-step">
+            <div class="step-number">05</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M18 42h28v6H18zm2-20h24l4 16H16zm2-6h20v8H22z"/>
+                <path d="M26 20V12h12v8"/>
+              </svg>
+            </div>
+            <span class="step-name">OPENING</span>
+            <p>Pre-Opening Support<br>&amp; Readiness</p>
+          </div>
+
+          <div class="engagement-step">
+            <div class="step-number">06</div>
+            <div class="step-icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M18 44V22h28v22M22 26h20M24 32h16M24 38h12"/>
+                <path d="M12 50h40"/>
+              </svg>
+            </div>
+            <span class="step-name">MANAGEMENT</span>
+            <p>Ongoing Operations,Performance &amp; Growth</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .success-formula-section {
+        background: linear-gradient(180deg, #f8f5ef 0%, #f2e8d7 100%);
+        padding: 3rem 0 4rem;
+        border-top: 1px solid rgba(12, 43, 82, 0.08);
+      }
+
+      .success-formula-shell {
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+
+      .success-formula-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .success-formula-header h2 {
+        display: inline-block;
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        color: var(--navy, #0c2a5c);
+        margin: 0;
+        padding: 0 1.25rem 0.4rem;
+        border-bottom: 4px solid #d7ad4f;
+        line-height: 1.1;
+        text-transform: uppercase;
+      }
+
+      .formula-grid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem 0.45rem;
+        margin-bottom: 2.25rem;
+      }
+
+      .formula-card {
+        width: clamp(170px, 15vw, 210px);
+        aspect-ratio: 1;
+        min-height: 0;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.3);
+        border: 3px solid #d0b06b;
+        box-shadow: inset 0 0 0 4px rgba(255,255,255,0.25), 0 10px 24px rgba(10, 34, 66, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1.3rem 1rem 1rem;
+        position: relative;
+      }
+
+      .formula-card--light {
+        background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(249,245,236,0.95) 100%);
+      }
+
+      .formula-card--dark {
+        background: linear-gradient(180deg, #0b2f5f 0%, #0a2348 100%);
+        border-color: #d8af5b;
+        box-shadow: inset 0 0 0 4px rgba(255,255,255,0.18), 0 10px 24px rgba(10, 34, 66, 0.18);
+      }
+
+      .formula-card--dark .formula-title,
+      .formula-card--dark .formula-copy {
+        color: #fff;
+      }
+
+      .formula-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.75rem;
+        fill: none;
+        stroke: var(--navy, #0c2a5c);
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .formula-card--dark .formula-icon {
+        stroke: #f5d68c;
+      }
+
+      .formula-icon svg {
+        width: 46px;
+        height: 46px;
+      }
+
+      .formula-labels {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .formula-title {
+        color: var(--navy, #0c2a5c);
+        font-weight: 900;
+        font-size: 1.05rem;
+        letter-spacing: 0.04em;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .formula-copy {
+        color: var(--navy, #0c2a5c);
+        font-size: 0.76rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-top: 0.2rem;
+      }
+
+      .formula-plus,
+      .formula-equals {
+        font-size: clamp(2.2rem, 2.4vw, 3rem);
+        font-weight: 900;
+        color: #0d2d5a;
+        line-height: 1;
+        margin: 0 0.1rem;
+      }
+
+      .engagement-header {
+        text-align: center;
+        margin: 2rem 0 1.5rem;
+      }
+
+      .engagement-header h3 {
+        margin: 0;
+        color: var(--navy, #0c2a5c);
+        font-size: clamp(2rem, 3vw, 3.2rem);
+        line-height: 1.1;
+        letter-spacing: 0.03em;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .engagement-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .engagement-step {
+        position: relative;
+        background: linear-gradient(180deg, rgba(255,255,255,0.68) 0%, rgba(247,240,219,0.5) 100%);
+        border: 3px solid #d4b36d;
+        border-radius: 50%;
+        width: 100%;
+        aspect-ratio: 1;
+        min-height: 0;
+        padding: 1rem 0.7rem 0.9rem;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(9, 28, 52, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .engagement-step:nth-child(odd) {
+        background: linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(246,236,214,0.6) 100%);
+      }
+
+      .engagement-step:nth-child(even) {
+        background: linear-gradient(180deg, rgba(238,245,248,0.8) 0%, rgba(246,235,213,0.6) 100%);
+      }
+
+      .step-number {
+        position: absolute;
+        top: 0.8rem;
+        left: 0.8rem;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        border: 2px solid rgba(12, 43, 82, 0.8);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--navy, #0c2a5c);
+        font-size: 0.95rem;
+        font-weight: 800;
+      }
+
+      .step-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.8rem auto 0.5rem;
+        fill: none;
+        stroke: var(--navy, #0c2a5c);
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .step-icon svg {
+        width: 42px;
+        height: 42px;
+      }
+
+      .step-name {
+        color: var(--navy, #0c2a5c);
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        font-size: 0.98rem;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .engagement-step p {
+        margin: 0.35rem 0 0;
+        color: var(--navy, #0c2a5c);
+        font-size: 0.64rem;
+        line-height: 1.45;
+        font-weight: 700;
+      }
+
+      @media (max-width: 1100px) {
+        .engagement-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 700px) {
+        .formula-grid {
+          gap: 0.8rem 0.4rem;
+        }
+
+        .formula-card {
+          width: 170px;
+        }
+
+        .formula-plus,
+        .formula-equals {
+          flex: 0 0 auto;
+          text-align: center;
+        }
+
+        .engagement-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.75rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .success-formula-section {
+          padding-top: 2.25rem;
+        }
+
+        .success-formula-header h2 {
+          font-size: 2rem;
+        }
+
+        .engagement-grid {
+          grid-template-columns: 1fr;
+          max-width: 320px;
+          margin: 0 auto;
+        }
+
+        .engagement-step {
+          width: min(100%, 280px);
+          justify-self: center;
+        }
+      }
+    </style>
 
     <!-- PROJECTS -->
 <section class="section bg-cream" id="projects">
@@ -5760,39 +9249,199 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 
 
-            <div class="lotus-contact-form">
-              <h3 class="mb-4">Send Us a Message</h3>
-              <form action="https://api.web3forms.com/submit" method="POST" class="row g-3">
-                <input type="hidden" name="access_key" value="a66d62d3-c1e6-47fa-87c7-f112f4740d52">
-                <div class="col-md-6">
-                  <label class="form-label">Name</label>
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Email</label>
-                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Phone</label>
-                  <input type="tel" name="phone" class="form-control" placeholder="Your Phone Number">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Company / Organization</label>
-                  <input type="text" name="company" class="form-control" placeholder="Your Company">
-                </div>
-                <div class="col-12">
-                  <label class="form-label">Message</label>
-                  <textarea name="message" class="form-control" rows="4" placeholder="How can we assist you?" required></textarea>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-gold px-4 py-3 w-100">Send Message</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  </section>
+
+<!-- =========================================================
+     CONTACT FORM
+========================================================= -->
+
+<div class="lotus-contact-form">
+
+  <h3 class="mb-4">Send Us a Message</h3>
+
+  <form
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    class="row g-3"
+  >
+
+    <input
+      type="hidden"
+      name="access_key"
+      value="a66d62d3-c1e6-47fa-87c7-f112f4740d52"
+    >
+
+    <!-- NAME -->
+    <div class="col-md-6">
+      <label class="form-label">Name</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        placeholder="Your Name"
+        required
+      >
+    </div>
+
+    <!-- EMAIL -->
+    <div class="col-md-6">
+      <label class="form-label">Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        placeholder="Your Email"
+        required
+      >
+    </div>
+
+    <!-- PHONE -->
+    <div class="col-md-6">
+      <label class="form-label">Phone</label>
+      <input
+        type="tel"
+        name="phone"
+        class="form-control"
+        placeholder="Your Phone Number"
+      >
+    </div>
+
+    <!-- COMPANY -->
+    <div class="col-md-6">
+      <label class="form-label">Company / Organization</label>
+      <input
+        type="text"
+        name="company"
+        class="form-control"
+        placeholder="Your Company"
+      >
+    </div>
+
+    <!-- MESSAGE -->
+    <div class="col-12">
+      <label class="form-label">Message</label>
+      <textarea
+        name="message"
+        class="form-control"
+        rows="4"
+        placeholder="How can we assist you?"
+        required
+      ></textarea>
+    </div>
+
+    <!-- SEND MESSAGE -->
+    <div class="col-12">
+      <button
+        type="submit"
+        class="btn btn-gold px-4 py-3 w-100"
+      >
+        Send Message
+      </button>
+    </div>
+
+    <!-- CORPORATE PRESENTATION DOWNLOAD -->
+    <div class="col-12 mt-3">
+      <a
+        href="images/Corporate Presentation TLLC.pdf"
+        download="The-LotusLeaf-Collection-Corporate-Presentation.pdf"
+        class="btn lotus-presentation-btn w-100"
+      >
+        <span class="presentation-icon">↓</span>
+        Download Corporate Presentation
+      </a>
+    </div>
+
+  </form>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- =========================================================
+     CORPORATE PRESENTATION BUTTON STYLE
+========================================================= -->
+
+<style>
+
+  .lotus-presentation-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 58px;
+
+    background: transparent;
+    color: #c9a24b;
+    border: 1px solid rgba(201, 162, 75, 0.65);
+
+    border-radius: 2px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition:
+      color 0.35s ease,
+      background 0.35s ease,
+      border-color 0.35s ease,
+      box-shadow 0.35s ease,
+      transform 0.35s ease;
+  }
+
+  .lotus-presentation-btn:hover {
+    background: #c9a24b;
+    color: #0a2a22;
+    border-color: #c9a24b;
+
+    box-shadow:
+      0 8px 30px rgba(201, 162, 75, 0.18);
+
+    transform: translateY(-2px);
+  }
+
+  .presentation-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid currentColor;
+    border-radius: 50%;
+
+    font-size: 17px;
+    line-height: 1;
+
+    transition: transform 0.35s ease;
+  }
+
+  .lotus-presentation-btn:hover .presentation-icon {
+    transform: translateY(2px);
+  }
+
+  /* Mobile */
+  @media (max-width: 576px) {
+
+    .lotus-presentation-btn {
+      min-height: 54px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding: 12px 15px;
+    }
+
+  }
+
+</style>
+
+</section>
+
 
     <!-- FOOTER -->
     <footer class="bg-emerald grain" style="border-top: 1px solid rgba(212,175,55,0.2)">
@@ -5840,14 +9489,14 @@ document.addEventListener("DOMContentLoaded", function () {
     <script>
       // ---- Data ----
       const services = [
-        { t: "Hotel & Resort Management", i: "bi-buildings", d: "Turnkey management solutions optimizing daily hotel operations." },
-        { t: "Pre-Opening Consultancy", i: "bi-key", d: "End-to-end launch planning, budgeting, SOP creation, and vendor sourcing." },
-        { t: "Commercial Strategy", i: "bi-megaphone", d: "Tailored revenue management, sales, marketing, and distribution setups." },
-        { t: "Special Consultancy Assignments", i: "bi-briefcase-fill", d: "Customized hospitality consulting solutions designed for specific business objectives and growth requirements." },
-        { t: "Revenue Management", i: "bi-graph-up-arrow", d: "Data-driven pricing strategies, forecasting, and revenue optimization to maximize profitability." },
-        { t: "Sales & Marketing", i: "bi-bar-chart-line-fill", d: "Strategic sales planning, brand positioning, digital marketing, and distribution solutions to increase visibility and bookings." },
-        { t: "HR & Training", i: "bi-people-fill", d: "Building high-performing teams through recruitment, employee development, training programs, and culture enhancement." },
-        { t: "Procurement", i: "bi-cart-check-fill", d: "Efficient procurement strategies, vendor management, and cost optimization for hospitality operations." }
+        { t: "Training", i: "bi-people-fill", d: "Empowering hospitality teams with practical skills, service excellence, and the confidence to grow." },
+        { t: "Hotel Management", i: "bi-buildings", d: "End-to-end hotel management that strengthens operations and creates memorable guest experiences." },
+        { t: "Commercial", i: "bi-megaphone", d: "Commercial strategies that connect business today with tomorrow’s opportunities." },
+        { t: "Resorts", i: "bi-tree", d: "Creating resort experiences where nature, thoughtful hospitality, and lasting memories come together." },
+        { t: "Audit", i: "bi-clipboard-check", d: "Operational and financial reviews that identify opportunities and support informed decisions." },
+        { t: "Revenue Management", i: "bi-graph-up-arrow", d: "Insight-led pricing, forecasting, and optimization to build sustainable revenue growth." },
+        { t: "Pre-opening", i: "bi-key", d: "From concept and planning to launch, we prepare hospitality assets for a confident opening." },
+        { t: "Consulting", i: "bi-lightbulb", d: "Practical hospitality expertise, tailored to your property, people, and business goals." }
       ];
 
       // ---- Render Services ----
