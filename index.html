@@ -27,9 +27,11 @@
         --muted-light: #a3b8b2;
       }
       * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+      html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: clip; }
       body {
         margin: 0;
+        max-width: 100%;
+        overflow-x: clip;
         font-family: "Outfit", Arial, sans-serif;
         color: var(--emerald);
         background: var(--cream);
