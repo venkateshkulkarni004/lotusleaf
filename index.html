@@ -537,7 +537,33 @@
       }
       .lotus-contact-form .btn-gold:hover {
         background: #0A2A22;
+        
         color: #ffffff;
+      }
+
+      /* Keep the navigation, cards, and contact form comfortable on phones. */
+      @media (max-width: 767.98px) {
+        .navbar-custom .navbar-collapse {
+          max-height: calc(100vh - 72px);
+          overflow-y: auto;
+          padding: 0.5rem 0 1rem;
+        }
+        .navbar-custom .nav-link { padding: 0.65rem 0.75rem !important; }
+        .dropdown-submenu > .dropdown-menu {
+          position: static !important;
+          width: 100%;
+          min-width: 0;
+          margin: 0.25rem 0 0.5rem;
+          box-shadow: none;
+          border-left: 2px solid var(--gold);
+        }
+        .hero { min-height: 100svh; padding: 6rem 0 3rem; }
+        .hero .display-1, .hero h1 { font-size: clamp(2.4rem, 11vw, 4rem); }
+        .service-card, .management-service-card, .project-card,
+        .team-card, .vision-mission-block { padding: 1.25rem; }
+        .lotus-contact-form { padding: 1.25rem; }
+        .contact-text { overflow-wrap: anywhere; }
+        .btn-gold, .btn-emerald, .btn-outline-cream { max-width: 100%; }
       }
     </style>
   </head>
@@ -9448,7 +9474,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     <!-- FOOTER -->
-    <footer class="bg-emerald grain" style="border-top: 1px solid rgba(212,175,55,0.2)">
+    <footer class="bg-emerald grain site-footer" style="border-top: 1px solid rgba(212,175,55,0.2)">
       <div class="container py-5">
         <div class="row g-4">
           <div class="col-md-5">
@@ -9462,7 +9488,7 @@ document.addEventListener("DOMContentLoaded", function () {
               Experience That Builds Excellence. Presence That Creates Impact.
             </p>
           </div>
-          <div class="col-6 col-md-3">
+          <div class="col-6 col-md-3 footer-explore">
             <p class="overline">Explore</p>
             <div class="d-flex flex-column gap-2 mt-3">
               <a class="footer-link" href="#about">About</a>
@@ -9472,7 +9498,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <a class="footer-link" href="#contact">Contact</a>
             </div>
           </div>
-          <div class="col-6 col-md-4">
+          <div class="col-6 col-md-4 footer-contact">
             <p class="overline">Contact</p>
             <div class="d-flex flex-column gap-2 mt-3">
               <a class="footer-link" href="mailto:info@lotusleafcollection.com">info@lotusleafcollection.com</a>
@@ -9487,6 +9513,31 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     </footer>
+
+    <style>
+      @media (max-width: 575.98px) {
+        .site-footer .row > div:first-child {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+        .site-footer .footer-contact,
+        .site-footer .footer-explore {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+        .site-footer .footer-contact { min-width: 0; }
+        .site-footer .footer-link {
+          display: block;
+          max-width: 100%;
+          overflow-wrap: anywhere;
+          word-break: break-word;
+          font-size: 0.8rem;
+        }
+        .site-footer .d-flex.flex-column.flex-sm-row > span {
+          overflow-wrap: anywhere;
+        }
+      }
+    </style>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
