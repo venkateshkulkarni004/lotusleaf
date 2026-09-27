@@ -189,7 +189,20 @@
       }
       .hero-bg {
         position: absolute; inset: 0;
-        background: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat;
+        background: url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat;
+        animation: hero-slideshow 100s infinite;
+      }
+      @keyframes hero-slideshow {
+        0%, 9.99% { background-image: url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2070&auto=format&fit=crop"); }
+        10%, 19.99% { background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"); }
+        20%, 29.99% { background-image: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"); }
+        30%, 39.99% { background-image: url("https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop"); }
+        40%, 49.99% { background-image: url("https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=2070&auto=format&fit=crop"); }
+        50%, 59.99% { background-image: url("https://images.unsplash.com/photo-157189 veze6349842-33c89424de2d?q=80&w=2070&auto=format&fit=crop"); }
+        60%, 69.99% { background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&sat=-10"); }
+        70%, 79.99% { background-image: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&sat=-10"); }
+        80%, 89.99% { background-image: url("https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop&sat=-10"); }
+        90%, 100% { background-image: url("https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=2070&auto=format&fit=crop&sat=-20"); }
       }
       .hero-overlay {
         position: absolute; inset: 0;
@@ -3706,12 +3719,39 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="zoom-img rounded-4 overflow-hidden">
 
             <img
-              src="https://images.unsplash.com/photo-1776761731066-c89caa8d25e6?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Luxury hospitality destination"
+              id="luxury-resort-image"
+              src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop"
+              alt="Luxury resort with a tropical infinity pool"
               class="w-100 rounded-4"
               style="height:520px; object-fit:cover;"
               loading="lazy"
             >
+
+            <script>
+              (() => {
+                const image = document.getElementById('luxury-resort-image');
+                if (!image) return;
+                const images = [
+                  'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1596394516093-28b0e0fbf4b6?q=80&w=1200&auto=format&fit=crop',
+                  'https://images.unsplash.com/photo-1602002418082-a4443e081dd1?q=80&w=1200&auto=format&fit=crop'
+                ];
+                let current = 0;
+                window.setInterval(() => {
+                  current = (current + 1) % images.length;
+                  image.src = images[current];
+                }, 5000);
+              })();
+            </script>
 
           </div>
 
@@ -6759,276 +6799,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     </section>
-    <!-- CREATION / PRE-OPENING SERVICES -->
-<section class="section bg-emerald" id="creation" style="padding: 100px 0; background-color: var(--emerald, #0A2A22);">
-  <div class="container">
-    <div class="row align-items-end g-4 mb-5">
-      <div class="col-lg-7">
-        <span class="overline" style="color: var(--gold, #C9A24B); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Scope of Work</span>
-        <h2 class="display-serif mt-2" style="color: var(--cream, #F5F0E6); font-size: clamp(2rem, 4vw, 3rem)">
-          Pre-opening Services
-        </h2>
-      </div>
-      <div class="col-lg-5">
-        <p class="text-muted-light mb-0" style="color: rgba(245,240,230,.72); line-height: 1.8;">
-          From vision to a grand opening, we bring together the strategy, people, systems, and standards needed to launch with confidence.
-        </p>
-      </div>
-    </div>
-
-    <div class="row g-4 preopening-flow">
-      
-      <!-- TIMELINE -->
-      <div class="col-md-6 col-lg-3">
-        <div class="preopening-card h-100">
-          <div class="preopening-image">
-            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80" alt="Timeline and Scheduling">
-          </div>
-          <div class="preopening-content">
-            <h3 class="h4" style="color: var(--emerald)">Timeline</h3>
-            <ul class="preopening-list text-muted-dark mb-0">
-              <li>Project Schedule</li>
-              <li>Milestones & Deliverables</li>
-              <li>Critical Path Planning</li>
-              <li>Progress Monitoring</li>
-              <li>Project Roadmap</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- PLANNING -->
-      <div class="col-md-6 col-lg-3">
-        <div class="preopening-card h-100">
-          <div class="preopening-image">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Strategic Planning">
-          </div>
-          <div class="preopening-content">
-            <h3 class="h4" style="color: var(--emerald)">Planning</h3>
-            <ul class="preopening-list text-muted-dark mb-0">
-              <li>Market Assessment</li>
-              <li>Hotel Positioning</li>
-              <li>Financial Feasibility</li>
-              <li>Business Plan</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- DESIGN -->
-      <div class="col-md-6 col-lg-3">
-        <div class="preopening-card h-100">
-          <div class="preopening-image">
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Interior Design & Architecture">
-          </div>
-          <div class="preopening-content">
-            <h3 class="h4" style="color: var(--emerald)">Design</h3>
-            <ul class="preopening-list text-muted-dark mb-0">
-              <li>Concept Development</li>
-              <li>Architectural Review</li>
-              <li>Interior Design Guidance</li>
-              <li>BOH & FOH Planning</li>
-              <li>Kitchen & Engineering</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- RECRUITMENT -->
-      <div class="col-md-6 col-lg-3">
-        <div class="preopening-card h-100">
-          <div class="preopening-image">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Hospitality Recruitment">
-          </div>
-          <div class="preopening-content">
-            <h3 class="h4" style="color: var(--emerald)">Recruitment</h3>
-            <ul class="preopening-list text-muted-dark mb-0">
-              <li>Organization Structure</li>
-              <li>Manpower Planning</li>
-              <li>Recruitment Strategy</li>
-              <li>Key Management Hiring</li>
-              <li>HR Policies & Compliance</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROCUREMENT -->
-      <div class="col-md-6 col-lg-3">
-        <div class="preopening-card h-100">
-          <div class="preopening-image">
-            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="Procurement and FF&E">
-          </div>
-          <div class="preopening-content">
-            <h3 class="h4" style="color: var(--emerald)">Procurement</h3>
-            <ul class="preopening-list text-muted-dark mb-0">
-              <li>FF&E Specifications</li>
-              <li>Vendor Identification</li>
-              <li>Purchasing & Negotiation</li>
-              <li>Cost Control</li>
-              <li>Logistics & Tracking</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- TRAINING -->
-      <div class="col-md-6 col-lg-3">
-        <div class="preopening-card h-100">
-          <div class="preopening-image">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Staff Training and SOPs">
-          </div>
-          <div class="preopening-content">
-            <h3 class="h4" style="color: var(--emerald)">Training</h3>
-            <ul class="preopening-list text-muted-dark mb-0">
-              <li>SOP Development</li>
-              <li>Brand Standards</li>
-              <li>Departmental Training</li>
-              <li>Service Culture</li>
-              <li>Mock Operations</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- SYSTEMS -->
-      <div class="col-md-6 col-lg-3">
-        <div class="preopening-card h-100">
-          <div class="preopening-image">
-            <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80" alt="Hotel Management Systems">
-          </div>
-          <div class="preopening-content">
-            <h3 class="h4" style="color: var(--emerald)">Systems</h3>
-            <ul class="preopening-list text-muted-dark mb-0">
-              <li>PMS & POS Setup</li>
-              <li>Channel Manager</li>
-              <li>Revenue Mgmt Systems</li>
-              <li>Finance & Accounting</li>
-              <li>Reporting & MIS</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- OPENING -->
-      <div class="col-md-6 col-lg-3">
-        <div class="preopening-card h-100">
-          <div class="preopening-image">
-            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Grand Opening Celebration">
-          </div>
-          <div class="preopening-content">
-            <h3 class="h4" style="color: var(--emerald)">Opening</h3>
-            <ul class="preopening-list text-muted-dark mb-0">
-              <li>Trial Operations</li>
-              <li>Soft Opening</li>
-              <li>Sales & Marketing Launch</li>
-              <li>Grand Opening</li>
-              <li>Stabilization Support</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     PRE-OPENING CSS STYLES
-========================================================= -->
-<style>
-/* Card Container */
-.preopening-card {
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.preopening-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
-}
-
-/* Top Image Section */
-.preopening-image {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  position: relative;
-  border-bottom: 2px solid var(--gold, #C9A24B);
-}
-
-.preopening-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.preopening-card:hover .preopening-image img {
-  transform: scale(1.08);
-}
-
-/* Content & Typography */
-.preopening-content {
-  padding: 25px 20px;
-  flex-grow: 1;
-}
-
-.preopening-content h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  letter-spacing: 0.5px;
-}
-
-/* Custom Styled List */
-.preopening-list {
-  padding-left: 0;
-  list-style: none;
-}
-
-.preopening-list li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-  color: #5f6864; /* Muted dark */
-  line-height: 1.5;
-}
-
-/* Custom Gold Bullet Points */
-.preopening-list li::before {
-  content: "•";
-  color: var(--gold, #C9A24B);
-  font-size: 1.2rem;
-  position: absolute;
-  left: 0;
-  top: -2px;
-}
-
-/* Responsive Grid Overrides */
-@media (max-width: 1100px) {
-  .preopening-flow > div {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-
-@media (max-width: 767px) {
-  .preopening-flow > div {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  #creation {
-    padding: 70px 0 !important;
-  }
-}
-</style>
+   
    
     <!-- HOSPITALITY EXPERIENCE NETWORK -->
     <section class="section bg-cream" id="hospitality-network">
@@ -9504,6 +9275,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
       document.getElementById("copyright").textContent =
         "© " + new Date().getFullYear() + " The LotusLeaf Collection. All rights reserved.";
+
+      // Rotate through ten luxury hotel and resort images every five seconds.
+      const resortImages = [
+        ["photo-1571896349842-33c89424de2d", "Luxury resort with a tropical infinity pool"],
+        ["photo-1566073771259-6a8506099945", "Elegant luxury hotel surrounded by tropical gardens"],
+        ["photo-1542314831-068cd1dbfeeb", "Grand luxury hotel entrance"],
+        ["photo-1582719508461-905c673771fd", "Serene luxury resort pool"],
+        ["photo-1570077188670-e3a8d69ac5ff", "Clifftop resort overlooking the sea"],
+        ["photo-1511895426328-dc8714191300", "Private tropical resort villa"],
+        ["photo-1570213489059-0aac6626cf98", "Luxury overwater resort villas"],
+        ["photo-1602002418082-a4443e081dd1", "Beachfront luxury resort"],
+        ["photo-1611892440504-42a792e24d32", "Refined luxury hotel suite"],
+        ["photo-1590490360182-c33d57733427", "Beautiful resort accommodation"]
+      ];
+      const resortImage = document.getElementById("luxury-resort-image");
+      let resortImageIndex = 0;
+      window.setInterval(() => {
+        resortImageIndex = (resortImageIndex + 1) % resortImages.length;
+        const [photoId, altText] = resortImages[resortImageIndex];
+        resortImage.src = `https://images.unsplash.com/${photoId}?q=80&w=1200&auto=format&fit=crop`;
+        resortImage.alt = altText;
+      }, 5000);
 
       // ---- Navbar scroll ----
       const navbar = document.getElementById("navbar");
