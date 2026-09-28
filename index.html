@@ -191,20 +191,16 @@
       }
       .hero-bg {
         position: absolute; inset: 0;
-        background: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat;
+        background: url("images/New%20folder/wall/1.jpeg") center/cover no-repeat;
         animation: hero-slideshow 100s infinite;
       }
       @keyframes hero-slideshow {
-        0%, 9.99% { background-image: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2070&auto=format&fit=crop"); }
-        10%, 19.99% { background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"); }
-        20%, 29.99% { background-image: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"); }
-        30%, 39.99% { background-image: url("https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop"); }
-        40%, 49.99% { background-image: url("https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=2070&auto=format&fit=crop"); }
-        50%, 59.99% { background-image: url("https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop"); }
-        60%, 69.99% { background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop&sat=-10"); }
-        70%, 79.99% { background-image: url("https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop&sat=-10"); }
-        80%, 89.99% { background-image: url("https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&sat=-10"); }
-        90%, 100% { background-image: url("https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2070&auto=format&fit=crop&sat=-20"); }
+        0%, 16.66% { background-image: url("images/New%20folder/wall/1.jpeg"); }
+        16.67%, 33.32% { background-image: url("images/New%20folder/wall/2.jpeg"); }
+        33.33%, 49.99% { background-image: url("images/New%20folder/wall/3.jpeg"); }
+        50%, 66.66% { background-image: url("images/New%20folder/wall/4.jpeg"); }
+        66.67%, 83.32% { background-image: url("images/New%20folder/wall/5.jpeg"); }
+        83.33%, 100% { background-image: url("images/New%20folder/wall/6.jpeg"); }
       }
       .hero-overlay {
         position: absolute; inset: 0;
@@ -2622,19 +2618,25 @@ window.addEventListener("load", function () {
         class="navbar-nav align-items-lg-center gap-lg-2">
 
 
-        <!-- ABOUT -->
-
-        <li class="nav-item">
-
+         <li class="nav-item dropdown">
           <a
-            class="nav-link"
-            href="#about">
-
+            class="nav-link dropdown-toggle"
+            href="javascript:void(0)"
+            id="aboutBtn"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
             About
-
           </a>
 
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="aboutBtn">
+            <li><a class="dropdown-item" href="#who-we-are">Who We Are</a></li>
+            <li><a class="dropdown-item" href="#vision-mission">Vision &amp; Mission</a></li>
+            <li><a class="dropdown-item" href="#our-team">Our Team</a></li>
+            <li><a class="dropdown-item" href="#leadership">Leadership</a></li>
+          </ul>
         </li>
+
 
 
 
@@ -2652,7 +2654,10 @@ window.addEventListener("load", function () {
           <a
             class="nav-link dropdown-toggle"
             href="javascript:void(0)"
-            id="ourHotelsBtn">
+            id="ourHotelsBtn"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
 
             Our Hotels
 
@@ -2923,13 +2928,20 @@ window.addEventListener("load", function () {
 
       <li>
 
-        <a href="#about">
+        <a href="javascript:void(0)" id="sideAboutBtn" aria-expanded="false">
 
-          About Us
+          <span>About</span>
 
-          <i class="bi bi-arrow-right"></i>
+          <i class="bi bi-chevron-down" id="sideAboutIcon"></i>
 
         </a>
+
+        <ul class="side-about-menu" id="sideAboutMenu" style="display:none;">
+          <li><a href="#who-we-are">Who We Are <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#vision-mission">Vision &amp; Mission <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#our-team">Our Team <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#leadership">Leadership <i class="bi bi-arrow-right"></i></a></li>
+        </ul>
 
       </li>
 
@@ -3384,6 +3396,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const sideHotelsIcon =
     document.getElementById("sideHotelsIcon");
 
+  const sideAboutBtn =
+    document.getElementById("sideAboutBtn");
+
+  const sideAboutMenu =
+    document.getElementById("sideAboutMenu");
+
+  const sideAboutIcon =
+    document.getElementById("sideAboutIcon");
+
+  sideAboutBtn.addEventListener("click", function () {
+    const isOpen = sideAboutMenu.style.display === "block";
+    sideAboutMenu.style.display = isOpen ? "none" : "block";
+    sideAboutIcon.className = isOpen ? "bi bi-chevron-down" : "bi bi-chevron-up";
+    sideAboutBtn.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  sideAboutMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      sideAboutMenu.style.display = "none";
+      sideAboutIcon.className = "bi bi-chevron-down";
+      sideAboutBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+
 
   sideHotelsBtn.addEventListener("click", function () {
 
@@ -3528,6 +3564,10 @@ document.addEventListener("DOMContentLoaded", function () {
   sideMenu.addEventListener(
     "hidden.bs.offcanvas",
     function () {
+
+      sideAboutMenu.style.display = "none";
+      sideAboutIcon.className = "bi bi-chevron-down";
+      sideAboutBtn.setAttribute("aria-expanded", "false");
 
       sideHotelsMenu.style.display = "none";
 
@@ -3688,7 +3728,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <!-- =====================================
            CONTENT
       ====================================== -->
-      <div class="col-lg-6 reveal">
+      <div class="col-lg-6 reveal" id="who-we-are">
 
         <span class="overline">
           Company Overview
@@ -3798,13 +3838,13 @@ document.addEventListener("DOMContentLoaded", function () {
             <div>
 
               <div class="font-serif text-cream fs-3 lh-1">
-                100+
-              </div>
+                      100+
+                    </div>
 
-              <div class="text-muted-light small mt-1">
-                Years Combined<br>
-                Leadership Experience
-              </div>
+                    <div class="text-muted-light small mt-1">
+                      Years Combined<br>
+                      Leadership Experience
+                    </div>
 
             </div>
 
@@ -3854,41 +3894,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const images = [
 
-    /* 01 — Luxury Resort Exterior */
-    "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=85&w=1600&auto=format&fit=crop",
-
-    /* 02 — Luxury Hotel Architecture */
-    "https://images.unsplash.com/photo-1542314831-068e97db4248?q=85&w=1600&auto=format&fit=crop",
-
-    /* 03 — Luxury Resort with Scenic Surroundings */
-    "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=85&w=1600&auto=format&fit=crop",
-
-    /* 04 — Premium Hotel Architecture */
-    "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=85&w=1600&auto=format&fit=crop",
-
-    /* 05 — Luxury Resort Property */
-    "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=85&w=1600&auto=format&fit=crop",
-
-    /* 06 — Scenic Mountain Resort */
-    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=85&w=1600&auto=format&fit=crop",
-
-    /* 07 — Luxury Resort Exterior */
-    "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=85&w=1600&auto=format&fit=crop",
-
-    /* 08 — Scenic Hotel Property */
-    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=85&w=1600&auto=format&fit=crop",
-
-    /* 09 — Premium Resort */
-    "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?q=85&w=1600&auto=format&fit=crop",
-
-    /* 10 — Luxury Hospitality Property */
-    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=85&w=1600&auto=format&fit=crop",
-
-    /* 11 — Premium Hotel Interior / Architecture */
-    "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=85&w=1600&auto=format&fit=crop",
-
-    /* 12 — Luxury Hotel */
-    "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=85&w=1600&auto=format&fit=crop"
+    "images/New folder/wall/1.jpeg",
+    "images/New folder/wall/2.jpeg",
+    "images/New folder/wall/3.jpeg",
+    "images/New folder/wall/4.jpeg",
+    "images/New folder/wall/5.jpeg",
+    "images/New folder/wall/6.jpeg"
 
   ];
 
@@ -4110,7 +4121,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="lotus-philosophy-image">
 
         <img
-          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
+          src="images\New folder\ps.jpeg"
           alt="People and teamwork in hospitality"
           loading="lazy"
         >
@@ -4118,27 +4129,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="lotus-philosophy-image-overlay"></div>
 
         <span class="lotus-philosophy-number"></span>
-
-      </div>
-
-
-      <div class="lotus-philosophy-content">
-
-        <span class="font-serif text-gold fs-2">
-          PEOPLE
-        </span>
-
-        <h4 class="display-serif mt-2 mb-3"
-            style="color:var(--emerald);">
-        
-        </h4>
-
-        <p class="text-muted-dark small mb-0"
-           style="line-height:1.85;">
-          Building strong relationships with owners, teams, partners
-          and guests to create a culture of trust, collaboration
-          and meaningful hospitality.
-        </p>
 
       </div>
 
@@ -4158,7 +4148,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="lotus-philosophy-image">
 
         <img
-          src="https://images.unsplash.com/photo-1778786026090-c5803b6bccec?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="images\New folder\places.jpeg"
           alt="Luxury resort destination"
           loading="lazy"
         >
@@ -4166,27 +4156,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="lotus-philosophy-image-overlay"></div>
 
         <span class="lotus-philosophy-number"></span>
-
-      </div>
-
-
-      <div class="lotus-philosophy-content">
-
-        <span class="font-serif text-gold fs-2">
-          PLACES
-        </span>
-
-        <h4 class="display-serif mt-2 mb-3"
-            style="color:var(--emerald);">
-        
-        </h4>
-
-        <p class="text-muted-dark small mb-0"
-           style="line-height:1.85;">
-          Respecting the character, culture and context of every
-          destination while creating hospitality experiences that
-          feel authentic and relevant.
-        </p>
 
       </div>
 
@@ -4206,7 +4175,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="lotus-philosophy-image">
 
         <img
-          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
+          src="images\New folder\possible.jpeg"
           alt="Innovation and strategic possibilities"
           loading="lazy"
         >
@@ -4214,27 +4183,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="lotus-philosophy-image-overlay"></div>
 
         <span class="lotus-philosophy-number"></span>
-
-      </div>
-
-
-      <div class="lotus-philosophy-content">
-
-        <span class="font-serif text-gold fs-2">
-          POSSIBILITIES
-        </span>
-
-        <h4 class="display-serif mt-2 mb-3"
-            style="color:var(--emerald);">
-      
-        </h4>
-
-        <p class="text-muted-dark small mb-0"
-           style="line-height:1.85;">
-          Unlocking opportunities through strategic thinking,
-          innovation, operational excellence and sustainable
-          commercial growth.
-        </p>
 
       </div>
 
@@ -4264,7 +4212,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     box-shadow: 0 12px 35px rgba(10,42,34,.06);
 
-    transition: none;
+    transition: transform .35s ease, box-shadow .35s ease;
   }
 
 
@@ -4290,7 +4238,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     display: block;
 
-    transition: none;
+    transition: transform .5s ease;
   }
 
 
@@ -4310,6 +4258,8 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
     pointer-events: none;
+
+    transition: opacity .35s ease;
   }
 
 
@@ -4389,7 +4339,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     box-shadow: 0 12px 35px rgba(10,42,34,.06) !important;
 
-    transform: none !important;
+    transform: translateY(-8px) !important;
+
+    box-shadow: 0 22px 48px rgba(10,42,34,.16) !important;
+  }
+
+  .lotus-philosophy-card:hover .lotus-philosophy-image img,
+  .lotus-philosophy-card:focus-visible .lotus-philosophy-image img {
+    transform: scale(1.08);
+  }
+
+  .lotus-philosophy-card:hover .lotus-philosophy-image-overlay,
+  .lotus-philosophy-card:focus-visible .lotus-philosophy-image-overlay {
+    opacity: .78;
   }
 
 
@@ -4469,26 +4431,15 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- =====================================
          CONCEPT & FEASIBILITY
     ====================================== -->
-    <div class="col-md-6 col-lg-3">
+    <div class="col-md-6 col-lg-6">
       <div class="lotus-strategy-card h-100">
         <div class="lotus-strategy-image">
           <img
-            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+            src="images\New folder\CONCEPT & FEASIBILITY.jpeg"
             alt="Hospitality strategy and planning"
             loading="lazy"
           >
           <div class="lotus-strategy-overlay"></div>
-        </div>
-        <div class="lotus-strategy-content">
-          <span class="text-gold font-serif fs-4">
-            CONCEPT & FEASIBILITY
-          </span>
-          <h5 class="mt-2 mb-2" style="color:var(--emerald);">
-            
-          </h5>
-          <p class="text-muted-dark small mb-0" style="line-height:1.8;">
-            Concept development, feasibility and strategic positioning.
-          </p>
         </div>
       </div>
     </div>
@@ -4496,26 +4447,15 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- =====================================
          PRE-OPENING
     ====================================== -->
-    <div class="col-md-6 col-lg-3">
+    <div class="col-md-6 col-lg-6">
       <div class="lotus-strategy-card h-100">
         <div class="lotus-strategy-image">
           <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+            src="images\New folder\preopening.jpeg"
             alt="Luxury hotel interior pre-opening development"
             loading="lazy"
           >
           <div class="lotus-strategy-overlay"></div>
-        </div>
-        <div class="lotus-strategy-content">
-          <span class="text-gold font-serif fs-4">
-            PRE-OPENING
-          </span>
-          <h5 class="mt-2 mb-2" style="color:var(--emerald);">
-           
-          </h5>
-          <p class="text-muted-dark small mb-0" style="line-height:1.8;">
-            Pre-opening planning, brand development and operational readiness.
-          </p>
         </div>
       </div>
     </div>
@@ -4523,26 +4463,15 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- =====================================
          OPERATIONS
     ====================================== -->
-    <div class="col-md-6 col-lg-3">
+    <div class="col-md-6 col-lg-6">
       <div class="lotus-strategy-card h-100">
         <div class="lotus-strategy-image">
           <img
-            src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1000&q=85"
+            src="images\New folder\ops.jpeg"
             alt="Hospitality operations and guest service"
             loading="lazy"
           >
           <div class="lotus-strategy-overlay"></div>
-        </div>
-        <div class="lotus-strategy-content">
-          <span class="text-gold font-serif fs-4">
-            OPERATIONS
-          </span>
-          <h5 class="mt-2 mb-2" style="color:var(--emerald);">
-            
-          </h5>
-          <p class="text-muted-dark small mb-0" style="line-height:1.8;">
-            Operational management, service excellence, people and processes.
-          </p>
         </div>
       </div>
     </div>
@@ -4550,26 +4479,15 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- =====================================
          SALES & PERFORMANCE
     ====================================== -->
-    <div class="col-md-6 col-lg-3">
+    <div class="col-md-6 col-lg-6">
       <div class="lotus-strategy-card h-100">
         <div class="lotus-strategy-image">
           <img
-            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85"
+            src="images\New folder\sales.jpeg"
             alt="Hotel sales strategy and business performance"
             loading="lazy"
           >
           <div class="lotus-strategy-overlay"></div>
-        </div>
-        <div class="lotus-strategy-content">
-          <span class="text-gold font-serif fs-4">
-           SALES & PERFORMANCE
-          </span>
-          <h5 class="mt-2 mb-2" style="color:var(--emerald);">
-            
-          </h5>
-          <p class="text-muted-dark small mb-0" style="line-height:1.8;">
-            Commercial growth, sales, revenue optimisation and performance improvement.
-          </p>
         </div>
       </div>
     </div>
@@ -4590,13 +4508,15 @@ document.addEventListener("DOMContentLoaded", function () {
   border-radius:22px;
   overflow:hidden;
   height:100%;
+  min-height:340px;
   box-shadow:0 12px 35px rgba(10,42,34,0.06);
+  transition:transform .35s ease, box-shadow .35s ease;
 }
 
 /* IMAGE */
 .lotus-strategy-image {
   position:relative;
-  height:190px;
+  height:340px;
   overflow:hidden;
   background:var(--emerald);
 }
@@ -4606,6 +4526,7 @@ document.addEventListener("DOMContentLoaded", function () {
   height:100%;
   object-fit:cover;
   display:block;
+  transition:transform .5s ease;
 }
 
 /* LUXURY OVERLAY */
@@ -4619,6 +4540,18 @@ document.addEventListener("DOMContentLoaded", function () {
       rgba(10,42,34,0.08) 65%,
       rgba(10,42,34,0.02)
     );
+  transition:opacity .35s ease;
+}
+
+.lotus-strategy-card:hover,
+.lotus-strategy-card:focus-within {
+  transform:translateY(-8px);
+  box-shadow:0 22px 48px rgba(10,42,34,0.16);
+}
+
+.lotus-strategy-card:hover .lotus-strategy-image img,
+.lotus-strategy-card:focus-within .lotus-strategy-image img {
+  transform:scale(1.08);
 }
 
 /* CONTENT */
@@ -4683,29 +4616,21 @@ document.addEventListener("DOMContentLoaded", function () {
          OUR VISION
     ====================================================== -->
 
-    <div class="ll-vision reveal">
+    <div class="ll-vision reveal" id="vision-mission">
 
       <div class="ll-section-label">
         <span>OUR VISION</span>
         <span class="ll-label-line"></span>
       </div>
 
-      <div class="ll-vision-layout">
+      <div class="ll-vision-layout" style="width: 100vw; max-width: 100vw; margin-left: calc(50% - 50vw); display: flex; justify-content: center; align-items: center;">
 
-        <div class="ll-vision-heading">
-          <h2 class="ll-vision-title">
-            Vision <span>2035</span>
-          </h2>
-        </div>
-
-        <div class="ll-vision-content">
-          <p>
-            To become India’s most trusted and respected hotel management
-            company, recognized for transforming hospitality assets into
-            <strong>profitable, sustainable</strong> and
-            <strong>guest-centric destinations</strong> through innovation,
-            operational excellence and strategic partnerships.
-          </p>
+        <div class="ll-vision-content" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+          <img
+            src="images/New folder/vision.jpeg"
+            alt="Vision 2035"
+            style="width: 100%; height: auto; max-width: 100%; object-fit: contain; display: block; margin: 0; border-radius: 0;"
+          >
         </div>
 
       </div>
@@ -5957,95 +5882,47 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 
   <!-- Core Values Grid -->
-  <div class="core-values-grid">
+  <div class="core-values-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
 
-    <!-- Owner Focused (Image: Luxury resort exterior / Asset view) -->
-    <div class="core-value-card reveal">
-      <div class="core-value-image">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Owner Focused - Luxury Resort">
-      </div>
-      <div class="core-value-content">
-        <h3>Owner Focused</h3>
-        <p>
-          We align every decision with owner priorities, asset performance
-          and long-term value creation.
-        </p>
-        <div class="core-value-line"></div>
+    <!-- Owner Focused image -->
+    <div class="core-value-card reveal" style="background: transparent; border: 0; box-shadow: none; padding: 0;">
+      <div class="core-value-image" style="border: 0; width: 100%; height: auto; aspect-ratio: 4 / 3; overflow: hidden;">
+        <img src="images/New%20folder/owner.jpeg" alt="Luxury resort exterior" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: center;">
       </div>
     </div>
 
-    <!-- Revenue Driven (Image: Premium hotel dining / Revenue centers) -->
-    <div class="core-value-card reveal">
-      <div class="core-value-image">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Revenue Driven - Hotel Dining">
-      </div>
-      <div class="core-value-content">
-        <h3>Revenue Driven</h3>
-        <p>
-          We identify opportunities that strengthen revenue, profitability
-          and sustainable commercial growth.
-        </p>
-        <div class="core-value-line"></div>
+    <!-- Revenue Driven image -->
+    <div class="core-value-card reveal" style="background: transparent; border: 0; box-shadow: none; padding: 0;">
+      <div class="core-value-image" style="border: 0; width: 100%; height: auto; aspect-ratio: 4 / 3; overflow: hidden;">
+        <img src="images/New%20folder/rev.jpeg" alt="Premium hotel dining" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: center;">
       </div>
     </div>
 
-    <!-- Operational Excellence (Image: Perfectly made hotel room / Housekeeping standards) -->
-    <div class="core-value-card reveal">
-      <div class="core-value-image">
-        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Operational Excellence - Hotel Room">
-      </div>
-      <div class="core-value-content">
-        <h3>Operational Excellence</h3>
-        <p>
-          We build disciplined systems and standards that deliver
-          consistency, efficiency and exceptional guest experiences.
-        </p>
-        <div class="core-value-line"></div>
+    <!-- Operational Excellence image -->
+    <div class="core-value-card reveal" style="background: transparent; border: 0; box-shadow: none; padding: 0;">
+      <div class="core-value-image" style="border: 0; width: 100%; height: auto; aspect-ratio: 4 / 3; overflow: hidden;">
+        <img src="images/New%20folder/operating.jpeg" alt="Well-appointed hotel room" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: center;">
       </div>
     </div>
 
-    <!-- Commercial Expertise (Image: Luxury hotel lobby / Commercial space) -->
-    <div class="core-value-card reveal">
-      <div class="core-value-image">
-        <img src="https://images.unsplash.com/photo-1562790351-d273a961e0e9?auto=format&fit=crop&w=800&q=80" alt="Commercial Expertise - Hotel Lobby">
-      </div>
-      <div class="core-value-content">
-        <h3>Commercial Expertise</h3>
-        <p>
-          We combine market insight, strategic thinking and hospitality
-          expertise to unlock asset potential.
-        </p>
-        <div class="core-value-line"></div>
+    <!-- Commercial Expertise image -->
+    <div class="core-value-card reveal" style="background: transparent; border: 0; box-shadow: none; padding: 0;">
+      <div class="core-value-image" style="border: 0; width: 100%; height: auto; aspect-ratio: 4 / 3; overflow: hidden;">
+        <img src="images/New%20folder/com.jpeg" alt="Luxury hotel lobby" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: center;">
       </div>
     </div>
 
-    <!-- Human Capital Development (Image: Smiling hospitality professional / Guest services) -->
-    <div class="core-value-card reveal">
-      <div class="core-value-image">
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt="Human Capital Development - Hospitality Staff">
-      </div>
-      <div class="core-value-content">
-        <h3>Human Capital Development</h3>
-        <p>
-          We develop capable leaders and engaged teams who elevate
-          performance and create lasting impact.
-        </p>
-        <div class="core-value-line"></div>
+    <!-- Human Capital Development image -->
+    <div class="core-value-card reveal" style="background: transparent; border: 0; box-shadow: none; padding: 0;">
+      <div class="core-value-image" style="border: 0; width: 100%; height: auto; aspect-ratio: 4 / 3; overflow: hidden;">
+        <img src="images/New%20folder/human.jpeg" alt="Hospitality professional" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: center;">
       </div>
     </div>
 
-    <!-- Asset Value Creation (Image: High-end resort architecture / Poolside amenities) -->
-    <div class="core-value-card reveal">
-      <div class="core-value-image">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Asset Value Creation - Resort Architecture">
-      </div>
-      <div class="core-value-content">
-        <h3>Asset Value Creation</h3>
-        <p>
-          We create stronger, more resilient hospitality assets prepared
-          to thrive for generations.
-        </p>
-        <div class="core-value-line"></div>
+    <!-- Asset Value Creation image -->
+    <div class="core-value-card reveal" style="background: transparent; border: 0; box-shadow: none; padding: 0;">
+      <div class="core-value-image" style="border: 0; width: 100%; height: auto; aspect-ratio: 4 / 3; overflow: hidden;">
+        <img src="images/New%20folder/ass.jpeg" alt="Resort architecture" style="display: block; width: 100%; height: 100%; object-fit: contain; object-position: center;">
       </div>
     </div>
 
@@ -8306,7 +8183,7 @@ document.addEventListener("DOMContentLoaded", function () {
          FOUNDER
     ====================================== -->
 
-    <div class="text-center mx-auto reveal" style="max-width:42rem">
+    <div class="text-center mx-auto reveal" id="leadership" style="max-width:42rem">
 
       <span class="overline">Leadership</span>
 
@@ -8315,11 +8192,9 @@ document.addEventListener("DOMContentLoaded", function () {
         Founder with Hospitality in his DNA
       </h2>
 
-      <!-- FOUNDER PHOTO -->
-      <div class="founder-photo mx-auto mt-4 mb-3">
-        <img src="images\WhatsApp Image 2026-09-23 at 12.21.07 PM.jpeg"
-             alt="Sanjeev Salokhe - CEO"
-             loading="lazy">
+      <!-- FOUNDER ICON -->
+      <div class="founder-photo mx-auto mt-4 mb-3 d-flex align-items-center justify-content-center" aria-label="Sanjeev Salokhe - CEO">
+        <i class="bi bi-person-badge-fill" aria-hidden="true" style="font-size: clamp(2.2rem, 4vw, 3.3rem); line-height: 1;"></i>
       </div>
 
       <p class="text-cream mt-3 fs-5 mb-1">
@@ -8337,7 +8212,7 @@ document.addEventListener("DOMContentLoaded", function () {
          ADVISORY BOARD HEADING
     ====================================== -->
 
-    <div class="text-center advisory-board-heading reveal">
+    <div class="text-center advisory-board-heading reveal" id="our-team">
 
       <span class="overline">Advisory Board</span>
 
@@ -8544,11 +8419,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
 
       <p>
-        Collectively bringing over
-        <strong>140 years</strong>
-        of hospitality leadership, operational expertise,
-        and strategic guidance to drive sustainable growth
-        and exceptional business performance.
+        <strong>100+ Years Combined Leadership Experience</strong>
       </p>
 
     </div>
@@ -9602,10 +9473,28 @@ document.addEventListener("DOMContentLoaded", function () {
       // Close mobile menu on link click
       document.querySelectorAll("#navMenu a").forEach((a) =>
         a.addEventListener("click", () => {
+          // Let Bootstrap open dropdowns instead of collapsing the mobile nav.
+          if (a.matches('[data-bs-toggle="dropdown"]')) return;
           const menu = document.getElementById("navMenu");
           if (menu.classList.contains("show")) new bootstrap.Collapse(menu).hide();
         })
       );
+
+      // Toggle the hotel location submenus; Bootstrap only handles the top-level menu.
+      document.querySelectorAll(".dropdown-submenu > .dropdown-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const submenu = toggle.nextElementSibling;
+          const shouldOpen = !submenu.classList.contains("show");
+          const parentMenu = toggle.closest(".hotel-dropdown");
+          parentMenu.querySelectorAll(".dropdown-submenu > .dropdown-menu.show").forEach((openMenu) => {
+            openMenu.classList.remove("show");
+          });
+          if (shouldOpen) submenu.classList.add("show");
+        });
+      });
 
       // ---- Reveal on scroll ----
       const io = new IntersectionObserver(
