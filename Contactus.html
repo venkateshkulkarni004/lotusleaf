@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -554,6 +554,52 @@
         background: #0A2A22;
         
         color: #ffffff;
+      }
+
+      /* Contact office detail rows: keep icon and text aligned on the same line */
+      .contact-page-blocks .contact-office {
+        height: 100%;
+      }
+      .contact-page-blocks .contact-office-info {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        width: min(100%, 340px);
+        margin: 0 auto;
+        text-align: left;
+      }
+      .contact-page-blocks .contact-detail {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        min-height: 42px;
+      }
+      .contact-page-blocks .contact-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: rgba(212, 175, 55, 0.12);
+        color: var(--gold);
+        font-size: 1rem;
+      }
+      .contact-page-blocks .contact-text {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        line-height: 1.6;
+        color: var(--muted-dark);
+      }
+      .contact-page-blocks .contact-text a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .contact-page-blocks .contact-text a:hover {
+        color: var(--emerald);
       }
 
       /* Keep the navigation, cards, and contact form comfortable on phones. */
@@ -2596,7 +2642,7 @@ window.addEventListener("load", function () {
 
     <a
       class="navbar-brand d-flex align-items-center gap-2"
-      href="#hero">
+      href="index.html">
 
       <svg
         width="40"
@@ -2604,7 +2650,7 @@ window.addEventListener("load", function () {
         fill="none"
         viewBox="0 0 64 64">
 
-        <use href="#lotus"></use>
+        <use href="index.html"></use>
 
       </svg>
 
@@ -2642,7 +2688,7 @@ window.addEventListener("load", function () {
         class="navbar-nav align-items-lg-center gap-lg-2">
 
 
-        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 
 
         <li class="nav-item"><a class="nav-link" href="Aboutus.html">About</a></li>
@@ -2745,7 +2791,7 @@ window.addEventListener("load", function () {
 
           <a
             class="btn btn-gold btn-sm px-3 py-2"
-            href="#contact">
+            href="Contactus.html">
 
             Book Now 
 
@@ -2821,14 +2867,14 @@ window.addEventListener("load", function () {
     <ul class="side-menu">
 
 
-      <li><a href="#hero">Home <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="index.html">Home <i class="bi bi-arrow-right"></i></a></li>
 
 
       <!-- ABOUT -->
 
       <li>
 
-        <a href="javascript:void(0)" id="sideAboutBtn" aria-expanded="false">
+        <a href="Aboutus.html" id="sideAboutBtn" aria-expanded="false">
 
           <span>About</span>
 
@@ -2837,10 +2883,10 @@ window.addEventListener("load", function () {
         </a>
 
         <ul class="side-about-menu" id="sideAboutMenu" style="display:none;">
-          <li><a href="#who-we-are">Who We Are <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#vision-mission">Vision &amp; Mission <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#our-team">Our Team <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#leadership">Leadership <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Who We Are <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Vision &amp; Mission <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Our Team <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Leadership <i class="bi bi-arrow-right"></i></a></li>
         </ul>
 
       </li>
@@ -2905,7 +2951,7 @@ window.addEventListener("load", function () {
 
 
               <a
-                href="#coming-projects"
+                href="portfolio.html"
                 target="_blank">
 
                 Pathik grand, Pune
@@ -2947,7 +2993,7 @@ window.addEventListener("load", function () {
 
 
               <a
-                href=""
+                href="protfolio.html"
                 target="_blank">
 
                 Vedi valley Resort, Satara
@@ -2982,12 +3028,12 @@ window.addEventListener("load", function () {
       <li>
         <a href="javascript:void(0)" id="sideWhatWeDoBtn" aria-expanded="false"><span>What We Do</span><i class="bi bi-chevron-down" id="sideWhatWeDoIcon"></i></a>
         <ul class="side-about-menu" id="sideWhatWeDoMenu" style="display:none;">
-          <li><a href="#hotel-resort-management">Hotel &amp; Resort Management <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#sales-marketing">Sales &amp; Marketing <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#revenue-management">Revenue Management <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#pre-opening-consultancy">Pre-Opening Consultancy <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#human-capital">Human Capital <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#operational-excellence">Operational Excellence <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Hotel &amp; Resort Management <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Sales &amp; Marketing <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Revenue Management <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Pre-Opening Consultancy <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Human Capital <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Operational Excellence <i class="bi bi-arrow-right"></i></a></li>
         </ul>
       </li>
 
@@ -2999,7 +3045,7 @@ window.addEventListener("load", function () {
 
       <li>
 
-        <a href="#contact">
+        <a href="Contactus.html">
 
           Contact Us
 
@@ -3481,6 +3527,11 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+  
+  <br>
+  <br>
+  <br>
+  <br>
 
  <!-- SECTION HEADING -->
     <div class="row justify-content-center text-center">
@@ -3488,7 +3539,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col-lg-8 mx-auto text-center">
 
 
-        <p class="text-muted-dark mb-5">
+        <p class="mb-5" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(3rem, 6vw, 6rem); line-height: 0.95; font-weight: 700; letter-spacing: -0.04em; color: var(--gold);">
             Contact Us
         </p>
 
@@ -3498,16 +3549,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     <!-- OFFICE BLOCKS -->
-    <div class="row g-4 justify-content-center">
+    <div class="row g-4 justify-content-center contact-page-blocks">
 
 
       <!-- ================================
            INDIA OFFICE
       ================================= -->
 
-      <div class="col-lg-5 col-md-6 reveal">
+      <div class="col-lg-5 col-md-6 reveal d-flex">
 
-        <div class="contact-office text-center p-4 p-lg-5">
+        <div class="contact-office text-center p-4 p-lg-5 w-100" style="border: 1px solid var(--gold); border-radius: 12px; box-shadow: 0 0 0 1px rgba(201, 162, 75, 0.25); background: rgba(255,255,255,0.02); display: flex; flex-direction: column; justify-content: flex-start; min-height: 100%;">
 
           <span class="overline">
             India
@@ -3515,7 +3566,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <h3 class="display-serif mt-2 mb-4"
               style="color:var(--emerald);">
-            India Office
+            ASIA PACIFIC
           </h3>
 
 
@@ -3585,9 +3636,9 @@ document.addEventListener("DOMContentLoaded", function () {
            UAE OFFICE
       ================================= -->
 
-      <div class="col-lg-5 col-md-6 reveal">
+      <div class="col-lg-5 col-md-6 reveal d-flex">
 
-        <div class="contact-office text-center p-4 p-lg-5">
+        <div class="contact-office text-center p-4 p-lg-5 w-100" style="border: 1px solid var(--gold); border-radius: 12px; box-shadow: 0 0 0 1px rgba(201, 162, 75, 0.25); background: rgba(255,255,255,0.02); display: flex; flex-direction: column; justify-content: flex-start; min-height: 100%;">
 
           <span class="overline">
             UAE
@@ -3595,7 +3646,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <h3 class="display-serif mt-2 mb-4"
               style="color:var(--emerald);">
-            UAE Office
+            Middle East & Africa
           </h3>
 
 
@@ -3687,6 +3738,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   </section>
+  <br>
+  <br>
 
 <!-- =========================================================
      CONTACT FORM
@@ -3788,6 +3841,19 @@ document.addEventListener("DOMContentLoaded", function () {
       </a>
     </div>
 
+    <!-- WHATSAPP CONTACT -->
+    <div class="col-12 mt-3">
+      <a
+        href="https://wa.me/919923587326"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn w-100"
+        style="background-color:#25D366;color:#fff;padding:1rem"
+      >
+        Contact us on WhatsApp
+      </a>
+    </div>
+
   </form>
 
 </div>
@@ -3878,6 +3944,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 </section>
+</section>
+
 
     <!-- FOOTER -->
     <footer class="bg-emerald grain site-footer" style="border-top: 1px solid rgba(212,175,55,0.2)">
@@ -3897,11 +3965,12 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="col-6 col-md-3 footer-explore">
             <p class="overline">Explore</p>
             <div class="d-flex flex-column gap-2 mt-3">
-              <a class="footer-link" href="#about">About</a>
-              <a class="footer-link" href="#services">Services</a>
-              <a class="footer-link" href="#projects">Projects</a>
-              <a class="footer-link" href="#team">Team</a>
-              <a class="footer-link" href="#contact">Contact</a>
+              <a class="footer-link" href="index.html">Home</a>
+              <a class="footer-link" href="Aboutus.html">About</a>
+              <a class="footer-link" href="whatwedo.html">What We Do</a>
+              <a class="footer-link" href="Portfolio.html">Our Hotels</a>
+              <a class="footer-link" href="Portfolio.html">Portfolio</a>
+              <a class="footer-link" href="Contact.html">Contact</a>
             </div>
           </div>
           <div class="col-6 col-md-4 footer-contact">

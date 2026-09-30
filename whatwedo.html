@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -1181,6 +1181,7 @@
   </style>
 
 </head>
+
 
 <body>
 <!-- =========================================================
@@ -2547,15 +2548,16 @@ window.addEventListener("load", function () {
 
 
   /*
-     Animation sequence:
+     Smooth 5-second loader sequence with no pause:
 
-     0.0s  → Emerald screen
+     0.0s  → Intro starts
      0.15s → Lotus logo begins
-     1.05s → THE LOTUSLEAF
-     1.55s → COLLECTION
-     2.00s → Tagline
-     2.20s → Gold lines
-     3.70s → Cinematic exit
+     1.05s → Brand appears
+     1.55s → Collection appears
+     2.00s → Tagline appears
+     2.20s → Gold lines animate
+     3.00s → Cinematic exit begins
+     5.00s → Loader removed
   */
 
 
@@ -2563,18 +2565,18 @@ window.addEventListener("load", function () {
 
     loader.classList.add("loader-blast");
 
-  }, 3900);
+  }, 3000);
 
 
   /*
-     Remove loader completely after animation
+     Remove loader completely after the 5s sequence
   */
 
   setTimeout(function () {
 
     loader.style.display = "none";
 
-  }, 5450);
+  }, 5000);
 
 });
 
@@ -2595,7 +2597,7 @@ window.addEventListener("load", function () {
 
     <a
       class="navbar-brand d-flex align-items-center gap-2"
-      href="#hero">
+      href="index.html">
 
       <svg
         width="40"
@@ -2603,7 +2605,7 @@ window.addEventListener("load", function () {
         fill="none"
         viewBox="0 0 64 64">
 
-        <use href="#lotus"></use>
+        <use href="index.html"></use>
 
       </svg>
 
@@ -2641,7 +2643,7 @@ window.addEventListener("load", function () {
         class="navbar-nav align-items-lg-center gap-lg-2">
 
 
-        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 
 
         <li class="nav-item"><a class="nav-link" href="Aboutus.html">About</a></li>
@@ -2685,7 +2687,7 @@ window.addEventListener("load", function () {
             ========================== -->
 
             <li>
-              <a class="dropdown-item" href="#coming-projects" target="_blank">
+              <a class="dropdown-item" href="Portfolio.html" target="_blank">
                 Pathik Grand, Pune
               </a>
             </li>
@@ -2697,7 +2699,7 @@ window.addEventListener("load", function () {
             ========================== -->
 
             <li>
-              <a class="dropdown-item" href="#coming-projects" target="_blank">
+              <a class="dropdown-item" href="Portfolio.html" target="_blank">
                 Vedi Valley Resort, Satara
               </a>
             </li>
@@ -2718,7 +2720,7 @@ window.addEventListener("load", function () {
  
 
 
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="Portfolio.html ">Portfolio</a></li>
 
 
 
@@ -2728,7 +2730,7 @@ window.addEventListener("load", function () {
 
           <a
             class="nav-link"
-            href="#contact">
+            href="Contactus.html">
 
             Contact
 
@@ -2744,7 +2746,7 @@ window.addEventListener("load", function () {
 
           <a
             class="btn btn-gold btn-sm px-3 py-2"
-            href="#contact">
+            href="Contactus.html">
 
             Book Now 
 
@@ -2820,14 +2822,14 @@ window.addEventListener("load", function () {
     <ul class="side-menu">
 
 
-      <li><a href="#hero">Home <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="index.html">Home <i class="bi bi-arrow-right"></i></a></li>
 
 
       <!-- ABOUT -->
 
       <li>
 
-        <a href="javascript:void(0)" id="sideAboutBtn" aria-expanded="false">
+        <a href="Aboutus.html" id="sideAboutBtn" aria-expanded="false">
 
           <span>About</span>
 
@@ -2836,10 +2838,10 @@ window.addEventListener("load", function () {
         </a>
 
         <ul class="side-about-menu" id="sideAboutMenu" style="display:none;">
-          <li><a href="#who-we-are">Who We Are <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#vision-mission">Vision &amp; Mission <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#our-team">Our Team <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#leadership">Leadership <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Who We Are <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Vision &amp; Mission <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Our Team <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Leadership <i class="bi bi-arrow-right"></i></a></li>
         </ul>
 
       </li>
@@ -2904,7 +2906,7 @@ window.addEventListener("load", function () {
 
 
               <a
-                href="#coming-projects"
+                href="portfolio.html"
                 target="_blank">
 
                 Pathik grand, Pune
@@ -2946,7 +2948,7 @@ window.addEventListener("load", function () {
 
 
               <a
-                href=""
+                href="protfolio.html"
                 target="_blank">
 
                 Vedi valley Resort, Satara
@@ -2981,12 +2983,12 @@ window.addEventListener("load", function () {
       <li>
         <a href="javascript:void(0)" id="sideWhatWeDoBtn" aria-expanded="false"><span>What We Do</span><i class="bi bi-chevron-down" id="sideWhatWeDoIcon"></i></a>
         <ul class="side-about-menu" id="sideWhatWeDoMenu" style="display:none;">
-          <li><a href="#hotel-resort-management">Hotel &amp; Resort Management <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#sales-marketing">Sales &amp; Marketing <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#revenue-management">Revenue Management <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#pre-opening-consultancy">Pre-Opening Consultancy <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#human-capital">Human Capital <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="#operational-excellence">Operational Excellence <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Hotel &amp; Resort Management <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Sales &amp; Marketing <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Revenue Management <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Pre-Opening Consultancy <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Human Capital <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Operational Excellence <i class="bi bi-arrow-right"></i></a></li>
         </ul>
       </li>
 
@@ -2998,7 +3000,7 @@ window.addEventListener("load", function () {
 
       <li>
 
-        <a href="#contact">
+        <a href="Contactus.html">
 
           Contact Us
 
@@ -3480,6 +3482,11 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+  
+  <br>
+  <br>
+  <br>
+  <br>
 
 <!-- =========================================
      STRATEGY TO OPERATIONS
@@ -5759,50 +5766,11 @@ document.addEventListener("DOMContentLoaded", function () {
     </section>
    
    
-    <!-- BRANDS WE HAVE WORKED WITH -->
-    <section class="section bg-cream brands-worked" id="brands-worked">
-      <style>
-        .brands-worked{padding:clamp(4rem,8vw,7rem) 0;overflow:hidden;color:#f6e5ad;background:linear-gradient(135deg,#071b17,#12352b 58%,#071b17)}
-        .brands-worked-title{text-align:center;margin:0 auto 2.5rem;max-width:760px}
-        .brands-worked-title h2{margin:.35rem 0;color:#f2d27c;font:700 clamp(2.4rem,5vw,4.5rem)/.95 "Cormorant Garamond",Georgia,serif}
-        .brands-worked-title p{margin:0;color:var(--gold);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase}
-        .brands-slider{position:relative;overflow:hidden;padding:1.25rem 0;border-block:1px solid rgba(212,175,55,.7)}
-        .brands-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;width:min(100% - 2rem,1200px);margin:0 auto}
-        .brand-card{display:grid;place-items:center;min-width:0;height:150px;padding:1.25rem;border:1px solid rgba(212,175,55,.65);border-radius:14px;background:linear-gradient(145deg,#173b30,#0b211b);box-shadow:0 8px 20px rgba(0,0,0,.24);color:#f2d27c;text-align:center;font:700 1.15rem/1.1 "Cormorant Garamond",Georgia,serif;transition:transform .25s ease,background .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:pointer}
-        .brand-card:hover,.brand-card:focus-visible{transform:translateY(-7px) scale(1.025);background:linear-gradient(145deg,#6d5220,#302713);border-color:#f2d27c;box-shadow:0 16px 30px rgba(212,175,55,.24);outline:none}
-        .brand-card:active{transform:translateY(-2px) scale(.99)}
-        .brand-card img{display:block;max-width:100%;max-height:90px;width:auto;height:auto;object-fit:contain}
-        .brand-card.logo-slot img{max-width:165px}
-        .brand-card.logo-slot{font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;color:#f2d27c}
-        @media(prefers-reduced-motion:reduce){.brand-card{transition:none}.brand-card:hover,.brand-card:focus-visible,.brand-card:active{transform:none}}
-        @media(max-width:575px){.brands-track{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.brand-card{height:120px}}
-      </style>
-      <div class="container">
-        <header class="brands-worked-title">
-          <p>Our network of trusted partnerships</p>
-          <h3>Brands We Have Worked With</h3>
-        </header>
-      </div>
-      <div class="brands-slider" aria-label="Brands we have worked with">
-        <div class="brands-track">
-          <div class="brand-card">Shalimar Hotels</div>
-          <div class="brand-card">The Oberoi Group</div>
-          <div class="brand-card">The O Group</div>
-          <div class="brand-card">The Pride Group</div>
-    <div class="brand-card">Radisson</div>
-   <div class="brand-card">Swara Group of Hotels & Resorts</div>
-  
-      
-          <div class="brand-card">Best Western Hotels &amp; Resorts</div>
-          <div class="brand-card">Royal Caribbean</div>
-          <div class="brand-card">NORWEGIAN CRUISE LINE</div>
-          <div class="brand-card">Taj Mahal Tea House</div>
-        </div>
-      </div>
-    </section>
-
    
   
+
+  </section>
+
 
     <!-- FOOTER -->
     <footer class="bg-emerald grain site-footer" style="border-top: 1px solid rgba(212,175,55,0.2)">
@@ -5822,11 +5790,12 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="col-6 col-md-3 footer-explore">
             <p class="overline">Explore</p>
             <div class="d-flex flex-column gap-2 mt-3">
-              <a class="footer-link" href="#about">About</a>
-              <a class="footer-link" href="#services">Services</a>
-              <a class="footer-link" href="#projects">Projects</a>
-              <a class="footer-link" href="#team">Team</a>
-              <a class="footer-link" href="#contact">Contact</a>
+              <a class="footer-link" href="index.html">Home</a>
+              <a class="footer-link" href="Aboutus.html">About</a>
+              <a class="footer-link" href="whatwedo.html">What We Do</a>
+              <a class="footer-link" href="Portfolio.html">Our Hotels</a>
+              <a class="footer-link" href="Portfolio.html">Portfolio</a>
+              <a class="footer-link" href="Contact.html">Contact</a>
             </div>
           </div>
           <div class="col-6 col-md-4 footer-contact">
