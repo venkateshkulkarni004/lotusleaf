@@ -1,0 +1,4832 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0A2A22">
+    <title>The LotusLeaf Collection — Hospitality Management & Consulting</title>
+    <meta name="description" content="The LotusLeaf Collection — hospitality management, consulting and pre-opening solutions for hotels, resorts and serviced apartments across India.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --emerald: #0a2a22;
+        --emerald-800: #0f3a2f;
+        --gold: #d4af37;
+        --gold-soft: #e6c968;
+        --cream: #f9f8f6;
+        --muted-dark: #4a625a;
+        --muted-light: #a3b8b2;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: clip; }
+      body {
+        margin: 0;
+        max-width: 100%;
+        overflow-x: clip;
+        font-family: "Outfit", Arial, sans-serif;
+        color: var(--emerald);
+        background: var(--cream);
+        -webkit-font-smoothing: antialiased;
+      }
+      .font-serif { font-family: "Cormorant Garamond", Georgia, serif; }
+      ::selection { background: var(--gold); color: var(--emerald); }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 10px; }
+      ::-webkit-scrollbar-track { background: var(--cream); }
+      ::-webkit-scrollbar-thumb { background: #cbb96a; border-radius: 8px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+      .overline {
+        font-size: 0.75rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--gold);
+      }
+      .text-gold { color: var(--gold); }
+      .bg-emerald { background: var(--emerald); }
+      .bg-cream { background: var(--cream); color: var(--emerald); }
+      .text-cream { color: var(--cream); }
+      .text-muted-dark { color: var(--muted-dark); }
+      .text-muted-light { color: var(--muted-light); }
+
+      .text-gold-gradient {
+        background: linear-gradient(120deg, #b8901f 0%, #d4af37 40%, #f0d97a 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gold-hairline {
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--gold), transparent);
+      }
+
+      .section { padding: 6rem 0; }
+      @media (max-width: 768px) { .section { padding: 4rem 0; } }
+
+      .display-serif {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        line-height: 1.05;
+      }
+
+      /* Pre-opening cards use the site's emerald, cream and gold palette. */
+      #creation .preopening-card {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        padding: 2rem;
+        border: 1px solid rgba(10, 42, 34, 0.12);
+        border-radius: 1rem;
+        background: #fffefa;
+        box-shadow: 0 8px 24px rgba(10, 42, 34, 0.07);
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      }
+      #creation .preopening-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 4px;
+        background: linear-gradient(180deg, var(--gold), var(--gold-soft));
+      }
+      #creation .preopening-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(212, 175, 55, .55);
+        box-shadow: 0 16px 34px rgba(10, 42, 34, .13);
+      }
+      #creation .preopening-icon {
+        display: inline-grid;
+        width: 3.25rem;
+        height: 3.25rem;
+        place-items: center;
+        border: 1px solid rgba(212, 175, 55, .5);
+        border-radius: 50%;
+        background: rgba(212, 175, 55, .13);
+        color: var(--emerald);
+        font-size: 1.35rem;
+      }
+      #creation .preopening-card h3 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 600;
+      }
+      #creation .preopening-card ul { padding-left: 1.15rem; line-height: 1.8; }
+      #creation .preopening-card li::marker { color: var(--gold); }
+      @media (prefers-reduced-motion: reduce) {
+        #creation .preopening-card { transition: none; }
+        #creation .preopening-card:hover { transform: none; }
+      }
+
+      /* Navbar */
+      .navbar-custom {
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+        background: #0A2A22;
+        z-index: 1030;
+      }
+      .navbar-custom.scrolled {
+        background: rgba(249, 248, 246, 0.9);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(10, 42, 34, 0.1);
+      }
+      .navbar-custom .nav-link {
+        color: rgba(249, 248, 246, 0.9);
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+      }
+      .navbar-custom.scrolled .nav-link { color: var(--muted-dark); }
+      .navbar-custom .nav-link:hover { color: var(--gold); }
+      /* Keep nested hotel menus usable and visible above the page content. */
+      .navbar-custom .dropdown-menu { z-index: 1050; }
+      .hotel-dropdown .dropdown-submenu { position: relative; }
+      .hotel-dropdown .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: 0;
+      }
+      @media (max-width: 991.98px) {
+        .hotel-dropdown .dropdown-submenu > .dropdown-menu {
+          position: static;
+          margin: 0 0 0 1rem;
+          border: 0;
+          box-shadow: none;
+        }
+      }
+      .brand-text { color: var(--cream); transition: color 0.3s ease; }
+      .navbar-custom.scrolled .brand-text { color: var(--emerald); }
+      .lotus-nav { stroke: var(--gold); transition: stroke 0.3s ease; }
+      .navbar-custom.scrolled .lotus-nav { stroke: var(--emerald); }
+
+      .btn-gold {
+        background: var(--gold);
+        color: var(--emerald);
+        font-weight: 600;
+        border: none;
+        border-radius: 999px;
+        padding: 0.65rem 1.6rem;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+      }
+      .btn-gold:hover { background: var(--gold-soft); color: var(--emerald); }
+      .btn-outline-cream {
+        background: transparent;
+        color: var(--cream);
+        border: 1px solid rgba(249, 248, 246, 0.3);
+        border-radius: 999px;
+        padding: 0.9rem 2rem;
+        font-weight: 600;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+      .btn-outline-cream:hover { color: var(--gold); border-color: var(--gold); }
+      .btn-emerald {
+        background: var(--emerald);
+        color: var(--cream);
+        border: none;
+        border-radius: 999px;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
+      }
+      .btn-emerald:hover { background: var(--emerald-800); color: var(--cream); }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute; inset: 0;
+        background: url("images/New%20folder/wall/1.jpeg") center/cover no-repeat;
+        animation: hero-slideshow 100s infinite;
+      }
+      @keyframes hero-slideshow {
+        0%, 16.66% { background-image: url("images/New%20folder/wall/1.jpeg"); }
+        16.67%, 33.32% { background-image: url("images/New%20folder/wall/2.jpeg"); }
+        33.33%, 49.99% { background-image: url("images/New%20folder/wall/3.jpeg"); }
+        50%, 66.66% { background-image: url("images/New%20folder/wall/4.jpeg"); }
+        66.67%, 83.32% { background-image: url("images/New%20folder/wall/5.jpeg"); }
+        83.33%, 100% { background-image: url("images/New%20folder/wall/6.jpeg"); }
+      }
+      .hero-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(10, 42, 34, 0.96) 0%,
+          rgba(10, 42, 34, 0.82) 45%,
+          rgba(10, 42, 34, 0.4) 100%
+        );
+      }
+      .hero-overlay-2 {
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, var(--emerald), transparent 45%);
+      }
+
+      /* Cards */
+      .value-card, .service-card, .project-card, .team-card {
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+      .value-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 0.85rem;
+        padding: 1.5rem;
+        color: var(--cream);
+      }
+      .value-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(212,175,55,0.5); }
+      .value-icon {
+        width: 44px; height: 44px; border-radius: 0.6rem;
+        background: rgba(212, 175, 55, 0.15);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--gold); font-size: 1.2rem; margin-bottom: 1rem;
+      }
+      .service-card {
+        background: #fff;
+        border: 1px solid rgba(10, 42, 34, 0.1);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        color: var(--emerald);
+      }
+      .service-card:hover { box-shadow: 0 20px 40px rgba(10,42,34,0.12); transform: translateY(-4px); }
+      .service-icon {
+        width: 48px; height: 48px; border-radius: 0.75rem;
+        background: var(--emerald); color: var(--gold);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.35rem; margin-bottom: 1.25rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .service-card:hover .service-icon { background: var(--gold); color: var(--emerald); }
+
+      /* Hotel management service cards */
+      .management-services-section {
+        background: linear-gradient(180deg, #f9f8f6 0%, #f1f5f1 100%);
+      }
+      .management-service-card {
+        position: relative;
+        overflow: hidden;
+        padding: 1.6rem;
+        border: 1px solid rgba(10, 42, 34, 0.12);
+        border-top: 4px solid var(--gold);
+        border-radius: 1rem;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(10, 42, 34, 0.07);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+      .management-service-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 16px 34px rgba(10, 42, 34, 0.14);
+      }
+      .management-service-card .service-card-head { gap: 0.9rem; }
+      .management-service-card .service-card-icon {
+        width: 46px;
+        height: 46px;
+        flex: 0 0 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.8rem;
+        background: var(--emerald);
+        color: var(--gold);
+        font-size: 1.2rem;
+        transition: background 0.25s ease, color 0.25s ease;
+      }
+      .management-service-card:hover .service-card-icon { background: var(--gold); color: var(--emerald); }
+      .management-service-card ul { padding-left: 1.1rem; margin: 1.2rem 0 0; color: var(--muted-dark); }
+      .management-service-card li { padding: 0.35rem 0; }
+      .management-service-card li::marker { color: var(--gold); }
+
+      .chip {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        color: var(--cream);
+        background: rgba(255,255,255,0.05);
+        margin: 0.25rem;
+      }
+
+      .project-card {
+        background: #fff;
+        border: 1px solid rgba(10, 42, 34, 0.1);
+        border-radius: 0.85rem;
+        padding: 1.5rem;
+        color: var(--emerald);
+      }
+      .project-card:hover { border-color: rgba(212,175,55,0.5); }
+      .project-num { font-family: "Cormorant Garamond", serif; font-size: 2rem; color: rgba(212,175,55,0.4); }
+
+      .team-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(212,175,55,0.2);
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        color: var(--cream);
+      }
+      .team-card:hover { border-color: rgba(212,175,55,0.5); }
+      .team-avatar {
+        width: 80px; height: 80px; margin: 0 auto;
+        border-radius: 999px;
+        background: rgba(212,175,55,0.15);
+        border: 1px solid rgba(212,175,55,0.4);
+        display: flex; align-items: center; justify-content: center;
+        font-family: "Cormorant Garamond", serif; font-size: 1.6rem; color: var(--gold);
+      }
+
+      .contact-icon {
+        width: 44px; height: 44px; border-radius: 0.7rem;
+        background: var(--emerald); color: var(--gold);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.15rem; flex-shrink: 0;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .contact-link:hover .contact-icon { background: var(--gold); color: var(--emerald); }
+      .contact-link { text-decoration: none; color: var(--muted-dark); }
+      .contact-link:hover { color: var(--emerald); }
+
+      .form-control {
+        border: 1px solid rgba(10, 42, 34, 0.2);
+        border-radius: 0.5rem;
+        padding: 0.7rem 0.9rem;
+        color: var(--emerald);
+      }
+      .form-control:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.2);
+      }
+      .form-label { color: var(--emerald); font-size: 0.9rem; font-weight: 500; }
+
+      .footer-link { color: rgba(249,248,246,0.8); text-decoration: none; font-size: 0.9rem; }
+      .footer-link:hover { color: var(--gold); }
+
+      /* Reveal animation */
+      .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+      }
+      .grain { position: relative; }
+      .zoom-img { overflow: hidden; }
+      .zoom-img img { transition: transform 0.7s ease; }
+      .zoom-img:hover img { transform: scale(1.05); }
+
+      /* Vision and Mission Blocks */
+      .vision-mission-block {
+        background: #fff;
+        border: 1px solid rgba(10, 42, 34, 0.1);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        color: var(--emerald);
+      }
+      .vision-mission-block:hover {
+        box-shadow: 0 10px 20px rgba(10,42,34,0.08);
+        transform: translateY(-2px);
+      }
+
+      /* Values List */
+      .values-list {
+        list-style: none;
+        padding: 0;
+      }
+      .values-list li {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      }
+      .values-list li:last-child {
+        border-bottom: none;
+      }
+      .value-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .value-description {
+        color: var(--muted-light);
+        font-size: 0.95rem;
+      }
+
+      /* Values Section */
+      .values-section {
+        background: #0A2A22;
+        padding: 50px 0;
+        color: var(--cream);
+      }
+      .values-section .overline {
+        color: #D4AF37;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .values-section .display-serif {
+        color: #D4AF37;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .values-section .section-desc {
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 620px;
+        margin: auto;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .values-section .vision-mission-block {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(212, 175, 55, 0.30);
+        border-radius: 12px;
+        padding: 18px;
+        min-height: 180px;
+        color: #f2f2f2;
+      }
+      .values-section .vision-mission-block p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+      .values-section .value-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(212, 175, 55, 0.30);
+        border-radius: 12px;
+        padding: 18px 15px;
+        text-align: center;
+        min-height: 190px;
+        color: var(--cream);
+      }
+      .values-section .value-icon {
+        width: 45px;
+        height: 45px;
+        margin: 0 auto 12px;
+        border-radius: 50%;
+        background: #D4AF37;
+        color: #0A2A22;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+      .values-section .value-card h4 {
+        color: #D4AF37;
+        font-size: 18px;
+        margin-bottom: 8px;
+        font-family: Georgia, serif;
+        font-weight: 600;
+      }
+      .values-section .value-card p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+
+      /* Founder Icon */
+      .founder-icon {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: #D4AF37;
+        color: #0A2A22;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Contact Form */
+      .lotus-contact-form {
+        background: #ffffff;
+        border: 1px solid rgba(10, 42, 34, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        color: var(--emerald);
+      }
+      .lotus-contact-form h3 {
+        color: #0A2A22;
+        font-size: 1.8rem;
+        font-family: Georgia, serif;
+      }
+      .lotus-contact-form .form-label {
+        color: #0A2A22;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .lotus-contact-form .form-control {
+        border: 1px solid rgba(10, 42, 34, 0.2);
+        border-radius: 10px;
+        padding: 12px 15px;
+        font-size: 14px;
+        color: var(--emerald);
+      }
+      .lotus-contact-form .form-control:focus {
+        border-color: #D4AF37;
+        box-shadow: 0 0 0 .15rem rgba(212, 175, 55, 0.25);
+      }
+      .lotus-contact-form .btn-gold {
+        background: #D4AF37;
+        color: #0A2A22;
+        border: none;
+        font-weight: 600;
+        border-radius: 10px;
+      }
+      .lotus-contact-form .btn-gold:hover {
+        background: #0A2A22;
+        
+        color: #ffffff;
+      }
+
+      /* Keep the navigation, cards, and contact form comfortable on phones. */
+      @media (max-width: 767.98px) {
+        .navbar-custom .navbar-collapse {
+          max-height: calc(100vh - 72px);
+          overflow-y: auto;
+          padding: 0.5rem 0 1rem;
+        }
+        .navbar-custom .nav-link { padding: 0.65rem 0.75rem !important; }
+        .dropdown-submenu > .dropdown-menu {
+          position: static !important;
+          width: 100%;
+          min-width: 0;
+          margin: 0.25rem 0 0.5rem;
+          box-shadow: none;
+          border-left: 2px solid var(--gold);
+        }
+        .hero { min-height: 100svh; padding: 6rem 0 3rem; }
+        .hero .display-1, .hero h1 { font-size: clamp(2.4rem, 11vw, 4rem); }
+        .service-card, .management-service-card, .project-card,
+        .team-card, .vision-mission-block { padding: 1.25rem; }
+        .lotus-contact-form { padding: 1.25rem; }
+        .contact-text { overflow-wrap: anywhere; }
+        .btn-gold, .btn-emerald, .btn-outline-cream { max-width: 100%; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SVG lotus symbol -->
+    <svg style="display: none">
+      <symbol id="lotus" viewBox="0 0 64 64">
+        <g fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 52c0-10 0-18 0-24"></path>
+          <path d="M32 28c-2-8-1-16 0-22 1 6 2 14 0 22z"></path>
+          <path d="M32 30c-6-5-11-7-17-8 3 6 8 11 17 12z"></path>
+          <path d="M32 30c6-5 11-7 17-8-3 6-8 11-17 12z"></path>
+          <path d="M32 32c-9-2-16 0-22 3 6 4 15 6 22 1z"></path>
+          <path d="M32 32c9-2 16 0 22 3-6 4-15 6-22 1z"></path>
+          <path d="M14 46c6 5 12 7 18 7s12-2 18-7"></path>
+        </g>
+      </symbol>
+    </svg>
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The LotusLeaf Collection</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  <style>
+
+    /* =========================================
+       GENERAL
+    ========================================= */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+    /* =========================================
+       NAVBAR
+    ========================================= */
+
+    .navbar-custom {
+      background: #ffffff;
+      padding: 12px 0;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+      z-index: 1050;
+    }
+
+
+    .navbar-brand {
+      color: #222;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+
+    .navbar-brand:hover {
+      color: #b08a3c;
+    }
+
+
+    .nav-link {
+      color: #222 !important;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 14px !important;
+      transition: 0.3s;
+    }
+
+
+    .nav-link:hover {
+      color: #b08a3c !important;
+    }
+
+    #aboutBtn.dropdown-toggle::after,
+    #whatWeDoBtn.dropdown-toggle::after {
+      display: none !important;
+    }
+
+
+    /* =========================================
+       MAIN OUR HOTELS DROPDOWN
+    ========================================= */
+
+    .hotel-dropdown {
+      min-width: 250px;
+      padding: 8px 0;
+
+      border: none;
+      border-radius: 8px;
+
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+
+
+    .hotel-dropdown .dropdown-item {
+      padding: 11px 18px;
+      font-size: 14px;
+      color: #333;
+
+      transition: 0.3s;
+    }
+
+
+    .hotel-dropdown .dropdown-item:hover {
+      background: #f8f5ed;
+      color: #b08a3c;
+    }
+
+
+    /* =========================================
+       LOCATION SUBMENU
+    ========================================= */
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+
+    .dropdown-submenu > .dropdown-menu {
+
+      top: 0;
+      left: 100%;
+
+      margin-top: -8px;
+      margin-left: 2px;
+
+      min-width: 290px;
+
+      border: none;
+      border-radius: 8px;
+
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /*
+       IMPORTANT:
+       No hover opening.
+       Javascript controls everything.
+    */
+
+    .dropdown-submenu > .dropdown-menu.show {
+      display: block;
+    }
+
+
+    /* =========================================
+       ARROWS
+    ========================================= */
+
+    .dropdown-submenu > .dropdown-toggle::after {
+
+      float: right;
+
+      margin-top: 7px;
+    }
+
+
+    /* =========================================
+       GOLD BUTTON
+    ========================================= */
+
+    .btn-gold {
+
+      background: #b08a3c;
+
+      border: 1px solid #b08a3c;
+
+      color: #ffffff;
+
+      border-radius: 4px;
+
+      transition: 0.3s;
+    }
+
+
+    .btn-gold:hover {
+
+      background: #92702e;
+
+      border-color: #92702e;
+
+      color: #ffffff;
+    }
+
+
+    /* =========================================
+       THREE LINE BUTTON
+    ========================================= */
+
+    .side-menu-btn {
+
+      width: 46px;
+      height: 46px;
+
+      border: 1px solid #ddd;
+
+      background: #ffffff;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 4px;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+
+    .side-menu-btn i {
+
+      font-size: 25px;
+
+      color: #222;
+    }
+
+
+    .side-menu-btn:hover {
+
+      background: #b08a3c;
+
+      border-color: #b08a3c;
+    }
+
+
+    .side-menu-btn:hover i {
+
+      color: #ffffff;
+    }
+
+
+    /* =========================================
+       RIGHT SIDE SLIDER
+    ========================================= */
+
+    .side-offcanvas {
+
+      width: 420px !important;
+
+      background: #ffffff;
+    }
+
+
+    .side-offcanvas .offcanvas-header {
+
+      padding: 25px 30px;
+
+      border-bottom: 1px solid #eeeeee;
+    }
+
+
+    .side-offcanvas .offcanvas-title {
+
+      font-size: 21px;
+
+      font-weight: 600;
+
+      color: #222;
+    }
+
+
+    .side-offcanvas .offcanvas-body {
+
+      padding: 30px;
+    }
+
+
+    /* =========================================
+       SIDE MENU
+    ========================================= */
+
+    .side-menu {
+
+      list-style: none;
+
+      padding: 0;
+
+      margin: 0;
+    }
+
+
+    .side-menu > li {
+
+      border-bottom: 1px solid #eeeeee;
+    }
+
+
+    .side-menu > li > a {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      text-decoration: none;
+
+      color: #222;
+
+      font-size: 16px;
+
+      font-weight: 500;
+
+      padding: 17px 5px;
+
+      transition: 0.3s;
+    }
+
+
+    .side-menu > li > a:hover {
+
+      color: #b08a3c;
+    }
+
+
+    /* =========================================
+       SIDE HOTEL LOCATIONS
+    ========================================= */
+
+    .side-hotel-location {
+
+      border-top: 1px solid #eeeeee;
+    }
+
+
+    .side-hotel-location > button {
+
+      width: 100%;
+
+      border: 0;
+
+      background: transparent;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 14px 10px;
+
+      color: #333;
+
+      font-size: 15px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      text-align: left;
+    }
+
+
+    .side-hotel-location > button:hover {
+
+      color: #b08a3c;
+
+      background: #faf8f2;
+    }
+
+
+    /* =========================================
+       SIDE HOTEL LIST
+    ========================================= */
+
+    .side-hotel-list {
+
+      display: none;
+
+      background: #fafafa;
+
+      padding: 5px 15px 12px 25px;
+    }
+
+
+    .side-hotel-list.show {
+
+      display: block;
+    }
+
+
+    .side-hotel-list a {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      text-decoration: none;
+
+      color: #555;
+
+      font-size: 14px;
+
+      padding: 10px 0;
+
+      transition: 0.3s;
+    }
+
+
+    .side-hotel-list a:hover {
+
+      color: #b08a3c;
+
+      padding-left: 5px;
+    }
+
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+
+    .side-contact {
+
+      margin-top: 35px;
+    }
+
+
+    .side-contact h6 {
+
+      color: #b08a3c;
+
+      font-size: 13px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .side-contact p {
+
+      margin-bottom: 12px;
+
+      color: #555;
+
+      font-size: 14px;
+    }
+
+
+    .side-contact a {
+
+      color: #333;
+
+      text-decoration: none;
+    }
+
+
+    .side-contact a:hover {
+
+      color: #b08a3c;
+    }
+
+
+    /* =========================================
+       SOCIAL
+    ========================================= */
+
+    .side-social {
+
+      display: flex;
+
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+
+    .side-social a {
+
+      width: 38px;
+      height: 38px;
+
+      border: 1px solid #ddd;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: #333;
+
+      text-decoration: none;
+
+      border-radius: 50%;
+
+      transition: 0.3s;
+    }
+
+
+    .side-social a:hover {
+
+      background: #b08a3c;
+
+      border-color: #b08a3c;
+
+      color: #ffffff;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 991px) {
+
+      .navbar-custom {
+
+        padding: 10px 15px;
+      }
+
+
+      .navbar-collapse {
+
+        margin-top: 15px;
+      }
+
+
+      .nav-link {
+
+        padding: 12px 5px !important;
+      }
+
+
+      /*
+        Main dropdown becomes normal
+        vertical menu on mobile
+      */
+
+      .hotel-dropdown {
+
+        box-shadow: none;
+
+        border-radius: 0;
+
+        padding-left: 10px;
+      }
+
+
+      .dropdown-submenu > .dropdown-menu {
+
+        position: static;
+
+        margin: 0;
+
+        box-shadow: none;
+
+        border-radius: 0;
+
+        padding-left: 15px;
+
+        background: #fafafa;
+      }
+
+
+      .side-offcanvas {
+
+        width: 85% !important;
+
+        max-width: 420px;
+      }
+
+    }
+
+
+    @media (max-width: 576px) {
+
+      .side-offcanvas {
+
+        width: 100% !important;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+<!-- =========================================================
+     THE LOTUSLEAF COLLECTION
+     CINEMATIC LUXURY INTRO / NETFLIX-STYLE REVEAL
+========================================================= -->
+
+<div id="site-loader">
+
+  <!-- Cinematic light sweep -->
+  <div class="lotus-light"></div>
+
+  <!-- Main intro -->
+  <div class="lotus-intro">
+
+    <!-- ==============================================
+         LOTUSLEAF LOGO
+         Use your transparent logo image here
+    =============================================== -->
+
+    <div class="lotus-logo-box">
+
+      <img
+        src="images/WhatsApp_Image_2026-06-19_at_7.35.11_PM-removebg-preview.png"
+        alt="The LotusLeaf Collection Logo"
+        class="lotus-logo"
+      >
+
+    </div>
+
+
+    <!-- ==============================================
+         BRAND NAME
+    =============================================== -->
+
+    <div class="lotus-brand">
+
+      <span>THE LOTUSLEAF</span>
+
+    </div>
+
+
+    <!-- ==============================================
+         COLLECTION
+    =============================================== -->
+
+    <div class="lotus-collection">
+
+      COLLECTION
+
+    </div>
+
+
+    <!-- ==============================================
+         TAGLINE
+    =============================================== -->
+
+    <div class="lotus-tagline">
+
+      <span class="gold-line left-line"></span>
+
+      <span class="tagline-text">
+        A HOTEL MANAGEMENT COMPANY
+      </span>
+
+      <span class="gold-line right-line"></span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<style>
+
+/* =========================================================
+   THE LOTUSLEAF COLLECTION
+   CINEMATIC LUXURY LOADER
+========================================================= */
+
+
+/* =========================================================
+   MAIN LOADER
+========================================================= */
+
+#site-loader {
+
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #104B3A 0%,
+      #0B3B2D 38%,
+      #063326 72%,
+      #05291F 100%
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 999999;
+
+  overflow: hidden;
+
+  opacity: 1;
+
+  visibility: visible;
+
+}
+
+
+/* =========================================================
+   VERY SUBTLE CINEMATIC BACKGROUND
+========================================================= */
+
+#site-loader::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -20%;
+
+  background:
+
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(201,162,75,.08),
+      transparent 32%
+    );
+
+  opacity: 0;
+
+  animation:
+
+    backgroundGlow
+
+    5.8s
+
+    ease-out
+
+    forwards;
+
+  pointer-events: none;
+
+}
+
+
+@keyframes backgroundGlow {
+
+  0% {
+
+    opacity: 0;
+
+    transform: scale(.8);
+
+  }
+
+  35% {
+
+    opacity: .7;
+
+    transform: scale(1);
+
+  }
+
+  75% {
+
+    opacity: .35;
+
+  }
+
+  100% {
+
+    opacity: 0;
+
+    transform: scale(1.15);
+
+  }
+
+}
+
+
+/* =========================================================
+   INTRO CONTAINER
+========================================================= */
+
+.lotus-intro {
+
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  width: 100%;
+
+  padding: 30px;
+
+}
+
+
+/* =========================================================
+   LOGO CONTAINER
+========================================================= */
+
+.lotus-logo-box {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: clamp(150px, 17vw, 245px);
+
+  height: clamp(150px, 17vw, 245px);
+
+  margin-bottom: 18px;
+
+  opacity: 0;
+
+  transform:
+
+    translateY(35px)
+
+    scale(.72);
+
+  filter:
+
+    blur(12px);
+
+  animation:
+
+    lotusLogoReveal
+
+    1.8s
+
+    cubic-bezier(.16,1,.3,1)
+
+    .15s
+
+    forwards;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.lotus-logo {
+
+  width: 150%;
+
+  height: 150%;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter:
+
+    drop-shadow(
+      0 8px 20px
+      rgba(201,162,75,.10)
+    );
+
+}
+
+
+/* =========================================================
+   LOGO CINEMATIC REVEAL
+========================================================= */
+
+@keyframes lotusLogoReveal {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+
+      translateY(35px)
+
+      scale(.72);
+
+    filter:
+
+      blur(12px)
+
+      brightness(.7);
+
+  }
+
+  35% {
+
+    opacity: .4;
+
+    transform:
+
+      translateY(10px)
+
+      scale(.88);
+
+    filter:
+
+      blur(5px)
+
+      brightness(1);
+
+  }
+
+  70% {
+
+    opacity: 1;
+
+    transform:
+
+      translateY(0)
+
+      scale(1.04);
+
+    filter:
+
+      blur(0)
+
+      brightness(1.08);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+
+      translateY(0)
+
+      scale(1);
+
+    filter:
+
+      blur(0)
+
+      brightness(1);
+
+  }
+
+}
+
+
+/* =========================================================
+   BRAND NAME
+========================================================= */
+
+.lotus-brand {
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform:
+
+    translateY(25px)
+
+    scaleX(.92);
+
+  filter: blur(7px);
+
+  animation:
+
+    brandReveal
+
+    1.25s
+
+    cubic-bezier(.16,1,.3,1)
+
+    1.05s
+
+    forwards;
+
+}
+
+
+.lotus-brand span {
+
+  display: block;
+
+  font-family:
+
+    "Avenir Next",
+
+    "Century Gothic",
+
+    "Trebuchet MS",
+
+    Arial,
+
+    sans-serif;
+
+  font-size:
+
+    clamp(29px, 4.3vw, 64px);
+
+  line-height: 1;
+
+  letter-spacing:
+
+    clamp(3px, .55vw, 8px);
+
+  font-weight: 400;
+
+  color: #F7F5EF;
+
+  white-space: nowrap;
+
+  text-shadow:
+
+    0 0 20px
+
+    rgba(255,255,255,.05);
+
+}
+
+
+/* =========================================================
+   BRAND REVEAL
+========================================================= */
+
+@keyframes brandReveal {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+
+      translateY(25px)
+
+      scaleX(.92);
+
+    filter: blur(7px);
+
+  }
+
+  55% {
+
+    opacity: 1;
+
+    transform:
+
+      translateY(0)
+
+      scaleX(1);
+
+    filter: blur(0);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+
+      translateY(0)
+
+      scaleX(1);
+
+    filter: blur(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   COLLECTION
+========================================================= */
+
+.lotus-collection {
+
+  margin-top: 18px;
+
+  font-family:
+
+    "Avenir Next",
+
+    "Century Gothic",
+
+    Arial,
+
+    sans-serif;
+
+  font-size:
+
+    clamp(19px, 2.5vw, 37px);
+
+  font-weight: 300;
+
+  letter-spacing:
+
+    clamp(7px, 1vw, 15px);
+
+  color: #F7F5EF;
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  transform:
+
+    translateY(18px)
+
+    scale(.96);
+
+  filter: blur(6px);
+
+  animation:
+
+    collectionReveal
+
+    1.15s
+
+    cubic-bezier(.16,1,.3,1)
+
+    1.55s
+
+    forwards;
+
+}
+
+
+/* =========================================================
+   COLLECTION REVEAL
+========================================================= */
+
+@keyframes collectionReveal {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+
+      translateY(18px)
+
+      scale(.96);
+
+    filter: blur(6px);
+
+  }
+
+  60% {
+
+    opacity: 1;
+
+    transform:
+
+      translateY(0)
+
+      scale(1);
+
+    filter: blur(0);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+
+      translateY(0)
+
+      scale(1);
+
+    filter: blur(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.lotus-tagline {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 28px;
+
+  opacity: 0;
+
+  transform:
+
+    translateY(15px);
+
+  filter: blur(5px);
+
+  animation:
+
+    taglineReveal
+
+    1.2s
+
+    cubic-bezier(.16,1,.3,1)
+
+    2s
+
+    forwards;
+
+}
+
+
+/* =========================================================
+   TAGLINE TEXT
+========================================================= */
+
+.tagline-text {
+
+  font-family:
+
+    "Avenir Next",
+
+    "Century Gothic",
+
+    Arial,
+
+    sans-serif;
+
+  font-size:
+
+    clamp(9px, 1.05vw, 15px);
+
+  font-weight: 500;
+
+  letter-spacing:
+
+    clamp(2.5px, .38vw, 5px);
+
+  color: #DDBE78;
+
+  white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   GOLD LINES
+========================================================= */
+
+.gold-line {
+
+  display: block;
+
+  width:
+
+    clamp(45px, 7vw, 105px);
+
+  height: 1px;
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      transparent,
+
+      #C9A24B
+
+    );
+
+  transform:
+
+    scaleX(0);
+
+}
+
+
+.left-line {
+
+  transform-origin: right center;
+
+  animation:
+
+    lineRevealLeft
+
+    .9s
+
+    cubic-bezier(.16,1,.3,1)
+
+    2.15s
+
+    forwards;
+
+}
+
+
+.right-line {
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      #C9A24B,
+
+      transparent
+
+    );
+
+  transform-origin: left center;
+
+  animation:
+
+    lineRevealRight
+
+    .9s
+
+    cubic-bezier(.16,1,.3,1)
+
+    2.15s
+
+    forwards;
+
+}
+
+
+/* =========================================================
+   TAGLINE REVEAL
+========================================================= */
+
+@keyframes taglineReveal {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+
+      translateY(15px);
+
+    filter: blur(5px);
+
+  }
+
+  60% {
+
+    opacity: 1;
+
+    transform:
+
+      translateY(0);
+
+    filter: blur(0);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+
+      translateY(0);
+
+    filter: blur(0);
+
+  }
+
+}
+
+
+@keyframes lineRevealLeft {
+
+  to {
+
+    transform: scaleX(1);
+
+  }
+
+}
+
+
+@keyframes lineRevealRight {
+
+  to {
+
+    transform: scaleX(1);
+
+  }
+
+}
+
+
+/* =========================================================
+   CINEMATIC LIGHT SWEEP
+========================================================= */
+
+.lotus-light {
+
+  position: absolute;
+
+  top: 0;
+
+  left: -30%;
+
+  width: 25%;
+
+  height: 150%;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      transparent 0%,
+
+      rgba(255,255,255,.015) 30%,
+
+      rgba(201,162,75,.10) 50%,
+
+      rgba(255,255,255,.015) 70%,
+
+      transparent 100%
+
+    );
+
+  transform:
+
+    skewX(-15deg);
+
+  animation:
+
+    cinematicSweep
+
+    2.8s
+
+    cubic-bezier(.16,1,.3,1)
+
+    .9s
+
+    forwards;
+
+}
+
+
+@keyframes cinematicSweep {
+
+  0% {
+
+    left: -35%;
+
+    opacity: 0;
+
+  }
+
+  20% {
+
+    opacity: .7;
+
+  }
+
+  65% {
+
+    opacity: .35;
+
+  }
+
+  100% {
+
+    left: 120%;
+
+    opacity: 0;
+
+  }
+
+}
+
+
+/* =========================================================
+   FINAL CINEMATIC BLAST
+========================================================= */
+
+#site-loader.loader-blast {
+
+  animation:
+
+    lotusleafFinalBlast
+
+    1.45s
+
+    cubic-bezier(.16,1,.3,1)
+
+    forwards;
+
+}
+
+
+@keyframes lotusleafFinalBlast {
+
+  0% {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    filter: blur(0);
+
+  }
+
+  25% {
+
+    opacity: 1;
+
+    transform: scale(1.015);
+
+    filter: blur(0);
+
+  }
+
+  48% {
+
+    opacity: 1;
+
+    transform: scale(1.045);
+
+    filter: blur(.5px);
+
+  }
+
+  70% {
+
+    opacity: .72;
+
+    transform: scale(1.22);
+
+    filter: blur(4px);
+
+  }
+
+  86% {
+
+    opacity: .28;
+
+    transform: scale(1.65);
+
+    filter: blur(11px);
+
+  }
+
+  100% {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(2.7);
+
+    filter: blur(25px);
+
+  }
+
+}
+
+
+/* =========================================================
+   GOLD FLASH DURING EXIT
+========================================================= */
+
+#site-loader.loader-blast::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  width: 20px;
+
+  height: 20px;
+
+  border-radius: 50%;
+
+  transform:
+
+    translate(-50%, -50%)
+
+    scale(.1);
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(255,255,255,.95) 0%,
+
+      rgba(221,190,120,.75) 12%,
+
+      rgba(201,162,75,.30) 35%,
+
+      transparent 72%
+
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  animation:
+
+    luxuryFlash
+
+    1.25s
+
+    ease-out
+
+    forwards;
+
+}
+
+
+@keyframes luxuryFlash {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+
+      translate(-50%, -50%)
+
+      scale(.1);
+
+  }
+
+  25% {
+
+    opacity: .7;
+
+    transform:
+
+      translate(-50%, -50%)
+
+      scale(12);
+
+  }
+
+  55% {
+
+    opacity: .28;
+
+    transform:
+
+      translate(-50%, -50%)
+
+      scale(45);
+
+  }
+
+  100% {
+
+    opacity: 0;
+
+    transform:
+
+      translate(-50%, -50%)
+
+      scale(85);
+
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .lotus-logo-box {
+
+    width: 270px;
+
+    height: 270px;
+
+  }
+
+  .lotus-brand span {
+
+    font-size: 68px;
+
+  }
+
+  .lotus-collection {
+
+    font-size: 40px;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .lotus-intro {
+
+    padding: 20px;
+
+  }
+
+  .lotus-logo-box {
+
+    width: 165px;
+
+    height: 165px;
+
+    margin-bottom: 20px;
+
+  }
+
+  .lotus-brand span {
+
+    font-size: 32px;
+
+    letter-spacing: 4px;
+
+  }
+
+  .lotus-collection {
+
+    font-size: 21px;
+
+    letter-spacing: 8px;
+
+    margin-top: 14px;
+
+  }
+
+  .lotus-tagline {
+
+    gap: 10px;
+
+    margin-top: 22px;
+
+  }
+
+  .tagline-text {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+  }
+
+  .gold-line {
+
+    width: 35px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .lotus-logo-box {
+
+    width: 125px;
+
+    height: 125px;
+
+    margin-bottom: 18px;
+
+  }
+
+  .lotus-brand span {
+
+    font-size: 23px;
+
+    letter-spacing: 2.5px;
+
+  }
+
+  .lotus-collection {
+
+    margin-top: 12px;
+
+    font-size: 16px;
+
+    letter-spacing: 5px;
+
+  }
+
+  .lotus-tagline {
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+  }
+
+  .tagline-text {
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+  }
+
+  .gold-line {
+
+    width: 25px;
+
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .lotus-logo-box {
+
+    width: 105px;
+
+    height: 105px;
+
+  }
+
+  .lotus-brand span {
+
+    font-size: 19px;
+
+    letter-spacing: 2px;
+
+  }
+
+  .lotus-collection {
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+  }
+
+  .tagline-text {
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+
+  }
+
+  .gold-line {
+
+    width: 20px;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #site-loader *,
+  #site-loader::before {
+
+    animation: none !important;
+
+    transition: none !important;
+
+  }
+
+  .lotus-logo-box,
+  .lotus-brand,
+  .lotus-collection,
+  .lotus-tagline {
+
+    opacity: 1;
+
+    transform: none;
+
+    filter: none;
+
+  }
+
+}
+
+</style>
+
+
+<script>
+
+/* =========================================================
+   THE LOTUSLEAF COLLECTION
+   LOADER CONTROL
+========================================================= */
+
+window.addEventListener("load", function () {
+
+  const loader =
+    document.getElementById("site-loader");
+
+
+  /*
+     Animation sequence:
+
+     0.0s  → Emerald screen
+     0.15s → Lotus logo begins
+     1.05s → THE LOTUSLEAF
+     1.55s → COLLECTION
+     2.00s → Tagline
+     2.20s → Gold lines
+     3.70s → Cinematic exit
+  */
+
+
+  setTimeout(function () {
+
+    loader.classList.add("loader-blast");
+
+  }, 3900);
+
+
+  /*
+     Remove loader completely after animation
+  */
+
+  setTimeout(function () {
+
+    loader.style.display = "none";
+
+  }, 5450);
+
+});
+
+</script>
+<!-- =====================================================
+     MAIN NAVBAR
+===================================================== -->
+
+<nav
+  id="navbar"
+  class="navbar navbar-expand-lg navbar-custom fixed-top">
+
+
+  <div class="container">
+
+
+    <!-- LOGO -->
+
+    <a
+      class="navbar-brand d-flex align-items-center gap-2"
+      href="#hero">
+
+      <svg
+        width="40"
+        height="40"
+        fill="none"
+        viewBox="0 0 64 64">
+
+        <use href="#lotus"></use>
+
+      </svg>
+
+
+      <span>
+        The LotusLeaf Collection
+      </span>
+
+    </a>
+
+
+
+    <!-- MOBILE NAV BUTTON -->
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMenu">
+
+      <i class="bi bi-list fs-3"></i>
+
+    </button>
+
+
+
+    <!-- NAVIGATION -->
+
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navMenu">
+
+
+      <ul
+        class="navbar-nav align-items-lg-center gap-lg-2">
+
+
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+
+
+        <li class="nav-item"><a class="nav-link" href="Aboutus.html">About</a></li>
+
+
+<li class="nav-item"><a class="nav-link" href="WhatWeDo.html">What We Do</a></li>
+
+        <!-- =================================================
+             OUR HOTELS
+        ================================================== -->
+
+        <li class="nav-item dropdown">
+
+          <!-- IMPORTANT:
+               Removed data-bs-toggle.
+               Javascript controls opening/closing.
+          -->
+
+          <a
+            class="nav-link dropdown-toggle"
+            href="javascript:void(0)"
+            id="ourHotelsBtn"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+
+            Our Hotels
+
+          </a>
+
+
+          <!-- MAIN HOTEL MENU -->
+
+          <ul
+            class="dropdown-menu dropdown-menu-end hotel-dropdown"
+            id="mainHotelMenu">
+
+
+            <!-- =========================
+                 AJMER
+            ========================== -->
+
+            <li>
+              <a class="dropdown-item" href="#coming-projects" target="_blank">
+                Pathik Grand, Pune
+              </a>
+            </li>
+
+
+
+            <!-- =========================
+                 JAIPUR
+            ========================== -->
+
+            <li>
+              <a class="dropdown-item" href="#coming-projects" target="_blank">
+                Vedi Valley Resort, Satara
+              </a>
+            </li>
+
+
+
+            <!-- =========================
+                 RANTHAMBORE
+            ========================== -->
+
+           
+
+
+          </ul>
+
+        </li>
+
+ 
+
+
+        <li class="nav-item"><a class="nav-link" href="Portfolio.html ">Portfolio</a></li>
+
+
+
+        <!-- CONTACT -->
+
+        <li class="nav-item">
+
+          <a
+            class="nav-link"
+            href="#contact">
+
+            Contact
+
+          </a>
+
+        </li>
+
+
+
+        <!-- GET IN TOUCH -->
+
+        <li class="nav-item ms-lg-2">
+
+          <a
+            class="btn btn-gold btn-sm px-3 py-2"
+            href="#contact">
+
+            Book Now 
+
+          </a>
+
+        </li>
+
+
+
+        <!-- THREE LINE MENU -->
+
+        <li class="nav-item ms-lg-2">
+
+          <button
+            class="side-menu-btn"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#rightSideMenu">
+
+            <i class="bi bi-list"></i>
+
+          </button>
+
+        </li>
+
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     RIGHT SIDE SLIDING MENU
+===================================================== -->
+
+<div
+  class="offcanvas offcanvas-end side-offcanvas"
+  tabindex="-1"
+  id="rightSideMenu">
+
+
+  <!-- HEADER -->
+
+  <div class="offcanvas-header">
+
+    <h5 class="offcanvas-title">
+
+      The LotusLeaf Collection
+
+    </h5>
+
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas">
+    </button>
+
+  </div>
+
+
+
+  <!-- BODY -->
+
+  <div class="offcanvas-body">
+
+
+    <ul class="side-menu">
+
+
+      <li><a href="#hero">Home <i class="bi bi-arrow-right"></i></a></li>
+
+
+      <!-- ABOUT -->
+
+      <li>
+
+        <a href="javascript:void(0)" id="sideAboutBtn" aria-expanded="false">
+
+          <span>About</span>
+
+          <i class="bi bi-chevron-down" id="sideAboutIcon"></i>
+
+        </a>
+
+        <ul class="side-about-menu" id="sideAboutMenu" style="display:none;">
+          <li><a href="#who-we-are">Who We Are <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#vision-mission">Vision &amp; Mission <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#our-team">Our Team <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#leadership">Leadership <i class="bi bi-arrow-right"></i></a></li>
+        </ul>
+
+      </li>
+
+
+
+      <!-- =================================================
+           SIDE OUR HOTELS
+      ================================================== -->
+
+      <li>
+
+
+        <!-- MAIN OUR HOTELS BUTTON -->
+
+        <a
+          href="javascript:void(0)"
+          id="sideHotelsBtn">
+
+          <span>
+            Our Hotels
+          </span>
+
+          <i
+            class="bi bi-chevron-down"
+            id="sideHotelsIcon">
+          </i>
+
+        </a>
+
+
+        <!-- SIDE HOTEL MENU -->
+
+        <div
+          id="sideHotelsMenu"
+          style="display:none;">
+
+
+          <!-- =================================
+               AJMER
+          ================================== -->
+
+          <div class="side-hotel-location">
+
+
+            <button
+              type="button"
+              data-side-location="sideAjmer">
+
+              <span>
+                Pune
+              </span>
+
+              <i class="bi bi-chevron-down"></i>
+
+            </button>
+
+
+            <div
+              class="side-hotel-list"
+              id="sideAjmer">
+
+
+              <a
+                href="#coming-projects"
+                target="_blank">
+
+                Pathik grand, Pune
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================
+               JAIPUR
+          ================================== -->
+
+          <div class="side-hotel-location">
+
+
+            <button
+              type="button"
+              data-side-location="sideJaipur">
+
+              <span>
+               Satara 
+              </span>
+
+              <i class="bi bi-chevron-down"></i>
+
+            </button>
+
+
+            <div
+              class="side-hotel-list"
+              id="sideJaipur">
+
+
+              <a
+                href=""
+                target="_blank">
+
+                Vedi valley Resort, Satara
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
+
+            
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================
+               RANTHAMBORE
+          ================================== -->
+
+          <div class="side-hotel-location">
+
+
+           
+      </li>
+
+
+
+      <!-- WHAT WE DO -->
+
+      <li>
+        <a href="javascript:void(0)" id="sideWhatWeDoBtn" aria-expanded="false"><span>What We Do</span><i class="bi bi-chevron-down" id="sideWhatWeDoIcon"></i></a>
+        <ul class="side-about-menu" id="sideWhatWeDoMenu" style="display:none;">
+          <li><a href="#hotel-resort-management">Hotel &amp; Resort Management <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#sales-marketing">Sales &amp; Marketing <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#revenue-management">Revenue Management <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#pre-opening-consultancy">Pre-Opening Consultancy <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#human-capital">Human Capital <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="#operational-excellence">Operational Excellence <i class="bi bi-arrow-right"></i></a></li>
+        </ul>
+      </li>
+
+      <li><a href="#portfolio">Portfolio <i class="bi bi-arrow-right"></i></a></li>
+
+
+
+      <!-- CONTACT -->
+
+      <li>
+
+        <a href="#contact">
+
+          Contact Us
+
+          <i class="bi bi-arrow-right"></i>
+
+        </a>
+
+      </li>
+
+
+    </ul>
+
+
+
+    <!-- =================================================
+         CONTACT DETAILS
+    ================================================== -->
+
+    <div class="side-contact">
+
+
+      <h6>
+        Get In Touch
+      </h6>
+
+
+      <p>
+
+        <i class="bi bi-envelope me-2"></i>
+
+        <a href="mailto:info@lotusleafcollection.com">
+
+          info@lotusleafcollection.com
+
+        </a>
+
+      </p>
+
+
+      <p>
+
+        <i class="bi bi-telephone me-2"></i>
+
+        <a href="tel:+919923587326">
+
+          +91 99235 87326
+
+        </a>
+
+      </p>
+
+
+      <div class="side-social">
+
+
+        <a href="#">
+
+          <i class="bi bi-instagram"></i>
+
+        </a>
+
+
+        <a href="#">
+
+          <i class="bi bi-facebook"></i>
+
+        </a>
+
+
+        <a href="#">
+
+          <i class="bi bi-linkedin"></i>
+
+        </a>
+
+
+        <a href="#">
+
+          <i class="bi bi-youtube"></i>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     BOOTSTRAP JS
+===================================================== -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<!-- =====================================================
+     MENU JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+  /* ==================================================
+     MAIN NAVBAR
+     OUR HOTELS OPEN / CLOSE
+  ================================================== */
+
+  const ourHotelsBtn =
+    document.getElementById("ourHotelsBtn");
+
+  const mainHotelMenu =
+    document.getElementById("mainHotelMenu");
+
+
+  ourHotelsBtn.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    e.stopPropagation();
+
+
+    /*
+       Toggle main hotel menu
+    */
+
+    mainHotelMenu.classList.toggle("show");
+
+
+    /*
+       If closing main menu,
+       close all location menus
+    */
+
+    if (!mainHotelMenu.classList.contains("show")) {
+
+      closeMainLocationMenus();
+
+    }
+
+  });
+
+
+
+  /* ==================================================
+     MAIN NAVBAR LOCATION MENUS
+  ================================================== */
+
+  const locationButtons =
+    document.querySelectorAll(
+      "#mainHotelMenu .dropdown-submenu > .dropdown-toggle"
+    );
+
+
+  locationButtons.forEach(function (button) {
+
+
+    button.addEventListener("click", function (e) {
+
+      e.preventDefault();
+
+      e.stopPropagation();
+
+
+      const submenu =
+        this.nextElementSibling;
+
+
+      /*
+         Close all other location menus
+      */
+
+      document
+        .querySelectorAll(
+          "#mainHotelMenu .dropdown-submenu .dropdown-menu"
+        )
+        .forEach(function (menu) {
+
+          if (menu !== submenu) {
+
+            menu.classList.remove("show");
+
+          }
+
+        });
+
+
+      /*
+         Toggle clicked location
+      */
+
+      submenu.classList.toggle("show");
+
+    });
+
+  });
+
+
+
+  /* ==================================================
+     CLOSE MAIN LOCATION MENUS
+  ================================================== */
+
+  function closeMainLocationMenus() {
+
+    document
+      .querySelectorAll(
+        "#mainHotelMenu .dropdown-submenu .dropdown-menu"
+      )
+      .forEach(function (menu) {
+
+        menu.classList.remove("show");
+
+      });
+
+  }
+
+
+
+  /* ==================================================
+     CLICK OUTSIDE MAIN MENU
+  ================================================== */
+
+  document.addEventListener("click", function (e) {
+
+
+    const navbar =
+      document.getElementById("navbar");
+
+
+    if (!navbar.contains(e.target)) {
+
+      mainHotelMenu.classList.remove("show");
+
+      closeMainLocationMenus();
+
+    }
+
+  });
+
+
+
+  /* ==================================================
+     SIDE MENU
+     OUR HOTELS OPEN / CLOSE
+  ================================================== */
+
+  const sideHotelsBtn =
+    document.getElementById("sideHotelsBtn");
+
+  const sideHotelsMenu =
+    document.getElementById("sideHotelsMenu");
+
+  const sideHotelsIcon =
+    document.getElementById("sideHotelsIcon");
+
+  const sideAboutBtn =
+    document.getElementById("sideAboutBtn");
+
+  const sideAboutMenu =
+    document.getElementById("sideAboutMenu");
+
+  const sideAboutIcon =
+    document.getElementById("sideAboutIcon");
+
+  const sideWhatWeDoBtn = document.getElementById("sideWhatWeDoBtn");
+  const sideWhatWeDoMenu = document.getElementById("sideWhatWeDoMenu");
+  const sideWhatWeDoIcon = document.getElementById("sideWhatWeDoIcon");
+
+  sideAboutBtn.addEventListener("click", function () {
+    const isOpen = sideAboutMenu.style.display === "block";
+    sideAboutMenu.style.display = isOpen ? "none" : "block";
+    sideAboutIcon.className = isOpen ? "bi bi-chevron-down" : "bi bi-chevron-up";
+    sideAboutBtn.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  sideAboutMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      sideAboutMenu.style.display = "none";
+      sideAboutIcon.className = "bi bi-chevron-down";
+      sideAboutBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  sideWhatWeDoBtn.addEventListener("click", function () {
+    const isOpen = sideWhatWeDoMenu.style.display === "block";
+    sideWhatWeDoMenu.style.display = isOpen ? "none" : "block";
+    sideWhatWeDoIcon.className = isOpen ? "bi bi-chevron-down" : "bi bi-chevron-up";
+    sideWhatWeDoBtn.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  sideWhatWeDoMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      sideWhatWeDoMenu.style.display = "none";
+      sideWhatWeDoIcon.className = "bi bi-chevron-down";
+      sideWhatWeDoBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+
+
+  sideHotelsBtn.addEventListener("click", function () {
+
+
+    const isOpen =
+      sideHotelsMenu.style.display === "block";
+
+
+    if (isOpen) {
+
+
+      /*
+         CLOSE
+      */
+
+      sideHotelsMenu.style.display = "none";
+
+      sideHotelsIcon.className =
+        "bi bi-chevron-down";
+
+
+      closeSideLocationMenus();
+
+
+    } else {
+
+
+      /*
+         OPEN
+      */
+
+      sideHotelsMenu.style.display = "block";
+
+      sideHotelsIcon.className =
+        "bi bi-chevron-up";
+
+    }
+
+  });
+
+
+
+  /* ==================================================
+     SIDE LOCATION MENUS
+  ================================================== */
+
+  const sideLocationButtons =
+    document.querySelectorAll(
+      "[data-side-location]"
+    );
+
+
+  sideLocationButtons.forEach(function (button) {
+
+
+    button.addEventListener("click", function () {
+
+
+      const targetId =
+        this.getAttribute("data-side-location");
+
+
+      const target =
+        document.getElementById(targetId);
+
+
+      const isOpen =
+        target.classList.contains("show");
+
+
+      /*
+         Close all other locations
+      */
+
+      closeSideLocationMenus();
+
+
+      /*
+         If it was closed,
+         open it.
+         If it was open,
+         it stays closed.
+      */
+
+      if (!isOpen) {
+
+        target.classList.add("show");
+
+        const icon =
+          this.querySelector("i");
+
+        icon.className =
+          "bi bi-chevron-up";
+
+      }
+
+    });
+
+  });
+
+
+
+  /* ==================================================
+     CLOSE SIDE LOCATION MENUS
+  ================================================== */
+
+  function closeSideLocationMenus() {
+
+
+    document
+      .querySelectorAll(".side-hotel-list")
+      .forEach(function (menu) {
+
+        menu.classList.remove("show");
+
+      });
+
+
+    document
+      .querySelectorAll(
+        ".side-hotel-location button i"
+      )
+      .forEach(function (icon) {
+
+        icon.className =
+          "bi bi-chevron-down";
+
+      });
+
+  }
+
+
+
+  /* ==================================================
+     RESET SIDE MENU WHEN CLOSED
+  ================================================== */
+
+  const sideMenu =
+    document.getElementById("rightSideMenu");
+
+
+  sideMenu.addEventListener(
+    "hidden.bs.offcanvas",
+    function () {
+
+      sideAboutMenu.style.display = "none";
+      sideAboutIcon.className = "bi bi-chevron-down";
+      sideAboutBtn.setAttribute("aria-expanded", "false");
+
+      sideWhatWeDoMenu.style.display = "none";
+      sideWhatWeDoIcon.className = "bi bi-chevron-down";
+      sideWhatWeDoBtn.setAttribute("aria-expanded", "false");
+
+      sideHotelsMenu.style.display = "none";
+
+      sideHotelsIcon.className =
+        "bi bi-chevron-down";
+
+      closeSideLocationMenus();
+
+    }
+  );
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+<!-- =========================================
+     COMING PROJECTS
+========================================= -->
+
+<section class="section bg-emerald grain" id="coming-projects">
+
+  <div class="container">
+
+    <!-- SECTION HEADER -->
+    <div class="text-center mx-auto mb-5 reveal"
+         style="max-width:750px;">
+
+      <span class="overline text-gold-gradient">
+        Future Portfolio
+      </span>
+
+      <h2 class="display-serif text-cream mt-2"
+          style="font-size:clamp(1.8rem,3vw,2.7rem);">
+        Our Upcoming Projects
+      </h2>
+
+      <p class="text-cream mt-3"
+         style="opacity:0.82; max-width:650px; margin-left:auto; margin-right:auto;">
+        A new generation of hospitality destinations taking shape
+        across Maharashtra, designed around business travel,
+        leisure stays, celebrations and memorable guest experiences.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================
+         PROJECT CARDS
+    ====================================== -->
+
+    <div class="row g-4 justify-content-center">
+
+
+      <!-- =================================
+           PATIK GRAND
+      ================================== -->
+
+      <div class="col-lg-6 col-md-10 reveal">
+
+        <div class="coming-project-card">
+
+          <!-- PROJECT VISUAL -->
+          <div class="coming-project-image project-icon-visual">
+
+            <div class="project-visual-icon">
+              <i class="bi bi-building"></i>
+            </div>
+
+            <div class="project-visual-label">
+              <span>Business Hotel</span>
+            </div>
+
+            <!-- COMING SOON BADGE -->
+            <div class="coming-badge">
+              <span>Coming Soon</span>
+            </div>
+
+          </div>
+
+
+          <!-- CONTENT -->
+          <div class="coming-project-content">
+
+            <span class="project-category">
+              UPCOMING BUSINESS HOTEL
+            </span>
+
+            <h3 class="project-title">
+              Pathik Grand
+            </h3>
+
+            <div class="project-location">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Talegaon MIDC, Pune, Maharashtra</span>
+            </div>
+
+            <div class="project-divider"></div>
+
+            <p>
+              A contemporary 21-room business hotel strategically
+              positioned in the Talegaon MIDC region, designed to
+              serve business travellers, corporate guests and
+              short-stay visitors with a comfortable and efficient
+              hospitality experience.
+            </p>
+
+
+            <!-- PROJECT DETAILS -->
+
+            <div class="project-details-grid">
+
+              <div class="project-detail">
+                <div class="detail-icon">
+                  <i class="bi bi-door-open"></i>
+                </div>
+
+                <div>
+                  <span>Accommodation</span>
+                  <strong>21 Rooms</strong>
+                </div>
+              </div>
+
+
+              <div class="project-detail">
+                <div class="detail-icon">
+                  <i class="bi bi-briefcase"></i>
+                </div>
+
+                <div>
+                  <span>Designed For</span>
+                  <strong>Business Travellers</strong>
+                </div>
+              </div>
+
+
+              <div class="project-detail">
+                <div class="detail-icon">
+                  <i class="bi bi-people"></i>
+                </div>
+
+                <div>
+                  <span>Guest Segment</span>
+                  <strong>Corporate &amp; Leisure</strong>
+                </div>
+              </div>
+
+
+              <div class="project-detail">
+                <div class="detail-icon">
+                  <i class="bi bi-cup-hot"></i>
+                </div>
+
+                <div>
+                  <span>Hospitality</span>
+                  <strong>Dining &amp; Guest Services</strong>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- FEATURES -->
+
+            <div class="project-features">
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                21-Room Business Hotel
+              </span>
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                Corporate Stays
+              </span>
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                Restaurant
+              </span>
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                Business Guest Services
+              </span>
+
+            </div>
+
+
+            <div class="project-status">
+              <i class="bi bi-stars"></i>
+              <span>In Development</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================
+           VEDI VALLEY RESORTS
+      ================================== -->
+
+      <div class="col-lg-6 col-md-10 reveal">
+
+        <div class="coming-project-card">
+
+          <!-- PROJECT VISUAL -->
+          <div class="coming-project-image project-icon-visual resort-visual">
+
+            <div class="project-visual-icon">
+              <i class="bi bi-tree"></i>
+            </div>
+
+            <div class="project-visual-label">
+              <span>Luxury Resort</span>
+            </div>
+
+            <!-- COMING SOON BADGE -->
+            <div class="coming-badge">
+              <span>Coming Soon</span>
+            </div>
+
+          </div>
+
+
+          <!-- CONTENT -->
+          <div class="coming-project-content">
+
+            <span class="project-category">
+              UPCOMING RESORT PROJECT
+            </span>
+
+            <h3 class="project-title">
+              Vedi Valley Resort
+            </h3>
+
+            <div class="project-location">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Satara, Maharashtra</span>
+            </div>
+
+            <div class="project-divider"></div>
+
+            <p>
+              An upcoming resort destination offering a blend of
+              rooms and cottages, complemented by indoor and outdoor
+              venues designed for weddings, corporate gatherings,
+              celebrations and destination experiences.
+            </p>
+
+
+            <!-- PROJECT DETAILS -->
+
+            <div class="project-details-grid">
+
+              <div class="project-detail">
+                <div class="detail-icon">
+                  <i class="bi bi-house-heart"></i>
+                </div>
+
+                <div>
+                  <span>Accommodation</span>
+                  <strong>44 Rooms &amp; Cottages</strong>
+                </div>
+              </div>
+
+
+              <div class="project-detail">
+                <div class="detail-icon">
+                  <i class="bi bi-heart"></i>
+                </div>
+
+                <div>
+                  <span>Celebrations</span>
+                  <strong>Wedding Events</strong>
+                </div>
+              </div>
+
+
+              <div class="project-detail">
+                <div class="detail-icon">
+                  <i class="bi bi-building"></i>
+                </div>
+
+                <div>
+                  <span>Events</span>
+                  <strong>Indoor &amp; Outdoor Venues</strong>
+                </div>
+              </div>
+
+
+              <div class="project-detail">
+                <div class="detail-icon">
+                  <i class="bi bi-briefcase"></i>
+                </div>
+
+                <div>
+                  <span>Business</span>
+                  <strong>Corporate Events</strong>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- FEATURES -->
+
+            <div class="project-features">
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                44 Rooms &amp; Cottages
+              </span>
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                Wedding Venues
+              </span>
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                Corporate Events
+              </span>
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                Restaurant &amp; Dining
+              </span>
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                Indoor &amp; Outdoor Venues
+              </span>
+
+              <span>
+                <i class="bi bi-check-circle-fill"></i>
+                Leisure Experiences
+              </span>
+
+            </div>
+
+
+            <div class="project-status">
+              <i class="bi bi-stars"></i>
+              <span>In Development</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================
+         BOTTOM STATEMENT
+    ====================================== -->
+
+    <div class="coming-project-footer text-center reveal">
+
+      <div class="coming-divider">
+        <span>✧</span>
+      </div>
+
+      <p>
+        From vision to destination,
+        <strong>we shape hospitality experiences that last.</strong>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     COMING PROJECTS CSS
+========================================= -->
+
+<style>
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.coming-project-card {
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.98);
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(201, 162, 75, 0.28);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.coming-project-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.26);
+}
+
+
+/* =========================================
+   PROJECT VISUAL
+========================================= */
+
+.coming-project-image {
+  position: relative;
+
+  height: 280px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(201, 162, 75, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #0A2A22 0%,
+      #123F32 55%,
+      #071C17 100%
+    );
+}
+
+
+/* =========================================
+   RESORT VISUAL
+========================================= */
+
+.resort-visual {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(201, 162, 75, 0.20),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #0A2A22 0%,
+      #174A36 50%,
+      #08241C 100%
+    );
+}
+
+
+/* =========================================
+   LARGE PROJECT ICON
+========================================= */
+
+.project-visual-icon {
+  width: 115px;
+  height: 115px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--gold);
+
+  font-size: 58px;
+
+  border: 1px solid rgba(201, 162, 75, 0.65);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  box-shadow:
+    0 0 0 12px rgba(201, 162, 75, 0.05),
+    0 15px 40px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.coming-project-card:hover .project-visual-icon {
+  transform: scale(1.06);
+
+  box-shadow:
+    0 0 0 16px rgba(201, 162, 75, 0.06),
+    0 18px 45px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================
+   PROJECT VISUAL LABEL
+========================================= */
+
+.project-visual-label {
+  position: absolute;
+
+  bottom: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   COMING SOON BADGE
+========================================= */
+
+.coming-badge {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  padding: 8px 16px;
+
+  border-radius: 30px;
+
+  background: rgba(10, 42, 34, 0.92);
+
+  border: 1px solid rgba(201, 162, 75, 0.75);
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.coming-project-content {
+  padding: 30px 30px 32px;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.project-category {
+  display: block;
+
+  color: var(--emerald);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  margin-bottom: 8px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.project-title {
+  margin: 0;
+
+  color: var(--emerald);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+
+  line-height: 1.2;
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.project-location {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 10px;
+
+  color: #666;
+
+  font-size: 13px;
+}
+
+.project-location i {
+  color: var(--gold);
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.project-divider {
+  width: 55px;
+
+  height: 2px;
+
+  background: var(--gold);
+
+  margin: 20px 0 16px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.coming-project-content > p {
+  color: #555;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================================
+   PROJECT DETAILS GRID
+========================================= */
+
+.project-details-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================
+   DETAIL ITEM
+========================================= */
+
+.project-detail {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: rgba(10, 42, 34, 0.045);
+
+  border: 1px solid rgba(10, 42, 34, 0.07);
+}
+
+.detail-icon {
+  flex: 0 0 34px;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--emerald);
+
+  color: var(--gold);
+
+  font-size: 14px;
+}
+
+.project-detail div:last-child {
+  min-width: 0;
+}
+
+.project-detail span {
+  display: block;
+
+  color: #777;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 2px;
+}
+
+.project-detail strong {
+  display: block;
+
+  color: var(--emerald);
+
+  font-size: 11px;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.project-features {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 20px;
+}
+
+.project-features span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 6px 9px;
+
+  border-radius: 20px;
+
+  background: rgba(201, 162, 75, 0.09);
+
+  color: var(--emerald);
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.project-features i {
+  color: var(--gold);
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   PROJECT STATUS
+========================================= */
+
+.project-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  background: rgba(10, 42, 34, 0.06);
+
+  color: var(--emerald);
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.project-status i {
+  color: var(--gold);
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.coming-project-footer {
+  max-width: 700px;
+
+  margin: 55px auto 0;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.coming-project-footer p {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.coming-project-footer strong {
+  color: var(--gold);
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   FOOTER DIVIDER
+========================================= */
+
+.coming-divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+.coming-divider::before,
+.coming-divider::after {
+  content: "";
+
+  height: 1px;
+
+  background: rgba(201, 162, 75, 0.7);
+
+  flex: 1;
+}
+
+.coming-divider span {
+  color: var(--gold);
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .coming-project-image {
+    height: 220px;
+  }
+
+  .project-visual-icon {
+    width: 95px;
+    height: 95px;
+
+    font-size: 46px;
+  }
+
+  .coming-project-content {
+    padding: 24px 22px 26px;
+  }
+
+  .project-title {
+    font-size: 1.55rem;
+  }
+
+  .coming-project-content > p {
+    font-size: 13px;
+  }
+
+  .project-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail {
+    padding: 11px;
+  }
+
+  .coming-project-footer {
+    margin-top: 40px;
+
+    padding: 0 15px;
+  }
+
+}
+
+</style>
+<br>
+<br>
+
+
+    
+   
+    <!-- PROJECTS -->
+<section class="section bg-cream" id="projects">
+
+  <div class="container">
+
+    <div class="text-center mx-auto mb-5" style="max-width:700px;">
+
+      <span class="overline">Projects Handled</span>
+
+      <h2 class="display-serif mt-2"
+          style="color:var(--emerald); font-size:clamp(1.5rem,2vw,2.5rem);">
+        Properties We've Had the Privilege to Shape
+      </h2>
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+      <!-- HOTEL IVY STUDIOS -->
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="zoom-img rounded-4 overflow-hidden mb-3">
+
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/1d/3b/30/c4/hotel-ivy-studio-is-nearer.jpg"
+               class="w-100 rounded-4"
+               style="height:230px;object-fit:cover;"
+               alt="Hotel Ivy Studios">
+
+        </div>
+
+        <h4 class="font-serif" style="color:#0A2A22;">
+          Hotel Ivy Studios
+        </h4>
+
+        <p class="text-muted-dark">
+          Viman Nagar, Pune
+        </p>
+
+      </div>
+
+
+      <!-- MANTRA RESORT -->
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="zoom-img rounded-4 overflow-hidden mb-3">
+
+          <img src="https://cdn0.weddingwire.in/vendor/8376/3_2/960/jpg/m8_15_118376.jpeg"
+               class="w-100 rounded-4"
+               style="height:230px;object-fit:cover;"
+               alt="Mantra Resort">
+
+        </div>
+
+        <h4 class="font-serif" style="color:#0A2A22;">
+          Mantra Resort
+        </h4>
+
+        <p class="text-muted-dark">
+          Bhor, Maharashtra
+        </p>
+
+      </div>
+
+
+      <!-- THE SOLITAIRE -->
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="zoom-img rounded-4 overflow-hidden mb-3">
+
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBxA21fyzQMed_KcrKq_4IWV8zmx32oPIjtgwrw_G-KMCzp6IKmlKcdanN&s=10"
+               class="w-100 rounded-4"
+               style="height:230px;object-fit:cover;"
+               alt="The Solitaire">
+
+        </div>
+
+        <h4 class="font-serif" style="color:#0A2A22;">
+          The Solitaire
+        </h4>
+
+        <p class="text-muted-dark">
+          Jaipur, Rajasthan
+        </p>
+
+      </div>
+
+
+      <!-- PRAKRUTI RESORT -->
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="zoom-img rounded-4 overflow-hidden mb-3">
+
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGUF8FjxCi4i8ejGtQLZyPLMrwWftyJ_19aXQJxrrRQ&s=10"
+               class="w-100 rounded-4"
+               style="height:230px;object-fit:cover;"
+               alt="Prakruti Resort">
+
+        </div>
+
+        <h4 class="font-serif" style="color:#0A2A22;">
+          Prakruti Resort
+        </h4>
+
+        <p class="text-muted-dark">
+          Hyderabad, Telangana
+        </p>
+
+      </div>
+
+
+      <!-- RITZ VALLEY RESORT -->
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="zoom-img rounded-4 overflow-hidden mb-3">
+
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/34/2d/ba/fb/caption.jpg?w=900&h=500&s=1"
+               class="w-100 rounded-4"
+               style="height:230px;object-fit:cover;"
+               alt="Ritz Valley Resort">
+
+        </div>
+
+        <h4 class="font-serif" style="color:#0A2A22;">
+          Ritz Valley Resort &amp; The Grand Legacy
+        </h4>
+
+        <p class="text-muted-dark">
+          Mahabaleshwar, Maharashtra
+        </p>
+
+      </div>
+
+
+      <!-- GAUTAM RESORT -->
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="zoom-img rounded-4 overflow-hidden mb-3">
+
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr3rQtascSh__Iq0imwDg1FQkLqA297JEqyjaA0Td8vw&s=10"
+               class="w-100 rounded-4"
+               style="height:230px;object-fit:cover;"
+               alt="Gautam Resort">
+
+        </div>
+
+        <h4 class="font-serif" style="color:#0A2A22;">
+          Gautam Resort
+        </h4>
+
+        <p class="text-muted-dark">
+          Lonavala,Maharashtra
+        </p>
+
+      </div>
+
+
+      <!-- SWARA GROUP -->
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="zoom-img rounded-4 overflow-hidden mb-3">
+
+          <img src="images\images (3).jpg"
+               class="w-100 rounded-4"
+               style="height:230px;object-fit:cover;"
+               alt="Swara Group of Hotels & Resorts">
+
+        </div>
+
+        <h4 class="font-serif" style="color:#0A2A22;">
+          Malhar Machi Luxury Mountain Resort
+        </h4>
+
+      <p class="text-muted-dark">
+          Mulshi, pune, Maharashtra
+        </p>
+      </div>
+
+
+      <!-- JALSRUSHTI -->
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="zoom-img rounded-4 overflow-hidden mb-3">
+
+          <img src="images\images (4).jpg"
+               class="w-100 rounded-4"
+               style="height:230px;object-fit:cover;"
+               alt="Jalsrushti">
+
+        </div>
+        
+
+        <h4 class="font-serif" style="color:#0A2A22;">
+          Jalsrushti Luxury island Resort
+        </h4>
+
+        <p class="text-muted-dark">
+          Mulshi, pune, Maharashtra
+        </p>
+
+      </div>
+
+
+      <!-- NABHANANTA BY MALHAR MACHI -->
+      <div class="col-md-6 col-lg-4 reveal">
+
+        <div class="zoom-img rounded-4 overflow-hidden mb-3">
+
+          <img src="images\images (5).jpg"
+               class="w-100 rounded-4"
+               style="height:230px;object-fit:cover;"
+               alt="Nabhananta by Malhar Machi">
+
+        </div>
+
+        <h4 class="font-serif" style="color:#0A2A22;">
+          Nabhananta by Malhar Machi
+        </h4>
+
+        <p class="text-muted-dark">
+           Mulshi, pune, Maharashtra
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<br>
+
+
+
+
+ 
+
+
+    <!-- FOOTER -->
+    <footer class="bg-emerald grain site-footer" style="border-top: 1px solid rgba(212,175,55,0.2)">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-md-5">
+            <div class="d-flex align-items-center gap-2">
+              <svg width="40" height="40" fill="none" viewBox="0 0 64 64">
+                <use href="#lotus"></use>
+              </svg>
+              <img src="images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png" alt="The LotusLeaf Collection Logo" class="img-fluid" style="max-width:250px; height:auto;">
+            </div>
+            <p class="text-muted-light small mt-3" style="max-width: 20rem">
+              Experience That Builds Excellence. Presence That Creates Impact.
+            </p>
+          </div>
+          <div class="col-6 col-md-3 footer-explore">
+            <p class="overline">Explore</p>
+            <div class="d-flex flex-column gap-2 mt-3">
+              <a class="footer-link" href="#about">About</a>
+              <a class="footer-link" href="#services">Services</a>
+              <a class="footer-link" href="#projects">Projects</a>
+              <a class="footer-link" href="#team">Team</a>
+              <a class="footer-link" href="#contact">Contact</a>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 footer-contact">
+            <p class="overline">Contact</p>
+            <div class="d-flex flex-column gap-2 mt-3">
+              <a class="footer-link" href="mailto:info@lotusleafcollection.com">info@lotusleafcollection.com</a>
+              <a class="footer-link" href="tel:+919923587326">+91 99235 87326</a>
+              <a class="footer-link" href="https://www.lotusleafcollection.com" target="_blank" rel="noopener">www.lotusleafcollection.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 mt-5 pt-4" style="border-top: 1px solid rgba(249,248,246,0.1)">
+          <span class="text-muted-light small" id="copyright">© 2026 The LotusLeaf Collection. All rights reserved.</span>
+          <span class="text-muted-light small">Hospitality Management · Consulting · Pre-Opening Solutions</span>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      @media (max-width: 575.98px) {
+        .site-footer .row > div:first-child {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+        .site-footer .footer-contact,
+        .site-footer .footer-explore {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+        .site-footer .footer-contact { min-width: 0; }
+        .site-footer .footer-link {
+          display: block;
+          max-width: 100%;
+          overflow-wrap: anywhere;
+          word-break: break-word;
+          font-size: 0.8rem;
+        }
+        .site-footer .d-flex.flex-column.flex-sm-row > span {
+          overflow-wrap: anywhere;
+        }
+      }
+    </style>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // ---- Data ----
+      const services = [
+        { t: "Training", i: "bi-people-fill", d: "Empowering hospitality teams with practical skills, service excellence, and the confidence to grow." },
+        { t: "Hotel Management", i: "bi-buildings", d: "End-to-end hotel management that strengthens operations and creates memorable guest experiences." },
+        { t: "Commercial", i: "bi-megaphone", d: "Commercial strategies that connect business today with tomorrow’s opportunities." },
+        { t: "Resorts", i: "bi-tree", d: "Creating resort experiences where nature, thoughtful hospitality, and lasting memories come together." },
+        { t: "Audit", i: "bi-clipboard-check", d: "Operational and financial reviews that identify opportunities and support informed decisions." },
+        { t: "Revenue Management", i: "bi-graph-up-arrow", d: "Insight-led pricing, forecasting, and optimization to build sustainable revenue growth." },
+        { t: "Pre-opening", i: "bi-key", d: "From concept and planning to launch, we prepare hospitality assets for a confident opening." },
+        { t: "Consulting", i: "bi-lightbulb", d: "Practical hospitality expertise, tailored to your property, people, and business goals." }
+      ];
+
+      // ---- Render Services ----
+      document.getElementById("servicesGrid").innerHTML = services
+        .map(
+          (s) => `
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="service-card">
+              <div class="service-icon"><i class="bi ${s.i}"></i></div>
+              <h3 class="font-serif fs-3" style="color: var(--emerald)">${s.t}</h3>
+              <p class="text-muted-dark small mb-0">${s.d}</p>
+            </div>
+          </div>`
+        )
+        .join("");
+
+      document.getElementById("copyright").textContent =
+        "© " + new Date().getFullYear() + " The LotusLeaf Collection. All rights reserved.";
+
+      // Rotate through ten luxury hotel and resort images every five seconds.
+      const resortImages = [
+        ["photo-1571896349842-33c89424de2d", "Luxury resort with a tropical infinity pool"],
+        ["photo-1566073771259-6a8506099945", "Elegant luxury hotel surrounded by tropical gardens"],
+        ["photo-1542314831-068cd1dbfeeb", "Grand luxury hotel entrance"],
+        ["photo-1582719508461-905c673771fd", "Serene luxury resort pool"],
+        ["photo-1570077188670-e3a8d69ac5ff", "Clifftop resort overlooking the sea"],
+        ["photo-1511895426328-dc8714191300", "Private tropical resort villa"],
+        ["photo-1570213489059-0aac6626cf98", "Luxury overwater resort villas"],
+        ["photo-1602002418082-a4443e081dd1", "Beachfront luxury resort"],
+        ["photo-1611892440504-42a792e24d32", "Refined luxury hotel suite"],
+        ["photo-1590490360182-c33d57733427", "Beautiful resort accommodation"]
+      ];
+      const resortImage = document.getElementById("luxury-resort-image");
+      let resortImageIndex = 0;
+      window.setInterval(() => {
+        resortImageIndex = (resortImageIndex + 1) % resortImages.length;
+        const [photoId, altText] = resortImages[resortImageIndex];
+        resortImage.src = `https://images.unsplash.com/${photoId}?q=80&w=1200&auto=format&fit=crop`;
+        resortImage.alt = altText;
+      }, 5000);
+
+      // ---- Navbar scroll ----
+      const navbar = document.getElementById("navbar");
+      const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+
+      // Close mobile menu on navigation, but leave dropdown toggles interactive.
+      document.querySelectorAll("#navMenu a").forEach((a) =>
+        a.addEventListener("click", () => {
+          if (a.matches('[data-bs-toggle="dropdown"], .dropdown-submenu > .dropdown-toggle')) return;
+          const menu = document.getElementById("navMenu");
+          if (menu.classList.contains("show")) new bootstrap.Collapse(menu).hide();
+        })
+      );
+
+      // Bootstrap handles top-level menus; this handler toggles nested hotel locations.
+      document.querySelectorAll(".dropdown-submenu > .dropdown-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const submenu = toggle.nextElementSibling;
+          const shouldOpen = !submenu.classList.contains("show");
+          const parentMenu = toggle.closest(".hotel-dropdown");
+          parentMenu.querySelectorAll(".dropdown-submenu > .dropdown-menu.show").forEach((openMenu) => {
+            openMenu.classList.remove("show");
+            openMenu.previousElementSibling.setAttribute("aria-expanded", "false");
+          });
+          if (shouldOpen) {
+            submenu.classList.add("show");
+            toggle.setAttribute("aria-expanded", "true");
+          } else {
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+      // Close any open location submenu when its parent hotel dropdown closes.
+      document.getElementById("mainHotelMenu").closest(".dropdown").addEventListener("hidden.bs.dropdown", () => {
+        document.querySelectorAll("#mainHotelMenu .dropdown-menu.show").forEach((submenu) => {
+          submenu.classList.remove("show");
+          submenu.previousElementSibling.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // ---- Reveal on scroll ----
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>
