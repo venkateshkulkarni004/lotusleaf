@@ -4,8 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0A2A22">
-    <title>The LotusLeaf Collection — Hospitality Management & Consulting</title>
-    <meta name="description" content="The LotusLeaf Collection — hospitality management, consulting and pre-opening solutions for hotels, resorts and serviced apartments across India.">
+    <title>Hotel Management &amp; Hospitality Consulting in Pune | LotusLeaf</title>
+    <meta name="description" content="The LotusLeaf Collection provides hotel and resort management, hospitality consulting, and pre-opening support for owners and developers in Pune and across India.">
+    <link rel="canonical" href="https://www.lotusleafcollection.com/">
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The LotusLeaf Collection | Hospitality Management">
+    <meta property="og:description" content="Hotel management, hospitality consulting, and pre-opening solutions in Pune and across India.">
+    <meta property="og:url" content="https://www.lotusleafcollection.com/">
+    <meta property="og:image" content="https://www.lotusleafcollection.com/images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "The LotusLeaf Collection",
+  "url": "https://www.lotusleafcollection.com/",
+  "email": "info@lotusleafcollection.com",
+  "telephone": "+91 99235 87326",
+  "areaServed": [
+    { "@type": "City", "name": "Pune" },
+    { "@type": "Country", "name": "India" }
+  ],
+  "description": "Hotel and resort management, hospitality consulting, and pre-opening services."
+}
+</script>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -1895,7 +1919,6 @@
   background:
 
     linear-gradient(
-
       90deg,
 
       transparent,
@@ -1935,7 +1958,6 @@
   background:
 
     linear-gradient(
-
       90deg,
 
       #C9A24B,
@@ -2053,7 +2075,6 @@
   background:
 
     linear-gradient(
-
       90deg,
 
       transparent 0%,
@@ -2065,7 +2086,6 @@
       rgba(255,255,255,.015) 70%,
 
       transparent 100%
-
     );
 
   transform:
@@ -2235,7 +2255,6 @@
   background:
 
     radial-gradient(
-
       circle,
 
       rgba(255,255,255,.95) 0%,
@@ -2245,7 +2264,6 @@
       rgba(201,162,75,.30) 35%,
 
       transparent 72%
-
     );
 
   opacity: 0;
@@ -2717,20 +2735,20 @@ window.addEventListener("load", function () {
                  RANTHAMBORE
             ========================== -->
 
-           
-
+            <li>
+              <a class="dropdown-item" href="Portfolio.html" target="_blank">
+                Ranthambore Resort, Pune
+              </a>
+            </li>
 
           </ul>
 
         </li>
 
- 
 
 
         <li class="nav-item"><a class="nav-link" href="Portfolio.html ">Our Work</a></li>
          <li class="nav-item"><a class="nav-link" href="Insights.html">Insights</a></li>
-
-
 
         <!-- CONTACT -->
 
@@ -2745,8 +2763,6 @@ Let's Connect
 
         </li>
 
-
-
         <!-- GET IN TOUCH -->
 
         <li class="nav-item ms-lg-2">
@@ -2760,8 +2776,6 @@ Let's Connect
           </a>
 
         </li>
-
-
 
         <!-- THREE LINE MENU -->
 
@@ -2967,8 +2981,6 @@ Let's Connect
               </a>
 
 
-            
-
             </div>
 
           </div>
@@ -2982,8 +2994,38 @@ Let's Connect
           <div class="side-hotel-location">
 
 
-           
-      </li>
+            <button
+              type="button"
+              data-side-location="sideRanthambore">
+
+              <span>
+                Ranthambore
+              </span>
+
+              <i class="bi bi-chevron-down"></i>
+
+            </button>
+
+
+            <div
+              class="side-hotel-list"
+              id="sideRanthambore">
+
+
+              <a
+                href="portfolio.html"
+                target="_blank">
+
+                Ranthambore Resort, Pune
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </a>
+
+
+            </div>
+
+          </li>
 
 
 
@@ -3005,8 +3047,6 @@ Let's Connect
 
       <li><a href="portfolio.html">Our Work <i class="bi bi-arrow-right"></i></a></li>
       <li><a href="insights.html">Insights <i class="bi bi-arrow-right"></i></a></li>
-
-
 
       <!-- CONTACT -->
 
@@ -3137,7 +3177,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainHotelMenu =
     document.getElementById("mainHotelMenu");
 
-
   ourHotelsBtn.addEventListener("click", function (e) {
 
     e.preventDefault();
@@ -3150,7 +3189,6 @@ document.addEventListener("DOMContentLoaded", function () {
     */
 
     mainHotelMenu.classList.toggle("show");
-
 
     /*
        If closing main menu,
@@ -3166,7 +3204,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-
   /* ==================================================
      MAIN NAVBAR LOCATION MENUS
   ================================================== */
@@ -3175,7 +3212,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(
       "#mainHotelMenu .dropdown-submenu > .dropdown-toggle"
     );
-
 
   locationButtons.forEach(function (button) {
 
@@ -3189,7 +3225,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const submenu =
         this.nextElementSibling;
-
 
       /*
          Close all other location menus
@@ -3209,7 +3244,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-
       /*
          Toggle clicked location
       */
@@ -3219,7 +3253,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   });
-
 
 
   /* ==================================================
@@ -3240,8 +3273,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-
-
   /* ==================================================
      CLICK OUTSIDE MAIN MENU
   ================================================== */
@@ -3252,7 +3283,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar =
       document.getElementById("navbar");
 
-
     if (!navbar.contains(e.target)) {
 
       mainHotelMenu.classList.remove("show");
@@ -3262,8 +3292,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
   });
-
-
 
   /* ==================================================
      SIDE MENU
@@ -3344,8 +3372,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       closeSideLocationMenus();
-
-
     } else {
 
 
@@ -3357,11 +3383,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       sideHotelsIcon.className =
         "bi bi-chevron-up";
-
     }
 
   });
-
 
 
   /* ==================================================
@@ -3372,7 +3396,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(
       "[data-side-location]"
     );
-
 
   sideLocationButtons.forEach(function (button) {
 
@@ -3387,17 +3410,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const target =
         document.getElementById(targetId);
 
-
       const isOpen =
         target.classList.contains("show");
-
 
       /*
          Close all other locations
       */
 
       closeSideLocationMenus();
-
 
       /*
          If it was closed,
@@ -3421,7 +3441,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   });
-
 
 
   /* ==================================================
@@ -3453,15 +3472,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-
-
   /* ==================================================
      RESET SIDE MENU WHEN CLOSED
   ================================================== */
 
   const sideMenu =
     document.getElementById("rightSideMenu");
-
 
   sideMenu.addEventListener(
     "hidden.bs.offcanvas",
@@ -3493,1233 +3509,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 
-</html>
-
-    <!-- HERO -->
-   <header class="hero" id="hero"> 
-  <div class="hero-bg"></div> 
-  <div class="hero-overlay"></div> 
-  <div class="hero-overlay-2"></div> 
-
-  <div class="container position-relative" style="z-index:2; padding-top:5rem;"> 
-    <div class="row"> 
-      <div class="col-lg-8"> 
-
-        <div class="d-flex align-items-center gap-3 mb-4"> 
-          <svg width="40" height="40" fill="none" viewBox="0 0 64 64"> 
-            <use href="#lotus"></use> 
-          </svg> 
-        </div> 
-
-        <div class="mb-4"> 
-
-          <!-- LOGO -->
-          <img 
-            src="images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png" 
-            alt="The LotusLeaf Collection Logo"
-            class="img-fluid"
-            style="max-width:350px; height:auto;"
-          >
-
-          <!-- MAIN BRAND -->
-        
-
-          <!-- SERVICES -->
-          <p class="text-gold-gradient fs-5 mb-4" style="letter-spacing:0.08em;">
-            Hospitality Management
-              <span class="text-muted-light"> | </span> Consulting
-            <span class="text-muted-light"> | </span>
-            Pre-Opening Solutions
-          </p>
-
-          <!-- MAIN HEADING -->
-          <h2 
-            class="display-serif text-cream mb-3"
-            style="font-size:clamp(2rem,6vw,4.6rem); line-height:1.05;"
-          >
-            BUILDING EXCEPTIONAL
-            <span class="text-gold-gradient">HOSPITALITY</span>
-          </h2>
-
-          <!-- DESCRIPTION -->
-          <p 
-            class="text-muted-light fs-5 mb-5"
-            style="max-width:38rem; line-height:1.7;"
-          >
-            Delivering Sustainable Growth, Operational Excellence 
-            &amp; Profitable Hotel Assets.
-          </p>
-
-          <!-- PROPERTY TYPES -->
-          <div class="d-flex flex-wrap gap-4 mb-5">
-
-            <div>
-              <span 
-                class="text-gold-gradient"
-                style="font-size:1rem; letter-spacing:0.15em;"
-              >
-              </span>
-            </div>
-
-            <div>
-              <span 
-                class="text-gold-gradient"
-                style="font-size:1rem; letter-spacing:0.15em;"
-              >
-              </span>
-            </div>
-
-          </div>
-
-          <!-- BUTTONS -->
-          <div class="d-flex flex-column flex-sm-row gap-3"> 
-
-            <a 
-              href="Contactus.html" 
-              class="btn btn-gold px-4 py-3"
-            >
-              Partner With Us
-            </a>
-
-            <a
-              href="Aboutus.html"
-              class="btn btn-gold px-4 py-3"
-            >
-              Explore Our Approach
-            </a>
-
-          </div>
-
-        </div> 
-      </div> 
-    </div> 
-  </div> 
-</header>
-
-  <!-- =========================================
-     ABOUT / THE LOTUSLEAF COLLECTION
-========================================= -->
-<section class="section bg-cream" id="about">
-
-  <div class="container">
-
-    <!-- =========================================
-         HEADER
-    ========================================= -->
-    <div class="row justify-content-center text-center mb-5">
-
-      <div class="col-lg-9 reveal">
-
-        <h2 class="display-serif mt-3 mb-4"
-            style="color: var(--emerald); font-size: clamp(2.2rem, 4vw, 3.5rem);">
-       
-        </h2>
-
-        <p class="text-muted-dark mx-auto"
-           style="max-width: 850px; font-size: 1.08rem; line-height: 1.9;">
-          HOSPITALITY FROM STRATEGY TO OPERATIONS
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <!-- =========================================
-         COMPANY OVERVIEW
-    ========================================= -->
-    <div class="row align-items-center g-5">
-
-
-      <!-- =====================================
-           CONTENT
-      ====================================== -->
-      <div class="col-lg-6 reveal" id="who-we-are">
-
-        <span class="overline">
-        
-        </span>
-
-        <h3 class="display-serif mt-2 mb-4"
-            style="color: var(--emerald); font-size: clamp(2rem, 3.5vw, 2.8rem);">
-          Creating and growing profitable destinations
-        </h3>
-
-        <p class="text-muted-dark">
-          The LotusLeaf Collection is a hospitality management company working
-          with owners, investors and developers to create and operate distinctive
-          hotels and resorts.
-        </p>
-
-    
-        <a href="Aboutus.html" class="btn btn-gold px-4 py-3 mt-3">
-          DISCOVER LOTUSLEAF
-        </a>
-
-
-        <!-- =====================================
-             TRUST / INSIGHT / EXECUTION
-        ====================================== -->
-        <div class="row g-3 mt-4">
-
-          <div class="col-4">
-            <div class="text-center p-3">
-
-              <div class="font-serif text-gold fs-2"></div>
-
-              <div class="small fw-semibold mt-2"
-                   style="color:var(--emerald);">
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="col-4">
-            <div class="text-center p-3">
-
-              <div class="font-serif text-gold fs-2"></div>
-
-              <div class="small fw-semibold mt-2"
-                   style="color:var(--emerald);">
-              </div>
-
-            </div>
-          </div>
-
-
-          <div class="col-4">
-            <div class="text-center p-3">
-
-              <div class="font-serif text-gold fs-2"></div>
-
-              <div class="small fw-semibold mt-2"
-                   style="color:var(--emerald);">
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- =====================================
-           LUXURY HOTEL / RESORT IMAGE
-      ====================================== -->
-      <div class="col-lg-6 reveal">
-
-        <div class="lotusleaf-about-image-container">
-
-          <img
-            id="lotusleaf-about-luxury-image"
-            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=85&w=1600&auto=format&fit=crop"
-            alt="Luxury hotel resort with scenic surroundings"
-            class="lotusleaf-about-luxury-image"
-            loading="lazy"
-          >
-
-
-          <!-- =================================
-               EXPERIENCE BADGE
-          ================================== -->
-          <div
-            class="position-absolute d-none d-sm-flex align-items-center gap-3 bg-emerald px-4 py-3 rounded-3 shadow"
-            style="bottom:-24px; left:-24px;">
-
-            <svg
-              width="48"
-              height="48"
-              fill="none"
-              viewBox="0 0 64 64"
-              aria-hidden="true">
-
-              <use href="#lotus"></use>
-
-            </svg>
-
-            <div>
-
-              <div class="font-serif text-cream fs-3 lh-1">
-                      100+
-                    </div>
-
-                    <div class="text-muted-light small mt-1">
-                      Years Combined<br>
-                      Leadership Experience
-                    </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     LOTUSLEAF LUXURY HOTEL IMAGE ROTATION
-     ONLY APPLIES TO THIS IMAGE
-========================================================= -->
-
-<script>
-(() => {
-
-  const image = document.getElementById(
-    "lotusleaf-about-luxury-image"
-  );
-
-  if (!image) return;
-
-
-  /*
-   * =========================================================
-   * LUXURY HOSPITALITY IMAGE COLLECTION
-   *
-   * Focus:
-   * Luxury Hotels
-   * Luxury Resorts
-   * Mountain Resorts
-   * Scenic Hotel Properties
-   * Lakeside Resorts
-   * Valley View Properties
-   * Premium Hotel Architecture
-   * =========================================================
-   */
-
-  const images = [
-
-    "images/New folder/wall/1.jpeg",
-    "images/New folder/wall/2.jpeg",
-    "images/New folder/wall/3.jpeg",
-    "images/New folder/wall/4.jpeg",
-    "images/New folder/wall/5.jpeg",
-    "images/New folder/wall/6.jpeg"
-
-  ];
-
-
-  let current = 0;
-
-
-  /*
-   * =========================================================
-   * PRELOAD IMAGES
-   * =========================================================
-   */
-
-  images.forEach((src) => {
-
-    const preload = new Image();
-
-    preload.src = src;
-
-  });
-
-
-  /*
-   * =========================================================
-   * CHANGE IMAGE EVERY 5 SECONDS
-   * =========================================================
-   */
-
-  setInterval(() => {
-
-    current = (current + 1) % images.length;
-
-
-    /*
-     * Neutral fade.
-     *
-     * No green.
-     * No gradient.
-     * No colored overlay.
-     */
-
-    image.style.opacity = "0";
-
-
-    setTimeout(() => {
-
-      image.src = images[current];
-
-      image.onload = () => {
-
-        image.style.opacity = "1";
-
-      };
-
-    }, 300);
-
-  }, 5000);
-
-})();
-</script>
-
-
-
-<!-- =========================================================
-     SCOPED CSS
-     ONLY AFFECTS THE ABOUT SECTION IMAGE
-========================================================= -->
-
-<style>
-
-  /*
-   * Main image container
-   */
-  .lotusleaf-about-image-container {
-
-    position: relative;
-
-    width: 100%;
-
-    height: 520px;
-
-    overflow: visible;
-
-  }
-
-
-  /*
-   * Luxury hotel image
-   */
-  .lotusleaf-about-image-container
-  .lotusleaf-about-luxury-image {
-
-    width: 100%;
-
-    height: 520px;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center center;
-
-    border-radius: 24px;
-
-    opacity: 1;
-
-    transition:
-      opacity 0.3s ease,
-      transform 0.9s cubic-bezier(.2,.7,.2,1);
-
-    will-change: opacity, transform;
-
-  }
-
-
-  /*
-   * Subtle luxury zoom
-   *
-   * Applies ONLY to this image.
-   */
-  .lotusleaf-about-image-container:hover
-  .lotusleaf-about-luxury-image {
-
-    transform: scale(1.025);
-
-  }
-
-
-  /*
-   * Tablet
-   */
-  @media (max-width: 991px) {
-
-    .lotusleaf-about-image-container {
-
-      height: 440px;
-
-    }
-
-    .lotusleaf-about-image-container
-    .lotusleaf-about-luxury-image {
-
-      height: 440px;
-
-    }
-
-  }
-
-
-  /*
-   * Mobile
-   */
-  @media (max-width: 576px) {
-
-    .lotusleaf-about-image-container {
-
-      height: 350px;
-
-    }
-
-    .lotusleaf-about-image-container
-    .lotusleaf-about-luxury-image {
-
-      height: 350px;
-
-      border-radius: 18px;
-
-    }
-
-  }
-
-</style>
-
-
-    <!-- =========================================
-         PHILOSOPHY
-    ========================================= -->
-   <!-- =========================================================
-     OUR PHILOSOPHY
-========================================================= -->
-
-<div class="row justify-content-center mt-5 pt-5">
-
-  <div class="col-lg-10 text-center reveal">
-
-    <span class="overline"></span>
-
-    <h3 class="display-serif mt-2 mb-3"
-        style="color:var(--emerald); font-size:clamp(2rem,3.5vw,2.8rem);">
-      We look beyond the property.
-    </h3>
-
-    <p class="text-muted-dark mx-auto"
-       style="max-width:800px; line-height:1.9;">
-      Strategy, operations and performance that create lasting value.
-    </p>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================================
-     PHILOSOPHY CARDS
-========================================================= -->
-
-<div class="row g-4 mt-4">
-
-
-    <!-- =======================================================
-      STRATEGIC THINKING
-    ======================================================== -->
-
-  <div class="col-lg-4 col-md-6 reveal">
-
-    <div class="lotus-philosophy-card lotus-philosophy-text-card h-100">
-      <div class="lotus-philosophy-content">
-        <div class="lotus-philosophy-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" style="width:48px;height:48px;"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>
-        </div>
-        <span>Strategic Thinking</span>
-        <h5>See the opportunity clearly.</h5>
-        <a href="Aboutus.html" class="btn mt-3 align-self-start" style="background-color:#d4af37;border-color:#d4af37;color:#fff;">Learn more</a>
-      </div>
-
-    </div>
-
-  </div>
-
-
-    <!-- =======================================================
-      OPERATIONAL EXCELLENCE
-    ======================================================== -->
-
-  <div class="col-lg-4 col-md-6 reveal">
-
-    <div class="lotus-philosophy-card lotus-philosophy-text-card h-100">
-      <div class="lotus-philosophy-content">
-        <div class="lotus-philosophy-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" style="width:48px;height:48px;"><path d="M4 19h16M6 16V9M12 16V5M18 16v-3"/></svg>
-        </div>
-        <span>Operational Excellence</span>
-        <h5>Build better systems.</h5>
-        <a href="Aboutus.html" class="btn mt-3 align-self-start" style="background-color:#d4af37;border-color:#d4af37;color:#fff;">Learn more</a>
-      </div>
-
-    </div>
-
-  </div>
-
-
-    <!-- =======================================================
-      COMMERCIAL PERFORMANCE
-    ======================================================== -->
-
-  <div class="col-lg-4 col-md-6 reveal">
-
-    <div class="lotus-philosophy-card lotus-philosophy-text-card h-100">
-      <div class="lotus-philosophy-content">
-        <div class="lotus-philosophy-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" style="width:48px;height:48px;"><path d="m4 16 5-5 4 3 7-8M15 6h5v5"/></svg>
-        </div>
-        <span>Commercial Performance</span>
-        <h5>Turn experience into performance.</h5>
-        <a href="Aboutus.html" class="btn mt-3 align-self-start" style="background-color:#d4af37;border-color:#d4af37;color:#fff;">Learn more</a>
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================================
-     PHILOSOPHY CARD CSS
-========================================================= -->
-
-<style>
-
-  .lotus-philosophy-card {
-    position: relative;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-    border: 1px solid rgba(10,42,34,.10);
-
-    border-radius: 5px;
-
-    box-shadow: 0 12px 35px rgba(10,42,34,.06);
-
-    transition: transform .35s ease, box-shadow .35s ease;
-  }
-
-
-  /* IMAGE */
-
-  .lotus-philosophy-image {
-    position: relative;
-
-    height: 280px;
-
-    overflow: hidden;
-
-    background: #0A2A22;
-  }
-
-
-  .lotus-philosophy-image img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition: transform .5s ease;
-  }
-
-
-  /* DARK LUXURY OVERLAY */
-
-  .lotus-philosophy-image-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(10,42,34,.05),
-        rgba(10,42,34,.10) 45%,
-        rgba(10,42,34,.68)
-      );
-
-    pointer-events: none;
-
-    transition: opacity .35s ease;
-  }
-
-
-  /* NUMBER */
-
-  .lotus-philosophy-number {
-    position: absolute;
-
-    right: 20px;
-
-    bottom: 18px;
-
-    color: rgba(255,255,255,.9);
-
-    font-family: var(--font-serif, Georgia, serif);
-
-    font-size: 1.1rem;
-
-    letter-spacing: .12em;
-
-    z-index: 2;
-  }
-
-
-  /* CONTENT */
-
-  .lotus-philosophy-content {
-    padding: 30px 30px 35px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .lotus-philosophy-icon {
-    width: 52px;
-    height: 52px;
-    display: grid;
-    place-items: center;
-    margin-bottom: 18px;
-    border: 1px solid rgba(201,162,75,.45);
-    border-radius: 50%;
-    color: var(--gold, #C9A24B);
-  }
-
-  .lotus-philosophy-icon svg {
-    width: 25px;
-    height: 25px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-
-  .lotus-philosophy-content > span {
-    display: block;
-
-    color: var(--gold, #C9A24B) !important;
-
-    font-family: var(--font-sans, sans-serif);
-
-    font-size: .68rem;
-
-    font-weight: 600;
-
-    letter-spacing: .24em;
-
-    text-transform: uppercase;
-  }
-
-
-  .lotus-philosophy-content h4 {
-    font-size: clamp(1.8rem, 2.6vw, 2.35rem);
-
-    line-height: 1;
-
-    margin-top: 12px !important;
-    text-align: center;
-  }
-
-
-  .lotus-philosophy-content p {
-    color: #4f5c58 !important;
-
-    font-size: .9rem;
-  }
-
-  .lotus-philosophy-text-card {
-    min-height: 280px;
-  }
-
-  .lotus-philosophy-text-card .lotus-philosophy-content {
-    min-height: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-
-  /* =========================================================
-     NO COLOR / TOUCH CHANGE
-  ========================================================= */
-
-  .lotus-philosophy-card:hover,
-  .lotus-philosophy-card:active,
-  .lotus-philosophy-card:focus,
-  .lotus-philosophy-card:focus-visible {
-
-    background: #ffffff !important;
-
-    border-color: rgba(10,42,34,.10) !important;
-
-    box-shadow: 0 12px 35px rgba(10,42,34,.06) !important;
-
-    transform: translateY(-8px) !important;
-
-    box-shadow: 0 22px 48px rgba(10,42,34,.16) !important;
-  }
-
-  .lotus-philosophy-card:hover .lotus-philosophy-image img,
-  .lotus-philosophy-card:focus-visible .lotus-philosophy-image img {
-    transform: scale(1.08);
-  }
-
-  .lotus-philosophy-card:hover .lotus-philosophy-image-overlay,
-  .lotus-philosophy-card:focus-visible .lotus-philosophy-image-overlay {
-    opacity: .78;
-  }
-
-
-  .lotus-philosophy-card {
-    -webkit-tap-highlight-color: transparent;
-  }
-
-
-  /* =========================================================
-     TABLET
-  ========================================================= */
-
-  @media (max-width: 991px) {
-
-    .lotus-philosophy-image {
-      height: 260px;
-    }
-
-  }
-
-
-  /* =========================================================
-     MOBILE
-  ========================================================= */
-
-  @media (max-width: 767px) {
-
-    .lotus-philosophy-image {
-      height: 240px;
-    }
-
-    .lotus-philosophy-content {
-      padding: 27px 25px 30px;
-    }
-
-    .lotus-philosophy-content h4 {
-      font-size: 2rem;
-    }
-
-  }
-
-</style>
-
-
-<br>
-    
-
-   
-
-
-<!-- =========================================================
-     PARTNER WITH US — SHORT CTA
-========================================================= -->
-
-<section class="partner-cta" id="partner"  
-
-  <div class="container">
-    <div class="partner-cta-inner">
-
-      <span class="partner-label">
-        PARTNER WITH US
-      </span>
-
-      <h2>
-        And Build the Next
-        <span>Destination.</span>
-      </h2>
-
-      <p>
-        Let's explore how the right hospitality strategy can
-        turn an opportunity into a thriving destination.
-      </p>
-
-      <div class="partner-buttons">
-
-        <a href="Contactus.html" class="partner-btn primary">
-          START A CONVERSATION
-          <i class="bi bi-arrow-right"></i>
-        </a>
-
-        <a href="Contactus.html" class="partner-btn secondary">
-          CONTACT US
-        </a>
-
-      </div>
-
-    </div>
-  </div>
-
-</section>
-
-
-<style>
-
-/* =========================================================
-   PARTNER CTA
-========================================================= */
-
-.partner-cta {
-  background: #f7f3ea;
-  padding: 75px 20px;
-}
-
-.partner-cta-inner {
-  max-width: 850px;
-  margin: auto;
-  text-align: center;
-}
-
-
-/* Label */
-
-.partner-label {
-  color: #b08d3c;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-
-/* Heading */
-
-.partner-cta h2 {
-  color: #0a2a22;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.6rem, 5vw, 4.5rem);
-  font-weight: 400;
-  line-height: 1.05;
-  margin: 18px 0;
-}
-
-.partner-cta h2 span {
-  color: #b08d3c;
-}
-
-
-/* Text */
-
-.partner-cta p {
-  max-width: 620px;
-  margin: 0 auto 30px;
-
-  color: #666862;
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-
-/* Buttons */
-
-.partner-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.partner-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 12px 22px;
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-
-  text-decoration: none;
-
-  transition: all 0.3s ease;
-}
-
-
-/* Primary */
-
-.partner-btn.primary {
-  background: #0a2a22;
-  color: #fff;
-  border: 1px solid #0a2a22;
-}
-
-.partner-btn.primary:hover {
-  background: #b08d3c;
-  border-color: #b08d3c;
-  color: #fff;
-}
-
-
-/* Secondary */
-
-.partner-btn.secondary {
-  background: transparent;
-  color: #0a2a22;
-  border: 1px solid #0a2a22;
-}
-
-.partner-btn.secondary:hover {
-  background: #0a2a22;
-  color: #fff;
-}
-
-
-/* Mobile */
-
-@media (max-width: 575px) {
-
-  .partner-cta {
-    padding: 60px 18px;
-  }
-
-  .partner-cta h2 {
-    font-size: 2.7rem;
-  }
-
-  .partner-cta p {
-    font-size: 14px;
-  }
-
-  .partner-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .partner-btn {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-
-}
-
-</style>
-
-
-
-    <!-- FOOTER -->
-    <footer class="bg-emerald grain site-footer" style="border-top: 1px solid rgba(212,175,55,0.2)">
-      <div class="container py-5">
-        <div class="row g-4">
-          <div class="col-md-5">
-            <div class="d-flex align-items-center gap-2">
-              <svg width="40" height="40" fill="none" viewBox="0 0 64 64">
-                <use href="#lotus"></use>
-              </svg>
-              <img src="images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png" alt="The LotusLeaf Collection Logo" class="img-fluid" style="max-width:250px; height:auto;">
-            </div>
-            <p class="text-muted-light small mt-3" style="max-width: 20rem">
-              Experience That Builds Excellence. Presence That Creates Impact.
-            </p>
-          </div>
-          <div class="col-6 col-md-3 footer-explore">
-            <p class="overline">Explore</p>
-            <div class="d-flex flex-column gap-2 mt-3">
-              <a class="footer-link" href="index.html">Explore</a>
-              <a class="footer-link" href="Aboutus.html"> Our DNA</a>
-              <a class="footer-link" href="whatwedo.html">What We Build </a>
-              <a class="footer-link" href="Portfolio.html">Our Collection </a>
-              <a class="footer-link" href="Portfolio.html"> Our Work</a>
-              <a class="footer-link" href="Contactus.html">Let's Connect</a>
-              <a class="footer-link" href="Insights.html">Insights</a>
-            </div>
-          </div>
-          <div class="col-6 col-md-4 footer-contact">
-            <p class="overline">Contact</p>
-            <div class="d-flex flex-column gap-3 mt-3">
-              <div>
-                <div class="text-gold small fw-semibold mb-2" style="letter-spacing:0.12em; text-transform:uppercase;">Indian Subcontinent</div>
-                <div class="d-flex flex-column gap-2">
-                  
-                  <a class="footer-link" href="tel:+919923587326"><i class="bi bi-telephone me-2"></i>+91 99235 87326</a>
-                  <a class="footer-link" href="https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-2"></i>Let's contact on WhatsApp</a>
-                </div>
-              </div>
-
-              <div>
-                <div class="text-gold small fw-semibold mb-2" style="letter-spacing:0.12em; text-transform:uppercase;">Middle East &amp; Africa</div>
-                <div class="d-flex flex-column gap-2">
-               
-                  <a class="footer-link" href="tel:+971551636310"><i class="bi bi-telephone me-2"></i>+971 55 1636310</a>
-               
-                  <div class="d-flex flex-column gap-2 mt-1">
-                     <a class="footer-link" href="mailto:info@lotusleafcollection.com"><i class="bi bi-envelope me-2"></i>info@lotusleafcollection.com</a>  
-                  <a class="footer-link" href="https://www.lotusleafcollection.com" target="_blank" rel="noopener"><i class="bi bi-globe me-2"></i>www.lotusleafcollection.com</a>
-                
-                    
-                  <span class="text-gold small fw-semibold" style="letter-spacing:0.08em; text-transform:uppercase;">Follow us on</span>
-                    <div class="d-flex align-items-center gap-3 flex-wrap" style="font-size: 1.8rem; line-height: 1;">
-                      <a class="footer-link" href="https://www.instagram.com/thelotusleafcollection/" target="_blank" rel="noopener" aria-label="Follow us on Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
-                      <a class="footer-link" href="https://www.instagram.com/thelotusleafcollection/" target="_blank" rel="noopener" aria-label="Follow us on Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
-                      <a class="footer-link" href="https://www.linkedin.com/company/lotusleaf-collection/home/?viewAsMember=true" target="_blank" rel="noopener" aria-label="Follow us on LinkedIn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                      <a class="footer-link" href="https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-                      <a class="footer-link" href="https://www.youtube.com/@Loutusleafcollection" target="_blank" rel="noopener" aria-label="Follow us on YouTube" title="YouTube"><i class="bi bi-youtube"></i></a>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 mt-5 pt-4" style="border-top: 1px solid rgba(249,248,246,0.1)">
-          <span class="text-muted-light small" id="copyright">© 2026 The LotusLeaf Collection. All rights reserved.</span>
-          <span class="text-muted-light small">Hospitality Management · Consulting · Pre-Opening Solutions</span>
-        </div>
-      </div>
-    </footer>
-
-    <style>
-      @media (max-width: 575.98px) {
-        .site-footer .row > div:first-child {
-          flex: 0 0 100%;
-          max-width: 100%;
-        }
-        .site-footer .footer-contact,
-        .site-footer .footer-explore {
-          flex: 0 0 50%;
-          max-width: 50%;
-        }
-        .site-footer .footer-contact { min-width: 0; }
-        .site-footer .footer-link {
-          display: block;
-          max-width: 100%;
-          overflow-wrap: anywhere;
-          word-break: break-word;
-          font-size: 0.8rem;
-        }
-        .site-footer .d-flex.flex-column.flex-sm-row > span {
-          overflow-wrap: anywhere;
-        }
-      }
-    </style>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // ---- Data ----
-      const services = [
-        { t: "Training", i: "bi-people-fill", d: "Empowering hospitality teams with practical skills, service excellence, and the confidence to grow." },
-        { t: "Hotel Management", i: "bi-buildings", d: "End-to-end hotel management that strengthens operations and creates memorable guest experiences." },
-        { t: "Commercial", i: "bi-megaphone", d: "Commercial strategies that connect business today with tomorrow’s opportunities." },
-        { t: "Resorts", i: "bi-tree", d: "Creating resort experiences where nature, thoughtful hospitality, and lasting memories come together." },
-        { t: "Audit", i: "bi-clipboard-check", d: "Operational and financial reviews that identify opportunities and support informed decisions." },
-        { t: "Revenue Management", i: "bi-graph-up-arrow", d: "Insight-led pricing, forecasting, and optimization to build sustainable revenue growth." },
-        { t: "Pre-opening", i: "bi-key", d: "From concept and planning to launch, we prepare hospitality assets for a confident opening." },
-        { t: "Consulting", i: "bi-lightbulb", d: "Practical hospitality expertise, tailored to your property, people, and business goals." }
-      ];
-
-      // ---- Render Services ----
-      document.getElementById("servicesGrid").innerHTML = services
-        .map(
-          (s) => `
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="service-card">
-              <div class="service-icon"><i class="bi ${s.i}"></i></div>
-              <h3 class="font-serif fs-3" style="color: var(--emerald)">${s.t}</h3>
-              <p class="text-muted-dark small mb-0">${s.d}</p>
-            </div>
-          </div>`
-        )
-        .join("");
-
-      document.getElementById("copyright").textContent =
-        "© " + new Date().getFullYear() + " The LotusLeaf Collection. All rights reserved.";
-
-      // Rotate through ten luxury hotel and resort images every five seconds.
-      const resortImages = [
-        ["photo-1571896349842-33c89424de2d", "Luxury resort with a tropical infinity pool"],
-        ["photo-1566073771259-6a8506099945", "Elegant luxury hotel surrounded by tropical gardens"],
-        ["photo-1542314831-068cd1dbfeeb", "Grand luxury hotel entrance"],
-        ["photo-1582719508461-905c673771fd", "Serene luxury resort pool"],
-        ["photo-1570077188670-e3a8d69ac5ff", "Clifftop resort overlooking the sea"],
-        ["photo-1511895426328-dc8714191300", "Private tropical resort villa"],
-        ["photo-1570213489059-0aac6626cf98", "Luxury overwater resort villas"],
-        ["photo-1602002418082-a4443e081dd1", "Beachfront luxury resort"],
-        ["photo-1611892440504-42a792e24d32", "Refined luxury hotel suite"],
-        ["photo-1590490360182-c33d57733427", "Beautiful resort accommodation"]
-      ];
-      const resortImage = document.getElementById("luxury-resort-image");
-      let resortImageIndex = 0;
-      window.setInterval(() => {
-        resortImageIndex = (resortImageIndex + 1) % resortImages.length;
-        const [photoId, altText] = resortImages[resortImageIndex];
-        resortImage.src = `https://images.unsplash.com/${photoId}?q=80&w=1200&auto=format&fit=crop`;
-        resortImage.alt = altText;
-      }, 5000);
-
-      // ---- Navbar scroll ----
-      const navbar = document.getElementById("navbar");
-      const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
-      window.addEventListener("scroll", onScroll);
-      onScroll();
-
-      // Close mobile menu on navigation, but leave dropdown toggles interactive.
-      document.querySelectorAll("#navMenu a").forEach((a) =>
-        a.addEventListener("click", () => {
-          if (a.matches('[data-bs-toggle="dropdown"], .dropdown-submenu > .dropdown-toggle')) return;
-          const menu = document.getElementById("navMenu");
-          if (menu.classList.contains("show")) new bootstrap.Collapse(menu).hide();
-        })
-      );
-
-      // Bootstrap handles top-level menus; this handler toggles nested hotel locations.
-      document.querySelectorAll(".dropdown-submenu > .dropdown-toggle").forEach((toggle) => {
-        toggle.addEventListener("click", (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-
-          const submenu = toggle.nextElementSibling;
-          const shouldOpen = !submenu.classList.contains("show");
-          const parentMenu = toggle.closest(".hotel-dropdown");
-          parentMenu.querySelectorAll(".dropdown-submenu > .dropdown-menu.show").forEach((openMenu) => {
-            openMenu.classList.remove("show");
-            openMenu.previousElementSibling.setAttribute("aria-expanded", "false");
-          });
-          if (shouldOpen) {
-            submenu.classList.add("show");
-            toggle.setAttribute("aria-expanded", "true");
-          } else {
-            toggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      });
-
-      // Close any open location submenu when its parent hotel dropdown closes.
-      document.getElementById("mainHotelMenu").closest(".dropdown").addEventListener("hidden.bs.dropdown", () => {
-        document.querySelectorAll("#mainHotelMenu .dropdown-menu.show").forEach((submenu) => {
-          submenu.classList.remove("show");
-          submenu.previousElementSibling.setAttribute("aria-expanded", "false");
-        });
-      });
-
-      // ---- Reveal on scroll ----
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              io.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-    </script>
-  </body>
 </html>
