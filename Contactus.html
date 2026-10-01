@@ -141,9 +141,12 @@
       .navbar-custom .nav-link {
         color: rgba(249, 248, 246, 0.9);
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 0.78rem;
+        white-space: nowrap;
+        padding-inline: 0.4rem;
         transition: color 0.2s ease;
       }
+      .navbar-custom .navbar-nav { flex-wrap: nowrap; }
       .navbar-custom.scrolled .nav-link { color: var(--muted-dark); }
       .navbar-custom .nav-link:hover { color: var(--gold); }
       /* Keep nested hotel menus usable and visible above the page content. */
@@ -556,52 +559,6 @@
         color: #ffffff;
       }
 
-      /* Contact office detail rows: keep icon and text aligned on the same line */
-      .contact-page-blocks .contact-office {
-        height: 100%;
-      }
-      .contact-page-blocks .contact-office-info {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
-        width: min(100%, 340px);
-        margin: 0 auto;
-        text-align: left;
-      }
-      .contact-page-blocks .contact-detail {
-        display: flex;
-        align-items: center;
-        gap: 0.9rem;
-        min-height: 42px;
-      }
-      .contact-page-blocks .contact-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 38px;
-        height: 38px;
-        flex-shrink: 0;
-        border-radius: 50%;
-        background: rgba(212, 175, 55, 0.12);
-        color: var(--gold);
-        font-size: 1rem;
-      }
-      .contact-page-blocks .contact-text {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        line-height: 1.6;
-        color: var(--muted-dark);
-      }
-      .contact-page-blocks .contact-text a {
-        color: inherit;
-        text-decoration: none;
-      }
-      .contact-page-blocks .contact-text a:hover {
-        color: var(--emerald);
-      }
-
       /* Keep the navigation, cards, and contact form comfortable on phones. */
       @media (max-width: 767.98px) {
         .navbar-custom .navbar-collapse {
@@ -739,12 +696,18 @@
     .hotel-dropdown .dropdown-item {
       padding: 11px 18px;
       font-size: 14px;
-      color: #333;
+      color: #222;
 
       transition: 0.3s;
     }
 
+    .hotel-dropdown a,
+    .hotel-dropdown a.dropdown-item {
+      color: #222;
+    }
 
+
+    .hotel-dropdown a:hover,
     .hotel-dropdown .dropdown-item:hover {
       background: #f8f5ed;
       color: #b08a3c;
@@ -958,6 +921,14 @@
     .side-menu > li > a:hover {
 
       color: #b08a3c;
+    }
+
+
+    .side-about-menu a,
+    .side-about-menu a:link,
+    .side-about-menu a:visited {
+
+      color: #000000;
     }
 
 
@@ -2602,7 +2573,7 @@ window.addEventListener("load", function () {
      1.55s → COLLECTION
      2.00s → Tagline
      2.20s → Gold lines
-     3.70s → Cinematic exit
+    3.50s → Smooth cinematic exit
   */
 
 
@@ -2610,7 +2581,7 @@ window.addEventListener("load", function () {
 
     loader.classList.add("loader-blast");
 
-  }, 3900);
+  }, 3500);
 
 
   /*
@@ -2621,7 +2592,7 @@ window.addEventListener("load", function () {
 
     loader.style.display = "none";
 
-  }, 5450);
+  }, 5000);
 
 });
 
@@ -2641,20 +2612,11 @@ window.addEventListener("load", function () {
     <!-- LOGO -->
 
     <a
-      class="navbar-brand d-flex align-items-center gap-2"
-      href="index.html">
+      class="navbar-brand d-flex align-items-center gap-2 me-auto"
+      href="index.html"
+      style="margin-right: auto; justify-content: flex-start;">
 
-      <svg
-        width="40"
-        height="40"
-        fill="none"
-        viewBox="0 0 64 64">
-
-        <use href="index.html"></use>
-
-      </svg>
-
-
+     
       <span>
         The LotusLeaf Collection
       </span>
@@ -2688,13 +2650,13 @@ window.addEventListener("load", function () {
         class="navbar-nav align-items-lg-center gap-lg-2">
 
 
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Explore </a></li>
 
 
-        <li class="nav-item"><a class="nav-link" href="Aboutus.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="Aboutus.html">Our DNA</a></li>
 
 
-<li class="nav-item"><a class="nav-link" href="whatwedo.html">What We Do</a></li>
+<li class="nav-item"><a class="nav-link" href="whatwedo.html">What We Build</a></li>
 
         <!-- =================================================
              OUR HOTELS
@@ -2715,7 +2677,7 @@ window.addEventListener("load", function () {
             data-bs-toggle="dropdown"
             aria-expanded="false">
 
-            Our Hotels
+           Our Collection
 
           </a>
 
@@ -2765,7 +2727,8 @@ window.addEventListener("load", function () {
  
 
 
-        <li class="nav-item"><a class="nav-link" href="Portfolio.html ">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="Portfolio.html ">Our Work</a></li>
+         <li class="nav-item"><a class="nav-link" href="Portfolio.html ">Insights</a></li>
 
 
 
@@ -2777,7 +2740,7 @@ window.addEventListener("load", function () {
             class="nav-link"
             href="Contactus.html">
 
-            Contact
+            Connect
 
           </a>
 
@@ -2867,26 +2830,28 @@ window.addEventListener("load", function () {
     <ul class="side-menu">
 
 
-      <li><a href="index.html">Home <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="index.html">Explore <i class="bi bi-arrow-right"></i></a></li>
 
 
       <!-- ABOUT -->
 
       <li>
 
-        <a href="Aboutus.html" id="sideAboutBtn" aria-expanded="false">
+        <a href="javascript:void(0)" id="sideAboutBtn" aria-expanded="false">
 
-          <span>About</span>
+          <span> Our DNA</span>
 
           <i class="bi bi-chevron-down" id="sideAboutIcon"></i>
 
         </a>
 
         <ul class="side-about-menu" id="sideAboutMenu" style="display:none;">
-          <li><a href="Aboutus.html">Who We Are <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="Aboutus.html">Vision &amp; Mission <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="Aboutus.html">Our Team <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Our Story<i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Vision 2035<i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Philosophy<i class="bi bi-arrow-right"></i></a></li>
           <li><a href="Aboutus.html">Leadership <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Advisory Board<i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="Aboutus.html">Core Values<i class="bi bi-arrow-right"></i></a></li>
         </ul>
 
       </li>
@@ -2907,7 +2872,7 @@ window.addEventListener("load", function () {
           id="sideHotelsBtn">
 
           <span>
-            Our Hotels
+            Our Collection
           </span>
 
           <i
@@ -3026,7 +2991,7 @@ window.addEventListener("load", function () {
       <!-- WHAT WE DO -->
 
       <li>
-        <a href="javascript:void(0)" id="sideWhatWeDoBtn" aria-expanded="false"><span>What We Do</span><i class="bi bi-chevron-down" id="sideWhatWeDoIcon"></i></a>
+        <a href="javascript:void(0)" id="sideWhatWeDoBtn" aria-expanded="false"><span>What We Build</span><i class="bi bi-chevron-down" id="sideWhatWeDoIcon"></i></a>
         <ul class="side-about-menu" id="sideWhatWeDoMenu" style="display:none;">
           <li><a href="whatwedo.html">Hotel &amp; Resort Management <i class="bi bi-arrow-right"></i></a></li>
           <li><a href="whatwedo.html">Sales &amp; Marketing <i class="bi bi-arrow-right"></i></a></li>
@@ -3034,10 +2999,13 @@ window.addEventListener("load", function () {
           <li><a href="whatwedo.html">Pre-Opening Consultancy <i class="bi bi-arrow-right"></i></a></li>
           <li><a href="whatwedo.html">Human Capital <i class="bi bi-arrow-right"></i></a></li>
           <li><a href="whatwedo.html">Operational Excellence <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Owner Services <i class="bi bi-arrow-right"></i></a></li>
+          <li><a href="whatwedo.html">Technology <i class="bi bi-arrow-right"></i></a></li>
         </ul>
       </li>
 
-      <li><a href="#portfolio">Portfolio <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="portfolio.html">Our Work <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="Portfolio.html"></a>Insights <i class="bi bi-arrow-right"></i></a></li>
 
 
 
@@ -3047,7 +3015,7 @@ window.addEventListener("load", function () {
 
         <a href="Contactus.html">
 
-          Contact Us
+          Connect
 
           <i class="bi bi-arrow-right"></i>
 
