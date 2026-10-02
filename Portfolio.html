@@ -265,15 +265,6 @@
       .hero-bg {
         position: absolute; inset: 0;
         background: url("images/New%20folder/wall/1.jpeg") center/cover no-repeat;
-        animation: hero-slideshow 100s infinite;
-      }
-      @keyframes hero-slideshow {
-        0%, 16.66% { background-image: url("images/New%20folder/wall/1.jpeg"); }
-        16.67%, 33.32% { background-image: url("images/New%20folder/wall/2.jpeg"); }
-        33.33%, 49.99% { background-image: url("images/New%20folder/wall/3.jpeg"); }
-        50%, 66.66% { background-image: url("images/New%20folder/wall/4.jpeg"); }
-        66.67%, 83.32% { background-image: url("images/New%20folder/wall/5.jpeg"); }
-        83.33%, 100% { background-image: url("images/New%20folder/wall/6.jpeg"); }
       }
       .hero-overlay {
         position: absolute; inset: 0;
@@ -431,12 +422,8 @@
       .footer-link { color: rgba(249,248,246,0.8); text-decoration: none; font-size: 0.9rem; }
       .footer-link:hover { color: var(--gold); }
 
-      /* Reveal animation */
-      .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-      .reveal.visible { opacity: 1; transform: translateY(0); }
-      @media (prefers-reduced-motion: reduce) {
-        .reveal { opacity: 1; transform: none; transition: none; }
-      }
+      /* Keep portfolio content readable even if optional scroll scripts fail. */
+      .reveal { opacity: 1; transform: none; }
       .grain { position: relative; }
       .zoom-img { overflow: hidden; }
       .zoom-img img { transition: transform 0.7s ease; }
@@ -655,27 +642,6 @@
         </g>
       </symbol>
     </svg>
-
-    <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>The LotusLeaf Collection</title>
-
-  <!-- Bootstrap -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-
-  <!-- Bootstrap Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 
   <style>
 
@@ -1249,12 +1215,15 @@
 
     }
 
+    @media (max-width: 991.98px) {
+      .desktop-slide-trigger,
+      .desktop-only-slide-menu {
+        display: none !important;
+      }
+    }
+
   </style>
 
-</head>
-
-
-<body>
 <!-- =========================================================
      THE LOTUSLEAF COLLECTION
      CINEMATIC LUXURY INTRO / NETFLIX-STYLE REVEAL
@@ -2702,25 +2671,18 @@
           </a>
 
         </li>
-
-
-
-        <!-- THREE LINE MENU -->
-
-        <li class="nav-item ms-lg-2">
-
+        </li>
+        <li class="nav-item ms-lg-2 desktop-slide-trigger">
           <button
             class="side-menu-btn"
             type="button"
             data-bs-toggle="offcanvas"
-            data-bs-target="#rightSideMenu">
-
-            <i class="bi bi-list"></i>
-
+            data-bs-target="#rightSideMenu"
+            aria-controls="rightSideMenu"
+            aria-label="Open additional navigation">
+            <i class="bi bi-list" aria-hidden="true"></i>
           </button>
-
         </li>
-
 
       </ul>
 
@@ -2730,321 +2692,31 @@
 
 </nav>
 
-
-
-<!-- =====================================================
-     RIGHT SIDE SLIDING MENU
-===================================================== -->
-
 <div
-  class="offcanvas offcanvas-end side-offcanvas"
+  class="offcanvas offcanvas-end side-offcanvas desktop-only-slide-menu"
   tabindex="-1"
-  id="rightSideMenu">
-
-
-  <!-- HEADER -->
-
+  id="rightSideMenu"
+  aria-labelledby="rightSideMenuTitle">
   <div class="offcanvas-header">
-
-    <h5 class="offcanvas-title">
-
-      The LotusLeaf Collection
-
-    </h5>
-
-
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas">
-    </button>
-
+    <h2 class="offcanvas-title" id="rightSideMenuTitle">The LotusLeaf Collection</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
   </div>
-
-
-
-  <!-- BODY -->
-
   <div class="offcanvas-body">
-
-
     <ul class="side-menu">
-
-
-      <li><a href="index.html">Explore <i class="bi bi-arrow-right"></i></a></li>
-
-
-      <!-- ABOUT -->
-
-      <li>
-
-        <a href="javascript:void(0)" id="sideAboutBtn" aria-expanded="false">
-
-          <span> Our DNA</span>
-
-          <i class="bi bi-chevron-down" id="sideAboutIcon"></i>
-
-        </a>
-
-        <ul class="side-about-menu" id="sideAboutMenu" style="display:none;">
-          <li><a href="Aboutus.html">Our Story<i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="Aboutus.html">Vision 2035<i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="Aboutus.html">Philosophy<i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="Aboutus.html">Leadership <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="Aboutus.html">Advisory Board<i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="Aboutus.html">Core Values<i class="bi bi-arrow-right"></i></a></li>
-        </ul>
-
-      </li>
-
-
-
-      <!-- =================================================
-           SIDE OUR HOTELS
-      ================================================== -->
-
-      <li>
-
-
-        <!-- MAIN OUR HOTELS BUTTON -->
-
-        <a
-          href="javascript:void(0)"
-          id="sideHotelsBtn">
-
-          <span>
-            Our Collection
-          </span>
-
-          <i
-            class="bi bi-chevron-down"
-            id="sideHotelsIcon">
-          </i>
-
-        </a>
-
-
-        <!-- SIDE HOTEL MENU -->
-
-        <div
-          id="sideHotelsMenu"
-          style="display:none;">
-
-
-          <!-- =================================
-               AJMER
-          ================================== -->
-
-          <div class="side-hotel-location">
-
-
-            <button
-              type="button"
-              data-side-location="sideAjmer">
-
-              <span>
-                Pune
-              </span>
-
-              <i class="bi bi-chevron-down"></i>
-
-            </button>
-
-
-            <div
-              class="side-hotel-list"
-              id="sideAjmer">
-
-
-              <a
-                href="portfolio.html"
-                target="_blank">
-
-                Pathik grand, Pune
-
-                <i class="bi bi-arrow-up-right"></i>
-
-              </a>
-
-
-            </div>
-
-          </div>
-
-
-
-          <!-- =================================
-               JAIPUR
-          ================================== -->
-
-          <div class="side-hotel-location">
-
-
-            <button
-              type="button"
-              data-side-location="sideJaipur">
-
-              <span>
-               Satara 
-              </span>
-
-              <i class="bi bi-chevron-down"></i>
-
-            </button>
-
-
-            <div
-              class="side-hotel-list"
-              id="sideJaipur">
-
-
-              <a
-                href="protfolio.html"
-                target="_blank">
-
-                Vedi valley Resort, Satara
-
-                <i class="bi bi-arrow-up-right"></i>
-
-              </a>
-
-
-            
-
-            </div>
-
-          </div>
-
-
-
-          <!-- =================================
-               RANTHAMBORE
-          ================================== -->
-
-          <div class="side-hotel-location">
-
-
-           
-      </li>
-
-
-
-      <!-- WHAT WE DO -->
-
-      <li>
-        <a href="javascript:void(0)" id="sideWhatWeDoBtn" aria-expanded="false"><span>What We Build</span><i class="bi bi-chevron-down" id="sideWhatWeDoIcon"></i></a>
-        <ul class="side-about-menu" id="sideWhatWeDoMenu" style="display:none;">
-          <li><a href="whatwedo.html">Hotel &amp; Resort Management <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="whatwedo.html">Sales &amp; Marketing <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="whatwedo.html">Revenue Management <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="whatwedo.html">Pre-Opening Consultancy <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="whatwedo.html">Human Capital <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="whatwedo.html">Operational Excellence <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="whatwedo.html">Owner Services <i class="bi bi-arrow-right"></i></a></li>
-          <li><a href="whatwedo.html">Technology <i class="bi bi-arrow-right"></i></a></li>
-        </ul>
-      </li>
-
-      <li><a href="portfolio.html">Our Work <i class="bi bi-arrow-right"></i></a></li>
-      <li><a href="insights.html">Insights <i class="bi bi-arrow-right"></i></a></li>
-
-
-
-      <!-- CONTACT -->
-
-      <li>
-
-        <a href="Contactus.html">
-
-          Let's Connect
-
-          <i class="bi bi-arrow-right"></i>
-
-        </a>
-
-      </li>
-
-
+      <li><a href="index.html">Explore <i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="Aboutus.html">Our DNA <i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="whatwedo.html">What We Build <i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="Portfolio.html">Our Collection <i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="Portfolio.html">Our Work <i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="Insights.html">Insights <i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
+      <li><a href="Contactus.html">Let's Connect <i class="bi bi-arrow-right" aria-hidden="true"></i></a></li>
     </ul>
-
-
-
-    <!-- =================================================
-         CONTACT DETAILS
-    ================================================== -->
-
     <div class="side-contact">
-
-
-      <h6>
-        Get In Touch
-      </h6>
-
-
-      <p>
-
-        <i class="bi bi-envelope me-2"></i>
-
-        <a href="mailto:info@lotusleafcollection.com">
-
-          info@lotusleafcollection.com
-
-        </a>
-
-      </p>
-
-
-      <p>
-
-        <i class="bi bi-telephone me-2"></i>
-
-        <a href="tel:+919923587326">
-
-          +91 99235 87326
-
-        </a>
-
-      </p>
-
-
-      <div class="side-social">
-
-
-        <a href="#">
-
-          <i class="bi bi-instagram"></i>
-
-        </a>
-
-
-        <a href="#">
-
-          <i class="bi bi-facebook"></i>
-
-        </a>
-
-
-        <a href="#">
-
-          <i class="bi bi-linkedin"></i>
-
-        </a>
-
-
-        <a href="#">
-
-          <i class="bi bi-youtube"></i>
-
-        </a>
-
-
-      </div>
-
+      <h3>Get In Touch</h3>
+      <p><i class="bi bi-envelope me-2" aria-hidden="true"></i><a href="mailto:info@lotusleafcollection.com">info@lotusleafcollection.com</a></p>
+      <p><i class="bi bi-telephone me-2" aria-hidden="true"></i><a href="tel:+919923587326">+91 99235 87326</a></p>
     </div>
-
-
   </div>
-
 </div>
 
 
@@ -3066,47 +2738,6 @@
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
-
-
-  /* ==================================================
-     MAIN NAVBAR
-     OUR HOTELS OPEN / CLOSE
-  ================================================== */
-
-  const ourHotelsBtn =
-    document.getElementById("ourHotelsBtn");
-
-  const mainHotelMenu =
-    document.getElementById("mainHotelMenu");
-
-
-  ourHotelsBtn.addEventListener("click", function (e) {
-
-    e.preventDefault();
-
-    e.stopPropagation();
-
-
-    /*
-       Toggle main hotel menu
-    */
-
-    mainHotelMenu.classList.toggle("show");
-
-
-    /*
-       If closing main menu,
-       close all location menus
-    */
-
-    if (!mainHotelMenu.classList.contains("show")) {
-
-      closeMainLocationMenus();
-
-    }
-
-  });
-
 
 
   /* ==================================================
@@ -3164,278 +2795,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  /* ==================================================
-     CLOSE MAIN LOCATION MENUS
-  ================================================== */
-
-  function closeMainLocationMenus() {
-
-    document
-      .querySelectorAll(
-        "#mainHotelMenu .dropdown-submenu .dropdown-menu"
-      )
-      .forEach(function (menu) {
-
-        menu.classList.remove("show");
-
-      });
-
-  }
-
-
-
-  /* ==================================================
-     CLICK OUTSIDE MAIN MENU
-  ================================================== */
-
-  document.addEventListener("click", function (e) {
-
-
-    const navbar =
-      document.getElementById("navbar");
-
-
-    if (!navbar.contains(e.target)) {
-
-      mainHotelMenu.classList.remove("show");
-
-      closeMainLocationMenus();
-
-    }
-
-  });
-
-
-
-  /* ==================================================
-     SIDE MENU
-     OUR HOTELS OPEN / CLOSE
-  ================================================== */
-
-  const sideHotelsBtn =
-    document.getElementById("sideHotelsBtn");
-
-  const sideHotelsMenu =
-    document.getElementById("sideHotelsMenu");
-
-  const sideHotelsIcon =
-    document.getElementById("sideHotelsIcon");
-
-  const sideAboutBtn =
-    document.getElementById("sideAboutBtn");
-
-  const sideAboutMenu =
-    document.getElementById("sideAboutMenu");
-
-  const sideAboutIcon =
-    document.getElementById("sideAboutIcon");
-
-  const sideWhatWeDoBtn = document.getElementById("sideWhatWeDoBtn");
-  const sideWhatWeDoMenu = document.getElementById("sideWhatWeDoMenu");
-  const sideWhatWeDoIcon = document.getElementById("sideWhatWeDoIcon");
-
-  sideAboutBtn.addEventListener("click", function () {
-    const isOpen = sideAboutMenu.style.display === "block";
-    sideAboutMenu.style.display = isOpen ? "none" : "block";
-    sideAboutIcon.className = isOpen ? "bi bi-chevron-down" : "bi bi-chevron-up";
-    sideAboutBtn.setAttribute("aria-expanded", String(!isOpen));
-  });
-
-  sideAboutMenu.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      sideAboutMenu.style.display = "none";
-      sideAboutIcon.className = "bi bi-chevron-down";
-      sideAboutBtn.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  sideWhatWeDoBtn.addEventListener("click", function () {
-    const isOpen = sideWhatWeDoMenu.style.display === "block";
-    sideWhatWeDoMenu.style.display = isOpen ? "none" : "block";
-    sideWhatWeDoIcon.className = isOpen ? "bi bi-chevron-down" : "bi bi-chevron-up";
-    sideWhatWeDoBtn.setAttribute("aria-expanded", String(!isOpen));
-  });
-
-  sideWhatWeDoMenu.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      sideWhatWeDoMenu.style.display = "none";
-      sideWhatWeDoIcon.className = "bi bi-chevron-down";
-      sideWhatWeDoBtn.setAttribute("aria-expanded", "false");
-    });
-  });
-
-
-  sideHotelsBtn.addEventListener("click", function () {
-
-
-    const isOpen =
-      sideHotelsMenu.style.display === "block";
-
-
-    if (isOpen) {
-
-
-      /*
-         CLOSE
-      */
-
-      sideHotelsMenu.style.display = "none";
-
-      sideHotelsIcon.className =
-        "bi bi-chevron-down";
-
-
-      closeSideLocationMenus();
-
-
-    } else {
-
-
-      /*
-         OPEN
-      */
-
-      sideHotelsMenu.style.display = "block";
-
-      sideHotelsIcon.className =
-        "bi bi-chevron-up";
-
-    }
-
-  });
-
-
-
-  /* ==================================================
-     SIDE LOCATION MENUS
-  ================================================== */
-
-  const sideLocationButtons =
-    document.querySelectorAll(
-      "[data-side-location]"
-    );
-
-
-  sideLocationButtons.forEach(function (button) {
-
-
-    button.addEventListener("click", function () {
-
-
-      const targetId =
-        this.getAttribute("data-side-location");
-
-
-      const target =
-        document.getElementById(targetId);
-
-
-      const isOpen =
-        target.classList.contains("show");
-
-
-      /*
-         Close all other locations
-      */
-
-      closeSideLocationMenus();
-
-
-      /*
-         If it was closed,
-         open it.
-         If it was open,
-         it stays closed.
-      */
-
-      if (!isOpen) {
-
-        target.classList.add("show");
-
-        const icon =
-          this.querySelector("i");
-
-        icon.className =
-          "bi bi-chevron-up";
-
-      }
-
-    });
-
-  });
-
-
-
-  /* ==================================================
-     CLOSE SIDE LOCATION MENUS
-  ================================================== */
-
-  function closeSideLocationMenus() {
-
-
-    document
-      .querySelectorAll(".side-hotel-list")
-      .forEach(function (menu) {
-
-        menu.classList.remove("show");
-
-      });
-
-
-    document
-      .querySelectorAll(
-        ".side-hotel-location button i"
-      )
-      .forEach(function (icon) {
-
-        icon.className =
-          "bi bi-chevron-down";
-
-      });
-
-  }
-
-
-
-  /* ==================================================
-     RESET SIDE MENU WHEN CLOSED
-  ================================================== */
-
-  const sideMenu =
-    document.getElementById("rightSideMenu");
-
-
-  sideMenu.addEventListener(
-    "hidden.bs.offcanvas",
-    function () {
-
-      sideAboutMenu.style.display = "none";
-      sideAboutIcon.className = "bi bi-chevron-down";
-      sideAboutBtn.setAttribute("aria-expanded", "false");
-
-      sideWhatWeDoMenu.style.display = "none";
-      sideWhatWeDoIcon.className = "bi bi-chevron-down";
-      sideWhatWeDoBtn.setAttribute("aria-expanded", "false");
-
-      sideHotelsMenu.style.display = "none";
-
-      sideHotelsIcon.className =
-        "bi bi-chevron-down";
-
-      closeSideLocationMenus();
-
-    }
-  );
-
-
 });
 
 </script>
 
 
-</body>
-
-</html>
   
   <br>
   <br>
@@ -4395,7 +3759,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="https://media-cdn.tripadvisor.com/media/photo-s/1d/3b/30/c4/hotel-ivy-studio-is-nearer.jpg"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Hotel Ivy Studios">
+               alt="Hotel Ivy Studios"
+               loading="lazy"
+               decoding="async"
+               width="900"
+               height="600">
 
         </div>
 
@@ -4418,7 +3786,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="https://cdn0.weddingwire.in/vendor/8376/3_2/960/jpg/m8_15_118376.jpeg"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Mantra Resort">
+               alt="Mantra Resort"
+               loading="lazy"
+               decoding="async"
+               width="900"
+               height="600">
 
         </div>
 
@@ -4441,7 +3813,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBxA21fyzQMed_KcrKq_4IWV8zmx32oPIjtgwrw_G-KMCzp6IKmlKcdanN&s=10"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="The Solitaire">
+               alt="The Solitaire"
+               loading="lazy"
+               decoding="async"
+               width="900"
+               height="600">
 
         </div>
 
@@ -4464,7 +3840,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGUF8FjxCi4i8ejGtQLZyPLMrwWftyJ_19aXQJxrrRQ&s=10"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Prakruti Resort">
+               alt="Prakruti Resort"
+               loading="lazy"
+               decoding="async"
+               width="900"
+               height="600">
 
         </div>
 
@@ -4487,7 +3867,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/34/2d/ba/fb/caption.jpg?w=900&h=500&s=1"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Ritz Valley Resort">
+               alt="Ritz Valley Resort"
+               loading="lazy"
+               decoding="async"
+               width="900"
+               height="600">
 
         </div>
 
@@ -4510,7 +3894,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr3rQtascSh__Iq0imwDg1FQkLqA297JEqyjaA0Td8vw&s=10"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Gautam Resort">
+               alt="Gautam Resort"
+               loading="lazy"
+               decoding="async"
+               width="900"
+               height="600">
 
         </div>
 
@@ -4530,10 +3918,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="zoom-img rounded-4 overflow-hidden mb-3">
 
-          <img src="images\images (3).jpg"
+          <img src="images/images%20(3).jpg"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Swara Group of Hotels & Resorts">
+               alt="Swara Group of Hotels & Resorts"
+               loading="lazy"
+               decoding="async"
+               width="900"
+               height="600">
 
         </div>
 
@@ -4552,10 +3944,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="zoom-img rounded-4 overflow-hidden mb-3">
 
-          <img src="images\images (4).jpg"
+          <img src="images/images%20(4).jpg"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Jalsrushti">
+               alt="Jalsrushti"
+               loading="lazy"
+               decoding="async"
+               width="900"
+               height="600">
 
         </div>
         
@@ -4576,10 +3972,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="zoom-img rounded-4 overflow-hidden mb-3">
 
-          <img src="images\images (5).jpg"
+          <img src="images/images%20(5).jpg"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Nabhananta by Malhar Machi">
+               alt="Nabhananta by Malhar Machi"
+               loading="lazy"
+               decoding="async"
+               width="900"
+               height="600">
 
         </div>
 
@@ -4708,64 +4108,14 @@ document.addEventListener("DOMContentLoaded", function () {
     </style>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // ---- Data ----
-      const services = [
-        { t: "Training", i: "bi-people-fill", d: "Empowering hospitality teams with practical skills, service excellence, and the confidence to grow." },
-        { t: "Hotel Management", i: "bi-buildings", d: "End-to-end hotel management that strengthens operations and creates memorable guest experiences." },
-        { t: "Commercial", i: "bi-megaphone", d: "Commercial strategies that connect business today with tomorrow’s opportunities." },
-        { t: "Resorts", i: "bi-tree", d: "Creating resort experiences where nature, thoughtful hospitality, and lasting memories come together." },
-        { t: "Audit", i: "bi-clipboard-check", d: "Operational and financial reviews that identify opportunities and support informed decisions." },
-        { t: "Revenue Management", i: "bi-graph-up-arrow", d: "Insight-led pricing, forecasting, and optimization to build sustainable revenue growth." },
-        { t: "Pre-opening", i: "bi-key", d: "From concept and planning to launch, we prepare hospitality assets for a confident opening." },
-        { t: "Consulting", i: "bi-lightbulb", d: "Practical hospitality expertise, tailored to your property, people, and business goals." }
-      ];
-
-      // ---- Render Services ----
-      document.getElementById("servicesGrid").innerHTML = services
-        .map(
-          (s) => `
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="service-card">
-              <div class="service-icon"><i class="bi ${s.i}"></i></div>
-              <h3 class="font-serif fs-3" style="color: var(--emerald)">${s.t}</h3>
-              <p class="text-muted-dark small mb-0">${s.d}</p>
-            </div>
-          </div>`
-        )
-        .join("");
-
-      document.getElementById("copyright").textContent =
-        "© " + new Date().getFullYear() + " The LotusLeaf Collection. All rights reserved.";
-
-      // Rotate through ten luxury hotel and resort images every five seconds.
-      const resortImages = [
-        ["photo-1571896349842-33c89424de2d", "Luxury resort with a tropical infinity pool"],
-        ["photo-1566073771259-6a8506099945", "Elegant luxury hotel surrounded by tropical gardens"],
-        ["photo-1542314831-068cd1dbfeeb", "Grand luxury hotel entrance"],
-        ["photo-1582719508461-905c673771fd", "Serene luxury resort pool"],
-        ["photo-1570077188670-e3a8d69ac5ff", "Clifftop resort overlooking the sea"],
-        ["photo-1511895426328-dc8714191300", "Private tropical resort villa"],
-        ["photo-1570213489059-0aac6626cf98", "Luxury overwater resort villas"],
-        ["photo-1602002418082-a4443e081dd1", "Beachfront luxury resort"],
-        ["photo-1611892440504-42a792e24d32", "Refined luxury hotel suite"],
-        ["photo-1590490360182-c33d57733427", "Beautiful resort accommodation"]
-      ];
-      const resortImage = document.getElementById("luxury-resort-image");
-      let resortImageIndex = 0;
-      window.setInterval(() => {
-        resortImageIndex = (resortImageIndex + 1) % resortImages.length;
-        const [photoId, altText] = resortImages[resortImageIndex];
-        resortImage.src = `https://images.unsplash.com/${photoId}?q=80&w=1200&auto=format&fit=crop`;
-        resortImage.alt = altText;
-      }, 5000);
-
       // ---- Navbar scroll ----
       const navbar = document.getElementById("navbar");
-      const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
-      window.addEventListener("scroll", onScroll);
-      onScroll();
+      if (navbar) {
+        const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+      }
 
       // Close mobile menu on navigation, but leave dropdown toggles interactive.
       document.querySelectorAll("#navMenu a").forEach((a) =>
@@ -4799,26 +4149,35 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       // Close any open location submenu when its parent hotel dropdown closes.
-      document.getElementById("mainHotelMenu").closest(".dropdown").addEventListener("hidden.bs.dropdown", () => {
-        document.querySelectorAll("#mainHotelMenu .dropdown-menu.show").forEach((submenu) => {
-          submenu.classList.remove("show");
-          submenu.previousElementSibling.setAttribute("aria-expanded", "false");
+      const mainHotelMenu = document.getElementById("mainHotelMenu");
+      const hotelDropdown = mainHotelMenu && mainHotelMenu.closest(".dropdown");
+      if (hotelDropdown) {
+        hotelDropdown.addEventListener("hidden.bs.dropdown", () => {
+          mainHotelMenu.querySelectorAll(".dropdown-menu.show").forEach((submenu) => {
+            submenu.classList.remove("show");
+            submenu.previousElementSibling.setAttribute("aria-expanded", "false");
+          });
         });
-      });
+      }
 
       // ---- Reveal on scroll ----
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              io.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+      const revealElements = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        revealElements.forEach((element) => io.observe(element));
+      } else {
+        revealElements.forEach((element) => element.classList.add("visible"));
+      }
     </script>
   </body>
 </html>
