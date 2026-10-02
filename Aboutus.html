@@ -6411,6 +6411,72 @@ document.addEventListener("DOMContentLoaded", function () {
     </footer>
 
     <style>
+      .whatsapp-widget {
+        position: fixed;
+        right: max(1rem, env(safe-area-inset-right));
+        bottom: max(1rem, env(safe-area-inset-bottom));
+        z-index: 1060;
+        font-family: "Outfit", Arial, sans-serif;
+      }
+      .whatsapp-widget [hidden] { display: none !important; }
+      .whatsapp-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: .55rem;
+        padding: .8rem 1rem;
+        border: 0;
+        border-radius: 999px;
+        background: #25d366;
+        color: #073b25;
+        font-weight: 600;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, .2);
+      }
+      .whatsapp-toggle:hover { background: #1fbd5b; color: #073b25; }
+      .whatsapp-toggle:focus-visible,
+      .whatsapp-close:focus-visible,
+      .whatsapp-start:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+      .whatsapp-panel {
+        width: min(20rem, calc(100vw - 2rem));
+        margin-bottom: .75rem;
+        overflow: hidden;
+        border-radius: .85rem;
+        background: #fff;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, .22);
+      }
+      .whatsapp-panel-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        padding: .85rem 1rem;
+        background: #075e3b;
+        color: #fff;
+      }
+      .whatsapp-panel-header strong { font-size: 1rem; }
+      .whatsapp-close {
+        border: 0;
+        background: transparent;
+        color: inherit;
+        font-size: 1.4rem;
+        line-height: 1;
+      }
+      .whatsapp-panel-body { padding: 1rem; }
+      .whatsapp-panel-body p { margin: 0 0 .85rem; color: var(--muted-dark); }
+      .whatsapp-start {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .65rem .9rem;
+        border-radius: .45rem;
+        background: #25d366;
+        color: #073b25;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .whatsapp-start:hover { background: #1fbd5b; color: #073b25; }
+      @media (prefers-reduced-motion: reduce) {
+        .whatsapp-widget *, .whatsapp-widget *::before, .whatsapp-widget *::after { scroll-behavior: auto; }
+      }
       @media (max-width: 575.98px) {
         .site-footer .row > div:first-child {
           flex: 0 0 100%;
@@ -6435,7 +6501,55 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     </style>
 
+    <div class="whatsapp-widget">
+      <div class="whatsapp-panel" id="whatsappPanel" role="region" aria-labelledby="whatsappPanelTitle" hidden>
+        <div class="whatsapp-panel-header">
+          <strong id="whatsappPanelTitle">Let’s chat on WhatsApp</strong>
+          <button class="whatsapp-close" type="button" aria-label="Close WhatsApp chat panel">&times;</button>
+        </div>
+        <div class="whatsapp-panel-body">
+          <p>Have a hospitality project in mind? Send our team a message.</p>
+          <a class="whatsapp-start" href="https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> Start a WhatsApp chat
+          </a>
+        </div>
+      </div>
+      <button class="whatsapp-toggle" type="button" aria-controls="whatsappPanel" aria-expanded="false">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i><span>Let’s chat</span>
+      </button>
+    </div>
+
     <script>
+      const whatsappWidget = document.querySelector(".whatsapp-widget");
+      const whatsappToggle = whatsappWidget.querySelector(".whatsapp-toggle");
+      const whatsappPanel = whatsappWidget.querySelector("#whatsappPanel");
+      const whatsappClose = whatsappWidget.querySelector(".whatsapp-close");
+
+      const setWhatsAppPanelOpen = (isOpen) => {
+        whatsappPanel.hidden = !isOpen;
+        whatsappToggle.setAttribute("aria-expanded", String(isOpen));
+        if (isOpen) whatsappClose.focus();
+      };
+
+      whatsappToggle.addEventListener("click", () => {
+        setWhatsAppPanelOpen(whatsappPanel.hidden);
+      });
+      whatsappClose.addEventListener("click", () => {
+        setWhatsAppPanelOpen(false);
+        whatsappToggle.focus();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !whatsappPanel.hidden) {
+          setWhatsAppPanelOpen(false);
+          whatsappToggle.focus();
+        }
+      });
+      document.addEventListener("click", (event) => {
+        if (!whatsappWidget.contains(event.target) && !whatsappPanel.hidden) {
+          setWhatsAppPanelOpen(false);
+        }
+      });
+
       document.getElementById("copyright").textContent =
         "© " + new Date().getFullYear() + " The LotusLeaf Collection. All rights reserved.";
 
