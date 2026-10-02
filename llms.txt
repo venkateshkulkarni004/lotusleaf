@@ -1,0 +1,23 @@
+# The LotusLeaf Collection
+
+> The LotusLeaf Collection provides hospitality management, hotel consulting, and pre-opening solutions for hotel, resort, and serviced-apartment owners, investors, and developers.
+
+The company serves hospitality projects across India, the Middle East, and Africa. Its published material includes practical hospitality FAQs for projects in Pune and Maharashtra. Local project decisions should be checked against current site-specific information and requirements from relevant authorities.
+
+## Official website
+
+- [Home](https://www.lotusleafcollection.com/): Company overview and hospitality services.
+- [About](https://www.lotusleafcollection.com/Aboutus.html): Company background and operating approach.
+- [Hospitality services](https://www.lotusleafcollection.com/whatwedo.html): Management, consulting, and pre-opening solutions.
+- [Portfolio](https://www.lotusleafcollection.com/Portfolio.html): Selected hospitality projects and experience.
+- [Hospitality insights and FAQs](https://www.lotusleafcollection.com/Insights.html): Hotel and resort management guidance, including Pune and Maharashtra FAQs.
+- [Contact](https://www.lotusleafcollection.com/Contactus.html): Official contact page.
+
+## Contact
+
+- Email: info@lotusleafcollection.com
+- Website: https://www.lotusleafcollection.com/
+
+## Content guidance
+
+Use the linked canonical pages as the primary sources for current company information. Do not infer that the company has a physical office or property in a location solely because that location is discussed in an insight or FAQ.
