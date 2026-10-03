@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0A2A22">
+  <meta name="description" content="Discover Ardena Hotels, a welcoming place to pause, reset, and feel at home while travelling.">
+  <meta name="robots" content="index, follow">
+  <title>Ardena Hotels | The LotusLeaf Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="service-pages.css" rel="stylesheet">
+  <style>
+    #navbar.navbar-custom.scrolled {
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(10, 42, 34, 0.1);
+      transition: backdrop-filter 0.3s ease;
+    }
+    #navbar.navbar-custom.scrolled .nav-link { color: var(--muted-dark); }
+    #navbar.navbar-custom.scrolled .navbar-brand { color: var(--emerald); }
+    .brand-hero {
+      min-height: 62vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(120deg, rgba(10,42,34,.96), rgba(10,42,34,.72)),
+        url("https://ardenahotels.com/img/carousel-1.jpg") center/cover;
+    }
+    .brand-note { max-width: 760px; }
+    .brand-story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem; }
+    .brand-story-card { padding: 1.5rem; border: 1px solid #e4e7e3; border-radius: 10px; background: #fff; }
+    .brand-story-card h3 { color: var(--emerald); }
+  </style>
+</head>
+<body>
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 me-auto" href="index.html">The LotusLeaf Collection</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-3"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Explore</a></li>
+          <li class="nav-item"><a class="nav-link" href="Aboutus.html">Our DNA</a></li>
+          <li class="nav-item"><a class="nav-link" href="whatwedo.html">What We Build</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ourBrandsBtn" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Our Brands</a>
+            <ul class="dropdown-menu dropdown-menu-end hotel-dropdown" aria-labelledby="ourBrandsBtn">
+              <li><a class="dropdown-item" href="ArdenaHotels.html">Ardena Hotels</a></li>
+              <li><a class="dropdown-item" href="Portfolio.html">LotusLeaf Hotels</a></li>
+              <li><a class="dropdown-item" href="Portfolio.html">LotusLeaf Resorts</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ourHotelsBtn" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Our Collection</a>
+            <ul class="dropdown-menu dropdown-menu-end hotel-dropdown" aria-labelledby="ourHotelsBtn">
+              <li><a class="dropdown-item" href="Portfolio.html">Pathik Grand, Pune</a></li>
+              <li><a class="dropdown-item" href="Portfolio.html">Vedi Valley Resort, Satara</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="Portfolio.html">Our Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="Insights.html">Insights</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contactus.html">Let's Connect</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-gold btn-sm px-3 py-2" href="Contactus.html">Book Now</a></li>
+          <li class="nav-item ms-lg-2 desktop-slide-trigger">
+            <button class="side-menu-btn" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#rightSideMenu" aria-label="Open quick links">
+              <i class="bi bi-list"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end service-side-menu" tabindex="-1" id="rightSideMenu"
+    aria-labelledby="sideMenuTitle">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title h5" id="sideMenuTitle">The LotusLeaf Collection</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="index.html">Explore</a></li>
+        <li class="list-group-item"><a href="Aboutus.html">Our DNA</a></li>
+        <li class="list-group-item"><a href="whatwedo.html">What We Build</a></li>
+        <li class="list-group-item"><a href="Portfolio.html">Our Collection &amp; Work</a></li>
+        <li class="list-group-item"><a href="Insights.html">Insights</a></li>
+        <li class="list-group-item"><a href="Contactus.html">Let's Connect</a></li>
+      </ul>
+      <div class="mt-4">
+        <p><a href="mailto:info@lotusleafcollection.com">info@lotusleafcollection.com</a></p>
+        <p><a href="tel:+919923587326">+91 99235 87326</a></p>
+      </div>
+    </div>
+  </div>
+
+  <header class="brand-hero">
+    <div class="container py-5">
+      <p class="service-eyebrow">A LotusLeaf Collection brand</p>
+      <h1 class="text-white display-2">Ardena Hotels</h1>
+      <p class="brand-note text-white fs-5">
+        A welcoming place to pause, reset, and feel at home while travelling.
+        Ardena’s hospitality is centred on making every guest feel seen and valued.
+      </p>
+      <a class="service-button" href="https://ardenahotels.com/index.php" target="_blank" rel="noopener noreferrer">
+        Visit the Ardena Hotels website <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="service-content">
+    <section>
+      <p class="service-eyebrow">More than a stay</p>
+      <h2>A stay that feels like home</h2>
+      <p class="brand-note">
+        Long journeys, full workdays, and unfamiliar surroundings can make travel tiring.
+        Ardena aims to offer a familiar, welcoming place where guests can slow down,
+        recharge, and feel at ease, whether they are travelling for business or leisure.
+      </p>
+    </section>
+
+    <section>
+      <p class="service-eyebrow">The idea behind the name</p>
+      <h2>A meeting of movement and stillness</h2>
+      <p>
+        Ardena takes inspiration from “Arden,” a name associated with depth and
+        landscape. Its roots are described as joining the British Celtic
+        <em>ardu</em> (“high”) and <em>denu</em> (“valley”), bringing together
+        contrasting ideas: ambition and rest, movement and quiet.
+      </p>
+      <p>
+        The name also recalls Shakespeare’s Forest of Arden, a place of discovery
+        and renewed perspective. Ardena carries that spirit into a contemporary
+        stay, giving travellers space to pause and return to what matters.
+      </p>
+    </section>
+
+    <section>
+      <p class="service-eyebrow">Thoughtful hospitality</p>
+      <h2>Comfort, without the excess</h2>
+      <p>
+        Ardena focuses on simple details that make a stay feel considered rather
+        than complicated. Its approach favours inviting rooms, restorative sleep,
+        a comfortable place to reset, and small everyday comforts such as freshly
+        brewed coffee.
+      </p>
+      <div class="brand-story-grid mt-4">
+        <article class="brand-story-card">
+          <h3>Warm and welcoming</h3>
+          <p class="mb-0">A relaxed atmosphere designed to feel familiar when guests are away from home.</p>
+        </article>
+        <article class="brand-story-card">
+          <h3>Rest and recharge</h3>
+          <p class="mb-0">Comfort-led spaces that help guests pause between journeys, meetings, and plans.</p>
+        </article>
+        <article class="brand-story-card">
+          <h3>Considered value</h3>
+          <p class="mb-0">A focus on safe, cosy, cost-conscious hospitality and effortless simplicity.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <p class="service-eyebrow">For guests and owners</p>
+      <h2>Designed around people</h2>
+      <p>
+        Ardena’s welcome is intended for guests seeking a restful, dependable
+        experience as well as hotel owners looking for a hospitality partner. The
+        brand’s guiding idea is that people should feel noticed and valued, not
+        treated as if they are simply passing through.
+      </p>
+      <p class="service-note">
+        For current hotel locations, room information, owner partnerships, and
+        reservations, visit the official Ardena Hotels website.
+      </p>
+      <a class="service-button" href="https://ardenahotels.com/about.php" target="_blank" rel="noopener noreferrer">
+        Read more about Ardena <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+      <a class="service-button ms-2" href="https://ardenahotels.com/index.php" target="_blank" rel="noopener noreferrer">
+        Visit Ardena Hotels <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </section>
+  </main>
+
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="lotus" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M32 52c0-10 0-18 0-24"></path>
+        <path d="M32 28c-2-8-1-16 0-22 1 6 2 14 0 22z"></path>
+        <path d="M32 30c-6-5-11-7-17-8 3 6 8 11 17 12z"></path>
+        <path d="M32 30c6-5 11-7 17-8-3 6-8 11-17 12z"></path>
+        <path d="M32 32c-9-2-16 0-22 3 6 4 15 6 22 1z"></path>
+        <path d="M32 32c9-2 16 0 22 3-6 4-15 6-22 1z"></path>
+        <path d="M14 46c6 5 12 7 18 7s12-2 18-7"></path>
+      </g>
+    </symbol>
+  </svg>
+
+  <footer class="bg-emerald grain site-footer" style="border-top: 1px solid rgba(212,175,55,0.2)">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <div class="d-flex align-items-center gap-2">
+            <svg width="40" height="40" fill="none" viewBox="0 0 64 64" aria-hidden="true">
+              <use href="#lotus"></use>
+            </svg>
+            <img src="images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png"
+              alt="The LotusLeaf Collection Logo" class="img-fluid" style="max-width:250px; height:auto;">
+          </div>
+          <p class="text-muted-light small mt-3" style="max-width:20rem">
+            Experience That Builds Excellence. Presence That Creates Impact.
+          </p>
+        </div>
+        <div class="col-6 col-md-3 footer-explore">
+          <p class="overline">Explore</p>
+          <div class="d-flex flex-column gap-2 mt-3">
+            <a class="footer-link" href="index.html">Explore</a>
+            <a class="footer-link" href="Aboutus.html">Our DNA</a>
+            <a class="footer-link" href="whatwedo.html">What We Build</a>
+            <a class="footer-link" href="ArdenaHotels.html">Our Brands: Ardena Hotels</a>
+            <a class="footer-link" href="Portfolio.html">Our Collection</a>
+            <a class="footer-link" href="Portfolio.html">Our Work</a>
+            <a class="footer-link" href="Contactus.html">Let's Connect</a>
+            <a class="footer-link" href="Insights.html">Insights</a>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 footer-contact">
+          <p class="overline">Contact</p>
+          <div class="d-flex flex-column gap-3 mt-3">
+            <div>
+              <div class="text-gold small fw-semibold mb-2" style="letter-spacing:.12em;text-transform:uppercase">Indian Subcontinent</div>
+              <div class="d-flex flex-column gap-2">
+                <a class="footer-link" href="tel:+919923587326"><i class="bi bi-telephone me-2"></i>+91 99235 87326</a>
+                <a class="footer-link" href="https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp me-2"></i>Let's contact on WhatsApp</a>
+              </div>
+            </div>
+            <div>
+              <div class="text-gold small fw-semibold mb-2" style="letter-spacing:.12em;text-transform:uppercase">Middle East &amp; Africa</div>
+              <div class="d-flex flex-column gap-2">
+                <a class="footer-link" href="tel:+971551636310"><i class="bi bi-telephone me-2"></i>+971 55 1636310</a>
+                <a class="footer-link" href="mailto:info@lotusleafcollection.com"><i class="bi bi-envelope me-2"></i>info@lotusleafcollection.com</a>
+                <a class="footer-link" href="https://www.lotusleafcollection.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-globe me-2"></i>www.lotusleafcollection.com</a>
+                <span class="text-gold small fw-semibold">FOLLOW US</span>
+                <div class="d-flex align-items-center gap-3 flex-wrap" style="font-size:1.8rem;line-height:1">
+                  <a class="footer-link" href="https://www.instagram.com/thelotusleafcollection/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a class="footer-link" href="https://www.linkedin.com/company/lotusleaf-collection/home/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a class="footer-link" href="https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                  <a class="footer-link" href="https://www.youtube.com/@Loutusleafcollection" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-sm-row justify-content-between gap-2 mt-5 pt-4" style="border-top:1px solid rgba(249,248,246,.1)">
+        <span class="text-muted-light small">© <span id="copyright-year"></span> The LotusLeaf Collection. All rights reserved.</span>
+        <span class="text-muted-light small">Hospitality Management · Consulting · Pre-Opening Solutions</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("copyright-year").textContent = new Date().getFullYear();
+    const navbar = document.getElementById("navbar");
+    const updateNavbarOnScroll = () => {
+      const isScrolled = window.scrollY > 24;
+      navbar.classList.toggle("scrolled", isScrolled);
+      if (isScrolled) {
+        navbar.style.setProperty("background-color", "rgba(249, 248, 246, 0.9)", "important");
+      } else {
+        navbar.style.removeProperty("background-color");
+      }
+    };
+    window.addEventListener("scroll", updateNavbarOnScroll);
+    window.addEventListener("scrollend", updateNavbarOnScroll);
+    updateNavbarOnScroll();
+  </script>
+  <script src="our-hotels-menu.js"></script>
+</body>
+</html>

@@ -2802,6 +2802,22 @@ window.addEventListener("load", function () {
 
 <li class="nav-item"><a class="nav-link" href="whatwedo.html">What We Build</a></li>
 
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="ourBrandsBtn"
+            role="button"
+            aria-expanded="false">
+            Our Brands
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end hotel-dropdown" aria-labelledby="ourBrandsBtn">
+            <li><a class="dropdown-item" href="ArdenaHotels.html">Ardena Hotels</a></li>
+            <li><a class="dropdown-item" href="Portfolio.html">LotusLeaf Hotels</a></li>
+            <li><a class="dropdown-item" href="Portfolio.html">LotusLeaf Resorts</a></li>
+          </ul>
+        </li>
+
         <!-- =================================================
              OUR HOTELS
         ================================================== -->
@@ -3281,6 +3297,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainHotelMenu =
     document.getElementById("mainHotelMenu");
 
+  const ourBrandsBtn =
+    document.getElementById("ourBrandsBtn");
+
+  const ourBrandsMenu =
+    ourBrandsBtn.nextElementSibling;
+
+  ourBrandsBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const isOpen = ourBrandsMenu.classList.toggle("show");
+    ourBrandsBtn.setAttribute("aria-expanded", String(isOpen));
+  });
+
 
   ourHotelsBtn.addEventListener("click", function (e) {
 
@@ -3392,6 +3422,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener("click", function (e) {
 
+    if (!ourBrandsBtn.parentElement.contains(e.target)) {
+      ourBrandsMenu.classList.remove("show");
+      ourBrandsBtn.setAttribute("aria-expanded", "false");
+    }
 
     const navbar =
       document.getElementById("navbar");
@@ -4906,5 +4940,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".reveal").forEach((el) => el.classList.add("visible"));
       }
     </script>
+    <script src="our-hotels-menu.js"></script>
   </body>
 </html>
