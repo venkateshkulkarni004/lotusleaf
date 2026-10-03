@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0A2A22">
-  <meta name="description" content="Discover Ardena Hotels, a welcoming place to pause, reset, and feel at home while travelling.">
+  <meta name="description" content="Discover Ardena Hotels, our Middle East and Africa brand: a welcoming place to pause, reset, and feel at home while travelling.">
   <meta name="robots" content="index, follow">
   <title>Ardena Hotels | The LotusLeaf Collection</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,14 @@
       align-items: center;
       background: linear-gradient(120deg, rgba(10,42,34,.96), rgba(10,42,34,.72)),
         url("https://ardenahotels.com/img/carousel-1.jpg") center/cover;
+    }
+    .brand-hero-heading { margin-bottom: 1rem; }
+    .brand-logo {
+      width: clamp(9rem, 22vw, 14rem);
+      height: auto;
+      flex: 0 0 auto;
+      border-radius: 8px;
+      background: #fff;
     }
     .brand-note { max-width: 760px; }
     .brand-story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem; }
@@ -103,8 +111,14 @@
 
   <header class="brand-hero">
     <div class="container py-5">
-      <p class="service-eyebrow">A LotusLeaf Collection brand</p>
-      <h1 class="text-white display-2">Ardena Hotels</h1>
+      <div class="brand-hero-heading d-flex flex-column flex-sm-row align-items-sm-center gap-4">
+        <img class="brand-logo" src="images/WhatsApp%20Image%202026-10-03%20at%207.53.07%20PM.jpeg"
+          alt="Ardena Living — Beyond a Stay logo">
+        <div>
+          <p class="service-eyebrow mb-2">Our Middle East &amp; Africa brand from The LotusLeaf Collection</p>
+          <h1 class="text-white display-2 mb-0">Ardena Hotels</h1>
+        </div>
+      </div>
       <p class="brand-note text-white fs-5">
         A welcoming place to pause, reset, and feel at home while travelling.
         Ardena’s hospitality is centred on making every guest feel seen and valued.
@@ -120,9 +134,10 @@
       <p class="service-eyebrow">More than a stay</p>
       <h2>A stay that feels like home</h2>
       <p class="brand-note">
-        Long journeys, full workdays, and unfamiliar surroundings can make travel tiring.
-        Ardena aims to offer a familiar, welcoming place where guests can slow down,
-        recharge, and feel at ease, whether they are travelling for business or leisure.
+        As The LotusLeaf Collection’s brand for the Middle East and Africa, Ardena
+        offers a welcoming place to pause and feel at home. Long journeys, full workdays,
+        and unfamiliar surroundings can make travel tiring, so guests can slow down,
+        recharge, and feel at ease, whether travelling for business or leisure.
       </p>
     </section>
 
