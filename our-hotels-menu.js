@@ -1,4 +1,27 @@
 (() => {
+  if (!document.getElementById("plain-slide-menu-styles")) {
+    const styles = document.createElement("style");
+    styles.id = "plain-slide-menu-styles";
+    styles.textContent = `
+      #rightSideMenu ul,
+      #rightSideMenu ol,
+      #rightSideMenu li {
+        list-style: none !important;
+      }
+      #rightSideMenu li {
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+      }
+      #rightSideMenu a,
+      #rightSideMenu strong,
+      #rightSideMenu b {
+        font-weight: 400 !important;
+        text-decoration: none !important;
+      }
+    `;
+    document.head.append(styles);
+  }
+
   const hotels = [
     ["Ardena Hotels", "ArdenaHotels.html"],
     ["LotusLeaf Hotels", "Portfolio.html"],
@@ -8,11 +31,17 @@
   const createHotelsList = (className, iconClass = "") => {
     const list = document.createElement("ul");
     list.className = className;
+    list.style.listStyle = "none";
+    list.style.padding = "0";
+    list.style.margin = "0";
     hotels.forEach(([label, href]) => {
       const item = document.createElement("li");
       const link = document.createElement("a");
       link.href = href;
       link.textContent = label;
+      link.style.display = "block";
+      link.style.fontWeight = "400";
+      link.style.textDecoration = "none";
       if (iconClass) {
         const icon = document.createElement("i");
         icon.className = iconClass;
@@ -64,6 +93,7 @@
   if (sideList.classList.contains("side-menu")) {
     const item = document.createElement("li");
     item.dataset.ourHotelsSlide = "true";
+    item.style.borderBottom = "0";
 
     const toggle = document.createElement("a");
     toggle.href = "javascript:void(0)";
@@ -72,6 +102,14 @@
 
     const submenu = createHotelsList("side-about-menu");
     submenu.style.display = "none";
+    submenu.style.paddingLeft = "12px";
+    submenu.querySelectorAll("li").forEach((entry) => {
+      entry.style.border = "0";
+    });
+    submenu.querySelectorAll("a").forEach((link) => {
+      link.style.padding = "8px 5px";
+      link.style.fontWeight = "400";
+    });
     item.append(toggle, submenu);
     const collectionItem = Array.from(sideList.children).find((entry) =>
       entry.textContent.includes("Our Collection")
@@ -89,9 +127,12 @@
     const item = document.createElement("li");
     item.className = "list-group-item";
     item.dataset.ourHotelsSlide = "true";
+    item.style.border = "0";
+    item.style.padding = "0";
 
-    const heading = document.createElement("strong");
+    const heading = document.createElement("span");
     heading.className = "d-block mb-2";
+    heading.style.fontWeight = "400";
     heading.textContent = "Our Brands";
     item.append(heading, createHotelsList("list-unstyled d-flex flex-column gap-2 ps-3"));
 
