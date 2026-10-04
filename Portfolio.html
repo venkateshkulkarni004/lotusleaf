@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#0A2A22">
     <link rel="icon" type="image/jpeg" href="images/WhatsApp%20Image%202026-06-19%20at%207.35.11%20PM.jpeg">
     <title>Hospitality Portfolio | The LotusLeaf Collection India</title>
-    <meta name="description" content="Explore hospitality projects shaped by The LotusLeaf Collection, an India-based hotel management and consulting company serving hotels, resorts and serviced apartments.">
+    <meta name="description" content="Explore selected hotels, resorts and hospitality projects shaped by The LotusLeaf Collection across India, including Pune, Maharashtra and Jaipur, for owners.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="The LotusLeaf Collection">
     <meta name="keywords" content="hospitality portfolio India, hotel projects Maharashtra, hotel projects Pune, resort projects Maharashtra, hotel management experience, resort management experience, hospitality consulting portfolio, Talegaon MIDC hotel, Pune hotels, Satara resort, Bhor resort, Mahabaleshwar resort, Lonavala resort, Mulshi resorts">
@@ -15,13 +15,13 @@
     <meta property="og:locale" content="en_IN">
     <meta property="og:site_name" content="The LotusLeaf Collection">
     <meta property="og:title" content="Hospitality Portfolio | The LotusLeaf Collection India">
-    <meta property="og:description" content="Explore hotel, resort and hospitality projects shaped by The LotusLeaf Collection across India.">
+    <meta property="og:description" content="Explore selected hotels, resorts and hospitality projects shaped by The LotusLeaf Collection across India, including Pune, Maharashtra and Jaipur, for owners.">
     <meta property="og:url" content="https://www.lotusleafcollection.com/Portfolio.html">
     <meta property="og:image" content="https://www.lotusleafcollection.com/images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png">
     <meta property="og:image:alt" content="The LotusLeaf Collection hospitality management and consulting">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hospitality Portfolio | The LotusLeaf Collection India">
-    <meta name="twitter:description" content="Explore hotel, resort and hospitality projects shaped by The LotusLeaf Collection across India.">
+    <meta name="twitter:description" content="Explore selected hotels, resorts and hospitality projects shaped by The LotusLeaf Collection across India, including Pune, Maharashtra and Jaipur, for owners.">
     <meta name="twitter:image" content="https://www.lotusleafcollection.com/images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png">
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -256,6 +256,35 @@
         transition: background-color 0.2s ease;
       }
       .btn-emerald:hover { background: var(--emerald-800); color: var(--cream); }
+      #stories .service-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      #stories .service-card > .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 3.25rem;
+        margin-top: auto !important;
+        padding: 0.5rem 0.75rem;
+        text-align: center;
+      }
+      #projects .row > .reveal {
+        display: flex;
+        flex-direction: column;
+      }
+      #projects .project-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 3.25rem;
+        margin-top: auto;
+        padding: 0.5rem 0.75rem;
+        text-align: center;
+      }
 
       /* Hero */
       .hero {
@@ -3733,7 +3762,83 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     
-   
+    <!-- CASE STUDIES, STORIES AND TESTIMONIALS -->
+    <section class="section bg-cream" id="stories">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width:750px;">
+          <span class="overline">Experience in action</span>
+          <h2 class="display-serif mt-2"
+              style="color:var(--emerald);font-size:clamp(1.8rem,3vw,2.7rem);">
+            Case Studies, Success Stories &amp; Transformations
+          </h2>
+          <p class="text-muted-dark mt-3 mb-0">
+            Every hospitality property has a different story. We work alongside
+            owners and teams to understand each opportunity, strengthen the guest
+            experience, and build practical foundations for lasting performance.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4 col-xl">
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><i class="bi bi-journal-text"></i></div>
+              <h3 class="h4 font-serif">Case Studies</h3>
+              <p class="text-muted-dark mb-0">
+                Explore the context, priorities, and hospitality expertise behind
+                hotel and resort assignments. Learn how a transparent, evidence-led
+                case study is framed and what information it should disclose.
+              </p>
+              <a class="btn btn-emerald mt-3" href="Case-Studies.html">Explore case studies</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl">
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i></div>
+              <h3 class="h4 font-serif">Success Stories</h3>
+              <p class="text-muted-dark mb-0">
+                See how clear priorities, thoughtful operations and owner-team
+                alignment can support progress, without promising a one-size-fits-all result.
+              </p>
+              <a class="btn btn-emerald mt-3" href="Success-Stories.html">Read success stories</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl">
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><i class="bi bi-arrow-repeat"></i></div>
+              <h3 class="h4 font-serif">Transformations</h3>
+              <p class="text-muted-dark mb-0">
+                Learn about a property-specific approach to pre-opening readiness,
+                operational review, prioritization and implementation.
+              </p>
+              <a class="btn btn-emerald mt-3" href="Transformations.html">Explore transformations</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl">
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><i class="bi bi-chat-quote"></i></div>
+              <h3 class="h4 font-serif">Client Testimonials</h3>
+              <p class="text-muted-dark mb-0">
+                Hear directly from hotel owners, investors and hospitality leaders
+                about their experience working with our team.
+              </p>
+              <a class="btn btn-emerald mt-3" href="Client-Testimonials.html">Read client testimonials</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl">
+            <article class="service-card">
+              <div class="service-icon" aria-hidden="true"><i class="bi bi-buildings"></i></div>
+              <h3 class="h4 font-serif">Projects Handled</h3>
+              <p class="text-muted-dark mb-0">
+                Explore detailed profiles of hotels and resorts we've had the
+                privilege to shape across the Indian Subcontinent.
+              </p>
+              <a class="btn btn-emerald mt-3" href="Projects-Handled.html">View projects handled</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PROJECTS -->
 <section class="section bg-cream" id="projects">
 
@@ -3777,6 +3882,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="text-muted-dark">
           Viman Nagar, Pune
         </p>
+        <a class="btn btn-emerald project-link" href="Projects-Handled.html">View project details</a>
 
       </div>
 
@@ -3804,6 +3910,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="text-muted-dark">
           Bhor, Maharashtra
         </p>
+        <a class="btn btn-emerald project-link" href="Projects-Handled.html">View project details</a>
 
       </div>
 
@@ -3831,6 +3938,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="text-muted-dark">
           Jaipur, Rajasthan
         </p>
+        <a class="btn btn-emerald project-link" href="Projects-Handled.html">View project details</a>
 
       </div>
 
@@ -3858,6 +3966,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="text-muted-dark">
           Hyderabad, Telangana
         </p>
+        <a class="btn btn-emerald project-link" href="Projects-Handled.html">View project details</a>
 
       </div>
 
@@ -3885,6 +3994,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="text-muted-dark">
           Mahabaleshwar, Maharashtra
         </p>
+        <a class="btn btn-emerald project-link" href="Projects-Handled.html">View project details</a>
 
       </div>
 
@@ -3912,6 +4022,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="text-muted-dark">
           Lonavala,Maharashtra
         </p>
+        <a class="btn btn-emerald project-link" href="Projects-Handled.html">View project details</a>
 
       </div>
 
@@ -3924,7 +4035,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="images/images%20(3).jpg"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Swara Group of Hotels & Resorts"
+               alt="Malhar Machi Luxury Mountain Resort in Mulshi, Pune, Maharashtra"
                loading="lazy"
                decoding="async"
                width="900"
@@ -3939,6 +4050,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <p class="text-muted-dark">
           Mulshi, pune, Maharashtra
         </p>
+        <a class="btn btn-emerald project-link" href="Projects-Handled.html">View project details</a>
       </div>
 
 
@@ -3950,7 +4062,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <img src="images/images%20(4).jpg"
                class="w-100 rounded-4"
                style="height:230px;object-fit:cover;"
-               alt="Jalsrushti"
+               alt="Jalsrushti Luxury Island Resort in Mulshi, Pune, Maharashtra"
                loading="lazy"
                decoding="async"
                width="900"
@@ -3966,6 +4078,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="text-muted-dark">
           Mulshi, pune, Maharashtra
         </p>
+        <a class="btn btn-emerald project-link" href="Projects-Handled.html">View project details</a>
 
       </div>
 
@@ -3993,6 +4106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="text-muted-dark">
            Mulshi, pune, Maharashtra
         </p>
+        <a class="btn btn-emerald project-link" href="Projects-Handled.html">View project details</a>
 
       </div>
 
