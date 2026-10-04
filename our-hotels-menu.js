@@ -27,14 +27,13 @@
     ["LotusLeaf Hotels", "Portfolio.html"],
     ["LotusLeaf Resorts", "Portfolio.html"]
   ];
-
-  const createHotelsList = (className, iconClass = "") => {
+  const createHotelsList = (className, iconClass = "", hotelList = hotels) => {
     const list = document.createElement("ul");
     list.className = className;
     list.style.listStyle = "none";
     list.style.padding = "0";
     list.style.margin = "0";
-    hotels.forEach(([label, href]) => {
+    hotelList.forEach(([label, href]) => {
       const item = document.createElement("li");
       const link = document.createElement("a");
       link.href = href;
@@ -53,6 +52,35 @@
     });
     return list;
   };
+
+  const footerLinks = [
+    ["Our Brands", "ArdenaHotels.html"],
+    ["Case Studies", "Case-Studies.html"],
+    ["Success Stories", "Success-Stories.html"],
+    ["Transformations", "Transformations.html"],
+    ["Client Testimonials", "Client-Testimonials.html"]
+  ];
+  const footerLinkList = document.querySelector("footer .footer-explore .d-flex");
+  if (footerLinkList) {
+    footerLinks.forEach(([label, href]) => {
+      const existingLink = Array.from(footerLinkList.querySelectorAll("a")).find(
+        (link) => link.textContent.trim() === label
+      );
+      if (existingLink) {
+        existingLink.href = href;
+        return;
+      }
+
+      const link = document.createElement("a");
+      link.className = "footer-link";
+      link.href = href;
+      link.textContent = label;
+      const insightsLink = Array.from(footerLinkList.querySelectorAll("a")).find(
+        (item) => item.getAttribute("href") === "Insights.html"
+      );
+      footerLinkList.insertBefore(link, insightsLink || null);
+    });
+  }
 
   const navList = document.querySelector("#navMenu .navbar-nav");
   const collectionToggle = document.getElementById("ourHotelsBtn");
@@ -130,11 +158,22 @@
     item.style.border = "0";
     item.style.padding = "0";
 
-    const heading = document.createElement("span");
-    heading.className = "d-block mb-2";
-    heading.style.fontWeight = "400";
-    heading.textContent = "Our Brands";
-    item.append(heading, createHotelsList("list-unstyled d-flex flex-column gap-2 ps-3"));
+    const heading = document.createElement("a");
+    heading.href = "javascript:void(0)";
+    heading.className = "d-flex align-items-center justify-content-between";
+    heading.setAttribute("aria-expanded", "false");
+    heading.innerHTML = '<span>Our Brands</span><i class="bi bi-chevron-down" aria-hidden="true"></i>';
+
+    const submenu = createHotelsList("list-unstyled d-flex flex-column gap-2 ps-3");
+    submenu.style.display = "none";
+    item.append(heading, submenu);
+    heading.addEventListener("click", (event) => {
+      event.preventDefault();
+      const isOpen = submenu.style.display !== "block";
+      submenu.style.display = isOpen ? "block" : "none";
+      heading.setAttribute("aria-expanded", String(isOpen));
+      heading.querySelector("i").className = isOpen ? "bi bi-chevron-up" : "bi bi-chevron-down";
+    });
 
     const collectionItem = Array.from(sideList.children).find((entry) =>
       entry.textContent.includes("Our Collection")
