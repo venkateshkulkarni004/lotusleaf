@@ -18,6 +18,7 @@ The company publishes hospitality project examples and local market guidance. A 
 - [Home](https://www.lotusleafcollection.com/): Company overview, audience, service summary, and contact links.
 - [About](https://www.lotusleafcollection.com/Aboutus.html): Company approach, leadership, values, experience, and partnerships.
 - [Hospitality services](https://www.lotusleafcollection.com/whatwedo.html): Hotel and resort management, consulting, revenue, sales, operational, training, owner, and pre-opening capabilities.
+- [Ardena Hotels brand](https://www.lotusleafcollection.com/ArdenaHotels.html): The LotusLeaf Collection hospitality brand across the Middle East and Africa.
 - [Hotel and resort management](https://www.lotusleafcollection.com/Hotel-Management.html): Owner-oriented information on operating priorities, guest experience, teams, and commercial performance.
 - [Hospitality consulting and hotel feasibility](https://www.lotusleafcollection.com/Hospitality-Consulting.html): Questions and considerations for concepts, demand assumptions, operating models, and investment scenarios.
 - [Hotel pre-opening solutions](https://www.lotusleafcollection.com/Hotel-Pre-Opening.html): Project-specific readiness workstreams for teams, systems, suppliers, guest journeys, and opening plans.
