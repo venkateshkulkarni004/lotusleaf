@@ -15,6 +15,7 @@ The company publishes hospitality project examples and local market guidance. A 
 
 ## Official pages
 
+- [Website Architecture Map](https://www.lotusleafcollection.com/architecture.html): Visual site architecture and internal linking structure for the LotusLeaf Collection hospitality management website.
 - [Home](https://www.lotusleafcollection.com/): Company overview, audience, service summary, and contact links.
 - [About](https://www.lotusleafcollection.com/Aboutus.html): Company approach, leadership, values, experience, and partnerships.
 - [Hospitality services](https://www.lotusleafcollection.com/whatwedo.html): Hotel and resort management, consulting, revenue, sales, operational, training, owner, and pre-opening capabilities.
