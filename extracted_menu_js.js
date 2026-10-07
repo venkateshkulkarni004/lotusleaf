@@ -1,0 +1,291 @@
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+  /* ==================================================
+     MAIN NAVBAR
+     OUR HOTELS OPEN / CLOSE
+  ================================================== */
+
+  const mainHotelMenu =
+    document.getElementById("mainHotelMenu");
+
+  const ourBrandsBtn =
+    document.getElementById("ourBrandsBtn");
+
+  const ourBrandsMenu =
+    ourBrandsBtn.nextElementSibling;
+
+  /* ==================================================
+     CLOSE MAIN LOCATION MENUS
+  ================================================== */
+
+  function closeMainLocationMenus() {
+
+    document
+      .querySelectorAll(
+        "#mainHotelMenu .dropdown-submenu .dropdown-menu"
+      )
+      .forEach(function (menu) {
+
+        menu.classList.remove("show");
+
+      });
+
+  }
+
+
+
+  /* ==================================================
+     CLICK OUTSIDE MAIN MENU
+  ================================================== */
+
+  document.addEventListener("click", function (e) {
+
+    if (!ourBrandsBtn.parentElement.contains(e.target)) {
+      ourBrandsMenu.classList.remove("show");
+      ourBrandsBtn.setAttribute("aria-expanded", "false");
+    }
+
+    const navbar =
+      document.getElementById("navbar");
+
+
+    if (!navbar.contains(e.target)) {
+
+      mainHotelMenu.classList.remove("show");
+
+      closeMainLocationMenus();
+
+    }
+
+  });
+
+
+
+  /* ==================================================
+     SIDE MENU
+     OUR HOTELS OPEN / CLOSE
+  ================================================== */
+
+  const sideHotelsBtn =
+    document.getElementById("sideHotelsBtn");
+
+  const sideHotelsMenu =
+    document.getElementById("sideHotelsMenu");
+
+  const sideHotelsIcon =
+    document.getElementById("sideHotelsIcon");
+
+  const sideAboutBtn =
+    document.getElementById("sideAboutBtn");
+
+  const sideAboutMenu =
+    document.getElementById("sideAboutMenu");
+
+  const sideAboutIcon =
+    document.getElementById("sideAboutIcon");
+
+  const sideWhatWeDoBtn = document.getElementById("sideWhatWeDoBtn");
+  const sideWhatWeDoMenu = document.getElementById("sideWhatWeDoMenu");
+  const sideWhatWeDoIcon = document.getElementById("sideWhatWeDoIcon");
+
+  sideAboutBtn.addEventListener("click", function () {
+    const isOpen = sideAboutMenu.style.display === "block";
+    sideAboutMenu.style.display = isOpen ? "none" : "block";
+    sideAboutIcon.className = isOpen ? "bi bi-chevron-down" : "bi bi-chevron-up";
+    sideAboutBtn.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  sideAboutMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      sideAboutMenu.style.display = "none";
+      sideAboutIcon.className = "bi bi-chevron-down";
+      sideAboutBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  sideWhatWeDoBtn.addEventListener("click", function () {
+    const isOpen = sideWhatWeDoMenu.style.display === "block";
+    sideWhatWeDoMenu.style.display = isOpen ? "none" : "block";
+    sideWhatWeDoIcon.className = isOpen ? "bi bi-chevron-down" : "bi bi-chevron-up";
+    sideWhatWeDoBtn.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  sideWhatWeDoMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      sideWhatWeDoMenu.style.display = "none";
+      sideWhatWeDoIcon.className = "bi bi-chevron-down";
+      sideWhatWeDoBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+
+
+  sideHotelsBtn.addEventListener("click", function () {
+
+
+    const isOpen =
+      sideHotelsMenu.style.display === "block";
+
+
+    if (isOpen) {
+
+
+      /*
+         CLOSE
+      */
+
+      sideHotelsMenu.style.display = "none";
+
+      sideHotelsIcon.className =
+        "bi bi-chevron-down";
+
+
+      closeSideLocationMenus();
+
+
+    } else {
+
+
+      /*
+         OPEN
+      */
+
+      sideHotelsMenu.style.display = "block";
+
+      sideHotelsIcon.className =
+        "bi bi-chevron-up";
+
+    }
+
+  });
+
+
+
+  /* ==================================================
+     SIDE LOCATION MENUS
+  ================================================== */
+
+  const sideLocationButtons =
+    document.querySelectorAll(
+      "[data-side-location]"
+    );
+
+
+  sideLocationButtons.forEach(function (button) {
+
+
+    button.addEventListener("click", function () {
+
+
+      const targetId =
+        this.getAttribute("data-side-location");
+
+
+      const target =
+        document.getElementById(targetId);
+
+
+      const isOpen =
+        target.classList.contains("show");
+
+
+      /*
+         Close all other locations
+      */
+
+      closeSideLocationMenus();
+
+
+      /*
+         If it was closed,
+         open it.
+         If it was open,
+         it stays closed.
+      */
+
+      if (!isOpen) {
+
+        target.classList.add("show");
+
+        const icon =
+          this.querySelector("i");
+
+        icon.className =
+          "bi bi-chevron-up";
+
+      }
+
+    });
+
+  });
+
+
+
+  /* ==================================================
+     CLOSE SIDE LOCATION MENUS
+  ================================================== */
+
+  function closeSideLocationMenus() {
+
+
+    document
+      .querySelectorAll(".side-hotel-list")
+      .forEach(function (menu) {
+
+        menu.classList.remove("show");
+
+      });
+
+
+    document
+      .querySelectorAll(
+        ".side-hotel-location button i"
+      )
+      .forEach(function (icon) {
+
+        icon.className =
+          "bi bi-chevron-down";
+
+      });
+
+  }
+
+
+
+  /* ==================================================
+     RESET SIDE MENU WHEN CLOSED
+  ================================================== */
+
+  const sideMenu =
+    document.getElementById("rightSideMenu");
+
+
+  sideMenu.addEventListener(
+    "hidden.bs.offcanvas",
+    function () {
+
+      sideAboutMenu.style.display = "none";
+      sideAboutIcon.className = "bi bi-chevron-down";
+      sideAboutBtn.setAttribute("aria-expanded", "false");
+
+      sideWhatWeDoMenu.style.display = "none";
+      sideWhatWeDoIcon.className = "bi bi-chevron-down";
+      sideWhatWeDoBtn.setAttribute("aria-expanded", "false");
+
+      sideHotelsMenu.style.display = "none";
+
+      sideHotelsIcon.className =
+        "bi bi-chevron-down";
+
+      closeSideLocationMenus();
+
+    }
+  );
+
+
+});
+
+</script>

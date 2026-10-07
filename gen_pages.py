@@ -322,6 +322,7 @@ def make_hotel_management_page(city, state):
     note = f"Service scope and availability are confirmed for each project. Mentions of {city} do not imply a local office or guaranteed engagement."
     hero_p = f"{city.capitalize()}'s hospitality market demands sharp operations, strong commercial focus, and a guest experience that matches the city's pace. The LotusLeaf Collection works with owners, investors and developers to align operating discipline with each property's goals."
     ops_p = f"{city} hotels range from {context}. Each segment has different guest expectations, competitive dynamics, and cost pressures. Management support should respond to the specific asset, market position, and ownership priorities."
+    market_p = f"{city} owners should evaluate demand drivers, competitive positioning, and operating standards against the property's concept and ownership goals. Practical support should connect local market realities with the service promise and commercial priorities."
     return {
         "slug": f"Hotel-Management-{city_clean}",
         "title": title,
@@ -336,6 +337,7 @@ def make_hotel_management_page(city, state):
         "eyebrow": "Hotel management",
         "hero_p": hero_p,
         "ops_p": ops_p,
+        "market_p": market_p,
         "cards": [
             ("Operating discipline", "Coordinate front office, housekeeping, food and beverage, maintenance, and back-of-house functions around clear routines and accountability."),
             ("Guest experience", "Shape arrival, stay, and departure experiences that match the property's brand promise and guest expectations."),
@@ -363,8 +365,8 @@ def make_service_page(service, city, state):
     city_clean = city.replace(" ", "")
     title = f"{service['title']} {city} | The LotusLeaf Collection"
     h1 = service["h1"]
-    desc = service["desc"]
-    keywords = f"{service['slug'].lower()} {city}, {service['slug'].lower()} {state}, {service['slug'].lower()} {city_clean}, {state} hospitality services"
+    desc = f"{service['desc'].rstrip('.')} for {city} owners, investors and developers. Local market context for {city} and {state}."
+    keywords = f"{service['slug'].lower()} {city}, {service['slug'].lower()} {state}, {service['slug'].lower()} {city_clean}, {state} hospitality services, {city} hospitality, {state} hospitality"
     cta = service["cta"]
     city_faq_q = f"What does {service['slug'].lower().replace('hotel-', 'hotel ')} cover in {city}?"
     city_faq_a = f"The scope is agreed for each project and may connect {service['slug'].lower().replace('hotel-', 'hotel ')} activities tailored to the {city} market, including local context, facilities, and guest expectations."
@@ -374,6 +376,7 @@ def make_service_page(service, city, state):
     note = f"Service scope and availability are confirmed for each project. Mentions of {city} do not imply a local office or guaranteed engagement."
     hero_p = f"{city.capitalize()}'s hospitality sector blends {context}. The LotusLeaf Collection works with owners, investors and developers to align {service['slug'].lower().replace('hotel-', 'hotel ')} with each property's goals."
     ops_p = f"{city} hospitality properties span {context}. Each segment has different guest expectations, competitive dynamics, and operational priorities. Support should respond to the specific asset, market position, and ownership priorities."
+    market_p = f"{city} owners should evaluate demand drivers, competitive positioning, and operating standards against the property's concept and ownership goals. Practical support should connect local market realities with the service promise and commercial priorities."
     return {
         "slug": f"{service['slug']}-{city_clean}",
         "title": title,
@@ -388,6 +391,7 @@ def make_service_page(service, city, state):
         "eyebrow": service["eyebrow"],
         "hero_p": hero_p,
         "ops_p": ops_p,
+        "market_p": market_p,
         "cards": service["cards"],
         "local_section": local_section,
         "note": note,
@@ -427,6 +431,19 @@ def build_html(page, related_links=None, other_city_links=None):
     other_city_html = ""
     if other_city_links:
         other_city_html = f'<div class="related" style="margin-top:1rem"><strong>Also available in:</strong> {" ".join([f"<a href=\"{slug}.html\">{label}</a>" for slug, label in other_city_links])}</div>'
+
+    # Load index-style header/footer sections
+    with open(os.path.join(SITE_ROOT, "extracted_navbar.html"), "r", encoding="utf-8") as f:
+        navbar_html = f.read()
+    with open(os.path.join(SITE_ROOT, "extracted_side_menu.html"), "r", encoding="utf-8") as f:
+        side_menu_html = f.read()
+    with open(os.path.join(SITE_ROOT, "extracted_footer.html"), "r", encoding="utf-8") as f:
+        footer_html = f.read()
+    with open(os.path.join(SITE_ROOT, "extracted_menu_js.js"), "r", encoding="utf-8") as f:
+        menu_js = f.read()
+    with open(os.path.join(SITE_ROOT, "extracted_header_footer.css"), "r", encoding="utf-8") as f:
+        header_footer_css = f.read()
+
     html = f"""<!DOCTYPE html>
 <html lang="en-IN">
 <head>
@@ -437,7 +454,7 @@ def build_html(page, related_links=None, other_city_links=None):
   <meta property="og:title" content="{page['og_title']}"><meta property="og:description" content="{page['og_desc']}"><meta property="og:url" content="{page['canonical']}">
   <meta property="og:image" content="https://www.lotusleafcollection.com/images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png">
   <meta property="og:image:alt" content="The LotusLeaf Collection - Hospitality management and consulting">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@lotusleafcollection"><meta name="twitter:title" content="{page['twitter_title']}"><meta name="twitter:description" content="{page['twitter_desc']}"><meta name="twitter:image" content="https://www.lotusleafcollection.com/images/WhatsApp_Image_2026-06-19_at_7.55.56_PM-removebg-preview.png"><meta name="twitter:image:alt" content="The LotusLeaf Collection hospitality management and consulting">
   <title>{page['title']}</title>
   <link rel="alternate" href="{page['canonical']}" hreflang="en-IN" />
@@ -452,12 +469,6 @@ def build_html(page, related_links=None, other_city_links=None):
     :root{{color-scheme:light;--emerald:#0a2a22;--green:#123a30;--gold:#c9a24b;--cream:#f9f8f6;--ink:#243c35;--muted:#52665f}}
     *{{box-sizing:border-box}}body{{margin:0;background:var(--cream);color:var(--ink);font:16px/1.7 Arial,sans-serif}}a{{color:inherit}}
     .skip{{position:absolute;left:-9999px;top:1rem;background:white;padding:.7rem;z-index:5}}.skip:focus{{left:1rem}}
-    header{{background:var(--emerald);color:var(--cream);padding:1.15rem max(1.25rem,calc((100% - 1120px)/2));display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}}
-    header a{{text-decoration:none;color:inherit}}nav{{display:flex;gap:1rem;flex-wrap:wrap;font-size:.92rem}}
-    .hero{{background:linear-gradient(135deg,var(--emerald),#1c5542);color:white;padding:5rem 1.25rem;text-align:center}}
-    .hero-inner{{max-width:1120px;margin:0 auto}}
-    .hero h1{{font:600 2.6rem/1.15 Cormorant Garamond,serif;margin:0 0 1rem}}
-    .hero p{{font-size:1.1rem;opacity:.95;max-width:740px;margin:0 auto}}
     .container{{max-width:1120px;margin:0 auto;padding:2.5rem 1.25rem}}
     .section{{padding:2.5rem 1.25rem;max-width:1120px;margin:0 auto}}
     .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:1.5rem}}
@@ -474,45 +485,19 @@ def build_html(page, related_links=None, other_city_links=None):
     .note{{background:#fff8e1;border-left:4px solid var(--gold);padding:1rem;border-radius:0 10px 10px 0;margin-top:1rem}}
     .related{{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}}
     .related a{{background:white;border:1px solid #d8d5ce;padding:.4rem .7rem;border-radius:999px;text-decoration:none;color:var(--emerald);font-size:.92rem}}
-    footer{{background:var(--emerald);color:var(--cream);padding:2rem 1.25rem;text-align:center;font-size:.92rem}}
-    footer a{{color:#f3efe6}}
-    @media (max-width: 760px) {{.hero h1{{font-size:2rem}} nav{{width:100%}}}}
   </style>
+  {header_footer_css}
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header>
-    <a href="index.html" style="font:600 1.25rem/1 Cormorant Garamond,serif;text-decoration:none">The LotusLeaf Collection</a>
-    <nav>
-      <a href="whatwedo.html">Services</a>
-      <a href="ArdenaHotels.html">Ardena Hotels</a>
-      <a href="Portfolio.html">Portfolio</a>
-      <a href="Case-Studies.html">Case Studies</a>
-      <a href="Client-Testimonials.html">Testimonials</a>
-      <a href="Projects-Handled.html">Projects</a>
-      <a href="Success-Stories.html">Success Stories</a>
-      <a href="Transformations.html">Transformations</a>
-      <a href="Hospitality-Trends.html">Trends</a>
-      <a href="Hospitality-Technology.html">Technology</a>
-      <a href="Luxury-Hospitality.html">Luxury</a>
-      <a href="Sustainable-Hospitality.html">Sustainability</a>
-      <a href="Aboutus.html">About</a>
-      <a href="Insights.html">Insights</a>
-      <a href="Contactus.html">Contact</a>
-    </nav>
-  </header>
-  <section class="hero">
-    <div class="hero-inner">
-      <span style="text-transform:uppercase;letter-spacing:.18em;font-size:.85rem;opacity:.9">{page['eyebrow']}</span>
-      <h1>{page['h1']}</h1>
-      <p>{page['desc']}</p>
-    </div>
-  </section>
-  <main id="main">
-    <section class="section">
-      <p>{page['hero_p']}</p>
-      <p>{page['ops_p']}</p>
-      <div class="grid">
+  {navbar_html}
+  {side_menu_html}
+    <main id="main">
+      <section class="section">
+        <p>{page['hero_p']}</p>
+        <p>{page['ops_p']}</p>
+        {page.get('market_p') and f"<p>{page['market_p']}</p>"}
+        <div class="grid">
         {cards_html}
       </div>
       <p class="muted small">{page['note']}</p>
@@ -534,16 +519,8 @@ def build_html(page, related_links=None, other_city_links=None):
       <a href="Contactus.html">{page['cta']}</a>
     </section>
   </main>
-  <footer>
-    <div style="max-width:1120px;margin:0 auto">
-      <div style="font:600 1.15rem/1.2 Cormorant Garamond,serif;margin-bottom:.5rem">The LotusLeaf Collection</div>
-      <p> Hospitality management and consulting across the Indian Subcontinent, Middle East, Africa, USA, and Europe.</p>
-      <p style="margin-top:.5rem"> Email: <a href="mailto:info@lotusleafcollection.com">info@lotusleafcollection.com</a> | Phone: <a href="tel:+91-99235-87326">+91-99235-87326</a></p>
-      <p style="margin-top:.5rem"><a href="index.html">Home</a> | <a href="whatwedo.html">Services</a> | <a href="Portfolio.html">Portfolio</a> | <a href="Contactus.html">Contact</a> | <a href="sitemap.xml">Sitemap</a></p>
-      <p style="margin-top:.5rem" class="muted small">&copy; <span id="year"></span> The LotusLeaf Collection. All rights reserved.</p>
-    </div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+  {footer_html}
+  {menu_js}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>"""
