@@ -1,0 +1,158 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main"
+  - navigation [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - link "The LotusLeaf Collection" [ref=f1e5] [cursor=pointer]:
+        - /url: index.html
+      - text: 
+      - list [ref=f1e7]:
+        - listitem [ref=f1e8]:
+          - link "Explore" [ref=f1e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=f1e10]:
+          - link "Our DNA" [ref=f1e11] [cursor=pointer]:
+            - /url: Aboutus.html
+        - listitem [ref=f1e12]:
+          - link "What We Build" [ref=f1e13] [cursor=pointer]:
+            - /url: whatwedo.html
+        - listitem [ref=f1e14]:
+          - button "Our Brands" [ref=f1e15] [cursor=pointer]
+        - listitem [ref=f1e16]:
+          - button "Our Collection" [ref=f1e17] [cursor=pointer]
+        - listitem [ref=f1e18]:
+          - link "Our Work" [ref=f1e19] [cursor=pointer]:
+            - /url: Portfolio.html
+        - listitem [ref=f1e20]:
+          - link "Insights" [ref=f1e21] [cursor=pointer]:
+            - /url: Insights.html
+        - listitem [ref=f1e22]:
+          - link "Let's Connect" [ref=f1e23] [cursor=pointer]:
+            - /url: Contactus.html
+        - listitem [ref=f1e24]:
+          - link "Book Now" [ref=f1e25] [cursor=pointer]:
+            - /url: Contactus.html
+        - listitem [ref=f1e26]:
+          - button "Open quick links" [ref=f1e27] [cursor=pointer]:
+            - generic [ref=f1e28]: 
+  - generic [ref=f1e29]:
+    - text: Middle East & Africa
+    - heading "Frequently asked questions" [level=1] [ref=f1e30]
+    - paragraph [ref=f1e31]: Answers to common questions about hotel management, consulting, pre-opening, and resort management services across the Middle East and Africa.
+    - link "Start a conversation" [ref=f1e32] [cursor=pointer]:
+      - /url: Contactus.html
+  - main [ref=f1e33]:
+    - generic [ref=f1e34]:
+      - heading "Hospitality questions for the Middle East & Africa" [level=2] [ref=f1e35]
+      - group [ref=f1e36]:
+        - generic "What hospitality services does The LotusLeaf Collection provide in the Middle East?" [ref=f1e37] [cursor=pointer]
+      - group [ref=f1e38]:
+        - generic "How can hotel owners in Dubai or the UAE engage The LotusLeaf Collection?" [ref=f1e39] [cursor=pointer]
+      - group [ref=f1e40]:
+        - generic "Does The LotusLeaf Collection support resort projects in Africa?" [ref=f1e41] [cursor=pointer]
+      - group [ref=f1e42]:
+        - generic "What is covered in a hotel pre-opening project in the Middle East?" [ref=f1e43] [cursor=pointer]
+      - group [ref=f1e44]:
+        - generic "Can The LotusLeaf Collection assist with revenue management for hotels in the UAE?" [ref=f1e45] [cursor=pointer]
+      - group [ref=f1e46]:
+        - generic "Are hospitality consulting services available for new hotel developments in the Middle East?" [ref=f1e47] [cursor=pointer]
+    - generic [ref=f1e48]:
+      - heading "Explore related hospitality services" [level=2] [ref=f1e49]
+      - paragraph [ref=f1e50]:
+        - link "Hotel and resort management" [ref=f1e51] [cursor=pointer]:
+          - /url: Hotel-Management.html
+        - link "Hospitality consulting" [ref=f1e52] [cursor=pointer]:
+          - /url: Hospitality-Consulting.html
+        - link "Pre-opening solutions" [ref=f1e53] [cursor=pointer]:
+          - /url: Hotel-Pre-Opening.html
+        - link "All services" [ref=f1e54] [cursor=pointer]:
+          - /url: whatwedo.html
+        - link "Contact us" [ref=f1e55] [cursor=pointer]:
+          - /url: Contactus.html
+  - contentinfo [ref=f1e56]:
+    - generic [ref=f1e57]:
+      - generic [ref=f1e58]:
+        - generic [ref=f1e59]:
+          - img "The LotusLeaf Collection Logo" [ref=f1e62]
+          - paragraph [ref=f1e63]: Experience That Builds Excellence. Presence That Creates Impact.
+        - generic [ref=f1e64]:
+          - paragraph [ref=f1e65]: Explore
+          - generic [ref=f1e66]:
+            - link "Explore" [ref=f1e67] [cursor=pointer]:
+              - /url: index.html
+            - link "Our DNA" [ref=f1e68] [cursor=pointer]:
+              - /url: Aboutus.html
+            - link "What We Build" [ref=f1e69] [cursor=pointer]:
+              - /url: whatwedo.html
+            - link "Our Collection" [ref=f1e70] [cursor=pointer]:
+              - /url: Portfolio.html
+            - link "Our Work" [ref=f1e71] [cursor=pointer]:
+              - /url: Portfolio.html
+            - link "Let's Connect" [ref=f1e72] [cursor=pointer]:
+              - /url: Contactus.html
+            - link "Our Brands" [ref=f1e73] [cursor=pointer]:
+              - /url: ArdenaHotels.html
+            - link "Case Studies" [ref=f1e74] [cursor=pointer]:
+              - /url: Case-Studies.html
+            - link "Success Stories" [ref=f1e75] [cursor=pointer]:
+              - /url: Success-Stories.html
+            - link "Transformations" [ref=f1e76] [cursor=pointer]:
+              - /url: Transformations.html
+            - link "Client Testimonials" [ref=f1e77] [cursor=pointer]:
+              - /url: Client-Testimonials.html
+            - link "Insights" [ref=f1e78] [cursor=pointer]:
+              - /url: Insights.html
+        - generic [ref=f1e79]:
+          - paragraph [ref=f1e80]: Contact
+          - generic [ref=f1e81]:
+            - generic [ref=f1e82]:
+              - generic [ref=f1e83]: Indian Subcontinent
+              - generic [ref=f1e84]:
+                - link " +91 99235 87326" [ref=f1e85] [cursor=pointer]:
+                  - /url: tel:+919923587326
+                  - generic [ref=f1e86]: 
+                  - text: +91 99235 87326
+                - link " Let's contact on WhatsApp" [ref=f1e87] [cursor=pointer]:
+                  - /url: https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection
+                  - generic [ref=f1e88]: 
+                  - text: Let's contact on WhatsApp
+            - generic [ref=f1e89]:
+              - generic [ref=f1e90]: Middle East & Africa
+              - generic [ref=f1e91]:
+                - link " +971 55 1636310" [ref=f1e92] [cursor=pointer]:
+                  - /url: tel:+971551636310
+                  - generic [ref=f1e93]: 
+                  - text: +971 55 1636310
+                - generic [ref=f1e94]:
+                  - link " info@lotusleafcollection.com" [ref=f1e95] [cursor=pointer]:
+                    - /url: mailto:info@lotusleafcollection.com
+                    - generic [ref=f1e96]: 
+                    - text: info@lotusleafcollection.com
+                  - link " www.lotusleafcollection.com" [ref=f1e97] [cursor=pointer]:
+                    - /url: https://www.lotusleafcollection.com
+                    - generic [ref=f1e98]: 
+                    - text: www.lotusleafcollection.com
+                  - generic [ref=f1e99]: Follow us on
+                  - generic [ref=f1e100]:
+                    - link "Follow us on Instagram" [ref=f1e101] [cursor=pointer]:
+                      - /url: https://www.instagram.com/thelotusleafcollection/
+                      - generic [ref=f1e102]: 
+                    - link "Follow us on Facebook" [ref=f1e103] [cursor=pointer]:
+                      - /url: https://www.instagram.com/thelotusleafcollection/
+                      - generic [ref=f1e104]: 
+                    - link "Follow us on LinkedIn" [ref=f1e105] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/company/lotusleaf-collection/home/?viewAsMember=true
+                      - generic [ref=f1e106]: 
+                    - link "Contact us on WhatsApp" [ref=f1e107] [cursor=pointer]:
+                      - /url: https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection
+                      - generic [ref=f1e108]: 
+                    - link "Follow us on YouTube" [ref=f1e109] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@Loutusleafcollection
+                      - generic [ref=f1e110]: 
+      - generic [ref=f1e111]:
+        - generic [ref=f1e112]: © 2026 The LotusLeaf Collection. All rights reserved.
+        - generic [ref=f1e113]:
+          - text: "|"
+          - link "Site Architecture" [ref=f1e114] [cursor=pointer]:
+            - /url: architecture.html
+        - generic [ref=f1e115]: Hospitality Management · Consulting · Pre-Opening Solutions

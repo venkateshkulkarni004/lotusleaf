@@ -1,0 +1,158 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - link "The LotusLeaf Collection" [ref=e5] [cursor=pointer]:
+        - /url: index.html
+      - text: 
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Explore" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e10]:
+          - link "Our DNA" [ref=e11] [cursor=pointer]:
+            - /url: Aboutus.html
+        - listitem [ref=e12]:
+          - link "What We Build" [ref=e13] [cursor=pointer]:
+            - /url: whatwedo.html
+        - listitem [ref=e14]:
+          - button "Our Brands" [ref=e15] [cursor=pointer]
+        - listitem [ref=e16]:
+          - button "Our Collection" [ref=e17] [cursor=pointer]
+        - listitem [ref=e18]:
+          - link "Our Work" [ref=e19] [cursor=pointer]:
+            - /url: Portfolio.html
+        - listitem [ref=e20]:
+          - link "Insights" [ref=e21] [cursor=pointer]:
+            - /url: Insights.html
+        - listitem [ref=e22]:
+          - link "Let's Connect" [ref=e23] [cursor=pointer]:
+            - /url: Contactus.html
+        - listitem [ref=e24]:
+          - link "Book Now" [ref=e25] [cursor=pointer]:
+            - /url: Contactus.html
+        - listitem [ref=e26]:
+          - button "Open quick links" [ref=e27] [cursor=pointer]:
+            - generic [ref=e28]: 
+  - generic [ref=e29]:
+    - text: Indian Subcontinent
+    - heading "Frequently asked questions" [level=1] [ref=e30]
+    - paragraph [ref=e31]: Answers to common questions about hotel management, consulting, pre-opening, and resort management services across the Indian Subcontinent.
+    - link "Start a conversation" [ref=e32] [cursor=pointer]:
+      - /url: Contactus.html
+  - main [ref=e33]:
+    - generic [ref=e34]:
+      - heading "Hospitality questions for India" [level=2] [ref=e35]
+      - group [ref=e36]:
+        - generic "What services does The LotusLeaf Collection offer in India?" [ref=e37] [cursor=pointer]
+      - group [ref=e38]:
+        - generic "How can hotel owners in Pune or Maharashtra engage with The LotusLeaf Collection?" [ref=e39] [cursor=pointer]
+      - group [ref=e40]:
+        - generic "Does The LotusLeaf Collection handle resort management in Goa and other regions?" [ref=e41] [cursor=pointer]
+      - group [ref=e42]:
+        - generic "What is included in a hotel pre-opening engagement?" [ref=e43] [cursor=pointer]
+      - group [ref=e44]:
+        - generic "Can The LotusLeaf Collection assist with hotel revenue management in India?" [ref=e45] [cursor=pointer]
+      - group [ref=e46]:
+        - generic "Are hospitality consulting services available for new hotel projects in India?" [ref=e47] [cursor=pointer]
+    - generic [ref=e48]:
+      - heading "Explore related hospitality services" [level=2] [ref=e49]
+      - paragraph [ref=e50]:
+        - link "Hotel and resort management" [ref=e51] [cursor=pointer]:
+          - /url: Hotel-Management.html
+        - link "Hospitality consulting" [ref=e52] [cursor=pointer]:
+          - /url: Hospitality-Consulting.html
+        - link "Pre-opening solutions" [ref=e53] [cursor=pointer]:
+          - /url: Hotel-Pre-Opening.html
+        - link "All services" [ref=e54] [cursor=pointer]:
+          - /url: whatwedo.html
+        - link "Contact us" [ref=e55] [cursor=pointer]:
+          - /url: Contactus.html
+  - contentinfo [ref=e56]:
+    - generic [ref=e57]:
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - img "The LotusLeaf Collection Logo" [ref=e62]
+          - paragraph [ref=e63]: Experience That Builds Excellence. Presence That Creates Impact.
+        - generic [ref=e64]:
+          - paragraph [ref=e65]: Explore
+          - generic [ref=e66]:
+            - link "Explore" [ref=e67] [cursor=pointer]:
+              - /url: index.html
+            - link "Our DNA" [ref=e68] [cursor=pointer]:
+              - /url: Aboutus.html
+            - link "What We Build" [ref=e69] [cursor=pointer]:
+              - /url: whatwedo.html
+            - link "Our Collection" [ref=e70] [cursor=pointer]:
+              - /url: Portfolio.html
+            - link "Our Work" [ref=e71] [cursor=pointer]:
+              - /url: Portfolio.html
+            - link "Let's Connect" [ref=e72] [cursor=pointer]:
+              - /url: Contactus.html
+            - link "Our Brands" [ref=e73] [cursor=pointer]:
+              - /url: ArdenaHotels.html
+            - link "Case Studies" [ref=e74] [cursor=pointer]:
+              - /url: Case-Studies.html
+            - link "Success Stories" [ref=e75] [cursor=pointer]:
+              - /url: Success-Stories.html
+            - link "Transformations" [ref=e76] [cursor=pointer]:
+              - /url: Transformations.html
+            - link "Client Testimonials" [ref=e77] [cursor=pointer]:
+              - /url: Client-Testimonials.html
+            - link "Insights" [ref=e78] [cursor=pointer]:
+              - /url: Insights.html
+        - generic [ref=e79]:
+          - paragraph [ref=e80]: Contact
+          - generic [ref=e81]:
+            - generic [ref=e82]:
+              - generic [ref=e83]: Indian Subcontinent
+              - generic [ref=e84]:
+                - link " +91 99235 87326" [ref=e85] [cursor=pointer]:
+                  - /url: tel:+919923587326
+                  - generic [ref=e86]: 
+                  - text: +91 99235 87326
+                - link " Let's contact on WhatsApp" [ref=e87] [cursor=pointer]:
+                  - /url: https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection
+                  - generic [ref=e88]: 
+                  - text: Let's contact on WhatsApp
+            - generic [ref=e89]:
+              - generic [ref=e90]: Middle East & Africa
+              - generic [ref=e91]:
+                - link " +971 55 1636310" [ref=e92] [cursor=pointer]:
+                  - /url: tel:+971551636310
+                  - generic [ref=e93]: 
+                  - text: +971 55 1636310
+                - generic [ref=e94]:
+                  - link " info@lotusleafcollection.com" [ref=e95] [cursor=pointer]:
+                    - /url: mailto:info@lotusleafcollection.com
+                    - generic [ref=e96]: 
+                    - text: info@lotusleafcollection.com
+                  - link " www.lotusleafcollection.com" [ref=e97] [cursor=pointer]:
+                    - /url: https://www.lotusleafcollection.com
+                    - generic [ref=e98]: 
+                    - text: www.lotusleafcollection.com
+                  - generic [ref=e99]: Follow us on
+                  - generic [ref=e100]:
+                    - link "Follow us on Instagram" [ref=e101] [cursor=pointer]:
+                      - /url: https://www.instagram.com/thelotusleafcollection/
+                      - generic [ref=e102]: 
+                    - link "Follow us on Facebook" [ref=e103] [cursor=pointer]:
+                      - /url: https://www.instagram.com/thelotusleafcollection/
+                      - generic [ref=e104]: 
+                    - link "Follow us on LinkedIn" [ref=e105] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/company/lotusleaf-collection/home/?viewAsMember=true
+                      - generic [ref=e106]: 
+                    - link "Contact us on WhatsApp" [ref=e107] [cursor=pointer]:
+                      - /url: https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection
+                      - generic [ref=e108]: 
+                    - link "Follow us on YouTube" [ref=e109] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@Loutusleafcollection
+                      - generic [ref=e110]: 
+      - generic [ref=e111]:
+        - generic [ref=e112]: © 2026 The LotusLeaf Collection. All rights reserved.
+        - generic [ref=e113]:
+          - text: "|"
+          - link "Site Architecture" [ref=e114] [cursor=pointer]:
+            - /url: architecture.html
+        - generic [ref=e115]: Hospitality Management · Consulting · Pre-Opening Solutions
