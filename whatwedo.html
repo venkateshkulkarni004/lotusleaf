@@ -4373,22 +4373,29 @@ document.addEventListener("DOMContentLoaded", function () {
       ];
 
       // ---- Render Services ----
-      document.getElementById("servicesGrid").innerHTML = services
-        .map(
-          (s) => `
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="service-card">
-              <div class="service-icon"><i class="bi ${s.i}"></i></div>
-              <h3 class="font-serif fs-3" style="color: var(--emerald)">${s.t}</h3>
-              <p class="text-muted-dark small mb-0">${s.d}</p>
-              <a class="service-page-link" href="${s.url}" aria-label="Learn more about ${s.t}">Explore service</a>
-            </div>
-          </div>`
-        )
-        .join("");
+      try {
+        const grid = document.getElementById("servicesGrid");
+        if (grid) {
+          grid.innerHTML = services
+            .map(
+              (s) => `
+            <div class="col-md-6 col-lg-4 reveal">
+              <div class="service-card">
+                <div class="service-icon"><i class="bi ${s.i}"></i></div>
+                <h3 class="font-serif fs-3" style="color: var(--emerald)">${s.t}</h3>
+                <p class="text-muted-dark small mb-0">${s.d}</p>
+                <a class="service-page-link" href="${s.url}" aria-label="Learn more about ${s.t}">Explore service</a>
+              </div>
+            </div>`
+            )
+            .join("");
+        }
+      } catch (e) {}
 
-      document.getElementById("copyright").textContent =
-        "© " + new Date().getFullYear() + " The LotusLeaf Collection. All rights reserved.";
+      try {
+        const cr = document.getElementById("copyright");
+        if (cr) cr.textContent = "© " + new Date().getFullYear() + " The LotusLeaf Collection. All rights reserved.";
+      } catch (e) {}
 
       // Rotate through ten luxury hotel and resort images every five seconds.
       const resortImages = [
@@ -4415,66 +4422,96 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // ---- Navbar scroll ----
-      const navbar = document.getElementById("navbar");
-      const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
-      window.addEventListener("scroll", onScroll);
-      onScroll();
+      try {
+        const navbar = document.getElementById("navbar");
+        if (navbar) {
+          const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 24);
+          window.addEventListener("scroll", onScroll);
+          onScroll();
+        }
+      } catch (e) {}
 
       // Close mobile menu on navigation, but leave dropdown toggles interactive.
-      document.querySelectorAll("#navMenu a").forEach((a) =>
-        a.addEventListener("click", () => {
-          if (a.matches('[data-bs-toggle="dropdown"], .dropdown-submenu > .dropdown-toggle')) return;
-          const menu = document.getElementById("navMenu");
-          if (menu.classList.contains("show")) new bootstrap.Collapse(menu).hide();
-        })
-      );
+      try {
+        document.querySelectorAll("#navMenu a").forEach((a) =>
+          a.addEventListener("click", () => {
+            if (a.matches('[data-bs-toggle="dropdown"], .dropdown-submenu > .dropdown-toggle')) return;
+            const menu = document.getElementById("navMenu");
+            if (menu && menu.classList.contains("show") && window.bootstrap && bootstrap.Collapse) {
+              new bootstrap.Collapse(menu).hide();
+            }
+          })
+        );
+      } catch (e) {}
 
       // Bootstrap handles top-level menus; this handler toggles nested hotel locations.
-      document.querySelectorAll(".dropdown-submenu > .dropdown-toggle").forEach((toggle) => {
-        toggle.addEventListener("click", (event) => {
-          event.preventDefault();
-          event.stopPropagation();
+      try {
+        document.querySelectorAll(".dropdown-submenu > .dropdown-toggle").forEach((toggle) => {
+          toggle.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
 
-          const submenu = toggle.nextElementSibling;
-          const shouldOpen = !submenu.classList.contains("show");
-          const parentMenu = toggle.closest(".hotel-dropdown");
-          parentMenu.querySelectorAll(".dropdown-submenu > .dropdown-menu.show").forEach((openMenu) => {
-            openMenu.classList.remove("show");
-            openMenu.previousElementSibling.setAttribute("aria-expanded", "false");
+            const submenu = toggle.nextElementSibling;
+            const shouldOpen = submenu && !submenu.classList.contains("show");
+            const parentMenu = toggle.closest(".hotel-dropdown");
+            if (parentMenu) {
+              parentMenu.querySelectorAll(".dropdown-submenu > .dropdown-menu.show").forEach((openMenu) => {
+                openMenu.classList.remove("show");
+                if (openMenu.previousElementSibling) {
+                  openMenu.previousElementSibling.setAttribute("aria-expanded", "false");
+                }
+              });
+            }
+            if (submenu) {
+              if (shouldOpen) {
+                submenu.classList.add("show");
+                toggle.setAttribute("aria-expanded", "true");
+              } else {
+                toggle.setAttribute("aria-expanded", "false");
+              }
+            }
           });
-          if (shouldOpen) {
-            submenu.classList.add("show");
-            toggle.setAttribute("aria-expanded", "true");
-          } else {
-            toggle.setAttribute("aria-expanded", "false");
-          }
         });
-      });
+      } catch (e) {}
 
       // Close any open location submenu when its parent hotel dropdown closes.
-      document.getElementById("mainHotelMenu").closest(".dropdown").addEventListener("hidden.bs.dropdown", () => {
-        document.querySelectorAll("#mainHotelMenu .dropdown-menu.show").forEach((submenu) => {
-          submenu.classList.remove("show");
-          submenu.previousElementSibling.setAttribute("aria-expanded", "false");
-        });
-      });
+      try {
+        const main = document.getElementById("mainHotelMenu");
+        if (main) {
+          const dd = main.closest(".dropdown");
+          if (dd) {
+            dd.addEventListener("hidden.bs.dropdown", () => {
+              document.querySelectorAll("#mainHotelMenu .dropdown-menu.show").forEach((submenu) => {
+                submenu.classList.remove("show");
+                if (submenu.previousElementSibling) {
+                  submenu.previousElementSibling.setAttribute("aria-expanded", "false");
+                }
+              });
+            });
+          }
+        }
+      } catch (e) {}
 
       // ---- Reveal on scroll ----
       const revealElements = document.querySelectorAll(".reveal");
-      if ("IntersectionObserver" in window) {
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.classList.add("visible");
-                io.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.12 }
-        );
-        revealElements.forEach((el) => io.observe(el));
-      } else {
+      try {
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((e) => {
+                if (e.isIntersecting) {
+                  e.target.classList.add("visible");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.12 }
+          );
+          revealElements.forEach((el) => io.observe(el));
+        } else {
+          revealElements.forEach((el) => el.classList.add("visible"));
+        }
+      } catch (e) {
         revealElements.forEach((el) => el.classList.add("visible"));
       }
     </script>

@@ -1,0 +1,6 @@
+[  232177ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/Case-Studies.html:311:65
+[  235223ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/Insights.html:2726:56
+[  243089ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/Aboutus.html:6528:56

@@ -1,0 +1,12 @@
+[     164ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/Aboutus.html:6528:56
+[   78612ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/Aboutus.html:6528:56
+[   80180ms] [LOG] Running with experiment IDs: [106288168] @ https://maps.googleapis.com/maps-api-v3/api/js/66/8b/main.js:311
+[   80572ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/whatwedo.html:4390:56
+[   80836ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:8901/whatwedo.html:0
+[   81810ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/Insights.html:2726:56
+[   82480ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/Case-Studies.html:311:65

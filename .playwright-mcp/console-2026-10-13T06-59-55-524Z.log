@@ -1,0 +1,23 @@
+[  526772ms] [ERROR] Failed to load resource: the server responded with a status of 503 () @ https://ogads-pa.clients6.google.com/$rpc/google.internal.onegoogle.asyncdata.v1.AsyncDataService/GetAsyncData:0
+[  621025ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/Aboutus.html:6528:56
+[  708598ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/whatwedo.html:4390:56
+[  708764ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:8901/whatwedo.html:0
+[  722988ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/ArdenaHotels.html:364:59
+[  723044ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8901/favicon.ico:0
+[  777513ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/whatwedo.html:4390:56
+[  777618ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:8901/whatwedo.html:0
+[  797877ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:8901/whatwedo.html:0
+[  808160ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:8901/whatwedo.html:0
+[  811171ms] [WARNING] The resource http://localhost:8901/images/New%20folder/wall/1.jpeg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:8901/whatwedo.html:0
+[  900226ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ http://localhost:8901/whatwedo.html:0
+[  903245ms] [WARNING] The resource http://localhost:8901/images/New%20folder/wall/1.jpeg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:8901/whatwedo.html:0
+[  909168ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at http://localhost:8901/ArdenaHotels.html:364:59
+[ 2621244ms] [WARNING] The resource http://localhost:8901/images/New%20folder/wall/1.jpeg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:8901/Pathik-Grand.html:0
+[ 2631610ms] [WARNING] The resource http://localhost:8901/images/New%20folder/wall/1.jpeg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:8901/Pathik-Grand.html:0
+[ 3060884ms] [WARNING] The resource http://localhost:8901/images/New%20folder/wall/1.jpeg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:8901/Pathik-Grand.html:0
+[ 3077001ms] [WARNING] The resource http://localhost:8901/images/New%20folder/wall/1.jpeg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:8901/Pathik-Grand.html:0

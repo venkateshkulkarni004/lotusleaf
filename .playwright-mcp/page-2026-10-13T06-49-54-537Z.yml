@@ -1,0 +1,296 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - link "The LotusLeaf Collection" [ref=e5] [cursor=pointer]:
+        - /url: index.html
+      - text: 
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "Explore" [ref=e10] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e11]:
+          - link "Our DNA" [ref=e12] [cursor=pointer]:
+            - /url: Aboutus.html
+        - listitem [ref=e13]:
+          - link "What We Build" [ref=e14] [cursor=pointer]:
+            - /url: whatwedo.html
+        - listitem [ref=e15]:
+          - button "Our Brands" [ref=e16] [cursor=pointer]
+        - listitem [ref=e17]:
+          - button "Our Collection" [ref=e18] [cursor=pointer]
+        - listitem [ref=e19]:
+          - link "Our Work" [ref=e20] [cursor=pointer]:
+            - /url: "Portfolio.html "
+        - listitem [ref=e21]:
+          - link "Insights" [ref=e22] [cursor=pointer]:
+            - /url: "Portfolio.html "
+        - listitem [ref=e23]:
+          - link "Let's Connect" [ref=e24] [cursor=pointer]:
+            - /url: Contactus.html
+        - listitem [ref=e25]:
+          - link "Book Now" [ref=e26] [cursor=pointer]:
+            - /url: Contactus.html
+        - listitem [ref=e27]:
+          - button "Open quick navigation menu" [ref=e28] [cursor=pointer]:
+            - generic [ref=e29]: 
+  - main [ref=e30]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - text: Company Overview
+        - heading "Creating and growing profitable destinations" [level=1] [ref=e35]
+        - paragraph [ref=e36]: The LotusLeaf Collection is a hospitality management and consulting company partnering with hotel owners, investors and developers to create, operate and grow distinctive hospitality destinations.
+        - paragraph [ref=e37]: We combine strategic insight, operational expertise and commercial thinking to help hospitality assets move from vision to execution and from execution to sustainable growth.
+      - generic [ref=e46]:
+        - img "Luxury hotel resort with scenic surroundings" [ref=e47]
+        - generic [ref=e51]:
+          - generic [ref=e52]: 100+
+          - generic [ref=e53]: Years Combined Leadership Experience
+    - generic [ref=e55]:
+      - generic [ref=e57]:
+        - text: Our Philosophy
+        - heading "People. Places. Possibilities." [level=3] [ref=e58]
+        - paragraph [ref=e59]: Meaningful hospitality rooted in trust, collaboration, sustainability and respect for people and places.
+      - generic [ref=e60]:
+        - img "People and teamwork in hospitality" [ref=e64]
+        - img "Luxury resort destination" [ref=e68]
+        - img "Innovation and strategic possibilities" [ref=e72]
+    - generic [ref=e74]:
+      - generic [ref=e75]:
+        - generic [ref=e76]: OUR VISION
+        - img "Vision 2035" [ref=e81]
+      - generic [ref=e86]:
+        - generic [ref=e87]: 
+        - generic [ref=e89]:
+          - generic [ref=e90]: OUR MISSION
+          - paragraph [ref=e93]: "We partner with hotel owners, investors and developers to create long-term value by delivering:"
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e96]: Exceptional hotel management solutions
+              - generic [ref=e99]: Revenue-driven commercial strategies
+              - generic [ref=e102]: Operational excellence across all departments
+              - generic [ref=e105]: Successful pre-opening and asset optimization
+            - generic [ref=e109]:
+              - generic [ref=e110]: Sustainable profitability and enhanced asset value
+              - generic [ref=e113]: Memorable guest experiences through service excellence
+              - generic [ref=e116]: People development and leadership excellence
+              - generic [ref=e119]: Transparent governance and ethical business practices
+      - generic [ref=e123]:
+        - generic [ref=e124]: OUR CORE VALUES
+        - generic [ref=e128]:
+          - article [ref=e129]:
+            - generic [ref=e130]: 
+            - heading "INTEGRITY" [level=3] [ref=e132]
+            - paragraph [ref=e134]: We operate with honesty, transparency, accountability and fairness in every engagement.
+          - article [ref=e135]:
+            - generic [aria-hidden] [ref=e137]: 
+            - heading "PARTNERSHIP" [level=3] [ref=e138]
+            - paragraph [ref=e140]: We believe in long-term relationships built on trust, collaboration and shared success.
+          - article [ref=e141]:
+            - generic [ref=e142]: 
+            - heading "INNOVATION" [level=3] [ref=e144]
+            - paragraph [ref=e146]: We embrace technology, creativity and modern hospitality practices to stay ahead of the industry.
+          - article [ref=e147]:
+            - generic [ref=e148]: 
+            - heading "GUEST CENTRICITY" [level=3] [ref=e150]
+            - paragraph [ref=e152]: Every decision is driven by creating memorable guest experiences and lasting brand loyalty.
+          - article [ref=e153]:
+            - heading "SUSTAINABILITY" [level=3] [ref=e157]
+            - paragraph [ref=e159]: We promote responsible hospitality by respecting communities, preserving the environment and creating businesses that thrive for generations.
+      - generic [ref=e160]:
+        - generic [ref=e161]: OUR PROMISE
+        - generic [ref=e163]:
+          - heading "Building Exceptional Hospitality" [level=2] [ref=e164]
+          - paragraph [ref=e165]: through Strategic Leadership, Operational Excellence, Sustainable Growth and Profitable Hotel Assets.
+    - generic [ref=e168]:
+      - generic [ref=e169]:
+        - text: Leadership
+        - heading "Founder with Hospitality in his DNA" [level=2] [ref=e170]
+        - generic "Sanjeev Salokhe - CEO" [ref=e171]:
+          - generic [aria-hidden] [ref=e172]: 
+        - paragraph [ref=e173]: Sanjeev Salokhe
+        - paragraph [ref=e174]: CEO
+      - generic [ref=e175]:
+        - text: Advisory Board
+        - heading "Strategic Leadership & Expertise" [level=3] [ref=e176]
+      - generic [ref=e177]:
+        - generic [ref=e179]:
+          - generic [ref=e180]: 
+          - generic [ref=e182]:
+            - generic [ref=e183]: SALES & MARKETING
+            - heading "Manoj Menon" [level=4] [ref=e184]
+            - paragraph [ref=e185]: Sales & Marketing Strategist
+            - generic [ref=e186]:
+              - generic [ref=e187]: 
+              - generic [ref=e188]: 35+ Years Experience
+        - generic [ref=e190]:
+          - generic [ref=e191]: 
+          - generic [ref=e193]:
+            - generic [ref=e194]: FINANCE
+            - heading "Balbir Negi" [level=4] [ref=e195]
+            - paragraph [ref=e196]: Financial Strategist
+            - generic [ref=e197]:
+              - generic [ref=e198]: 
+              - generic [ref=e199]: 30+ Years Experience
+        - generic [ref=e201]:
+          - generic [ref=e202]: 
+          - generic [ref=e204]:
+            - generic [ref=e205]: REVENUE MANAGEMENT
+            - heading "Smriti & Vishal" [level=4] [ref=e206]
+            - paragraph [ref=e207]: Revenue Management & Strategic Planning
+            - generic [ref=e208]:
+              - generic [ref=e209]: 
+              - generic [ref=e210]: 25+ Years Experience
+        - generic [ref=e212]:
+          - generic [ref=e213]: 
+          - generic [ref=e215]:
+            - generic [ref=e216]: DIGITAL MARKETING
+            - heading "Madhulika Joshi" [level=4] [ref=e217]
+            - paragraph [ref=e218]: Digital Marketing
+            - generic [ref=e219]:
+              - generic [ref=e220]: 
+              - generic [ref=e221]: 30+ Years Experience
+        - generic [ref=e223]:
+          - generic [ref=e224]: 
+          - generic [ref=e226]:
+            - generic [ref=e227]: HOSPITALITY OPERATIONS
+            - heading "Sameer Vyas" [level=4] [ref=e228]
+            - paragraph [ref=e229]: Pre-opening & Rooms Division
+            - generic [ref=e230]:
+              - generic [ref=e231]: 
+              - generic [ref=e232]: 20+ Years Experience
+      - generic [ref=e233]:
+        - generic [ref=e234]: ✧
+        - paragraph [ref=e236]:
+          - strong [ref=e237]: 100+ Years Combined Leadership Experience
+    - generic [ref=e239]:
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - heading "Hospitality Experience Across India & Africa" [level=2] [ref=e243]: Hospitality ExperienceAcross India & Africa
+          - paragraph [ref=e244]: Diverse markets · Proven capability · Greater tomorrow
+        - generic [ref=e245]:
+          - generic "India hospitality network" [ref=e246]:
+            - heading "INDIA" [level=3] [ref=e247]
+          - generic "Africa hospitality network" [ref=e248]:
+            - heading "AFRICA" [level=3] [ref=e249]
+        - generic [ref=e250]:
+          - generic [ref=e251]:
+            - generic [aria-hidden] [ref=e252]: 
+            - strong [ref=e253]: 20+
+            - generic [ref=e254]: Hotel & ResortAssignments
+          - generic [ref=e255]:
+            - generic [aria-hidden] [ref=e256]: 
+            - strong [ref=e257]: "2"
+            - generic [ref=e258]: ContinentsIndia & Africa
+          - generic [ref=e259]:
+            - generic [aria-hidden] [ref=e260]: 
+            - strong [ref=e261]: 100+ Years
+            - generic [ref=e262]: Combined LeadershipExperience
+      - generic [ref=e263]:
+        - generic [ref=e265]:
+          - paragraph [ref=e266]: Our network of trusted partnerships
+          - heading "Brands We Have Worked With" [level=3] [ref=e267]
+        - generic "Brands we have worked with" [ref=e268]:
+          - generic [ref=e269]:
+            - generic [ref=e270] [cursor=pointer]: Shalimar Hotels
+            - generic [ref=e271] [cursor=pointer]: The Oberoi Group
+            - generic [ref=e272] [cursor=pointer]: The O Group
+            - generic [ref=e273] [cursor=pointer]: The Pride Group
+            - generic [ref=e274] [cursor=pointer]: Radisson
+            - generic [ref=e275] [cursor=pointer]: Swara Group of Hotels & Resorts
+            - generic [ref=e276] [cursor=pointer]: Best Western Hotels & Resorts
+            - generic [ref=e277] [cursor=pointer]: Royal Caribbean
+            - generic [ref=e278] [cursor=pointer]: NORWEGIAN CRUISE LINE
+            - generic [ref=e279] [cursor=pointer]: Taj Mahal Tea House
+  - generic [ref=e280]:
+    - generic [ref=e281]: © 2026 The LotusLeaf Collection. All rights reserved.
+    - link "Site Architecture" [ref=e283] [cursor=pointer]:
+      - /url: architecture.html
+  - generic [ref=e284]:
+    - text: 
+    - button "Let’s chat" [ref=e285] [cursor=pointer]:
+      - generic [aria-hidden] [ref=e286]: 
+  - contentinfo [ref=e288]:
+    - generic [ref=e289]:
+      - generic [ref=e290]:
+        - generic [ref=e291]:
+          - img "The LotusLeaf Collection Logo" [ref=e295]
+          - paragraph [ref=e296]: Experience That Builds Excellence. Presence That Creates Impact.
+        - generic [ref=e297]:
+          - paragraph [ref=e298]: Explore
+          - generic [ref=e299]:
+            - link "Book an Audit" [ref=e300] [cursor=pointer]:
+              - /url: Book-Audit.html
+            - link "Book a Consultation" [ref=e301] [cursor=pointer]:
+              - /url: Book-Consultation.html
+            - link "Download Brochure" [ref=e302] [cursor=pointer]:
+              - /url: Download-Brochure.html
+            - link "Join Newsletter" [ref=e303] [cursor=pointer]:
+              - /url: Join-Newsletter.html
+            - link "Request a Proposal" [ref=e304] [cursor=pointer]:
+              - /url: Request-Proposal.html
+            - link "Explore" [ref=e305] [cursor=pointer]:
+              - /url: index.html
+            - link "Our DNA" [ref=e306] [cursor=pointer]:
+              - /url: Aboutus.html
+            - link "What We Build" [ref=e307] [cursor=pointer]:
+              - /url: whatwedo.html
+            - link "Our Collection" [ref=e308] [cursor=pointer]:
+              - /url: Portfolio.html
+            - link "Our Work" [ref=e309] [cursor=pointer]:
+              - /url: Portfolio.html
+            - link "Let's Connect" [ref=e310] [cursor=pointer]:
+              - /url: Contactus.html
+            - link "Insights" [ref=e311] [cursor=pointer]:
+              - /url: Insights.html
+        - generic [ref=e312]:
+          - paragraph [ref=e313]: Contact
+          - generic [ref=e314]:
+            - generic [ref=e315]:
+              - generic [ref=e316]: Indian Subcontinent
+              - generic [ref=e317]:
+                - link " +91 99235 87326" [ref=e318] [cursor=pointer]:
+                  - /url: tel:+919923587326
+                  - generic [ref=e319]: 
+                  - text: +91 99235 87326
+                - link " Let's contact on WhatsApp" [ref=e320] [cursor=pointer]:
+                  - /url: https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection
+                  - generic [ref=e321]: 
+                  - text: Let's contact on WhatsApp
+            - generic [ref=e322]:
+              - generic [ref=e323]: Middle East & Africa
+              - generic [ref=e324]:
+                - link " +971 55 1636310" [ref=e325] [cursor=pointer]:
+                  - /url: tel:+971551636310
+                  - generic [ref=e326]: 
+                  - text: +971 55 1636310
+                - generic [ref=e327]:
+                  - link " info@lotusleafcollection.com" [ref=e328] [cursor=pointer]:
+                    - /url: mailto:info@lotusleafcollection.com
+                    - generic [ref=e329]: 
+                    - text: info@lotusleafcollection.com
+                  - link " www.lotusleafcollection.com" [ref=e330] [cursor=pointer]:
+                    - /url: https://www.lotusleafcollection.com
+                    - generic [ref=e331]: 
+                    - text: www.lotusleafcollection.com
+                  - generic [ref=e332]: Follow us on
+                  - generic [ref=e333]:
+                    - link "Follow us on Instagram" [ref=e334] [cursor=pointer]:
+                      - /url: https://www.instagram.com/thelotusleafcollection/
+                      - generic [ref=e335]: 
+                    - link "Follow us on Facebook" [ref=e336] [cursor=pointer]:
+                      - /url: https://www.instagram.com/thelotusleafcollection/
+                      - generic [ref=e337]: 
+                    - link "Follow us on LinkedIn" [ref=e338] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/company/lotusleaf-collection/home/?viewAsMember=true
+                      - generic [ref=e339]: 
+                    - link "Contact us on WhatsApp" [ref=e340] [cursor=pointer]:
+                      - /url: https://wa.me/919923587326?text=Hello%20LotusLeaf%20Collection
+                      - generic [ref=e341]: 
+                    - link "Follow us on YouTube" [ref=e342] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@Loutusleafcollection
+                      - generic [ref=e343]: 
+      - generic [ref=e344]:
+        - generic [ref=e345]: © 2026 The LotusLeaf Collection. All rights reserved.
+        - generic [ref=e346]: Hospitality Management · Consulting · Pre-Opening Solutions
